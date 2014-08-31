@@ -23,7 +23,7 @@
 
         <!-- Title Panel -->
         <StackPanel Grid.Row="0" Margin="19,0,0,0">
-            <TextBlock x:Uid="AuthTitle" Text="{Binding Path=LocalizedResources.Authorization, Source={StaticResource LocalizedStrings}}" Margin="0,-6.5,0,26.5" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+            <TextBlock Text="{Binding Path=LocalizedResources.Authorization, Source={StaticResource LocalizedStrings}}" Margin="0,-6.5,0,26.5" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Margin="10,0,10,0">

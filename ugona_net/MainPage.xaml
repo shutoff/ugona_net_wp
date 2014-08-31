@@ -24,6 +24,7 @@
 
                 <StackPanel>
                     <TextBlock Text="{Binding EventTime}"/>
+                    <TextBlock Text="{Binding Error}" Foreground="OrangeRed"/>
                     <Grid Margin="20,20,20,0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
@@ -32,13 +33,26 @@
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        <Image Source="/Assets/Car/car_black.png" Grid.RowSpan="6"/>
-                        <Image Source="/Assets/Icons/icon_voltage.png" Grid.Row="0" Grid.Column="1"/>
-                        <TextBlock Text="{Binding MainVoltage}" Grid.Row="0" Grid.Column="2"/>
+                        <Image Source="{Binding CarLevel0}" Grid.RowSpan="6" Height="320"/>
+                        <Image Source="{Binding CarLevel1}" Grid.RowSpan="6" Height="320"/>
+                        <Image Source="{Binding CarLevel2}" Grid.RowSpan="6" Height="320"/>
+                        <Image Source="{Binding CarLevel3}" Grid.RowSpan="6" Height="320"/>
+                        <Image Source="{Binding CarLevel4}" Grid.RowSpan="6" Height="320"/>
+                        <Image Source="{Binding CarLevel5}" Grid.RowSpan="6" Height="320"/>
+                        <Image Source="{Binding CarLevel6}" Grid.RowSpan="6" Height="320"/>
+                        <Image Source="{Binding CarLevel7}" Grid.RowSpan="6" Height="320"/>
+                        <Image Source="/Assets/Icons/icon_voltage.png" Grid.Row="0" Grid.Column="1" Height="30"/>
+                        <TextBlock Text="{Binding MainVoltage}" Grid.Row="0" Grid.Column="2" TextAlignment="Right" Foreground="{Binding MainVoltageColor}"/>
+                        <Image Source="/Assets/Icons/icon_reserve.png" Grid.Row="1" Grid.Column="1" Height="30"/>
+                        <TextBlock Text="{Binding ReservedVoltage}" Grid.Row="1" Grid.Column="2" TextAlignment="Right"/>
+                        <Image Source="/Assets/Icons/icon_balance.png" Grid.Row="2" Grid.Column="1" Height="30"/>
+                        <TextBlock Text="{Binding Balance}" Grid.Row="2" Grid.Column="2" TextAlignment="Right"/>
                     </Grid>
-
                 </StackPanel>
 
             </phone:PivotItem>
