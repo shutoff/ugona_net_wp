@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ugona_net.Resources;
+using System.Net;
 using System.Net.Http;
 using Newtonsoft.Json.Linq;
 
@@ -34,7 +35,14 @@ namespace ugona_net
             return IsolatedStorageSettings.ApplicationSettings[name] as String;
         }
 
-        static public void PutSettings(String name, String value)
+        static public long GetLongSetting(String name)
+        {
+            if (!IsolatedStorageSettings.ApplicationSettings.Contains(name))
+                return 0;
+            return Convert.ToInt64(IsolatedStorageSettings.ApplicationSettings[name]);
+        }
+
+        static public void PutSettings(String name, Object value)
         {
             IsolatedStorageSettings.ApplicationSettings[name] = value;
         }
@@ -42,6 +50,19 @@ namespace ugona_net
         static public void RemoveSettings(String name)
         {
             IsolatedStorageSettings.ApplicationSettings.Remove(name);
+        }
+
+        static public void Flush()
+        {
+            IsolatedStorageSettings.ApplicationSettings.Save();
+        }
+
+        static public DateTime JavaTimeToDateTime(long javaMS)
+        {
+            DateTime UTCBaseTime = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+            DateTime dt = UTCBaseTime.Add(new TimeSpan(javaMS * TimeSpan.TicksPerMillisecond)).ToLocalTime();
+            return dt;
+
         }
 
         static private HttpClient httpClient = null;
@@ -62,6 +83,31 @@ namespace ugona_net
                 throw new Exception(obj["error"].ToString());
             }
             return obj;
+        }
+
+        static public Task<JObject> GetApi(String method, params Object[] values)
+        {
+            String url = "https://car-online.ugona.net/";
+            url += method;
+            bool first = true;
+            for (int i = 0; i < values.Length; i += 2)
+            {
+                if (values[i + 1] == null)
+                    continue;
+                if (first)
+                {
+                    first = false;
+                    url += "?";
+                }
+                else
+                {
+                    url += "&";
+                }
+                url += values[i];
+                url += "=";
+                url += HttpUtility.UrlEncode(values[i + 1].ToString());
+            }
+            return GetJson(url);
         }
     }
 }

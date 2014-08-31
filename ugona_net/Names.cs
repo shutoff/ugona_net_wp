@@ -10,5 +10,6 @@ namespace ugona_net
     {
         static public String KEY = "key";
         static public String AUTH = "auth";
+        static public String CAR_DATA = "data";
     }
 }

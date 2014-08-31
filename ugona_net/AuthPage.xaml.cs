@@ -9,7 +9,6 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Net.Http;
 using Newtonsoft.Json.Linq;
 
 namespace ugona_net
@@ -46,13 +45,11 @@ namespace ugona_net
             SystemTray.ProgressIndicator.IsVisible = true;
             try
             {
-                String url = "https://car-online.ugona.net/key?login=";
-                url += HttpUtility.UrlEncode(login);
-                url += "&password=";
-                url += HttpUtility.UrlEncode(password);
-                JObject obj = await Helper.GetJson(url);
+                JObject obj = await Helper.GetApi("key", "login", login, "password", password);
                 Helper.PutSettings(Names.KEY, obj["key"].ToString());
                 Helper.PutSettings(Names.AUTH, obj["auth"].ToString());
+                Helper.Flush();
+                String key = Helper.GetSetting(Names.KEY);
                 NavigationService.GoBack();
             }
             catch (Exception ex)

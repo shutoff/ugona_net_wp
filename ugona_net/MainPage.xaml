@@ -22,6 +22,24 @@
             <!--Pivot item one-->
             <phone:PivotItem Header="{Binding Path=LocalizedResources.State, Source={StaticResource LocalizedStrings}}">
 
+                <StackPanel>
+                    <TextBlock Text="{Binding EventTime}"/>
+                    <Grid Margin="20,20,20,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Image Source="/Assets/Car/car_black.png" Grid.RowSpan="6"/>
+                        <Image Source="/Assets/Icons/icon_voltage.png" Grid.Row="0" Grid.Column="1"/>
+                        <TextBlock Text="{Binding MainVoltage}" Grid.Row="0" Grid.Column="2"/>
+                    </Grid>
+
+                </StackPanel>
 
             </phone:PivotItem>
 

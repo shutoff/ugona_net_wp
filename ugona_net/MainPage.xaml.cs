@@ -5,6 +5,7 @@ using System.Net;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
+using System.Windows.Threading;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using ugona_net.Resources;
@@ -13,12 +14,15 @@ namespace ugona_net
 {
     public partial class MainPage : PhoneApplicationPage
     {
+        DispatcherTimer refreshTimer;
+
         // Constructor
         public MainPage()
         {
             show_auth = false;
 
             InitializeComponent();
+            DataContext = App.ViewModel;
 
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
@@ -33,16 +37,41 @@ namespace ugona_net
                 if (Helper.GetSetting(Names.KEY) == null)
                 {
                     Application.Current.Terminate();
+                    return;
                 }
-                return;
             }
-            String key = Helper.GetSetting(Names.KEY, "demo");
-            if (key == "demo")
+            else
             {
-                show_auth = true;
-                Helper.RemoveSettings(Names.KEY);
-                NavigationService.Navigate(new Uri("/AuthPage.xaml", UriKind.Relative));
+                String key = Helper.GetSetting(Names.KEY, "demo");
+                if (key == "demo")
+                {
+                    show_auth = true;
+                    Helper.RemoveSettings(Names.KEY);
+                    NavigationService.Navigate(new Uri("/AuthPage.xaml", UriKind.Relative));
+                }
             }
+            if (!App.ViewModel.IsDataLoaded)
+            {
+                App.ViewModel.LoadData();
+            }
+            App.ViewModel.refresh();
+            if (refreshTimer == null)
+            {
+                refreshTimer = new DispatcherTimer();
+                refreshTimer.Interval = TimeSpan.FromMinutes(1);
+                refreshTimer.Tick += OnRefresh;
+            }
+            refreshTimer.Start();
+        }
+
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            refreshTimer.Stop();
+        }
+
+        void OnRefresh(Object sender, EventArgs args)
+        {
+            App.ViewModel.refresh();
         }
 
         // Sample code for building a localized ApplicationBar

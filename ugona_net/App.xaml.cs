@@ -12,6 +12,23 @@ namespace ugona_net
 {
     public partial class App : Application
     {
+        private static CarModel viewModel = null;
+
+        /// <summary>
+        /// A static ViewModel used by the views to bind against.
+        /// </summary>
+        /// <returns>The MainViewModel object.</returns>
+        public static CarModel ViewModel
+        {
+            get
+            {
+                // Delay creation of the view model until necessary
+                if (viewModel == null)
+                    viewModel = new CarModel();
+
+                return viewModel;
+            }
+        }
 
         /// <summary>
         /// Provides easy access to the root frame of the Phone Application.
