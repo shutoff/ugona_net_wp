@@ -89,6 +89,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AddressBox.cs" />
+    <Compile Include="AddressHelper.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -211,6 +213,7 @@
     <Content Include="Assets\Car\trunk_white_open4.png" />
     <Content Include="Assets\Car\valet.png" />
     <Content Include="Assets\Car\valet_h.png" />
+    <Content Include="Assets\Icons\appbar.settings.png" />
     <Content Include="Assets\Icons\icon_balance.png" />
     <Content Include="Assets\Icons\icon_label.png" />
     <Content Include="Assets\Icons\icon_reserve.png" />

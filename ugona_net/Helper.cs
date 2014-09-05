@@ -65,10 +65,30 @@ namespace ugona_net
 
         }
 
+        static public String formatTime(long time)
+        {
+            if (time == 0)
+                return "";
+            DateTime dt = JavaTimeToDateTime(time);
+            String res = dt.ToString("t");
+            String date = dt.ToString("d");
+            if (date != DateTime.Now.ToString("d"))
+                res += " " + date;
+            return res;
+        }
+
         static private HttpClient httpClient = null;
 
-        async static public Task<JObject> GetJson(String url)
+        async static public Task<JObject> GetJson(String url, params Object[] values)
         {
+            for (int n = 1; ; n++)
+            {
+                int pos = url.IndexOf("$" + n);
+                if (pos < 0)
+                    break;
+                url = url.Replace("$" + n, HttpUtility.UrlEncode(values[n - 1].ToString()));
+            }
+
             Uri iru = new Uri(url, UriKind.Absolute);
             if (httpClient == null)
             {

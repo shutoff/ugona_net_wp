@@ -36,10 +36,7 @@ namespace ugona_net
         {
             get
             {
-                if (Car.time == 0)
-                    return "";
-                DateTime dt = Helper.JavaTimeToDateTime(Car.time);
-                return dt.ToString();
+                return Helper.formatTime(Car.time);
             }
 
         }
@@ -208,15 +205,48 @@ namespace ugona_net
             }
         }
 
+        public String Address
+        {
+            get
+            {
+                String res = Helper.formatTime(Car.last_stand);
+                if (res.Length > 0)
+                    res += " ";
+                res += "|";
+                if ((Car.gps.latitude != null) && (Car.gps.longitude != null))
+                {
+                    res += " " + String.Format("{0:n5}", Car.gps.latitude);
+                    res += " " + String.Format("{0:n5}", Car.gps.longitude);
+                }
+                res += "|\n";
+                if (address != null)
+                {
+                    string[] separators = new string[] { ", " };
+                    String[] parts = address.Split(separators, StringSplitOptions.None);
+                    int start = 1;
+                    if (parts.Length > 0)
+                        res += parts[0];
+                    res += "|\n";
+                    for (int i = start; i < parts.Length; i++)
+                    {
+                        if (i > start)
+                            res += ", ";
+                        res += parts[i];
+                    }
+                }
+                return res;
+            }
+        }
+
         public class VoltageData
         {
-            public float? main
+            public double? main
             {
                 get;
                 set;
             }
 
-            public float? reserved
+            public double? reserved
             {
                 get;
                 set;
@@ -225,7 +255,7 @@ namespace ugona_net
 
         public class BalanceData
         {
-            public float? value
+            public double? value
             {
                 get;
                 set;
@@ -332,6 +362,33 @@ namespace ugona_net
             }
         }
 
+        public class GpsData
+        {
+            public double? latitude
+            {
+                get;
+                set;
+            }
+
+            public double? longitude
+            {
+                get;
+                set;
+            }
+
+            public double? speed
+            {
+                get;
+                set;
+            }
+
+            public int? course
+            {
+                get;
+                set;
+            }
+        }
+
         public class CarData : INotifyPropertyChanged
         {
             public long time
@@ -376,6 +433,12 @@ namespace ugona_net
                 set;
             }
 
+            public long last_stand
+            {
+                get;
+                set;
+            }
+
             public VoltageData voltage
             {
                 get
@@ -412,9 +475,21 @@ namespace ugona_net
                 }
             }
 
+            public GpsData gps
+            {
+                get{
+                    if (gps_data == null)
+                    {
+                        gps_data = new GpsData();
+                    }
+                    return gps_data;
+                }
+            }
+
             VoltageData voltage_data;
             BalanceData balance_data;
             ContactData contact_data;
+            GpsData gps_data;
 
             public event PropertyChangedEventHandler PropertyChanged;
             private void NotifyPropertyChanged(String propertyName)
@@ -467,6 +542,8 @@ namespace ugona_net
             if (data != null)
                 car_data = JsonConvert.DeserializeObject<CarData>(data);
             this.IsDataLoaded = true;
+            UpdateAddress();
+            UpdateLevels();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -524,11 +601,27 @@ namespace ugona_net
                         continue;
                     p.SetValue(to, val);
                 }
+                else if (type == typeof(int))
+                {
+                    int val = v.ToObject<int>();
+                    Object old = p.GetValue(to);
+                    if ((old != null) && (val == (int)old))
+                        continue;
+                    p.SetValue(to, val);
+                }
                 else if (type == typeof(bool))
                 {
                     bool val = v.ToObject<bool>();
                     Object old = p.GetValue(to);
                     if ((old != null) && (val == (bool)old))
+                        continue;
+                    p.SetValue(to, val);
+                }
+                else if (type == typeof(double))
+                {
+                    double val = v.ToObject<double>();
+                    Object old = p.GetValue(to);
+                    if ((old != null) && (val == (double)old))
                         continue;
                     p.SetValue(to, val);
                 }
@@ -557,17 +650,51 @@ namespace ugona_net
                 String key = Helper.GetSetting(Names.KEY);
                 if (key == null)
                     return;
-                JObject res = await Helper.GetApi("", "skey", key, "time", Car.time);
+                long time = Car.time;
+                JObject res = await Helper.GetApi("", "skey", key, "time", Car.time);           
                 SetData(Car, res, null, null);
                 Error = "";
                 NotifyPropertyChanged("Error");
+                if (time == Car.time)
+                    return;
                 UpdateLevels();
+                UpdateAddress();
+                Helper.PutSettings(Names.CAR_DATA, JsonConvert.SerializeObject(Car));
             }
             catch (Exception ex)
             {
                 Error = ex.Message;
                 NotifyPropertyChanged("Error");
             }
+        }
+
+        double? latitude;
+        double? longitude;
+
+        String address;
+
+        async private void UpdateAddress()
+        {
+            if ((Car.gps.latitude == null) || (Car.gps.longitude == null))
+            {
+                SetAddress(null);
+                return;
+            }
+            double? d = AddressHelper.distance(Car.gps.longitude, Car.gps.longitude, latitude, longitude);
+            if ((d != null) && (d < 50))
+                return;
+            if (d > 300)
+                SetAddress(null);
+            String res = await AddressHelper.get(Car.gps.latitude, Car.gps.longitude);
+            SetAddress(res);
+        }
+
+        private void SetAddress(String addr)
+        {
+            if (addr == address)
+                return;
+            address = addr;
+            NotifyPropertyChanged("Address");
         }
 
         private void UpdateLevels()
