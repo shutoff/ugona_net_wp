@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
+﻿using Microsoft.Phone.Controls;
+using System;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Navigation;
 using System.Windows.Threading;
-using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
-using ugona_net.Resources;
 
 namespace ugona_net
 {
@@ -22,10 +16,16 @@ namespace ugona_net
             show_auth = false;
 
             InitializeComponent();
+            Loaded += OnLoaded;
             DataContext = App.ViewModel;
 
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
+        }
+
+        private void OnLoaded(object sender, RoutedEventArgs e)
+        {
+            Helper.Init(LayoutRoot);
         }
 
         // Load data for the ViewModel Items

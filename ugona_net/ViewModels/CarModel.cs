@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
+﻿using Microsoft.Phone.Shell;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System;
+using System.ComponentModel;
 using System.Reflection;
-using System.Globalization;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media;
 
 namespace ugona_net
@@ -32,13 +30,29 @@ namespace ugona_net
             private set;
         }
 
+        public bool Refresh
+        {
+            get;
+            private set;
+        }
+
         public String EventTime
         {
             get
             {
-                return Helper.formatTime(Car.time);
+                return DateUtils.formatTime(Car.time);
             }
+        }
 
+        public Brush EventColor
+        {
+            get
+            {
+                long delta = DateUtils.Now - Car.time;
+                if ((delta / 60000) < Car.timer + 1)
+                    return Colors.BlueBrush;
+                return (Brush)App.Current.Resources["PhoneForegroundBrush"];
+            }
         }
 
         public String MainVoltage
@@ -56,8 +70,16 @@ namespace ugona_net
             get
             {
                 if ((Car.voltage.main != null) && (Car.voltage.main <= 12.2))
-                    return ErrorBrush;
+                    return Colors.ErrorBrush;
                 return (Brush) App.Current.Resources["PhoneForegroundBrush"];
+            }
+        }
+
+        public Visibility MainVoltageVisibilty
+        {
+            get
+            {
+                return (Car.voltage.main == null) ? Visibility.Collapsed : Visibility.Visible;
             }
         }
 
@@ -71,17 +93,21 @@ namespace ugona_net
             }
         }
 
-        static private Brush error_brush;
-
-        public Brush ErrorBrush
+        public Brush ReservedVoltageColor
         {
             get
             {
-                if (error_brush == null)
-                {
-                    error_brush = new SolidColorBrush(Color.FromArgb(255, 255, 64, 64));
-                }
-                return error_brush;
+                if (!Car.contact.reservePowerNormal)
+                    return Colors.ErrorBrush;
+                return (Brush)App.Current.Resources["PhoneForegroundBrush"];
+            }
+        }
+
+        public Visibility ReservedVoltageVisibilty
+        {
+            get
+            {
+                return (Car.voltage.reserved == null) ? Visibility.Collapsed : Visibility.Visible;
             }
         }
 
@@ -92,6 +118,63 @@ namespace ugona_net
                 if (Car.balance.value == null)
                     return "";
                 return String.Format("{0:n2}", Car.balance.value);
+            }
+        }
+
+        public Brush BalanceColor
+        {
+            get
+            {
+                if ((Car.balance.value != null) && (Car.balance.value < 50))
+                    return Colors.ErrorBrush;
+                return (Brush)App.Current.Resources["PhoneForegroundBrush"];
+            }
+        }
+
+        public Visibility BalanceVisibilty
+        {
+            get
+            {
+                return (Car.balance.value == null) ? Visibility.Collapsed : Visibility.Visible;
+            }
+        }
+
+
+        public String GsmLevel
+        {
+            get
+            {
+                if (Car.gsm.db == null)
+                    return "";
+                return String.Format("{0:d} dBm", Car.gsm.db);
+            }
+        }
+
+        public String GsmLevelImage
+        {
+            get
+            {
+                if (Car.gsm.db == null)
+                    return null;
+                if (Car.gsm.db > -51)
+                    return "/Assets/Icons/gsm_level5.png";
+                if (Car.gsm.db > -65)
+                    return "/Assets/Icons/gsm_level4.png";
+                if (Car.gsm.db > -77)
+                    return "/Assets/Icons/gsm_level3.png";
+                if (Car.gsm.db > -91)
+                    return "/Assets/Icons/gsm_level2.png";
+                if (Car.gsm.db > -105)
+                    return "/Assets/Icons/gsm_level1.png";
+                return "/Assets/Icons/gsm_level0.png";
+            }
+        }
+
+        public Visibility GsmLevelVisibilty
+        {
+            get
+            {
+                return (Car.gsm.db == null) ? Visibility.Collapsed : Visibility.Visible;
             }
         }
 
@@ -205,27 +288,39 @@ namespace ugona_net
             }
         }
 
+        static Regex number_match = new Regex("^[0-9]+ ?");
+
         public String Address
         {
             get
             {
-                String res = Helper.formatTime(Car.last_stand);
+                String res = "";
+                if (Car.last_stand > 0)
+                    res = DateUtils.formatTime(Car.last_stand);
+                if ((Car.last_stand < 0) && (Car.gps.speed != null))
+                    res = String.Format("{0:n0} ", Car.gps.speed) + Helper.GetString("km/h");
                 if (res.Length > 0)
                     res += " ";
                 res += "|";
                 if ((Car.gps.latitude != null) && (Car.gps.longitude != null))
                 {
-                    res += " " + String.Format("{0:n5}", Car.gps.latitude);
-                    res += " " + String.Format("{0:n5}", Car.gps.longitude);
+                    res += " " + String.Format("{0:n4}", Car.gps.latitude);
+                    res += " " + String.Format("{0:n4}", Car.gps.longitude);
                 }
                 res += "|\n";
                 if (address != null)
                 {
                     string[] separators = new string[] { ", " };
                     String[] parts = address.Split(separators, StringSplitOptions.None);
-                    int start = 1;
-                    if (parts.Length > 0)
-                        res += parts[0];
+                    int start = 2;
+                    res += parts[0];
+                    if (parts.Length > 1)
+                        res += ", " + parts[1];
+                    if ((parts.Length > 2) && number_match.IsMatch(parts[2]))
+                    {
+                        res += ", " + parts[2].Replace(" ", "\xA0");
+                        start++;
+                    }
                     res += "|\n";
                     for (int i = start; i < parts.Length; i++)
                     {
@@ -301,7 +396,6 @@ namespace ugona_net
                 set;
             }
 
-
             public bool door_back_left
             {
                 get;
@@ -360,6 +454,12 @@ namespace ugona_net
                 get;
                 set;
             }
+
+            public bool reservePowerNormal
+            {
+                get;
+                set;
+            }
         }
 
         public class GpsData
@@ -383,6 +483,39 @@ namespace ugona_net
             }
 
             public int? course
+            {
+                get;
+                set;
+            }
+        }
+
+        public class GsmData
+        {
+            public int cc
+            {
+                get;
+                set;
+            }
+
+            public int nc
+            {
+                get;
+                set;
+            }
+
+            public int lac
+            {
+                get;
+                set;
+            }
+
+            public int cid
+            {
+                get;
+                set;
+            }
+
+            public int? db
             {
                 get;
                 set;
@@ -439,6 +572,12 @@ namespace ugona_net
                 set;
             }
 
+            public long timer
+            {
+                get;
+                set;
+            }
+
             public VoltageData voltage
             {
                 get
@@ -486,10 +625,23 @@ namespace ugona_net
                 }
             }
 
+            public GsmData gsm
+            {
+                get
+                {
+                    if (gsm_data == null)
+                    {
+                        gsm_data = new GsmData();
+                    }
+                    return gsm_data;
+                }
+            }
+
             VoltageData voltage_data;
             BalanceData balance_data;
             ContactData contact_data;
             GpsData gps_data;
+            GsmData gsm_data;
 
             public event PropertyChangedEventHandler PropertyChanged;
             private void NotifyPropertyChanged(String propertyName)
@@ -521,16 +673,37 @@ namespace ugona_net
         private void CarPropertyChanged(Object sender, PropertyChangedEventArgs args)
         {
             if (args.PropertyName == "time")
+            {
                 NotifyPropertyChanged("EventTime");
+                NotifyPropertyChanged("EventColor");
+            }
+            if (args.PropertyName == "timer")
+                NotifyPropertyChanged("EventColor");
             if (args.PropertyName == "voltage.main")
             {
                 NotifyPropertyChanged("MainVoltage");
                 NotifyPropertyChanged("MainVoltageColor");
+                NotifyPropertyChanged("MainVoltageVisibilty");
             }
             if (args.PropertyName == "voltage.reserved")
+            {
                 NotifyPropertyChanged("ReservedVoltage");
+                NotifyPropertyChanged("ReservedVoltageVisibilty");
+            }
+            if (args.PropertyName == "contact.reservePowerNormal")
+                NotifyPropertyChanged("ReservedVoltageColor");
             if (args.PropertyName == "balance.value")
+            {
                 NotifyPropertyChanged("Balance");
+                NotifyPropertyChanged("BalanceColor");
+                NotifyPropertyChanged("BalanceVisibilty");
+            }
+            if (args.PropertyName == "gsm.db")
+            {
+                NotifyPropertyChanged("GsmLevel");
+                NotifyPropertyChanged("GsmLevelImage");
+                NotifyPropertyChanged("GsmLevelVisibility");
+            }
         }
 
         public void LoadData()
@@ -540,7 +713,10 @@ namespace ugona_net
                 return;
             String data = Helper.GetSetting(Names.CAR_DATA);
             if (data != null)
+            {
                 car_data = JsonConvert.DeserializeObject<CarData>(data);
+                car_data.PropertyChanged += CarPropertyChanged;
+            }
             this.IsDataLoaded = true;
             UpdateAddress();
             UpdateLevels();
@@ -561,11 +737,16 @@ namespace ugona_net
             PropertyInfo[] props = to.GetType().GetProperties();
             if (delegates == null)
             {
-                MulticastDelegate eventDelagate =
-                          (MulticastDelegate)to.GetType().GetField("PropertyChanged",
+                FieldInfo info = to.GetType().GetField("PropertyChanged",
                            System.Reflection.BindingFlags.Instance |
-                           System.Reflection.BindingFlags.NonPublic).GetValue(to);
-                delegates = eventDelagate.GetInvocationList();
+                           System.Reflection.BindingFlags.NonPublic);
+                if (info != null)
+                {
+                    MulticastDelegate eventDelagate =
+                              (MulticastDelegate)info.GetValue(to);
+                    if (eventDelagate != null)
+                        delegates = eventDelagate.GetInvocationList();
+                }
             }
             foreach (PropertyInfo p in props)
             {
@@ -636,36 +817,62 @@ namespace ugona_net
                 String pname = p.Name;
                 if (prefix != null)
                     pname = prefix + pname;
-                foreach (Delegate dlg in delegates)
+                if (delegates != null)
                 {
-                    dlg.Method.Invoke(dlg.Target, new object[] { to, new PropertyChangedEventArgs(pname) });
+                    foreach (Delegate dlg in delegates)
+                    {
+                        dlg.Method.Invoke(dlg.Target, new object[] { to, new PropertyChangedEventArgs(pname) });
+                    }
                 }
             }
         }
 
         async public void refresh()
         {
+            if (Refresh)
+                return;
+            Refresh = true;
+            SystemTray.ProgressIndicator = new ProgressIndicator();
+            SystemTray.ProgressIndicator.Text = Helper.GetString("Refresh data");
+            SystemTray.ProgressIndicator.IsIndeterminate = true;
+            SystemTray.ProgressIndicator.IsVisible = true;
+            try
+            {
+                await doRefresh();
+            }
+            catch (Exception)
+            {
+            }
+            SystemTray.ProgressIndicator.IsIndeterminate = false;
+            SystemTray.ProgressIndicator.IsVisible = false;
+            Refresh = false;
+        }
+
+        async public Task<bool> doRefresh()
+        {
             try
             {
                 String key = Helper.GetSetting(Names.KEY);
                 if (key == null)
-                    return;
+                    return false;
                 long time = Car.time;
                 JObject res = await Helper.GetApi("", "skey", key, "time", Car.time);           
                 SetData(Car, res, null, null);
                 Error = "";
                 NotifyPropertyChanged("Error");
                 if (time == Car.time)
-                    return;
+                    return false;
                 UpdateLevels();
                 UpdateAddress();
                 Helper.PutSettings(Names.CAR_DATA, JsonConvert.SerializeObject(Car));
+                return true;
             }
             catch (Exception ex)
             {
                 Error = ex.Message;
                 NotifyPropertyChanged("Error");
             }
+            return false;
         }
 
         double? latitude;
@@ -703,7 +910,7 @@ namespace ugona_net
                 levels = new String[9];
             bool doors4 = false;
             DateTime last = DateTime.Now.AddDays(-3);
-            DateTime time = Helper.JavaTimeToDateTime(Car.time);
+            DateTime time = DateUtils.ToDateTime(Car.time);
             if (time.CompareTo(last) < 0)
             {
                 setLayer(0, doors4 ? "car_black4" : "car_black");

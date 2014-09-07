@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.IO.IsolatedStorage;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ugona_net.Resources;
 using System.Net;
 using System.Net.Http;
-using Newtonsoft.Json.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using ugona_net.Resources;
 
 namespace ugona_net
 {
@@ -57,27 +57,52 @@ namespace ugona_net
             IsolatedStorageSettings.ApplicationSettings.Save();
         }
 
-        static public DateTime JavaTimeToDateTime(long javaMS)
-        {
-            DateTime UTCBaseTime = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
-            DateTime dt = UTCBaseTime.Add(new TimeSpan(javaMS * TimeSpan.TicksPerMillisecond)).ToLocalTime();
-            return dt;
+        static String user_agent = null;
 
-        }
+        private const string Html =
+@"<!DOCTYPE HTML PUBLIC ""-//W3C//DTD HTML 4.01 Transitional//EN"">
+<html>
+<head>
+<script language=""javascript"" type=""text/javascript"">
+function notifyUA() {
+    window.external.notify(navigator.userAgent);
+}
+</script>
+</head>
+<body onload=""notifyUA();""></body>
+</html>";
 
-        static public String formatTime(long time)
+        static public void Init(Panel rootElement)
         {
-            if (time == 0)
-                return "";
-            DateTime dt = JavaTimeToDateTime(time);
-            String res = dt.ToString("t");
-            String date = dt.ToString("d");
-            if (date != DateTime.Now.ToString("d"))
-                res += " " + date;
-            return res;
+            if (user_agent != null)
+                return;
+            var browser = new Microsoft.Phone.Controls.WebBrowser();
+            browser.IsScriptEnabled = true;
+            browser.Visibility = Visibility.Collapsed;
+            browser.Loaded += (sender, args) => browser.NavigateToString(Html);
+            browser.ScriptNotify += (sender, args) =>
+            {
+                string userAgent = args.Value;
+                rootElement.Children.Remove(browser);
+                user_agent = userAgent;
+                if (httpClient != null)
+                    httpClient.DefaultRequestHeaders.Add("User-Agent", user_agent);
+            };
+            rootElement.Children.Add(browser);
         }
 
         static private HttpClient httpClient = null;
+
+        class BypassCacheClientHandler : HttpClientHandler
+        {
+            protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+            {
+                if (request.Headers.IfModifiedSince == null)
+                    request.Headers.IfModifiedSince = new DateTimeOffset(DateTime.Now);
+                var browser = new Microsoft.Phone.Controls.WebBrowser();
+                return base.SendAsync(request, cancellationToken);
+            }
+        }
 
         async static public Task<JObject> GetJson(String url, params Object[] values)
         {
@@ -89,11 +114,12 @@ namespace ugona_net
                 url = url.Replace("$" + n, HttpUtility.UrlEncode(values[n - 1].ToString()));
             }
 
-            Uri iru = new Uri(url, UriKind.Absolute);
             if (httpClient == null)
             {
-                HttpMessageHandler handler = new HttpClientHandler();
+                HttpMessageHandler handler = new BypassCacheClientHandler();
                 httpClient = new HttpClient(handler);
+                if (user_agent != null)
+                    httpClient.DefaultRequestHeaders.Add("User-Agent", user_agent);
             }
             HttpResponseMessage response = await httpClient.GetAsync(url);
             String body = await response.Content.ReadAsStringAsync();

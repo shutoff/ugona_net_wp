@@ -28,9 +28,9 @@
 
         <StackPanel Grid.Row="1" Margin="10,0,10,0">
             <TextBlock Text="{Binding Path=LocalizedResources.Login, Source={StaticResource LocalizedStrings}}" Margin="0,6.5,0,0" TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}"/>
-            <TextBox x:Name="Login" TextChanged="TextChanged"/>
+            <TextBox x:Name="Login" AcceptsReturn="False" TextChanged="TextChanged" InputScope="Url" KeyDown="OnLoginKeyDownHandler"/>
             <TextBlock Text="{Binding Path=LocalizedResources.Password, Source={StaticResource LocalizedStrings}}" Margin="0,6.5,0,6.5" TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}"/>
-            <PasswordBox x:Name="Password" PasswordChanged="TextChanged"/>
+            <PasswordBox x:Name="Password" PasswordChanged="TextChanged" KeyDown="OnPasswordKeyDownHandler"/>
             <TextBlock x:Name="Error" Foreground="OrangeRed" FontSize="20"/>
         </StackPanel>
 

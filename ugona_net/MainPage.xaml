@@ -36,9 +36,9 @@
             <!--Pivot item one-->
             <phone:PivotItem Header="{Binding Path=LocalizedResources.State, Source={StaticResource LocalizedStrings}}">
 
-                <StackPanel>
-                    <TextBlock Text="{Binding EventTime}"/>
-                    <TextBlock Text="{Binding Error}" Foreground="OrangeRed"/>
+                <StackPanel Margin="0,-30,0,0">
+                    <TextBlock Text="{Binding EventTime}" Foreground="{Binding EventColor}" FontSize="24" FontWeight="Bold"/>
+                    <TextBlock Text="{Binding Error}" Foreground="OrangeRed" TextWrapping="Wrap" MaxHeight="200"/>
                     <Grid Margin="20,0,20,0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
@@ -60,12 +60,14 @@
                         <Image Source="{Binding CarLevel5}" Grid.RowSpan="6" Height="320"/>
                         <Image Source="{Binding CarLevel6}" Grid.RowSpan="6" Height="320"/>
                         <Image Source="{Binding CarLevel7}" Grid.RowSpan="6" Height="320"/>
-                        <Image Source="/Assets/Icons/icon_voltage.png" Grid.Row="0" Grid.Column="1" Height="30" Margin="0,5,0,5"/>
-                        <TextBlock Text="{Binding MainVoltage}" Grid.Row="0" Grid.Column="2" TextAlignment="Right" Foreground="{Binding MainVoltageColor}" VerticalAlignment="Center"/>
-                        <Image Source="/Assets/Icons/icon_reserve.png" Grid.Row="1" Grid.Column="1" Height="30" Margin="0,5,0,5"/>
-                        <TextBlock Text="{Binding ReservedVoltage}" Grid.Row="1" Grid.Column="2" TextAlignment="Right" VerticalAlignment="Center"/>
-                        <Image Source="/Assets/Icons/icon_balance.png" Grid.Row="2" Grid.Column="1" Height="30" Margin="0,5,0,5"/>
-                        <TextBlock Text="{Binding Balance}" Grid.Row="2" Grid.Column="2" TextAlignment="Right" VerticalAlignment="Center"/>
+                        <Image Source="{Binding GsmLevelImage}" Grid.Row="0" Grid.Column="1" Height="30" Margin="0,5,0,5" Visibility="{Binding GsmLevelVisibility}"/>
+                        <TextBlock Text="{Binding GsmLevel}" Grid.Row="0" Grid.Column="2" TextAlignment="Right" Foreground="{Binding MainVoltageColor}" VerticalAlignment="Center" Visibility="{Binding GsmLevelVisibility}" FontSize="18"/>
+                        <Image Source="/Assets/Icons/icon_voltage.png" Grid.Row="1" Grid.Column="1" Height="30" Margin="0,5,0,5" Visibility="{Binding MainVoltageVisibilty}"/>
+                        <TextBlock Text="{Binding MainVoltage}" Grid.Row="1" Grid.Column="2" TextAlignment="Right" Foreground="{Binding MainVoltageColor}" VerticalAlignment="Center" Visibility="{Binding MainVoltageVisibilty}"/>
+                        <Image Source="/Assets/Icons/icon_reserve.png" Grid.Row="2" Grid.Column="1" Height="30" Margin="0,5,0,5" Visibility="{Binding ReservedVoltageVisibilty}"/>
+                        <TextBlock Text="{Binding ReservedVoltage}" Grid.Row="2" Grid.Column="2" TextAlignment="Right" Foreground="{Binding ReservedVoltageColor}" VerticalAlignment="Center" Visibility="{Binding ReservedVoltageVisibilty}"/>
+                        <Image Source="/Assets/Icons/icon_balance.png" Grid.Row="3" Grid.Column="1" Height="30" Margin="0,5,0,5" Visibility="{Binding BalanceVisibilty}"/>
+                        <TextBlock Text="{Binding Balance}" Grid.Row="3" Grid.Column="2" TextAlignment="Right" Foreground="{Binding BalanceColor}" VerticalAlignment="Center" Visibility="{Binding BalanceVisibilty}"/>
                     </Grid>
                     <ScrollViewer Margin="10,10,10,10">
                         <local:AddressBox Text="{Binding Address}"/>
