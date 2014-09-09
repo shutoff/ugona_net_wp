@@ -1,0 +1,48 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="ugona_net.MapPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" 
+    xmlns:AppBarUtils="clr-namespace:AppBarUtils;assembly=AppBarUtils" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Assets/Icons/appbar.settings.png"
+                                            Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Assets/Icons/appbar.settings.png" 
+		        Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="Google" Click="GoogleClick"/>
+                <shell:ApplicationBarMenuItem Text="Yandex" Click="YandexClick"/>
+                <shell:ApplicationBarMenuItem Text="Bing" Click="BingClick"/>
+                <shell:ApplicationBarMenuItem Text="OSM" Click="OsmClick"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+    <i:Interaction.Behaviors>
+        <AppBarUtils:AppBarItemCommand Id="Google" Type="MenuItem" Text="{Binding GoogleText, Mode=OneWay}"/>
+        <AppBarUtils:AppBarItemCommand Id="Yandex" Type="MenuItem" Text="{Binding YandexText, Mode=OneWay}"/>
+        <AppBarUtils:AppBarItemCommand Id="Bing" Type="MenuItem" Text="{Binding BingText, Mode=OneWay}"/>
+        <AppBarUtils:AppBarItemCommand Id="OSM" Type="MenuItem" Text="{Binding OsmText, Mode=OneWay}"/>
+    </i:Interaction.Behaviors>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <phone:WebBrowser x:Name="map"/>
+    </Grid>
+
+</phone:PhoneApplicationPage>

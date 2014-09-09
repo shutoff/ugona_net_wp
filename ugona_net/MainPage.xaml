@@ -70,7 +70,7 @@
                         <TextBlock Text="{Binding Balance}" Grid.Row="3" Grid.Column="2" TextAlignment="Right" Foreground="{Binding BalanceColor}" VerticalAlignment="Center" Visibility="{Binding BalanceVisibilty}"/>
                     </Grid>
                     <ScrollViewer Margin="10,10,10,10">
-                        <local:AddressBox Text="{Binding Address}"/>
+                        <local:AddressBox x:Name="Addr" Text="{Binding Address}" Click="OnAddressClick"/>
                     </ScrollViewer>
                 </StackPanel>
 

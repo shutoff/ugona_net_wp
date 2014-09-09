@@ -170,7 +170,7 @@ namespace ugona_net
             }
         }
 
-        public Visibility GsmLevelVisibilty
+        public Visibility GsmLevelVisibility
         {
             get
             {
@@ -289,6 +289,88 @@ namespace ugona_net
         }
 
         static Regex number_match = new Regex("^[0-9]+ ?");
+
+        public String GoogleText
+        {
+            get
+            {
+                return GetPrefix("Google") + "Google";
+            }
+        }
+
+        public String YandexText
+        {
+            get
+            {
+                return GetPrefix("Yandex") + "Yandex";
+            }
+        }
+
+        public String BingText
+        {
+            get
+            {
+                return GetPrefix("Bing") + "Bing";
+            }
+        }
+
+        public String OsmText
+        {
+            get
+            {
+                return GetPrefix("OSM") + "OSM";
+            }
+        }
+
+        public String MapType
+        {
+            get
+            {
+                String res = Helper.GetSetting("MapType");
+                if (res == null)
+                    res = "OSM";
+                return res;
+            }
+
+            set
+            {
+                Helper.PutSettings("MapType", value);
+                NotifyPropertyChanged("GoogleText");
+                NotifyPropertyChanged("YandexText");
+                NotifyPropertyChanged("BingText");
+                NotifyPropertyChanged("OsmText");
+            }
+        }
+
+        String GetPrefix(String type)
+        {
+            if (MapType == type) 
+                return "\u221A\xA0";
+            return "";
+        }
+
+        public int? Course
+        {
+            get {
+                return Car.gps.course;
+            }
+        }
+
+        public double? Latitude
+        {
+            get
+            {
+                return latitude;
+            }
+        }
+
+        public double? Longitude
+        {
+            get
+            {
+                return longitude;
+            }
+        }
 
         public String Address
         {
@@ -843,8 +925,14 @@ namespace ugona_net
             catch (Exception)
             {
             }
-            SystemTray.ProgressIndicator.IsIndeterminate = false;
-            SystemTray.ProgressIndicator.IsVisible = false;
+            try
+            {
+                SystemTray.ProgressIndicator.IsIndeterminate = false;
+                SystemTray.ProgressIndicator.IsVisible = false;
+            }
+            catch (Exception)
+            {
+            }
             Refresh = false;
         }
 
@@ -887,13 +975,15 @@ namespace ugona_net
                 SetAddress(null);
                 return;
             }
-            double? d = AddressHelper.distance(Car.gps.longitude, Car.gps.longitude, latitude, longitude);
+            double? d = AddressHelper.distance(Car.gps.latitude, Car.gps.longitude, latitude, longitude);
             if ((d != null) && (d < 50))
                 return;
             if (d > 300)
                 SetAddress(null);
             String res = await AddressHelper.get(Car.gps.latitude, Car.gps.longitude);
             SetAddress(res);
+            latitude = Car.gps.latitude;
+            longitude = Car.gps.longitude;
         }
 
         private void SetAddress(String addr)

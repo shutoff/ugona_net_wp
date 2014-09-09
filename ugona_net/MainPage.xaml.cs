@@ -1,6 +1,7 @@
 ﻿using Microsoft.Phone.Controls;
 using System;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Navigation;
 using System.Windows.Threading;
 
@@ -18,9 +19,14 @@ namespace ugona_net
             InitializeComponent();
             Loaded += OnLoaded;
             DataContext = App.ViewModel;
-
+            
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
+        }
+
+        private void OnAddressClick(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/MapPage.xaml", UriKind.Relative));
         }
 
         private void OnLoaded(object sender, RoutedEventArgs e)

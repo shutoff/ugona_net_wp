@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
-using System.Windows.Media;
+using System.Windows.Input;
 
 namespace ugona_net
 {
@@ -18,6 +18,8 @@ namespace ugona_net
                                             new PropertyChangedCallback
                                                 (TextPropertyChanged)));
 
+        public event RoutedEventHandler Click;
+
         public AddressBox()
         {
             this.TextAlignment = TextAlignment.Center;
@@ -29,7 +31,28 @@ namespace ugona_net
             set { SetValue(TextProperty, value); }
         }
 
-        static Brush blue = new SolidColorBrush(Color.FromArgb(0xFF, 0x33, 0xb5, 0xe5));
+        DateTime downTime;
+        Point downPoint;
+
+        protected override void OnMouseLeftButtonDown(System.Windows.Input.MouseButtonEventArgs e)
+        {
+            downTime = DateTime.Now;
+            downPoint = e.GetPosition(this);
+        }
+
+        protected override void OnMouseLeftButtonUp(System.Windows.Input.MouseButtonEventArgs e)
+        {
+            DateTime upTime = DateTime.Now;
+            Point upPoint = e.GetPosition(this);
+            long delta = (upTime.Ticks - downTime.Ticks) / 10000;
+            double dx = upPoint.X - downPoint.X;
+            double dy = upPoint.Y - downPoint.Y;
+            double distance = dx * dx + dy * dy;
+            if ((delta > 900) || (distance > 400))
+                return;
+            if (Click != null)
+                Click(this, e);
+        }
 
         private static void TextPropertyChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs dependencyPropertyChangedEventArgs)
         {
@@ -52,7 +75,7 @@ namespace ugona_net
                 }
                 odd = true;
                 span.FontWeight = FontWeights.Bold;
-                span.Foreground = blue;
+                span.Foreground = Colors.BlueBrush;
             }
             richTextBox.Blocks.Clear();
             richTextBox.Blocks.Add(paragraph);
