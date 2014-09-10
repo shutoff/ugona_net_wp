@@ -74,8 +74,8 @@ namespace ugona_net
             try
             {
                 JObject obj = await Helper.GetApi("key", "login", login, "password", password);
-                Helper.PutSettings(Names.KEY, obj["key"].ToString());
-                Helper.PutSettings(Names.AUTH, obj["auth"].ToString());
+                Helper.PutSetting(Names.KEY, obj["key"].ToString());
+                Helper.PutSetting(Names.AUTH, obj["auth"].ToString());
                 Helper.Flush();
                 String key = Helper.GetSetting(Names.KEY);
                 NavigationService.GoBack();

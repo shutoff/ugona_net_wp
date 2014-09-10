@@ -17,15 +17,18 @@
 
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
-            <shell:ApplicationBarIconButton IconUri="/Assets/Icons/appbar.settings.png"
-                                            Text="Button 1"/>
-            <shell:ApplicationBarIconButton IconUri="/Assets/Icons/appbar.settings.png" 
-		        Text="Button 2"/>
+            <shell:ApplicationBarIconButton IconUri="/Assets/Icons/appbar.position.png"
+                                            Text="Position"
+                                            Click="PositionClick"/>
+            <shell:ApplicationBarIconButton IconUri="/Assets/Icons/appbar.center.png" 
+		                                    Text="Center"
+                                            Click="CenterClick"/>
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem Text="Google" Click="GoogleClick"/>
                 <shell:ApplicationBarMenuItem Text="Yandex" Click="YandexClick"/>
                 <shell:ApplicationBarMenuItem Text="Bing" Click="BingClick"/>
                 <shell:ApplicationBarMenuItem Text="OSM" Click="OsmClick"/>
+                <shell:ApplicationBarMenuItem Text="Traffic" Click="TrafficClick"/>
             </shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
@@ -35,6 +38,9 @@
         <AppBarUtils:AppBarItemCommand Id="Yandex" Type="MenuItem" Text="{Binding YandexText, Mode=OneWay}"/>
         <AppBarUtils:AppBarItemCommand Id="Bing" Type="MenuItem" Text="{Binding BingText, Mode=OneWay}"/>
         <AppBarUtils:AppBarItemCommand Id="OSM" Type="MenuItem" Text="{Binding OsmText, Mode=OneWay}"/>
+        <AppBarUtils:AppBarItemCommand Id="Traffic" Type="MenuItem" Text="{Binding TrafficText, Mode=OneWay}"/>
+        <AppBarUtils:AppBarItemCommand Id="Position" Type="Button" Text="{Binding PositionText, Mode=OneWay}"/>
+        <AppBarUtils:AppBarItemCommand Id="Center" Type="Button" Text="{Binding CenterText, Mode=OneWay}"/>
     </i:Interaction.Behaviors>
 
     <!--LayoutRoot is the root grid where all page content is placed-->

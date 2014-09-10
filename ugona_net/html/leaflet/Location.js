@@ -3,6 +3,19 @@ var Location = {
     update: function () {
         if (map == null)
             return;
+        if ((this.init == null) && (window.navigator.geolocation != null)) {
+            this.init = true;
+            window.navigator.geolocation.watchPosition(function (position) {
+                var c = position.coords;
+                var data = c.latitude + ',' + c.longitude + ',' + c.accuracy;
+                android.location = function () {
+                    return data;
+                }
+                Location.data = android.location();
+                Location.update();
+            }, function (err) {
+            })
+        }
         if (this.data == null) {
             if (this.location) {
                 map.removeLayer(this.location);
@@ -47,10 +60,10 @@ var Location = {
             this.marker.setIcon(this.icon);
         }
     }
-
 }
 
 function myLocation() {
+
     Location.data = android.location();
     Location.update();
 }
@@ -59,17 +72,18 @@ function setPosition() {
     if (map == null)
         return;
 
-    getLocation(function (res) {
+    var res = android.location();
+    if (res == null)
+        return;
 
-        var pos = res.split(',');
-        if (pos.length < 3)
-            return;
+    var pos = res.split(',');
+    if (pos.length < 3)
+        return;
 
-        var bounds = getBounds();
-        bounds.push([parseFloat(pos[0]), parseFloat(pos[1])]);
+    var bounds = getBounds();
+    bounds.push([parseFloat(pos[0]), parseFloat(pos[1])]);
 
-        fitBounds(bounds, 0.125);
-    })
+    fitBounds(bounds, 0.125);
 }
 
 function getRect(bounds) {
@@ -317,6 +331,7 @@ function showPointInfo(event) {
     var d = new Date(time0 + (time - time0) / 1000);
     showPopup(lat, lon, d.toLocaleTimeString() + '<br/>' + speed + ' ' + android.kmh());
 }
+
 
 function showPopup(lat, lon, text, point) {
     if (Tracks.point_info == null)

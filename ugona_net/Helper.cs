@@ -35,6 +35,13 @@ namespace ugona_net
             return IsolatedStorageSettings.ApplicationSettings[name] as String;
         }
 
+        static public bool GetBoolSetting(String name, bool defaultValue)
+        {
+            if (!IsolatedStorageSettings.ApplicationSettings.Contains(name))
+                return defaultValue;
+            return (bool) IsolatedStorageSettings.ApplicationSettings[name];
+        }
+
         static public long GetLongSetting(String name)
         {
             if (!IsolatedStorageSettings.ApplicationSettings.Contains(name))
@@ -42,12 +49,12 @@ namespace ugona_net
             return Convert.ToInt64(IsolatedStorageSettings.ApplicationSettings[name]);
         }
 
-        static public void PutSettings(String name, Object value)
+        static public void PutSetting(String name, Object value)
         {
             IsolatedStorageSettings.ApplicationSettings[name] = value;
         }
 
-        static public void RemoveSettings(String name)
+        static public void RemoveSetting(String name)
         {
             IsolatedStorageSettings.ApplicationSettings.Remove(name);
         }

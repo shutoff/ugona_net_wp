@@ -1,7 +1,6 @@
 ﻿using Microsoft.Phone.Controls;
 using System;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Navigation;
 using System.Windows.Threading;
 
@@ -52,7 +51,7 @@ namespace ugona_net
                 if (key == "demo")
                 {
                     show_auth = true;
-                    Helper.RemoveSettings(Names.KEY);
+                    Helper.RemoveSetting(Names.KEY);
                     NavigationService.Navigate(new Uri("/AuthPage.xaml", UriKind.Relative));
                 }
             }

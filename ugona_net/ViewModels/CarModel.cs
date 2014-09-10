@@ -334,11 +334,52 @@ namespace ugona_net
 
             set
             {
-                Helper.PutSettings("MapType", value);
+                Helper.PutSetting("MapType", value);
                 NotifyPropertyChanged("GoogleText");
                 NotifyPropertyChanged("YandexText");
                 NotifyPropertyChanged("BingText");
                 NotifyPropertyChanged("OsmText");
+            }
+        }
+
+        public bool Traffic
+        {
+            get
+            {
+                return Helper.GetBoolSetting("Traffic", false);
+            }
+
+            set
+            {
+                Helper.PutSetting("Traffic", value);
+                NotifyPropertyChanged("TrafficText");
+            }
+        }
+
+        public String TrafficText
+        {
+            get
+            {
+                String res = Helper.GetString("Show traffic");
+                if (Traffic)
+                    return "\u221A\xA0" + res;
+                return res;
+            }
+        }
+
+        public String PositionText
+        {
+            get
+            {
+                return Helper.GetString("My position");
+            }
+        }
+
+        public String CenterText
+        {
+            get
+            {
+                return Helper.GetString("Center");
             }
         }
 
@@ -927,8 +968,11 @@ namespace ugona_net
             }
             try
             {
-                SystemTray.ProgressIndicator.IsIndeterminate = false;
-                SystemTray.ProgressIndicator.IsVisible = false;
+                if (SystemTray.ProgressIndicator != null)
+                {
+                    SystemTray.ProgressIndicator.IsIndeterminate = false;
+                    SystemTray.ProgressIndicator.IsVisible = false;
+                }
             }
             catch (Exception)
             {
@@ -952,7 +996,7 @@ namespace ugona_net
                     return false;
                 UpdateLevels();
                 UpdateAddress();
-                Helper.PutSettings(Names.CAR_DATA, JsonConvert.SerializeObject(Car));
+                Helper.PutSetting(Names.CAR_DATA, JsonConvert.SerializeObject(Car));
                 return true;
             }
             catch (Exception ex)

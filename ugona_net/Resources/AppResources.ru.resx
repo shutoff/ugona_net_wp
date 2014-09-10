@@ -158,4 +158,13 @@
   <data name="Refresh data" xml:space="preserve">
     <value>Обновление данных</value>
   </data>
+  <data name="Center" xml:space="preserve">
+    <value>В центр</value>
+  </data>
+  <data name="My position" xml:space="preserve">
+    <value>Мое положение</value>
+  </data>
+  <data name="Show traffic" xml:space="preserve">
+    <value>Показывать пробки</value>
+  </data>
 </root>

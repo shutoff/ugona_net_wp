@@ -9,6 +9,8 @@ using System.Windows;
 using System.Windows.Navigation;
 using System.Windows.Resources;
 using System.Windows.Threading;
+using Windows.Devices.Geolocation;
+using System.Threading.Tasks;
 
 namespace ugona_net
 {
@@ -50,6 +52,7 @@ namespace ugona_net
             map.ScriptNotify += Map_OnScriptNotify;
             map.LoadCompleted += Map_OnLoadCompleted;
             map.IsScriptEnabled = true;
+            map.IsGeolocationEnabled = true;
             map.Navigate(new Uri("html/map.html", UriKind.Relative));
         }
 
@@ -69,7 +72,7 @@ namespace ugona_net
             }
         }
 
-        private void Map_OnLoadCompleted(object sender, NavigationEventArgs e)
+        async private void Map_OnLoadCompleted(object sender, NavigationEventArgs e)
         {
             SetConfig();
             SetData();
@@ -110,6 +113,16 @@ namespace ugona_net
             CallJs("setData", data);
         }
 
+        private void PositionClick(object sender, EventArgs e)
+        {
+            CallJs("setPosition");
+        }
+
+        private void CenterClick(object sender, EventArgs e)
+        {
+            CallJs("center");
+        }
+
         private void GoogleClick(object sender, EventArgs e)
         {
             SetMapType("Google");
@@ -128,6 +141,12 @@ namespace ugona_net
         private void OsmClick(object sender, EventArgs e)
         {
             SetMapType("OSM");
+        }
+
+        private void TrafficClick(object sender, EventArgs e)
+        {
+            App.ViewModel.Traffic = !App.ViewModel.Traffic;
+            CallJs("setTraffic", App.ViewModel.Traffic);
         }
 
         private void SetMapType(String type)
@@ -149,9 +168,17 @@ namespace ugona_net
                     url += ',';
                 Object v = values[i];
                 Type t = v.GetType();
-                if ((t == typeof(int)) || (t == typeof(bool)))
+                if (t == typeof(int))
                 {
                     url += v;
+                }
+                else if (t == typeof(bool))
+                {
+                    url += (bool)v ? "true" : "false";
+                }
+                else if (t == typeof(double))
+                {
+                    url += String.Format(CultureInfo.InvariantCulture, "{0:0.#####}", (double)v);
                 }
                 else
                 {
@@ -182,6 +209,11 @@ namespace ugona_net
                 "html/leaflet/images/marker-icon-2x.png",
                 "html/leaflet/images/marker-icon.png",
                 "html/leaflet/images/marker-shadow.png",
+                "html/leaflet/images/arrow.png",
+                "html/leaflet/images/marker.png",
+                "html/leaflet/images/cur_arrow.png",
+                "html/leaflet/images/cur_marker.png",
+                "html/leaflet/images/person.png",
             };
 
             IsolatedStorageFile isoStore = IsolatedStorageFile.GetUserStoreForApplication();

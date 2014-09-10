@@ -145,6 +145,7 @@
     <None Include="Properties\WMAppManifest.xml">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Resources\AppResLib.dll.0419.mui" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\AlignmentGrid.png" />
@@ -227,6 +228,8 @@
     <Content Include="Assets\Car\trunk_white_open4.png" />
     <Content Include="Assets\Car\valet.png" />
     <Content Include="Assets\Car\valet_h.png" />
+    <Content Include="Assets\Icons\appbar.center.png" />
+    <Content Include="Assets\Icons\appbar.position.png" />
     <Content Include="Assets\Icons\appbar.settings.png" />
     <Content Include="Assets\Icons\gsm_level0.png" />
     <Content Include="Assets\Icons\gsm_level1.png" />
@@ -277,6 +280,7 @@
     <Content Include="html\leaflet\Traffic.js" />
     <Content Include="html\leaflet\Yandex.js" />
     <Content Include="html\map.html" />
+    <Content Include="Resources\AppResLib.dll" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\AppResources.resx">
