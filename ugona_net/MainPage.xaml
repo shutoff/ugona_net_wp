@@ -6,6 +6,7 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     xmlns:local="clr-namespace:ugona_net" 
     xmlns:common="using:SDKTemplate.Common" 
     mc:Ignorable="d"
@@ -32,9 +33,9 @@
     <Grid x:Name="LayoutRoot" Background="Transparent">
 
         <!--Pivot Control-->
-        <phone:Pivot Title="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}">
+        <phone:Pivot Title="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}" LoadedPivotItem="Pivot_LoadedPivotItem">
             <!--Pivot item one-->
-            <phone:PivotItem Header="{Binding Path=LocalizedResources.State, Source={StaticResource LocalizedStrings}}">
+            <phone:PivotItem x:Name="StatePage" Header="{Binding Path=LocalizedResources.State, Source={StaticResource LocalizedStrings}}">
 
                 <StackPanel Margin="0,-30,0,0">
                     <TextBlock Text="{Binding EventTime}" Foreground="{Binding EventColor}" FontSize="24" FontWeight="Bold"/>
@@ -77,9 +78,42 @@
             </phone:PivotItem>
 
             <!--Pivot item two-->
-            <phone:PivotItem Header="{Binding Path=LocalizedResources.Events, Source={StaticResource LocalizedStrings}}">
+            <phone:PivotItem x:Name="EventsPage" Header="{Binding Path=LocalizedResources.Events, Source={StaticResource LocalizedStrings}}">
 
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
 
+                    <toolkit:DatePicker x:Name="DatePicker" Value="{Binding Date}" ValueStringFormat="{}{0:dd MMMM yyyy}"/>
+                    <ProgressBar x:Name="EventsProgress" IsIndeterminate="True" Grid.Row="1"/>
+                    <ListBox x:Name="Events" Grid.Row="1" Visibility="Collapsed">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="10,10,10,10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="90"/>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="{Binding Time}" VerticalAlignment="Center"/>
+                                    <Image Source="{Binding Image}" Grid.Column="1"/>
+                                    <TextBlock Text="{Binding Name}" Grid.Column="2" VerticalAlignment="Center" Margin="15,0,0,0" TextWrapping="Wrap"/>
+                                </Grid>
+
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <TextBlock x:Name="EventsText" Visibility="Collapsed"/>
+                </Grid>
+                
             </phone:PivotItem>
         </phone:Pivot>
 

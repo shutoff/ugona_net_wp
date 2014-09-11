@@ -3,6 +3,8 @@ using System;
 using System.Windows;
 using System.Windows.Navigation;
 using System.Windows.Threading;
+using Newtonsoft.Json.Linq;
+using System.Collections.Generic;
 
 namespace ugona_net
 {
@@ -26,6 +28,10 @@ namespace ugona_net
         private void OnAddressClick(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/MapPage.xaml", UriKind.Relative));
+        }
+
+        private void OnDateClick(object sender, RoutedEventArgs e)
+        {
         }
 
         private void OnLoaded(object sender, RoutedEventArgs e)
@@ -53,6 +59,7 @@ namespace ugona_net
                     show_auth = true;
                     Helper.RemoveSetting(Names.KEY);
                     NavigationService.Navigate(new Uri("/AuthPage.xaml", UriKind.Relative));
+                    return;
                 }
             }
             if (!App.ViewModel.IsDataLoaded)
@@ -71,7 +78,8 @@ namespace ugona_net
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
-            refreshTimer.Stop();
+            if (refreshTimer != null)
+                refreshTimer.Stop();
         }
 
         void OnRefresh(Object sender, EventArgs args)
@@ -96,5 +104,41 @@ namespace ugona_net
         //}
 
         bool show_auth;
+
+        private void Pivot_LoadedPivotItem(object sender, PivotItemEventArgs e)
+        {
+            if (e.Item.Name == "EventsPage")
+                LoadEvents();
+        }
+
+        async private void LoadEvents()
+        {
+            DateTime current = App.ViewModel.Date;
+            DateTime begin = new DateTime(current.Year, current.Month, current.Day);
+            DateTime end = begin.AddDays(1);
+            try
+            {
+                JObject res = await Helper.GetApi("events",
+                    "skey", Helper.GetSetting(Names.KEY),
+                    "begin", DateUtils.ToJavaTime(begin),
+                    "end", DateUtils.ToJavaTime(end));
+                JArray events = res.GetValue("events").ToObject<JArray>();
+                List<Event> event_array = new List<Event>(0);
+                foreach (JToken el in events)
+                {
+                    Event e = new Event();
+                    Helper.SetData(e, el.ToObject<JObject>(), "", null);
+                    event_array.Add(e);
+                }
+                Events.ItemsSource = event_array;
+                Events.Visibility = Visibility.Visible;
+                EventsProgress.Visibility = Visibility.Collapsed;
+            }
+            catch (Exception)
+            {
+
+            }
+
+        }
     }
 }

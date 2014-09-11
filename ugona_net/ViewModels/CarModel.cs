@@ -3,7 +3,6 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.ComponentModel;
-using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
@@ -16,6 +15,7 @@ namespace ugona_net
 
         public CarModel()
         {
+            currentDate = DateTime.Now;
         }
 
         public bool IsDataLoaded
@@ -388,6 +388,24 @@ namespace ugona_net
             if (MapType == type) 
                 return "\u221A\xA0";
             return "";
+        }
+
+        DateTime currentDate;
+
+        public DateTime Date
+        {
+            get
+            {
+                return currentDate;
+            }
+        }
+
+        public String DateText
+        {
+            get
+            {
+                return currentDate.ToString("dd MMMM");
+            }
         }
 
         public int? Course
@@ -779,7 +797,7 @@ namespace ugona_net
 
         CarData car_data;
 
-        CarData Car
+        public CarData Car
         {
             get
             {
@@ -855,100 +873,6 @@ namespace ugona_net
             }
         }
 
-        public void SetData(Object to, JObject obj, String prefix, Delegate[] delegates)
-        {
-            PropertyInfo[] props = to.GetType().GetProperties();
-            if (delegates == null)
-            {
-                FieldInfo info = to.GetType().GetField("PropertyChanged",
-                           System.Reflection.BindingFlags.Instance |
-                           System.Reflection.BindingFlags.NonPublic);
-                if (info != null)
-                {
-                    MulticastDelegate eventDelagate =
-                              (MulticastDelegate)info.GetValue(to);
-                    if (eventDelagate != null)
-                        delegates = eventDelagate.GetInvocationList();
-                }
-            }
-            foreach (PropertyInfo p in props)
-            {
-                JToken v = obj[p.Name];
-                if (v == null)
-                    continue;
-                Type type = p.PropertyType;
-                if (type.IsClass)
-                {
-                    String name = p.Name;
-                    if (prefix != null)
-                        name = prefix + name;
-                    SetData(p.GetValue(to), v.ToObject<JObject>(), name + ".", delegates);
-                    continue;
-                }
-                if (!p.CanWrite)
-                    continue;
-                if (type.IsGenericType && (type.GetGenericTypeDefinition() == typeof(Nullable<>)))
-                    type = Nullable.GetUnderlyingType(type);
-                if (type == typeof(long))
-                {
-                    long val = v.ToObject<long>();
-                    Object old = p.GetValue(to);
-                    if ((old != null) && (val == (long)old))
-                        continue;
-                    p.SetValue(to, val);
-                }
-                else if (type == typeof(float))
-                {
-                    float val = v.ToObject<float>();
-                    Object old = p.GetValue(to);
-                    if ((old != null) && (val == (float)old))
-                        continue;
-                    p.SetValue(to, val);
-                }
-                else if (type == typeof(int))
-                {
-                    int val = v.ToObject<int>();
-                    Object old = p.GetValue(to);
-                    if ((old != null) && (val == (int)old))
-                        continue;
-                    p.SetValue(to, val);
-                }
-                else if (type == typeof(bool))
-                {
-                    bool val = v.ToObject<bool>();
-                    Object old = p.GetValue(to);
-                    if ((old != null) && (val == (bool)old))
-                        continue;
-                    p.SetValue(to, val);
-                }
-                else if (type == typeof(double))
-                {
-                    double val = v.ToObject<double>();
-                    Object old = p.GetValue(to);
-                    if ((old != null) && (val == (double)old))
-                        continue;
-                    p.SetValue(to, val);
-                }
-                else
-                {
-                    String val = v.ToString();
-                    Object old = p.GetValue(to);
-                    if ((old != null) && (val == old.ToString()))
-                        continue;
-                    p.SetValue(to, val);
-                }
-                String pname = p.Name;
-                if (prefix != null)
-                    pname = prefix + pname;
-                if (delegates != null)
-                {
-                    foreach (Delegate dlg in delegates)
-                    {
-                        dlg.Method.Invoke(dlg.Target, new object[] { to, new PropertyChangedEventArgs(pname) });
-                    }
-                }
-            }
-        }
 
         async public void refresh()
         {
@@ -989,7 +913,7 @@ namespace ugona_net
                     return false;
                 long time = Car.time;
                 JObject res = await Helper.GetApi("", "skey", key, "time", Car.time);           
-                SetData(Car, res, null, null);
+                Helper.SetData(Car, res, null, null);
                 Error = "";
                 NotifyPropertyChanged("Error");
                 if (time == Car.time)

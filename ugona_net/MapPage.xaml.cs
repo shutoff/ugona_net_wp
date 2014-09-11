@@ -11,6 +11,8 @@ using System.Windows.Resources;
 using System.Windows.Threading;
 using Windows.Devices.Geolocation;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace ugona_net
 {
@@ -24,9 +26,11 @@ namespace ugona_net
         }
 
         DispatcherTimer refreshTimer;
+        String track_data;
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            track_data = null;
             if (refreshTimer == null)
             {
                 refreshTimer = new DispatcherTimer();
@@ -54,6 +58,7 @@ namespace ugona_net
             map.IsScriptEnabled = true;
             map.IsGeolocationEnabled = true;
             map.Navigate(new Uri("html/map.html", UriKind.Relative));
+            LoadTrack();
         }
 
         private void Map_OnScriptNotify(object sender, NotifyEventArgs e)
@@ -69,10 +74,11 @@ namespace ugona_net
             if (args.PropertyName == "Address")
             {
                 SetData();
+                LoadTrack();
             }
         }
 
-        async private void Map_OnLoadCompleted(object sender, NavigationEventArgs e)
+        private void Map_OnLoadCompleted(object sender, NavigationEventArgs e)
         {
             SetConfig();
             SetData();
@@ -81,7 +87,7 @@ namespace ugona_net
 
         private void SetConfig()
         {
-            CallJs("setConfig", App.ViewModel.MapType, 1, Helper.GetString("km/h"), 1, Helper.GetString("ResourceLanguage"));
+            CallJs("setConfig", App.ViewModel.MapType, App.ViewModel.Traffic, Helper.GetString("km/h"), 1, Helper.GetString("ResourceLanguage"));
         }
 
         private char[] separator = {'|'};
@@ -109,7 +115,8 @@ namespace ugona_net
                 data += p;
                 odd = true;
             }
-            data += ";";
+            data += ";;";
+                data += track_data;
             CallJs("setData", data);
         }
 
@@ -187,6 +194,42 @@ namespace ugona_net
             }
             url += ')';
             map.Navigate(new Uri(url, UriKind.Absolute));
+        }
+
+        bool track_load;
+
+        async private void LoadTrack(){
+            bool engine = App.ViewModel.Car.contact.input3 || App.ViewModel.Car.contact.realIgnition;
+            bool az = App.ViewModel.Car.az;
+            if (!engine || az)
+            {
+                if (track_data != null)
+                {
+                    track_data = null;
+                    SetData();
+                }
+                return;
+            }
+
+            if (track_load)
+                return;
+
+            try
+            {
+                String key = Helper.GetSetting(Names.KEY);
+                long end = App.ViewModel.Car.time;
+                long begin = end - 86400000;
+                JObject res = await Helper.GetApi("tracks", "skey", key, "begin", begin, "end", end);
+                JArray list = res.GetValue("tracks").ToObject<JArray>();
+                JObject track = list.Last.ToObject<JObject>();
+                track_data = track.GetValue("track").ToString().Replace('|', '_');
+                SetData();
+                CallJs("showPoints");
+            }
+            catch (Exception ex)
+            {
+            }
+            track_load = false;
         }
 
         private void SaveFilesToIsoStore()

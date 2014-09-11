@@ -167,4 +167,1578 @@
   <data name="Show traffic" xml:space="preserve">
     <value>Показывать пробки</value>
   </data>
+  <data name="app_name" xml:space="preserve">
+<value>Угона.нет+</value>
+</data>
+<data name="notification" xml:space="preserve">
+<value>Батарея в метке разряжена|Отключено бортовое питание|Подключено бортовое питание|Нарушена конфигурация LAN|Аварийная батарея разряжена|Отключен интернет в роуминге</value>
+</data>
+<data name="alarm" xml:space="preserve">
+<value>Сильный удар|Открыт багажник|Открыт капот|Открыты двери|Включено зажигание|Машина движется|Разбойное нападение|Зона аксессуаров|Включено зажигание</value>
+</data>
+<data name="def" xml:space="preserve">
+<value>по умолчанию</value>
+</data>
+<data name="phone_number_summary" xml:space="preserve">
+<value>Укажите номер телефона автомобиля</value>
+</data>
+<data name="phone_number" xml:space="preserve">
+<value>Номер телефона</value>
+</data>
+<data name="alarm_sound" xml:space="preserve">
+<value>Звук тревоги</value>
+</data>
+<data name="notify_sound" xml:space="preserve">
+<value>Звук уведомления</value>
+</data>
+<data name="preferences" xml:space="preserve">
+<value>Настройки</value>
+</data>
+<data name="actions" xml:space="preserve">
+<value>Действия</value>
+</data>
+<data name="control" xml:space="preserve">
+<value>Управление</value>
+</data>
+<data name="sms_mode" xml:space="preserve">
+<value>Переключиться в режим SMS</value>
+</data>
+<data name="call_mode" xml:space="preserve">
+<value>Переключиться в режим звонка</value>
+</data>
+<data name="alarm_mode" xml:space="preserve">
+<value>Оповещение о тревогах</value>
+</data>
+<data name="sms_mode_summary" xml:space="preserve">
+<value>Выберите способ оповещения: звонки или СМС</value>
+</data>
+<data name="sms_error" xml:space="preserve">
+<value>Не могу отправить SMS</value>
+</data>
+<data name="sms_err" xml:space="preserve">
+<value>Ошибка отправки SMS</value>
+</data>
+<data name="auth" xml:space="preserve">
+<value>Авторизация</value>
+</data>
+<data name="auth_summary" xml:space="preserve">
+<value>Авторизация на сервере</value>
+</data>
+<data name="save" xml:space="preserve">
+<value>Сохранить</value>
+</data>
+<data name="bad_key" xml:space="preserve">
+<value>Неправильный ключ API</value>
+</data>
+<data name="valet_on" xml:space="preserve">
+<value>Включить режим АВТОСЕРВИС</value>
+</data>
+<data name="valet_off" xml:space="preserve">
+<value>Выключить режим АВТОСЕРВИС</value>
+</data>
+<data name="ccode" xml:space="preserve">
+<value>C-код:</value>
+</data>
+<data name="ok" xml:space="preserve">
+<value>Продолжить</value>
+</data>
+<data name="internet_on" xml:space="preserve">
+<value>Включить интернет</value>
+</data>
+<data name="internet_off" xml:space="preserve">
+<value>Выключить интернет</value>
+</data>
+<data name="internet_on_sum" xml:space="preserve">
+<value>Разрешить доступ в интернет на устройстве</value>
+</data>
+<data name="internet_off_sum" xml:space="preserve">
+<value>Запретить доступ в интернет на устройстве</value>
+</data>
+<data name="valet_on_sum" xml:space="preserve">
+<value>Отключить охрану</value>
+</data>
+<data name="valet_off_sum" xml:space="preserve">
+<value>Включить охрану</value>
+</data>
+<data name="motor_on" xml:space="preserve">
+<value>АВТОЗАПУСК включить</value>
+</data>
+<data name="motor_off" xml:space="preserve">
+<value>АВТОЗАПУСК выключить</value>
+</data>
+<data name="motor_on_sum" xml:space="preserve">
+<value>Произвести дистанционный запуск двигателя</value>
+</data>
+<data name="motor_off_sum" xml:space="preserve">
+<value>Дистанционно остановить двигатель</value>
+</data>
+<data name="turbo_on" xml:space="preserve">
+<value>Включить режим слежения</value>
+</data>
+<data name="turbo_off" xml:space="preserve">
+<value>Выключить режим слежения</value>
+</data>
+<data name="turbo_on_sum" xml:space="preserve">
+<value>Режим преследования, в этом режиме устройство отправляет данные так часто, как это возможно</value>
+</data>
+<data name="turbo_off_sum" xml:space="preserve">
+<value>Отменить режим преследования</value>
+</data>
+<data name="reset_sum" xml:space="preserve">
+<value>Выполнить принудительную перезагрузку устройства</value>
+</data>
+<data name="unknown" xml:space="preserve">
+<value>неизвестно</value>
+</data>
+<data name="alarm_test" xml:space="preserve">
+<value>Проверка тревоги</value>
+</data>
+<data name="alarm_test_sum" xml:space="preserve">
+<value>Нажмите для проверки тревоги</value>
+</data>
+<data name="map" xml:space="preserve">
+<value>Карта</value>
+</data>
+<data name="tracks" xml:space="preserve">
+<value>Маршруты</value>
+</data>
+<data name="status" xml:space="preserve">
+<value>Расстояние: %s км\nВремя в пути: %s\nСредняя скорость:
+        %.2f км/ч\nМаксимальная скорость: %d км/ч
+    </value>
+</data>
+<data name="m_format" xml:space="preserve">
+<value>%d мин</value>
+</data>
+<data name="hm_format" xml:space="preserve">
+<value>%d ч %02d мин</value>
+</data>
+<data name="day" xml:space="preserve">
+<value>Выберите день</value>
+</data>
+<data name="no_data" xml:space="preserve">
+<value>Нет данных</value>
+</data>
+<data name="mileage" xml:space="preserve">
+<value>%.2f км</value>
+</data>
+<data name="short_status" xml:space="preserve">
+<value>Время в пути: %s\nСредняя скорость: %.2f
+        км/ч\nМаксимальная скорость: %d км/ч\n
+    </value>
+</data>
+<data name="saved" xml:space="preserve">
+<value>Трек сохранен</value>
+</data>
+<data name="loading" xml:space="preserve">
+<value>Загрузка данных...</value>
+</data>
+<data name="error_load" xml:space="preserve">
+<value>Ошибка загрузки данных</value>
+</data>
+<data name="about" xml:space="preserve">
+<value>О программе</value>
+</data>
+<data name="version" xml:space="preserve">
+<value>Версия:</value>
+</data>
+<data name="share" xml:space="preserve">
+<value>Поделиться</value>
+</data>
+<data name="invalid_key" xml:space="preserve">
+<value>Неверный ключ API</value>
+</data>
+<data name="auth_error" xml:space="preserve">
+<value>Ошибка авторизации</value>
+</data>
+<data name="check_auth" xml:space="preserve">
+<value>Проверка авторизации</value>
+</data>
+<data name="data_error" xml:space="preserve">
+<value>Ошибка обновления данных</value>
+</data>
+<data name="block" xml:space="preserve">
+<value>Заблокировать двигатель</value>
+</data>
+<data name="block_sum" xml:space="preserve">
+<value>Включить дистанционную блокировку автомобиля</value>
+</data>
+<data name="autostart" xml:space="preserve">
+<value>Автозапуск</value>
+</data>
+<data name="autostart_summary" xml:space="preserve">
+<value>Отображать действия для дистанционного запуска</value>
+</data>
+<data name="rele" xml:space="preserve">
+<value>Предпусковой подогреватель</value>
+</data>
+<data name="password_summary" xml:space="preserve">
+<value>Укажите пароль для управления устройством из приложения</value>
+</data>
+<data name="password_old" xml:space="preserve">
+<value>Старый пароль:</value>
+</data>
+<data name="password_text" xml:space="preserve">
+<value>Пароль:</value>
+</data>
+<data name="password_confirm" xml:space="preserve">
+<value>Подтверждение:</value>
+</data>
+<data name="password_set" xml:space="preserve">
+<value>Установить</value>
+</data>
+<data name="invalid_password" xml:space="preserve">
+<value>Неверный пароль</value>
+</data>
+<data name="invalid_confirm" xml:space="preserve">
+<value>Пароли не совпадают</value>
+</data>
+<data name="input_password" xml:space="preserve">
+<value>Введите пароль</value>
+</data>
+<data name="map_type" xml:space="preserve">
+<value>Использовать карты</value>
+</data>
+<data name="kmh" xml:space="preserve">
+<value>км/ч</value>
+</data>
+<data name="close" xml:space="preserve">
+<value>Завершить</value>
+</data>
+<data name="traffic" xml:space="preserve">
+<value>Показывать скорости</value>
+</data>
+<data name="traffic_layer" xml:space="preserve">
+<value>Показывать пробки</value>
+</data>
+<data name="traffic_summary" xml:space="preserve">
+<value>Отображать скорость как цветной трек</value>
+</data>
+<data name="alarms" xml:space="preserve">
+<value>Тревоги</value>
+</data>
+<data name="contacts" xml:space="preserve">
+<value>Контакты</value>
+</data>
+<data name="system" xml:space="preserve">
+<value>Система</value>
+</data>
+<data name="event" xml:space="preserve">
+<value>Событие</value>
+</data>
+<data name="guard_on" xml:space="preserve">
+<value>Постановка в охрану</value>
+</data>
+<data name="guard_off" xml:space="preserve">
+<value>Снятие с охраны</value>
+</data>
+<data name="can_on" xml:space="preserve">
+<value>Постановка в охрану штатной сигнализации</value>
+</data>
+<data name="can_off" xml:space="preserve">
+<value>Снятие с охраны штатной сигнализации</value>
+</data>
+<data name="end_move" xml:space="preserve">
+<value>Конец маршрута по датчику движения</value>
+</data>
+<data name="lock_off1" xml:space="preserve">
+<value>Пропала карта 1</value>
+</data>
+<data name="lock_off2" xml:space="preserve">
+<value>Пропала карта 2</value>
+</data>
+<data name="lock_off3" xml:space="preserve">
+<value>Пропала карта 3</value>
+</data>
+<data name="lock_off4" xml:space="preserve">
+<value>Пропала карта 4</value>
+</data>
+<data name="lock_off5" xml:space="preserve">
+<value>Пропала карта 5</value>
+</data>
+<data name="lock_on1" xml:space="preserve">
+<value>Обнаружена карта 1</value>
+</data>
+<data name="lock_on2" xml:space="preserve">
+<value>Обнаружена карта 2</value>
+</data>
+<data name="lock_on3" xml:space="preserve">
+<value>Обнаружена карта 3</value>
+</data>
+<data name="lock_on4" xml:space="preserve">
+<value>Обнаружена карта 4</value>
+</data>
+<data name="lock_on5" xml:space="preserve">
+<value>Обнаружена карта 5</value>
+</data>
+<data name="user_call" xml:space="preserve">
+<value>Запрос по звонку</value>
+</data>
+<data name="user_sms" xml:space="preserve">
+<value>Запрос по SMS</value>
+</data>
+<data name="motor_start" xml:space="preserve">
+<value>Дистанционный запуск двигателя</value>
+</data>
+<data name="motor_start_azd" xml:space="preserve">
+<value>Автоматический запуск двигателя</value>
+</data>
+<data name="request_photo" xml:space="preserve">
+<value>Запрос фото</value>
+</data>
+<data name="trunk_open" xml:space="preserve">
+<value>Открыт багажник</value>
+</data>
+<data name="hood_open" xml:space="preserve">
+<value>Открыт капот</value>
+</data>
+<data name="door_open" xml:space="preserve">
+<value>Открыта дверь</value>
+</data>
+<data name="ignition_on" xml:space="preserve">
+<value>Зажигание включено</value>
+</data>
+<data name="access_on" xml:space="preserve">
+<value>Аксессуары</value>
+</data>
+<data name="input1_on" xml:space="preserve">
+<value>Вход 1 включен</value>
+</data>
+<data name="input2_on" xml:space="preserve">
+<value>Вход 2 включен</value>
+</data>
+<data name="input3_on" xml:space="preserve">
+<value>Вход 3 включен</value>
+</data>
+<data name="input4_on" xml:space="preserve">
+<value>Вход 4 включен</value>
+</data>
+<data name="input5_on" xml:space="preserve">
+<value>Вход 5 включен</value>
+</data>
+<data name="input6_on" xml:space="preserve">
+<value>Вход 6 включен</value>
+</data>
+<data name="trunk_close" xml:space="preserve">
+<value>Закрыт багажник</value>
+</data>
+<data name="hood_close" xml:space="preserve">
+<value>Закрыт капот</value>
+</data>
+<data name="door_close" xml:space="preserve">
+<value>Закрыта дверь</value>
+</data>
+<data name="ignition_off" xml:space="preserve">
+<value>Зажигание выключено</value>
+</data>
+<data name="access_off" xml:space="preserve">
+<value>Аксессуары</value>
+</data>
+<data name="input1_off" xml:space="preserve">
+<value>Вход 1 выключен</value>
+</data>
+<data name="input2_off" xml:space="preserve">
+<value>Вход 2 выключен</value>
+</data>
+<data name="input3_off" xml:space="preserve">
+<value>Вход 3 выключен</value>
+</data>
+<data name="input4_off" xml:space="preserve">
+<value>Вход 4 выключен</value>
+</data>
+<data name="input5_off" xml:space="preserve">
+<value>Вход 5 выключен</value>
+</data>
+<data name="input6_off" xml:space="preserve">
+<value>Вход 6 выключен</value>
+</data>
+<data name="gprs_on" xml:space="preserve">
+<value>Соединение GPRS восстановлено</value>
+</data>
+<data name="gprs_off" xml:space="preserve">
+<value>Соединение GPRS потеряно</value>
+</data>
+<data name="reset_modem" xml:space="preserve">
+<value>Сброс модема</value>
+</data>
+<data name="reset" xml:space="preserve">
+<value>Сброс</value>
+</data>
+<data name="trace_start" xml:space="preserve">
+<value>Начало маршрута</value>
+</data>
+<data name="trace_stop" xml:space="preserve">
+<value>Конец маршрута</value>
+</data>
+<data name="gsm_fail" xml:space="preserve">
+<value>Потеряна сеть GSM</value>
+</data>
+<data name="gsm_recover" xml:space="preserve">
+<value>Восстановлено соединение GSM </value>
+</data>
+<data name="gps_fail" xml:space="preserve">
+<value>Потеряны спутники GPS</value>
+</data>
+<data name="gps_recover" xml:space="preserve">
+<value>Обнаружены спутники GPS</value>
+</data>
+<data name="till_start" xml:space="preserve">
+<value>Начало движения</value>
+</data>
+<data name="net_error" xml:space="preserve">
+<value>Ошибка передачи данных</value>
+</data>
+<data name="light_shock" xml:space="preserve">
+<value>Слабый удар</value>
+</data>
+<data name="ext_zone" xml:space="preserve">
+<value>Внешняя зона MKW</value>
+</data>
+<data name="heavy_shock" xml:space="preserve">
+<value>Сильный удар</value>
+</data>
+<data name="inner_zone" xml:space="preserve">
+<value>Внутренняя MKW</value>
+</data>
+<data name="tilt" xml:space="preserve">
+<value>Наклон</value>
+</data>
+<data name="main_power_on" xml:space="preserve">
+<value>Подключено основное питание</value>
+</data>
+<data name="main_power_off" xml:space="preserve">
+<value>Отключено основное питание</value>
+</data>
+<data name="reserve_power_on" xml:space="preserve">
+<value>Подключено резервное питание</value>
+</data>
+<data name="reserve_power_off" xml:space="preserve">
+<value>Отключено резервное питание</value>
+</data>
+<data name="rogue" xml:space="preserve">
+<value>Разбойное нападение</value>
+</data>
+<data name="rogue_off" xml:space="preserve">
+<value>Отбой разбойного нападения</value>
+</data>
+<data name="alarm_boot" xml:space="preserve">
+<value>Тревога: открыт багажник</value>
+</data>
+<data name="alarm_hood" xml:space="preserve">
+<value>Тревога: открыт капот</value>
+</data>
+<data name="alarm_door" xml:space="preserve">
+<value>Тревога: открыта дверь</value>
+</data>
+<data name="ignition_lock" xml:space="preserve">
+<value>Тревога: зажигание включено</value>
+</data>
+<data name="alarm_accessories" xml:space="preserve">
+<value>Тревога по зоне аксессуаров</value>
+</data>
+<data name="alarm_input1" xml:space="preserve">
+<value>Тревога: вход 1</value>
+</data>
+<data name="alarm_input2" xml:space="preserve">
+<value>Тревога: вход 2</value>
+</data>
+<data name="alarm_input3" xml:space="preserve">
+<value>Тревога: вход 3</value>
+</data>
+<data name="alarm_input4" xml:space="preserve">
+<value>Тревога: вход 4</value>
+</data>
+<data name="sos" xml:space="preserve">
+<value>SOS</value>
+</data>
+<data name="sms_request" xml:space="preserve">
+<value>Запрос по SMS</value>
+</data>
+<data name="incomming_sms" xml:space="preserve">
+<value>Входящее SMS</value>
+</data>
+<data name="no_events" xml:space="preserve">
+<value>Нет событий</value>
+</data>
+<data name="cars" xml:space="preserve">
+<value>Список автомобилей</value>
+</data>
+<data name="name" xml:space="preserve">
+<value>Название</value>
+</data>
+<data name="car" xml:space="preserve">
+<value>Автомобиль</value>
+</data>
+<data name="add" xml:space="preserve">
+<value>Добавить</value>
+</data>
+<data name="cancel" xml:space="preserve">
+<value>Отменить</value>
+</data>
+<data name="select_car" xml:space="preserve">
+<value>Выберите автомобиль</value>
+</data>
+<data name="error_read" xml:space="preserve">
+<value>Ошибка чтения данных</value>
+</data>
+<data name="speed" xml:space="preserve">
+<value>Скорость: %s км/ч</value>
+</data>
+<data name="temp_correct" xml:space="preserve">
+<value>Коррекция температуры</value>
+</data>
+<data name="voice" xml:space="preserve">
+<value>Загружен голос</value>
+</data>
+<data name="download_events" xml:space="preserve">
+<value>Загружена таблица событий</value>
+</data>
+<data name="low_battery" xml:space="preserve">
+<value>Батарейка в карточке разряжена</value>
+</data>
+<data name="download_settings" xml:space="preserve">
+<value>Загружены настройки устройства</value>
+</data>
+<data name="lan_change" xml:space="preserve">
+<value>Изменилось количество устройств LAN</value>
+</data>
+<data name="command" xml:space="preserve">
+<value>Команда с кодонаборника</value>
+</data>
+<data name="brake" xml:space="preserve">
+<value>Тормоз</value>
+</data>
+<data name="guard2_on" xml:space="preserve">
+<value>Включен режим охраны 2</value>
+</data>
+<data name="guard2_off" xml:space="preserve">
+<value>Выключен режим охраны 2</value>
+</data>
+<data name="valet_on_msg" xml:space="preserve">
+<value>Для включения режима АВТОСЕРВИС требуется ввод C-кода</value>
+</data>
+<data name="valet_off_msg" xml:space="preserve">
+<value>Для отключения режима АВТОСЕРВИС требуется ввод C-кода</value>
+</data>
+<data name="valet_on_msg_sms" xml:space="preserve">
+<value>Отправка СМС для включения режима АВТОСЕРВИС требует ввода C-кода</value>
+</data>
+<data name="valet_off_msg_sms" xml:space="preserve">
+<value>Отправка СМС для отключения режима АВТОСЕРВИС требует ввода C-кода</value>
+</data>
+<data name="bad_ccode" xml:space="preserve">
+<value>Неверный С-код</value>
+</data>
+<data name="pswd" xml:space="preserve">
+<value>Пароль:</value>
+</data>
+<data name="block_msg" xml:space="preserve">
+<value>Для отмены блокировки включите и выключите режим АВТОСЕРВИС</value>
+</data>
+<data name="motor_start_error" xml:space="preserve">
+<value>Двигатель не заведен или заглох</value>
+</data>
+<data name="motor_stop" xml:space="preserve">
+<value>Двигатель остановлен</value>
+</data>
+<data name="zone_in" xml:space="preserve">
+<value>Въезд в зону</value>
+</data>
+<data name="zone_out" xml:space="preserve">
+<value>Выезд из зоны</value>
+</data>
+<data name="position" xml:space="preserve">
+<value>Мое положение</value>
+</data>
+<data name="settings" xml:space="preserve">
+<value>Настройки</value>
+</data>
+<data name="no_gps_title" xml:space="preserve">
+<value>GPS выключен</value>
+</data>
+<data name="no_gps_message" xml:space="preserve">
+<value>GPS выключен в системе.\nДля определения местоположения надо включить GPS в настройках</value>
+</data>
+<data name="net_gps_message" xml:space="preserve">
+<value>Местоположение определено по сети.\nДля более точного определения положения надо включить GPS в настройках</value>
+</data>
+<data name="no_location" xml:space="preserve">
+<value>Неизвестное местоположение</value>
+</data>
+<data name="shock_sens" xml:space="preserve">
+<value>Чувствительность датчика удара</value>
+</data>
+<data name="shock_sens_msg" xml:space="preserve">
+<value>Установка уровня чувствительности датчика удара. Работает только для СуперАгент</value>
+</data>
+<data name="show_balance" xml:space="preserve">
+<value>Отображать баланс</value>
+</data>
+<data name="safe_mode" xml:space="preserve">
+<value>Безопасный режим</value>
+</data>
+<data name="ugona_net" xml:space="preserve">
+<value>УГОНА.НЕТ</value>
+</data>
+<data name="no_phone" xml:space="preserve">
+<value>Нет телефонного номера для контакта</value>
+</data>
+<data name="select_phone" xml:space="preserve">
+<value>Выберите номер</value>
+</data>
+<data name="phone_home" xml:space="preserve">
+<value>домашний</value>
+</data>
+<data name="phone_work" xml:space="preserve">
+<value>рабочий</value>
+</data>
+<data name="phone_mobile" xml:space="preserve">
+<value>мобильный</value>
+</data>
+<data name="pgsm_version" xml:space="preserve">
+<value>Версия прошивки</value>
+</data>
+<data name="delete" xml:space="preserve">
+<value>Удалить</value>
+</data>
+<data name="status_title" xml:space="preserve">
+<value>Статус</value>
+</data>
+<data name="status_sum" xml:space="preserve">
+<value>Запрос текущего состояния</value>
+</data>
+<data name="guard_state" xml:space="preserve">
+<value>В охране</value>
+</data>
+<data name="gps_state" xml:space="preserve">
+<value>Местоположение по GPS установлено</value>
+</data>
+<data name="gprs_none_state" xml:space="preserve">
+<value>Нет соединения с интернетом</value>
+</data>
+<data name="gprs_home_state" xml:space="preserve">
+<value>Соединение с интернетом установлено</value>
+</data>
+<data name="gprs_roaming_state" xml:space="preserve">
+<value>Соединение с интернетом установлено в роуминге</value>
+</data>
+<data name="phones" xml:space="preserve">
+<value>Управляющие телефоны</value>
+</data>
+<data name="phones_sum" xml:space="preserve">
+<value>Настройка управляющих телефонов</value>
+</data>
+<data name="add_phone" xml:space="preserve">
+<value>Добавить телефон</value>
+</data>
+<data name="erase_phones" xml:space="preserve">
+<value>Для очистки списка сделайте повторную инициализацию главного телефона</value>
+</data>
+<data name="clear" xml:space="preserve">
+<value>Очистить</value>
+</data>
+<data name="timer" xml:space="preserve">
+<value>Настройка таймера</value>
+</data>
+<data name="timer_sum" xml:space="preserve">
+<value>Настройка периодичности соединения автомобиля с сервером</value>
+</data>
+<data name="timer_on" xml:space="preserve">
+<value>Включить таймер</value>
+</data>
+<data name="minutes" xml:space="preserve">
+<value>мин</value>
+</data>
+<data name="init_phone" xml:space="preserve">
+<value>Инициализация главного телефона</value>
+</data>
+<data name="main_phone" xml:space="preserve">
+<value>Главный телефон</value>
+</data>
+<data name="invalid_ccode" xml:space="preserve">
+<value>Неверный С-код</value>
+</data>
+<data name="supply_regular" xml:space="preserve">
+<value>Бортовое питание подключено</value>
+</data>
+<data name="service" xml:space="preserve">
+<value>ФЕДЕРАЛЬНЫЙ СЕРВИС</value>
+</data>
+<data name="application" xml:space="preserve">
+<value>Приложение Угона.нет+ предназначено для контроля и управления автомобилями, оборудованными охранным мониторинговым комплексом серии MS-PGSM</value>
+</data>
+<data name="service_btn" xml:space="preserve">
+<value>Сервис Угона.нет</value>
+</data>
+<data name="forum_btn" xml:space="preserve">
+<value>Форум поддержки</value>
+</data>
+<data name="balance" xml:space="preserve">
+<value>Баланс</value>
+</data>
+<data name="balance_request" xml:space="preserve">
+<value>Запрос баланса</value>
+</data>
+<data name="valet_warning" xml:space="preserve">
+<value>Не забудьте отключить режим АВТОСЕРВИС</value>
+</data>
+<data name="net_warning" xml:space="preserve">
+<value>Нет соединения для передачи данных</value>
+</data>
+<data name="passwd" xml:space="preserve">
+<value>Пароль:</value>
+</data>
+<data name="show_photo" xml:space="preserve">
+<value>Показывать фотографии</value>
+</data>
+<data name="photo" xml:space="preserve">
+<value>Фото</value>
+</data>
+<data name="no_photos" xml:space="preserve">
+<value>Нет фотографий</value>
+</data>
+<data name="sms_mode_msg" xml:space="preserve">
+<value>СМС от устройства будут обрабатываться приложением и выводить окно тревоги</value>
+</data>
+<data name="photo_error" xml:space="preserve">
+<value>Ошибка загрузки изображения</value>
+</data>
+<data name="motor_on_ok" xml:space="preserve">
+<value>Двигатель заведен</value>
+</data>
+<data name="motor_off_ok" xml:space="preserve">
+<value>Двигатель заглушен</value>
+</data>
+<data name="valet_on_ok" xml:space="preserve">
+<value>Режим АВТОСЕРВИС включен</value>
+</data>
+<data name="valet_off_ok" xml:space="preserve">
+<value>Режим АВТОСЕРВИС выключен</value>
+</data>
+<data name="background" xml:space="preserve">
+<value>Фон</value>
+</data>
+<data name="rotate" xml:space="preserve">
+<value>Перевернуть</value>
+</data>
+<data name="new_car" xml:space="preserve">
+<value>Новый автомобиль</value>
+</data>
+<data name="rele1_action" xml:space="preserve">
+<value>Отправить импульс на RELE1</value>
+</data>
+<data name="rele2_action" xml:space="preserve">
+<value>Отправить импульс на RELE2</value>
+</data>
+<data name="gsm_register_fail" xml:space="preserve">
+<value>Невозможно зарегестрироваться в GSM сети</value>
+</data>
+<data name="widget_config" xml:space="preserve">
+<value>Настройка виджета</value>
+</data>
+<data name="balance_notification" xml:space="preserve">
+<value>Предупреждать о пороге отключения</value>
+</data>
+<data name="low_balance" xml:space="preserve">
+<value>Вы приблизились к порогу отключения</value>
+</data>
+<data name="call" xml:space="preserve">
+<value>Позвонить на автомобиль</value>
+</data>
+<data name="timer_event" xml:space="preserve">
+<value>Соединение по таймеру</value>
+</data>
+<data name="find" xml:space="preserve">
+<value>Включить режим поиска</value>
+</data>
+<data name="find_sum" xml:space="preserve">
+<value>Передавать координаты 3 часа каждые 10 минут</value>
+</data>
+<data name="map_req" xml:space="preserve">
+<value>Запрос местоположения</value>
+</data>
+<data name="map_sum" xml:space="preserve">
+<value>Однократный запрос местоположения</value>
+</data>
+<data name="mode_a" xml:space="preserve">
+<value>Режим A</value>
+</data>
+<data name="mode_a_sum" xml:space="preserve">
+<value>Передача GSM координат каждые 6 часов</value>
+</data>
+<data name="mode_b" xml:space="preserve">
+<value>Режим B</value>
+</data>
+<data name="mode_b_sum" xml:space="preserve">
+<value>Передача GSM координат каждые 12 часов</value>
+</data>
+<data name="mode_c" xml:space="preserve">
+<value>Режим C</value>
+</data>
+<data name="mode_c_sum" xml:space="preserve">
+<value>Передача GPS координат каждые 24 часа</value>
+</data>
+<data name="mode_d" xml:space="preserve">
+<value>Режим D</value>
+</data>
+<data name="mode_d_sum" xml:space="preserve">
+<value>Ожидание команды каждые 12 часов</value>
+</data>
+<data name="commands" xml:space="preserve">
+<value>Команды управления</value>
+</data>
+<data name="commands_sum" xml:space="preserve">
+<value>Выбор команд на главном экране</value>
+</data>
+<data name="valet_cmd" xml:space="preserve">
+<value>Режим АВТОСЕРВИС</value>
+</data>
+<data name="work_time" xml:space="preserve">
+<value>Время прогрева</value>
+</data>
+<data name="rele_sum" xml:space="preserve">
+<value>Настройки предпускового подогревателя</value>
+</data>
+<data name="connection" xml:space="preserve">
+<value>Подключение:</value>
+</data>
+<data name="show_map" xml:space="preserve">
+<value>Карта</value>
+</data>
+<data name="data_transfer" xml:space="preserve">
+<value>Передача данных</value>
+</data>
+<data name="timeout" xml:space="preserve">
+<value>Долгое время не было сообщений от маяка</value>
+</data>
+<data name="pointer" xml:space="preserve">
+<value>Маяк</value>
+</data>
+<data name="pointer_msg" xml:space="preserve">
+<value>Связать с автомобилем?</value>
+</data>
+<data name="pointer_support" xml:space="preserve">
+<value>Поддержка маяка</value>
+</data>
+<data name="pointer_support_msg" xml:space="preserve">
+<value>Приложение поддерживает получение данных с маяка.\nВы можете добавить маяк сейчас или сделать это позже командой Список автомобилей</value>
+</data>
+<data name="cmd_msg" xml:space="preserve">
+<value>На основном экране будут показаны только 3 кнопки</value>
+</data>
+<data name="temp_change" xml:space="preserve">
+<value>Изменение температуры</value>
+</data>
+<data name="brk_data" xml:space="preserve">
+<value>Данные с БРК</value>
+</data>
+<data name="show_name" xml:space="preserve">
+<value>Показать название</value>
+</data>
+<data name="impulse" xml:space="preserve">
+<value>Управление импульсом</value>
+</data>
+<data name="brake_on" xml:space="preserve">
+<value>Ручник поднят</value>
+</data>
+<data name="brake_off" xml:space="preserve">
+<value>Ручник опущен</value>
+</data>
+<data name="ps_guard" xml:space="preserve">
+<value>Включен режим охраны с пассажирами</value>
+</data>
+<data name="time_warning" xml:space="preserve">
+<value>Долгое время не было связи с машиной</value>
+</data>
+<data name="gsm_new" xml:space="preserve">
+<value>Изменился GSM-сектор</value>
+</data>
+<data name="trace_point" xml:space="preserve">
+<value>Точка маршрута</value>
+</data>
+<data name="nondigits" xml:space="preserve">
+<value>Код содержит не только цифры</value>
+</data>
+<data name="shock_sensor" xml:space="preserve">
+<value>Датчик удара</value>
+</data>
+<data name="motor_time" xml:space="preserve">
+<value>после $1 мин</value>
+</data>
+<data name="guard_notify" xml:space="preserve">
+<value>Уведомления об охране</value>
+</data>
+<data name="pointer_voltage" xml:space="preserve">
+<value>Низкий уровень заряда батарейки в маяке</value>
+</data>
+<data name="widget_rows" xml:space="preserve">
+<value>К-во значений:</value>
+</data>
+<data name="auto" xml:space="preserve">
+<value>автоматически</value>
+</data>
+<data name="send_sms" xml:space="preserve">
+<value>Отправить СМС</value>
+</data>
+<data name="send_sms_message" xml:space="preserve">
+<value>Сеть передачи данных недоступна.\nОтправить команду с помощью СМС?</value>
+</data>
+<data name="send_command" xml:space="preserve">
+<value>Отправка команды</value>
+</data>
+<data name="send_sms_on_fail" xml:space="preserve">
+<value>Ошибка отправки команды по сети.\nОтправить команду с помощью СМС?</value>
+</data>
+<data name="wait_msg" xml:space="preserve">
+<value>Команда поставлена в очередь и будет передана в течении $1 мин.</value>
+</data>
+<data name="you_can" xml:space="preserve">
+<value>Вы можете:</value>
+</data>
+<data name="call_car" xml:space="preserve">
+<value>Позвонить</value>
+</data>
+<data name="send_via_sms" xml:space="preserve">
+<value>Отправить команду как СМС</value>
+</data>
+<data name="or_wait" xml:space="preserve">
+<value>или подождать</value>
+</data>
+<data name="motor_on_ccode" xml:space="preserve">
+<value>Для запуска двигателя надо ввести C-код</value>
+</data>
+<data name="motor_off_ccode" xml:space="preserve">
+<value>Для остановки двигателя надо ввести C-код</value>
+</data>
+<data name="rele_ccode" xml:space="preserve">
+<value>Требуется C-код</value>
+</data>
+<data name="control_method" xml:space="preserve">
+<value>Отправка команд</value>
+</data>
+<data name="number" xml:space="preserve">
+<value>С-код содержит не только цифры</value>
+</data>
+<data name="stat" xml:space="preserve">
+<value>Статистика</value>
+</data>
+<data name="sms_sent" xml:space="preserve">
+<value>СМС отправлено</value>
+</data>
+<data name="device_settings" xml:space="preserve">
+<value>Настройки устройства</value>
+</data>
+<data name="notifications" xml:space="preserve">
+<value>Уведомления</value>
+</data>
+<data name="guard_sound" xml:space="preserve">
+<value>Cопровождать звуком постановку/снятие с охраны</value>
+</data>
+<data name="tilt_low" xml:space="preserve">
+<value>Загрубление датчика наклона</value>
+</data>
+<data name="guard_partial" xml:space="preserve">
+<value>Постоянный режим охраны с пассажирами</value>
+</data>
+<data name="comfort_enable" xml:space="preserve">
+<value>Разрешение функции комфорт-поднятие стекол</value>
+</data>
+<data name="tilt_level" xml:space="preserve">
+<value>Уровень срабатывания датчика наклона</value>
+</data>
+<data name="unit" xml:space="preserve">
+<value>ед</value>
+</data>
+<data name="guard_time" xml:space="preserve">
+<value>Время постановки в охрану при потере метки</value>
+</data>
+<data name="sec" xml:space="preserve">
+<value>сек.</value>
+</data>
+<data name="robbery_time" xml:space="preserve">
+<value>Время задержки старта противоразбойной функции</value>
+</data>
+<data name="heater_start" xml:space="preserve">
+<value>Производить автозапуск после отработки предпускового подогревателя</value>
+</data>
+<data name="no_sound" xml:space="preserve">
+<value>Охрана без звука</value>
+</data>
+<data name="heater_time" xml:space="preserve">
+<value>Время работы отопителя</value>
+</data>
+<data name="close_time" xml:space="preserve">
+<value>Задержка между выключением зажигания и закрытием ЦЗ через CAN</value>
+</data>
+<data name="voltage_limit" xml:space="preserve">
+<value>Напряжение аккумулятора при котором производить автозапуск</value>
+</data>
+<data name="v" xml:space="preserve">
+<value>В</value>
+</data>
+<data name="no_start" xml:space="preserve">
+<value>не запускать</value>
+</data>
+<data name="setup" xml:space="preserve">
+<value>Применить</value>
+</data>
+<data name="setup_msg" xml:space="preserve">
+<value>Загрузить настройки на устройство</value>
+</data>
+<data name="start_time" xml:space="preserve">
+<value>Время прогрева</value>
+</data>
+<data name="soft_start" xml:space="preserve">
+<value>Режим "мягкой посадки"</value>
+</data>
+<data name="rele1" xml:space="preserve">
+<value>РЕЛЕ 1</value>
+</data>
+<data name="rele1i" xml:space="preserve">
+<value>РЕЛЕ 1 импульс</value>
+</data>
+<data name="rele2" xml:space="preserve">
+<value>РЕЛЕ 2</value>
+</data>
+<data name="rele2i" xml:space="preserve">
+<value>РЕЛЕ 2 импульс</value>
+</data>
+<data name="rele1_on" xml:space="preserve">
+<value>РЕЛЕ 1 включить</value>
+</data>
+<data name="rele1_off" xml:space="preserve">
+<value>РЕЛЕ 1 выключить</value>
+</data>
+<data name="rele2_on" xml:space="preserve">
+<value>РЕЛЕ 2 включить</value>
+</data>
+<data name="rele2_off" xml:space="preserve">
+<value>РЕЛЕ 2 выключить</value>
+</data>
+<data name="error" xml:space="preserve">
+<value>Ошибка</value>
+</data>
+<data name="no_network" xml:space="preserve">
+<value>Сеть для передачи данных недоступна</value>
+</data>
+<data name="retry" xml:space="preserve">
+<value>Повторить</value>
+</data>
+<data name="phone" xml:space="preserve">
+<value>Телефон:</value>
+</data>
+<data name="changed" xml:space="preserve">
+<value>Настройки изменены</value>
+</data>
+<data name="changed_msg" xml:space="preserve">
+<value>У вас есть несохраненные настрйоки.\nВы действительно хотите выйти?</value>
+</data>
+<data name="exit" xml:space="preserve">
+<value>Выход</value>
+</data>
+<data name="notify_msg" xml:space="preserve">
+<value>Уведомления приходят с некоторой задержкой в зависимости от настроек таймаута устройства и соединения телефона с сетью</value>
+</data>
+<data name="command_name" xml:space="preserve">
+<value>Имя команды:</value>
+</data>
+<data name="device_phone_number" xml:space="preserve">
+<value>Номер телефона устройства</value>
+</data>
+<data name="sound_off" xml:space="preserve">
+<value>Включить режим охраны без звука</value>
+</data>
+<data name="sound_on" xml:space="preserve">
+<value>Отключить режим охраны без звука</value>
+</data>
+<data name="silent_mode" xml:space="preserve">
+<value>Режим охраны без звука</value>
+</data>
+<data name="km" xml:space="preserve">
+<value>км</value>
+</data>
+<data name="alarm_shock" xml:space="preserve">
+<value>Тревоги по датчикам</value>
+</data>
+<data name="inf_sms" xml:space="preserve">
+<value>Ответные СМС при удачном запуске двигателя</value>
+</data>
+<data name="inf_sms_msg" xml:space="preserve">
+<value>При отключении отправки информационных СМС не будут приходить уведомления об успешном запуске двигателя и низком уровне заряда батарейки в метке</value>
+</data>
+<data name="voltage_shift" xml:space="preserve">
+<value>Коррекция напряжения</value>
+</data>
+<data name="zones" xml:space="preserve">
+<value>Зоны</value>
+</data>
+<data name="sms_notify" xml:space="preserve">
+<value>Оповещать о въезде и выезде из зоны по СМС</value>
+</data>
+<data name="add_zone" xml:space="preserve">
+<value>Добавить зону</value>
+</data>
+<data name="zone_name" xml:space="preserve">
+<value>Пустое наиеменование</value>
+</data>
+<data name="zone_name_msg" xml:space="preserve">
+<value>Наименование зоны не может быть пустым.\nВвведите наименование зоны</value>
+</data>
+<data name="zone_remove" xml:space="preserve">
+<value>Удалить зону</value>
+</data>
+<data name="device_pswd" xml:space="preserve">
+<value>Требуется отправка пароля в СМС</value>
+</data>
+<data name="input_device_pswd" xml:space="preserve">
+<value>Введите пароль устройства</value>
+</data>
+<data name="attention" xml:space="preserve">
+<value>Внимание</value>
+</data>
+<data name="zone_msg" xml:space="preserve">
+<value>При отключении СМС-уведомлений для зоны, уведомления будут приходить с некоторой задержкой в зависимости от настроек устройства и настроек сети на телефоне</value>
+</data>
+<data name="zone_bad_char" xml:space="preserve">
+<value>Название зоны может сожержать только латинские буквы и цифры</value>
+</data>
+<data name="schedule" xml:space="preserve">
+<value>Расписание запуска</value>
+</data>
+<data name="add_timer" xml:space="preserve">
+<value>Добавить таймер</value>
+</data>
+<data name="init" xml:space="preserve">
+<value>Инициализация</value>
+</data>
+<data name="zone_my" xml:space="preserve">
+<value>Не уведомлять, если рядом с машиной</value>
+</data>
+<data name="timer_set" xml:space="preserve">
+<value>Таймер</value>
+</data>
+<data name="timer_empty" xml:space="preserve">
+<value>Выберите дни недели</value>
+</data>
+<data name="timer_delete" xml:space="preserve">
+<value>Удалить таймер?</value>
+</data>
+<data name="search" xml:space="preserve">
+<value>Поиск на стоянке</value>
+</data>
+<data name="temp_sensors" xml:space="preserve">
+<value>Датчики температуры</value>
+</data>
+<data name="sensor" xml:space="preserve">
+<value>Датчик</value>
+</data>
+<data name="door_time" xml:space="preserve">
+<value>Задержка тревоги по зонам двери/багажник</value>
+</data>
+<data name="zone_in_sound" xml:space="preserve">
+<value>Уведомление о въезде в зону</value>
+</data>
+<data name="zone_out_sound" xml:space="preserve">
+<value>Уведомление о выезде из зоны</value>
+</data>
+<data name="voltage" xml:space="preserve">
+<value>Напряжение</value>
+</data>
+<data name="reserved" xml:space="preserve">
+<value>Резервный источник</value>
+</data>
+<data name="temperature" xml:space="preserve">
+<value>Температура</value>
+</data>
+<data name="use_gps" xml:space="preserve">
+<value>Использовать GPS</value>
+</data>
+<data name="charts" xml:space="preserve">
+<value>Графики</value>
+</data>
+<data name="heater_on" xml:space="preserve">
+<value>Обогреватель без салона</value>
+</data>
+<data name="heater_air" xml:space="preserve">
+<value>Обогреватель с салоном</value>
+</data>
+<data name="heater_off" xml:space="preserve">
+<value>Выключить обогреватель</value>
+</data>
+<data name="air" xml:space="preserve">
+<value>Включить вентилятор</value>
+</data>
+<data name="card_message" xml:space="preserve">
+<value>Возможно метка осталась в машине</value>
+</data>
+<data name="widgets" xml:space="preserve">
+<value>Виджеты</value>
+</data>
+<data name="lock_widget" xml:space="preserve">
+<value>Виджет экрана блокировки</value>
+</data>
+<data name="no_widgets" xml:space="preserve">
+<value>Нет виджетов</value>
+</data>
+<data name="add_lock_widget" xml:space="preserve">
+<value>Вы можете добавить виджет на экран блокировки</value>
+</data>
+<data name="recalc_stat" xml:space="preserve">
+<value>Пересчитать статистику</value>
+</data>
+<data name="recalc_message" xml:space="preserve">
+<value>Процесс пересчета займет несколько минут</value>
+</data>
+<data name="e0101" xml:space="preserve">
+<value>Постановка под охрану с брелка</value>
+</data>
+<data name="e0102" xml:space="preserve">
+<value>Постановка под охрану автоматически</value>
+</data>
+<data name="e0103" xml:space="preserve">
+<value>Постановка под охрану кнопкой VALET</value>
+</data>
+<data name="e0104" xml:space="preserve">
+<value>Постановка под охрану с помощью Hands-Free</value>
+</data>
+<data name="e0105" xml:space="preserve">
+<value>Постановка под охрану по команде с телефона</value>
+</data>
+<data name="e0106" xml:space="preserve">
+<value>Постановка под охрану по команде с интернет-сервиса</value>
+</data>
+<data name="e0107" xml:space="preserve">
+<value>Постановка под охрану со штатной сигнализации</value>
+</data>
+<data name="e0201" xml:space="preserve">
+<value>Снятие с охраны брелком</value>
+</data>
+<data name="e0202" xml:space="preserve">
+<value>Снятие с охраны по команде с телефона</value>
+</data>
+<data name="e0203" xml:space="preserve">
+<value>Снятие с охраны по команде с интернет-сервиса</value>
+</data>
+<data name="e0204" xml:space="preserve">
+<value>Снятие с охраны с помощью Hands-Free</value>
+</data>
+<data name="e0205" xml:space="preserve">
+<value>Снятие с охраны с помощью PIN-кода</value>
+</data>
+<data name="e0206" xml:space="preserve">
+<value>Снятие с охраны штатной сигнализацией</value>
+</data>
+<data name="e0301" xml:space="preserve">
+<value>Тревога по критическому снижению напряжения</value>
+</data>
+<data name="e0302" xml:space="preserve">
+<value>Тревога предварительной зоны дополнительного датчика</value>
+</data>
+<data name="e0303" xml:space="preserve">
+<value>Тревога основной зоны дополнительного датчика</value>
+</data>
+<data name="e0304" xml:space="preserve">
+<value>Тревога предварительной зоны датчика удара</value>
+</data>
+<data name="e0305" xml:space="preserve">
+<value>Тревога основной зоны датчика удара</value>
+</data>
+<data name="e0306" xml:space="preserve">
+<value>Тревога по нажатию педали тормоза</value>
+</data>
+<data name="e0307" xml:space="preserve">
+<value>Тревога по поднятию ручника</value>
+</data>
+<data name="e0308" xml:space="preserve">
+<value>Тревога по датчику наклона</value>
+</data>
+<data name="e0309" xml:space="preserve">
+<value>Тревога по датчику движения</value>
+</data>
+<data name="e0310" xml:space="preserve">
+<value>Тревога по включению зажигания</value>
+</data>
+<data name="e0311" xml:space="preserve">
+<value>Тревога по открытию багажника</value>
+</data>
+<data name="e0312" xml:space="preserve">
+<value>Тревога по открытию водительской двери</value>
+</data>
+<data name="e0313" xml:space="preserve">
+<value>Тревога по открытию пассажирской двери</value>
+</data>
+<data name="e0314" xml:space="preserve">
+<value>Тревога по открытию пассажирской двери</value>
+</data>
+<data name="e0315" xml:space="preserve">
+<value>Тревога по открытию пассажирской двери</value>
+</data>
+<data name="e0316" xml:space="preserve">
+<value>Тревога по открытию капота</value>
+</data>
+<data name="e0401" xml:space="preserve">
+<value>Запуск двигателя с брелока</value>
+</data>
+<data name="e0402" xml:space="preserve">
+<value>Запуск двигателя с телефона</value>
+</data>
+<data name="e0403" xml:space="preserve">
+<value>Запуск двигателя по таймеру</value>
+</data>
+<data name="e0404" xml:space="preserve">
+<value>Запуск двигателя по температуре</value>
+</data>
+<data name="e0405" xml:space="preserve">
+<value>Запуск даигателя по напряжению</value>
+</data>
+<data name="e0406" xml:space="preserve">
+<value>Запуск двигателя по команде с интернет-сервиса</value>
+</data>
+<data name="e0501" xml:space="preserve">
+<value>Останов двигателя с брелока</value>
+</data>
+<data name="e0502" xml:space="preserve">
+<value>Останов двигателя с телефона</value>
+</data>
+<data name="e0503" xml:space="preserve">
+<value>Останов двигателя по таймеру</value>
+</data>
+<data name="e0504" xml:space="preserve">
+<value>Останов двигателя по температуре</value>
+</data>
+<data name="e0505" xml:space="preserve">
+<value>Останов даигателя по команде с интернет-сервиса</value>
+</data>
+<data name="e0506" xml:space="preserve">
+<value>Аварийная остановка двигателя</value>
+</data>
+<data name="e0507" xml:space="preserve">
+<value>Автоматическая остановка двигателя</value>
+</data>
+<data name="e0601" xml:space="preserve">
+<value>Двигатель заблокирован по команде с интернет-сервиса</value>
+</data>
+<data name="e0602" xml:space="preserve">
+<value>Двигатель заблокирован с телефона</value>
+</data>
+<data name="e0603" xml:space="preserve">
+<value>Двигатель заблокирован автоматически</value>
+</data>
+<data name="e0701" xml:space="preserve">
+<value>Включение режима ТО с брелока</value>
+</data>
+<data name="e0801" xml:space="preserve">
+<value>Изменение настроек системы с сайта</value>
+</data>
+<data name="e0802" xml:space="preserve">
+<value>Изменение настроек на сайте</value>
+</data>
+<data name="e0803" xml:space="preserve">
+<value>Изменение настроек в меню системы</value>
+</data>
+<data name="e0804" xml:space="preserve">
+<value>Изменение настроек запись брелоков</value>
+</data>
+<data name="e0805" xml:space="preserve">
+<value>Изменение настроек запись RF-модуля</value>
+</data>
+<data name="e0806" xml:space="preserve">
+<value>Изменение настроек смена PIN-кода</value>
+</data>
+<data name="e0807" xml:space="preserve">
+<value>Изменение настроек с телефона</value>
+</data>
+<data name="e0808" xml:space="preserve">
+<value>Изменение настроек с брелока</value>
+</data>
+<data name="e0901" xml:space="preserve">
+<value>Заправка</value>
+</data>
+<data name="e1001" xml:space="preserve">
+<value>Авария</value>
+</data>
+<data name="e1101" xml:space="preserve">
+<value>GSM связь пропала</value>
+</data>
+<data name="e1102" xml:space="preserve">
+<value>GSM связь восстановлена</value>
+</data>
+<data name="e1103" xml:space="preserve">
+<value>Входящий вызов</value>
+</data>
+<data name="e1201" xml:space="preserve">
+<value>Экстренный вызов с брелока</value>
+</data>
+<data name="e1301" xml:space="preserve">
+<value>Неудачная попытка запуска - нет нейтрали</value>
+</data>
+<data name="e1302" xml:space="preserve">
+<value>Неудачная попытка запуска - авто не в охране</value>
+</data>
+<data name="e1303" xml:space="preserve">
+<value>Неудачная попытка запуска - по техническим причинам</value>
+</data>
+<data name="e1304" xml:space="preserve">
+<value>Неудачная попытка запуска - двигатель заблокирован</value>
+</data>
+<data name="e1401" xml:space="preserve">
+<value>Включение трекинга брелоком</value>
+</data>
+<data name="e1402" xml:space="preserve">
+<value>Включение трекинга с телефона</value>
+</data>
+<data name="e1403" xml:space="preserve">
+<value>Включение трекинга по команде с интернет-сервиса</value>
+</data>
+<data name="e1501" xml:space="preserve">
+<value>Выключение трекинга брелоком</value>
+</data>
+<data name="e1502" xml:space="preserve">
+<value>Выключение трекинга с телефона</value>
+</data>
+<data name="e1503" xml:space="preserve">
+<value>Выключение трекинга по команде с интернет-сервиса</value>
+</data>
+<data name="e1601" xml:space="preserve">
+<value>Отключение питания системы</value>
+</data>
+<data name="e1701" xml:space="preserve">
+<value>Откртыие багажника брелоком</value>
+</data>
+<data name="e1702" xml:space="preserve">
+<value>Открытие багажника с телефона</value>
+</data>
+<data name="e1703" xml:space="preserve">
+<value>Открытие багажника по команде с интернет-сервиса</value>
+</data>
+<data name="e3700" xml:space="preserve">
+<value>Неровность дороги</value>
+</data>
+<data name="sound" xml:space="preserve">
+<value>Подача звукового сигнала</value>
+</data>
+<data name="shock_sensor_secondary" xml:space="preserve">
+<value>Датчик удара - предварительный уровень</value>
+</data>
+<data name="shock_sensor_primary" xml:space="preserve">
+<value>Датчик удара - основной уровень</value>
+</data>
+<data name="move_sensor" xml:space="preserve">
+<value>Датчик движения</value>
+</data>
+<data name="ext_sensor_secondary" xml:space="preserve">
+<value>Дополнительный датчик - предварительный уровень</value>
+</data>
+<data name="ext_sensor_primary" xml:space="preserve">
+<value>Дополнительный датчик - основной уровень</value>
+</data>
+<data name="no_points" xml:space="preserve">
+<value>Нет точек в выделенной области</value>
+</data>
+<data name="empty_voltage" xml:space="preserve">
+<value>-- V</value>
+</data>
+<data name="empty_balance" xml:space="preserve">
+<value>---.--</value>
+</data>
+<data name="empty_temperature" xml:space="preserve">
+<value>-- °C</value>
+</data>
+<data name="google" xml:space="preserve">
+<value>Google</value>
+</data>
+<data name="osm" xml:space="preserve">
+<value>OSM</value>
+</data>
+<data name="copyright" xml:space="preserve">
+<value>© 2013-2014 Ugona.net, info@ugona.net</value>
+</data>
+<data name="thermocode" xml:space="preserve">
+<value>Thermocode</value>
+</data>
+<data name="lost" xml:space="preserve">
+<value>Связь с автомобилем потеряна</value>
+</data>
+<data name="restore" xml:space="preserve">
+<value>Связь с автомобилем восстановлена</value>
+</data>
+<data name="cmd_error" xml:space="preserve">
+<value>Ошибка выполнения комманды</value>
+</data>
+<data name="lost_sound" xml:space="preserve">
+<value>Уведомление о потере связи</value>
+</data>
+<data name="restore_sound" xml:space="preserve">
+<value>Уведомление о восстановлении связи</value>
+</data>
+<data name="light_shock_alarm" xml:space="preserve">
+<value>Тревога по событию легкий удар</value>
+</data>
+<data name="balance_sound" xml:space="preserve">
+<value>Уведомление о балансе</value>
+</data>
+<data name="cant_connect" xml:space="preserve">
+<value>Невозможно установить соединение с автомобилем</value>
+</data>
+<data name="send_cmd" xml:space="preserve">
+<value>Выполнить команду?</value>
+</data>
+<data name="ccode_change" xml:space="preserve">
+<value>C-код</value>
+</data>
+<data name="ccode_change_msg" xml:space="preserve">
+<value>Смена C-кода</value>
+</data>
+<data name="ccode_guard" xml:space="preserve">
+<value>Для смены С-кода вы должны снять автомобиль с охраны</value>
+</data>
+<data name="old_ccode" xml:space="preserve">
+<value>Старый C-код:</value>
+</data>
+<data name="new_ccode" xml:space="preserve">
+<value>Новый C-код:</value>
+</data>
+<data name="new_ccode_invalid" xml:space="preserve">
+<value>Новый код и подтверждение не совпадают</value>
+</data>
+<data name="ccode_format" xml:space="preserve">
+<value>С-код должен содержать 6 цифр</value>
+</data>
+<data name="ccode_zero" xml:space="preserve">
+<value>Новый С-код содержит нули, его невозможно набрать с кодонаборника</value>
+</data>
+<data name="open_trunk" xml:space="preserve">
+<value>Открыть багажник</value>
+</data>
+<data name="ccode_fail" xml:space="preserve">
+<value>Ошибка изменения C-кода</value>
+</data>
+<data name="delete_widget" xml:space="preserve">
+<value>Удалить виджет</value>
+</data>
+<data name="delete_widget_msg" xml:space="preserve">
+<value>Вы действительно хотите удалить виджет?</value>
+</data>
+<data name="card_info" xml:space="preserve">
+<value>Уровень сигнала: %d dB\nЗаряд батареи: %.2f V</value>
+</data>
+<data name="demo_mode" xml:space="preserve">
+<value>Демо режим</value>
+</data>
+<data name="ccode_ok" xml:space="preserve">
+<value>C-код изменен</value>
+</data>
+<data name="ccode_failed" xml:space="preserve">
+<value>Ошибка изменения C-кода</value>
+</data>
+<data name="yandex" xml:space="preserve">
+<value>Yandex</value>
+</data>
+<data name="bing" xml:space="preserve">
+<value>Bing</value>
+</data>
+<data name="more" xml:space="preserve">
+<value>Подробнее</value>
+</data>
+
 </root>

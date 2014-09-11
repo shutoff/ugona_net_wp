@@ -119,6 +119,7 @@
     <Compile Include="SQLite.cs" />
     <Compile Include="SQLiteAsync.cs" />
     <Compile Include="ViewModels\CarModel.cs" />
+    <Compile Include="ViewModels\Event.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -139,6 +140,90 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Events\e_access_off.png" />
+    <Content Include="Assets\Events\e_access_on.png" />
+    <Content Include="Assets\Events\e_alarm_accessories.png" />
+    <Content Include="Assets\Events\e_alarm_boot.png" />
+    <Content Include="Assets\Events\e_alarm_door.png" />
+    <Content Include="Assets\Events\e_alarm_hood.png" />
+    <Content Include="Assets\Events\e_alarm_input1.png" />
+    <Content Include="Assets\Events\e_alarm_input2.png" />
+    <Content Include="Assets\Events\e_alarm_input3.png" />
+    <Content Include="Assets\Events\e_alarm_input4.png" />
+    <Content Include="Assets\Events\e_boot_close.png" />
+    <Content Include="Assets\Events\e_boot_open.png" />
+    <Content Include="Assets\Events\e_brake.png" />
+    <Content Include="Assets\Events\e_can.png" />
+    <Content Include="Assets\Events\e_doors_close.png" />
+    <Content Include="Assets\Events\e_doors_open.png" />
+    <Content Include="Assets\Events\e_exit_zone.png" />
+    <Content Include="Assets\Events\e_gprs_off.png" />
+    <Content Include="Assets\Events\e_gprs_on.png" />
+    <Content Include="Assets\Events\e_gps_fail.png" />
+    <Content Include="Assets\Events\e_gps_recover.png" />
+    <Content Include="Assets\Events\e_gsm_fail.png" />
+    <Content Include="Assets\Events\e_gsm_recover.png" />
+    <Content Include="Assets\Events\e_guard_off.png" />
+    <Content Include="Assets\Events\e_guard_on.png" />
+    <Content Include="Assets\Events\e_heavy_shock.png" />
+    <Content Include="Assets\Events\e_hood_close.png" />
+    <Content Include="Assets\Events\e_hood_open.png" />
+    <Content Include="Assets\Events\e_ignition_off.png" />
+    <Content Include="Assets\Events\e_ignition_on.png" />
+    <Content Include="Assets\Events\e_inner_zone.png" />
+    <Content Include="Assets\Events\e_input1_off.png" />
+    <Content Include="Assets\Events\e_input1_on.png" />
+    <Content Include="Assets\Events\e_input2_off.png" />
+    <Content Include="Assets\Events\e_input2_on.png" />
+    <Content Include="Assets\Events\e_input3_off.png" />
+    <Content Include="Assets\Events\e_input3_on.png" />
+    <Content Include="Assets\Events\e_input4_off.png" />
+    <Content Include="Assets\Events\e_input4_on.png" />
+    <Content Include="Assets\Events\e_input5_off.png" />
+    <Content Include="Assets\Events\e_input5_on.png" />
+    <Content Include="Assets\Events\e_input6_off.png" />
+    <Content Include="Assets\Events\e_input6_on.png" />
+    <Content Include="Assets\Events\e_light_shock.png" />
+    <Content Include="Assets\Events\e_lockclose1.png" />
+    <Content Include="Assets\Events\e_lockclose2.png" />
+    <Content Include="Assets\Events\e_lockclose3.png" />
+    <Content Include="Assets\Events\e_lockclose4.png" />
+    <Content Include="Assets\Events\e_lockclose5.png" />
+    <Content Include="Assets\Events\e_lockopen1.png" />
+    <Content Include="Assets\Events\e_lockopen2.png" />
+    <Content Include="Assets\Events\e_lockopen3.png" />
+    <Content Include="Assets\Events\e_lockopen4.png" />
+    <Content Include="Assets\Events\e_lockopen5.png" />
+    <Content Include="Assets\Events\e_main_power_off.png" />
+    <Content Include="Assets\Events\e_motor_error.png" />
+    <Content Include="Assets\Events\e_motor_start.png" />
+    <Content Include="Assets\Events\e_motor_stop.png" />
+    <Content Include="Assets\Events\e_request_photo.png" />
+    <Content Include="Assets\Events\e_reserve_power_off.png" />
+    <Content Include="Assets\Events\e_reset.png" />
+    <Content Include="Assets\Events\e_reset_modem.png" />
+    <Content Include="Assets\Events\e_rogue.png" />
+    <Content Include="Assets\Events\e_settings.png" />
+    <Content Include="Assets\Events\e_sos.png" />
+    <Content Include="Assets\Events\e_system.png" />
+    <Content Include="Assets\Events\e_till_start.png" />
+    <Content Include="Assets\Events\e_tilt.png" />
+    <Content Include="Assets\Events\e_timer.png" />
+    <Content Include="Assets\Events\e_trace_start.png" />
+    <Content Include="Assets\Events\e_trace_stop.png" />
+    <Content Include="Assets\Events\e_user_call.png" />
+    <Content Include="Assets\Events\e_user_sms.png" />
+    <Content Include="Assets\Events\e_valet_off.png" />
+    <Content Include="Assets\Events\e_valet_on.png" />
+    <Content Include="Assets\Events\e_voice.png" />
+    <Content Include="Assets\Events\e_zone_in.png" />
+    <Content Include="Assets\Events\e_zone_out.png" />
+    <Content Include="README_FIRST.txt" />
+    <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml" />
@@ -287,11 +372,18 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\AppResources.ru.resx" />
+    <EmbeddedResource Include="Resources\AppResources.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="AppBarUtils">
       <HintPath>..\packages\AppBarUtils.2.4\lib\windowsphone8\AppBarUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Controls.Toolkit">
+      <HintPath>..\packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

@@ -335,7 +335,9 @@ function showPointInfo(event) {
 
 function showPopup(lat, lon, text, point) {
     if (Tracks.point_info == null)
-        Tracks.point_info = L.popup();
+        Tracks.point_info = L.popup({
+            maxWidth: 240
+        });
     Tracks.popup = point;
     Tracks.point_info
 		.setLatLng([lat, lon])
