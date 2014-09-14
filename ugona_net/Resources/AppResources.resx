@@ -153,1578 +153,1580 @@
     <value>State</value>
   </data>
   <data name="app_name" xml:space="preserve">
-<value>Ugona.net+</value>
-</data>
-<data name="notification" xml:space="preserve">
-<value>Low card battery|Supply reserve|Supply regular|ERROR
+    <value>Ugona.net+</value>
+  </data>
+  <data name="notification" xml:space="preserve">
+    <value>Low card battery|Supply reserve|Supply regular|ERROR
         LAN-devices|Low reserve voltage|Roaming. Internet OFF
     </value>
-</data>
-<data name="alarm" xml:space="preserve">
-<value>Heavy shock|Trunk|Hood|Doors|Ignition Lock|MovTilt sensor|Rogue|Accessory zone|Ignition lock</value>
-</data>
-<data name="def" xml:space="preserve">
-<value>default</value>
-</data>
-<data name="phone_number_summary" xml:space="preserve">
-<value>Select car phone number</value>
-</data>
-<data name="phone_number" xml:space="preserve">
-<value>Phone number</value>
-</data>
-<data name="alarm_sound" xml:space="preserve">
-<value>Alarm sound</value>
-</data>
-<data name="notify_sound" xml:space="preserve">
-<value>Notify sound</value>
-</data>
-<data name="preferences" xml:space="preserve">
-<value>Preferences</value>
-</data>
-<data name="actions" xml:space="preserve">
-<value>Actions</value>
-</data>
-<data name="control" xml:space="preserve">
-<value>Control</value>
-</data>
-<data name="alarm_mode" xml:space="preserve">
-<value>Alarm notification</value>
-</data>
-<data name="sms_mode" xml:space="preserve">
-<value>Switch to SMS mode</value>
-</data>
-<data name="call_mode" xml:space="preserve">
-<value>Switch to call mode</value>
-</data>
-<data name="sms_mode_summary" xml:space="preserve">
-<value>Select alarm mode: SMS or call</value>
-</data>
-<data name="auth" xml:space="preserve">
-<value>Authorization</value>
-</data>
-<data name="auth_summary" xml:space="preserve">
-<value>Authorization on server</value>
-</data>
-<data name="sms_error" xml:space="preserve">
-<value>Can&amp;t send SMS</value>
-</data>
-<data name="sms_err" xml:space="preserve">
-<value>SMS send error</value>
-</data>
-<data name="save" xml:space="preserve">
-<value>Save</value>
-</data>
-<data name="bad_key" xml:space="preserve">
-<value>Enter valid API-key</value>
-</data>
-<data name="ccode" xml:space="preserve">
-<value>C-Code:</value>
-</data>
-<data name="ok" xml:space="preserve">
-<value>OK</value>
-</data>
-<data name="valet_on" xml:space="preserve">
-<value>VALET On</value>
-</data>
-<data name="valet_off" xml:space="preserve">
-<value>VALET Off</value>
-</data>
-<data name="valet_on_sum" xml:space="preserve">
-<value>Deactivate guard</value>
-</data>
-<data name="valet_off_sum" xml:space="preserve">
-<value>Activate guard</value>
-</data>
-<data name="internet_on" xml:space="preserve">
-<value>Internet On</value>
-</data>
-<data name="internet_off" xml:space="preserve">
-<value>Internet Off</value>
-</data>
-<data name="internet_on_sum" xml:space="preserve">
-<value>Enable internet on the device</value>
-</data>
-<data name="internet_off_sum" xml:space="preserve">
-<value>Disable internet on the device</value>
-</data>
-<data name="motor_on" xml:space="preserve">
-<value>Motor On</value>
-</data>
-<data name="motor_off" xml:space="preserve">
-<value>Motor Off</value>
-</data>
-<data name="motor_on_sum" xml:space="preserve">
-<value>Start engine</value>
-</data>
-<data name="motor_off_sum" xml:space="preserve">
-<value>Stop engine</value>
-</data>
-<data name="reset_sum" xml:space="preserve">
-<value>Reset device</value>
-</data>
-<data name="turbo_on" xml:space="preserve">
-<value>Turbo On</value>
-</data>
-<data name="turbo_off" xml:space="preserve">
-<value>Turbo Off</value>
-</data>
-<data name="turbo_on_sum" xml:space="preserve">
-<value>Start turbo mode</value>
-</data>
-<data name="turbo_off_sum" xml:space="preserve">
-<value>Cancel turbo mode</value>
-</data>
-<data name="empty_voltage" xml:space="preserve">
-<value>-- V</value>
-</data>
-<data name="empty_balance" xml:space="preserve">
-<value>---.--</value>
-</data>
-<data name="empty_temperature" xml:space="preserve">
-<value>-- °C</value>
-</data>
-<data name="alarm_test" xml:space="preserve">
-<value>Alarm test</value>
-</data>
-<data name="alarm_test_sum" xml:space="preserve">
-<value>Click for test alarm</value>
-</data>
-<data name="map" xml:space="preserve">
-<value>Map</value>
-</data>
-<data name="tracks" xml:space="preserve">
-<value>Tracks</value>
-</data>
-<data name="status" xml:space="preserve">
-<value>Mileage: %s km\nEngine time: %s\nAverage speed: %.2f
-        kmh\nMax speed: %d kmh
+  </data>
+  <data name="alarm" xml:space="preserve">
+    <value>Heavy shock|Trunk|Hood|Doors|Ignition Lock|MovTilt sensor|Rogue|Accessory zone|Ignition lock</value>
+  </data>
+  <data name="def" xml:space="preserve">
+    <value>default</value>
+  </data>
+  <data name="phone_number_summary" xml:space="preserve">
+    <value>Select car phone number</value>
+  </data>
+  <data name="phone_number" xml:space="preserve">
+    <value>Phone number</value>
+  </data>
+  <data name="alarm_sound" xml:space="preserve">
+    <value>Alarm sound</value>
+  </data>
+  <data name="notify_sound" xml:space="preserve">
+    <value>Notify sound</value>
+  </data>
+  <data name="preferences" xml:space="preserve">
+    <value>Preferences</value>
+  </data>
+  <data name="actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="control" xml:space="preserve">
+    <value>Control</value>
+  </data>
+  <data name="alarm_mode" xml:space="preserve">
+    <value>Alarm notification</value>
+  </data>
+  <data name="sms_mode" xml:space="preserve">
+    <value>Switch to SMS mode</value>
+  </data>
+  <data name="call_mode" xml:space="preserve">
+    <value>Switch to call mode</value>
+  </data>
+  <data name="sms_mode_summary" xml:space="preserve">
+    <value>Select alarm mode: SMS or call</value>
+  </data>
+  <data name="auth" xml:space="preserve">
+    <value>Authorization</value>
+  </data>
+  <data name="auth_summary" xml:space="preserve">
+    <value>Authorization on server</value>
+  </data>
+  <data name="sms_error" xml:space="preserve">
+    <value>Can&amp;t send SMS</value>
+  </data>
+  <data name="sms_err" xml:space="preserve">
+    <value>SMS send error</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="bad_key" xml:space="preserve">
+    <value>Enter valid API-key</value>
+  </data>
+  <data name="ccode" xml:space="preserve">
+    <value>C-Code:</value>
+  </data>
+  <data name="ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="valet_on" xml:space="preserve">
+    <value>VALET On</value>
+  </data>
+  <data name="valet_off" xml:space="preserve">
+    <value>VALET Off</value>
+  </data>
+  <data name="valet_on_sum" xml:space="preserve">
+    <value>Deactivate guard</value>
+  </data>
+  <data name="valet_off_sum" xml:space="preserve">
+    <value>Activate guard</value>
+  </data>
+  <data name="internet_on" xml:space="preserve">
+    <value>Internet On</value>
+  </data>
+  <data name="internet_off" xml:space="preserve">
+    <value>Internet Off</value>
+  </data>
+  <data name="internet_on_sum" xml:space="preserve">
+    <value>Enable internet on the device</value>
+  </data>
+  <data name="internet_off_sum" xml:space="preserve">
+    <value>Disable internet on the device</value>
+  </data>
+  <data name="motor_on" xml:space="preserve">
+    <value>Motor On</value>
+  </data>
+  <data name="motor_off" xml:space="preserve">
+    <value>Motor Off</value>
+  </data>
+  <data name="motor_on_sum" xml:space="preserve">
+    <value>Start engine</value>
+  </data>
+  <data name="motor_off_sum" xml:space="preserve">
+    <value>Stop engine</value>
+  </data>
+  <data name="reset_sum" xml:space="preserve">
+    <value>Reset device</value>
+  </data>
+  <data name="turbo_on" xml:space="preserve">
+    <value>Turbo On</value>
+  </data>
+  <data name="turbo_off" xml:space="preserve">
+    <value>Turbo Off</value>
+  </data>
+  <data name="turbo_on_sum" xml:space="preserve">
+    <value>Start turbo mode</value>
+  </data>
+  <data name="turbo_off_sum" xml:space="preserve">
+    <value>Cancel turbo mode</value>
+  </data>
+  <data name="empty_voltage" xml:space="preserve">
+    <value>-- V</value>
+  </data>
+  <data name="empty_balance" xml:space="preserve">
+    <value>---.--</value>
+  </data>
+  <data name="empty_temperature" xml:space="preserve">
+    <value>-- °C</value>
+  </data>
+  <data name="alarm_test" xml:space="preserve">
+    <value>Alarm test</value>
+  </data>
+  <data name="alarm_test_sum" xml:space="preserve">
+    <value>Click for test alarm</value>
+  </data>
+  <data name="map" xml:space="preserve">
+    <value>Map</value>
+  </data>
+  <data name="tracks" xml:space="preserve">
+    <value>Tracks</value>
+  </data>
+  <data name="status" xml:space="preserve">
+    <value>Mileage: {0:n2} km
+Engine time: {1}
+Average speed: {2:n2} kmh
+Max speed: {3} kmh
     </value>
-</data>
-<data name="m_format" xml:space="preserve">
-<value>%d min</value>
-</data>
-<data name="hm_format" xml:space="preserve">
-<value>%d h %02d min</value>
-</data>
-<data name="day" xml:space="preserve">
-<value>Select a day</value>
-</data>
-<data name="no_data" xml:space="preserve">
-<value>No data</value>
-</data>
-<data name="mileage" xml:space="preserve">
-<value>%.2f km</value>
-</data>
-<data name="short_status" xml:space="preserve">
-<value>Engine time: %s\nAverage speed: %.2f kmh\nMax
-        speed: %d kmh\n
-    </value>
-</data>
-<data name="saved" xml:space="preserve">
-<value>Track saved</value>
-</data>
-<data name="loading" xml:space="preserve">
-<value>Loading data...</value>
-</data>
-<data name="error_load" xml:space="preserve">
-<value>Data loading error</value>
-</data>
-<data name="about" xml:space="preserve">
-<value>About</value>
-</data>
-<data name="version" xml:space="preserve">
-<value>Version:</value>
-</data>
-<data name="share" xml:space="preserve">
-<value>Share</value>
-</data>
-<data name="invalid_key" xml:space="preserve">
-<value>Invalid API key</value>
-</data>
-<data name="auth_error" xml:space="preserve">
-<value>Check authorization error</value>
-</data>
-<data name="check_auth" xml:space="preserve">
-<value>Check authorization</value>
-</data>
-<data name="data_error" xml:space="preserve">
-<value>Data update error</value>
-</data>
-<data name="block" xml:space="preserve">
-<value>Remote blocking</value>
-</data>
-<data name="block_sum" xml:space="preserve">
-<value>Remote blocking of the car</value>
-</data>
-<data name="block_msg" xml:space="preserve">
-<value>For cancel blocking switch ON and OFF valet mode</value>
-</data>
-<data name="autostart" xml:space="preserve">
-<value>Autostart</value>
-</data>
-<data name="autostart_summary" xml:space="preserve">
-<value>Show autoastart actions</value>
-</data>
-<data name="rele" xml:space="preserve">
-<value>Prestarting heater</value>
-</data>
-<data name="password_summary" xml:space="preserve">
-<value>Set password for actions</value>
-</data>
-<data name="password_old" xml:space="preserve">
-<value>Old password:</value>
-</data>
-<data name="password_text" xml:space="preserve">
-<value>Password:</value>
-</data>
-<data name="password_confirm" xml:space="preserve">
-<value>Confirm:</value>
-</data>
-<data name="password_set" xml:space="preserve">
-<value>Set password</value>
-</data>
-<data name="invalid_password" xml:space="preserve">
-<value>Invalid password</value>
-</data>
-<data name="invalid_confirm" xml:space="preserve">
-<value>Invalid confirm</value>
-</data>
-<data name="input_password" xml:space="preserve">
-<value>Input password</value>
-</data>
-<data name="map_type" xml:space="preserve">
-<value>Map type</value>
-</data>
-<data name="kmh" xml:space="preserve">
-<value>kmh</value>
-</data>
-<data name="close" xml:space="preserve">
-<value>Close</value>
-</data>
-<data name="traffic" xml:space="preserve">
-<value>Show speed</value>
-</data>
-<data name="traffic_layer" xml:space="preserve">
-<value>Show traffic</value>
-</data>
-<data name="traffic_summary" xml:space="preserve">
-<value>Show speed as color track</value>
-</data>
-<data name="alarms" xml:space="preserve">
-<value>Alarms</value>
-</data>
-<data name="contacts" xml:space="preserve">
-<value>Contacts</value>
-</data>
-<data name="system" xml:space="preserve">
-<value>System</value>
-</data>
-<data name="event" xml:space="preserve">
-<value>Event</value>
-</data>
-<data name="guard_on" xml:space="preserve">
-<value>Guard on</value>
-</data>
-<data name="guard_off" xml:space="preserve">
-<value>Guard off</value>
-</data>
-<data name="can_on" xml:space="preserve">
-<value>Guard on via CAN</value>
-</data>
-<data name="can_off" xml:space="preserve">
-<value>Guard off via CAN</value>
-</data>
-<data name="end_move" xml:space="preserve">
-<value>End route by move sensor</value>
-</data>
-<data name="lock_off1" xml:space="preserve">
-<value>Card 1 off</value>
-</data>
-<data name="lock_off2" xml:space="preserve">
-<value>Card 2 off</value>
-</data>
-<data name="lock_off3" xml:space="preserve">
-<value>Card 3 off</value>
-</data>
-<data name="lock_off4" xml:space="preserve">
-<value>Card 4 off</value>
-</data>
-<data name="lock_off5" xml:space="preserve">
-<value>Card 5 off</value>
-</data>
-<data name="lock_on1" xml:space="preserve">
-<value>Card 1 on</value>
-</data>
-<data name="lock_on2" xml:space="preserve">
-<value>Card 2 on</value>
-</data>
-<data name="lock_on3" xml:space="preserve">
-<value>Card 3 on</value>
-</data>
-<data name="lock_on4" xml:space="preserve">
-<value>Card 4 on</value>
-</data>
-<data name="lock_on5" xml:space="preserve">
-<value>Card 5 on</value>
-</data>
-<data name="user_call" xml:space="preserve">
-<value>Request via call</value>
-</data>
-<data name="user_sms" xml:space="preserve">
-<value>Request via SMS</value>
-</data>
-<data name="motor_start" xml:space="preserve">
-<value>Engine start request</value>
-</data>
-<data name="motor_start_azd" xml:space="preserve">
-<value>Engine start request AZD</value>
-</data>
-<data name="request_photo" xml:space="preserve">
-<value>Photo request</value>
-</data>
-<data name="trunk_open" xml:space="preserve">
-<value>Trunk open</value>
-</data>
-<data name="hood_open" xml:space="preserve">
-<value>Hood open</value>
-</data>
-<data name="door_open" xml:space="preserve">
-<value>Door open</value>
-</data>
-<data name="ignition_on" xml:space="preserve">
-<value>Ignition ON</value>
-</data>
-<data name="access_on" xml:space="preserve">
-<value>Accessories ON</value>
-</data>
-<data name="input1_on" xml:space="preserve">
-<value>Input 1 ON</value>
-</data>
-<data name="input2_on" xml:space="preserve">
-<value>Input 2 ON</value>
-</data>
-<data name="input3_on" xml:space="preserve">
-<value>Input 3 ON</value>
-</data>
-<data name="input4_on" xml:space="preserve">
-<value>Input 4 ON</value>
-</data>
-<data name="input5_on" xml:space="preserve">
-<value>Input 5 ON</value>
-</data>
-<data name="input6_on" xml:space="preserve">
-<value>Input 6 ON</value>
-</data>
-<data name="trunk_close" xml:space="preserve">
-<value>Trunk close</value>
-</data>
-<data name="hood_close" xml:space="preserve">
-<value>Hood close</value>
-</data>
-<data name="door_close" xml:space="preserve">
-<value>Door close</value>
-</data>
-<data name="ignition_off" xml:space="preserve">
-<value>Ignition OFF</value>
-</data>
-<data name="access_off" xml:space="preserve">
-<value>Accessories OFF</value>
-</data>
-<data name="input1_off" xml:space="preserve">
-<value>Input 1 OFF</value>
-</data>
-<data name="input2_off" xml:space="preserve">
-<value>Input 2 OFF</value>
-</data>
-<data name="input3_off" xml:space="preserve">
-<value>Input 3 OFF</value>
-</data>
-<data name="input4_off" xml:space="preserve">
-<value>Input 4 OFF</value>
-</data>
-<data name="input5_off" xml:space="preserve">
-<value>Input 5 OFF</value>
-</data>
-<data name="input6_off" xml:space="preserve">
-<value>Input 6 OFF</value>
-</data>
-<data name="gprs_on" xml:space="preserve">
-<value>GPRS ON</value>
-</data>
-<data name="gprs_off" xml:space="preserve">
-<value>GPRS OFF</value>
-</data>
-<data name="reset_modem" xml:space="preserve">
-<value>Reset modem</value>
-</data>
-<data name="reset" xml:space="preserve">
-<value>Reset</value>
-</data>
-<data name="trace_start" xml:space="preserve">
-<value>Trace start</value>
-</data>
-<data name="trace_stop" xml:space="preserve">
-<value>Trace finish</value>
-</data>
-<data name="gsm_fail" xml:space="preserve">
-<value>GSM fail</value>
-</data>
-<data name="gsm_recover" xml:space="preserve">
-<value>GSM recovery</value>
-</data>
-<data name="gps_fail" xml:space="preserve">
-<value>GPS fail</value>
-</data>
-<data name="gps_recover" xml:space="preserve">
-<value>GPS recovery</value>
-</data>
-<data name="till_start" xml:space="preserve">
-<value>Movement start</value>
-</data>
-<data name="net_error" xml:space="preserve">
-<value>Network error</value>
-</data>
-<data name="light_shock" xml:space="preserve">
-<value>Light shock</value>
-</data>
-<data name="ext_zone" xml:space="preserve">
-<value>External zone MKW</value>
-</data>
-<data name="heavy_shock" xml:space="preserve">
-<value>Heavy shock</value>
-</data>
-<data name="inner_zone" xml:space="preserve">
-<value>Inner zone MKW</value>
-</data>
-<data name="sms_request" xml:space="preserve">
-<value>SMS request</value>
-</data>
-<data name="tilt" xml:space="preserve">
-<value>Tilt</value>
-</data>
-<data name="main_power_on" xml:space="preserve">
-<value>Main power ON</value>
-</data>
-<data name="main_power_off" xml:space="preserve">
-<value>Main power OFF</value>
-</data>
-<data name="reserve_power_on" xml:space="preserve">
-<value>Reserve power ON</value>
-</data>
-<data name="reserve_power_off" xml:space="preserve">
-<value>Reserve power OFF</value>
-</data>
-<data name="rogue" xml:space="preserve">
-<value>Rogue</value>
-</data>
-<data name="rogue_off" xml:space="preserve">
-<value>Cancel rogue</value>
-</data>
-<data name="alarm_boot" xml:space="preserve">
-<value>Alarm Trunk</value>
-</data>
-<data name="alarm_hood" xml:space="preserve">
-<value>Alarm hood</value>
-</data>
-<data name="alarm_door" xml:space="preserve">
-<value>Alarm door</value>
-</data>
-<data name="ignition_lock" xml:space="preserve">
-<value>Alarm ignition</value>
-</data>
-<data name="alarm_accessories" xml:space="preserve">
-<value>Alarm accessories zone</value>
-</data>
-<data name="alarm_input1" xml:space="preserve">
-<value>Alarm input 1</value>
-</data>
-<data name="alarm_input2" xml:space="preserve">
-<value>Alarm input 2</value>
-</data>
-<data name="alarm_input3" xml:space="preserve">
-<value>Alarm input 3</value>
-</data>
-<data name="alarm_input4" xml:space="preserve">
-<value>Alarm input 4</value>
-</data>
-<data name="sos" xml:space="preserve">
-<value>SOS</value>
-</data>
-<data name="error_read" xml:space="preserve">
-<value>Error read memory</value>
-</data>
-<data name="incomming_sms" xml:space="preserve">
-<value>Incomming SMS</value>
-</data>
-<data name="no_events" xml:space="preserve">
-<value>No events</value>
-</data>
-<data name="unknown" xml:space="preserve">
-<value>unknown</value>
-</data>
-<data name="cars" xml:space="preserve">
-<value>Cars</value>
-</data>
-<data name="new_car" xml:space="preserve">
-<value>New car</value>
-</data>
-<data name="name" xml:space="preserve">
-<value>Name</value>
-</data>
-<data name="car" xml:space="preserve">
-<value>Car</value>
-</data>
-<data name="add" xml:space="preserve">
-<value>Add</value>
-</data>
-<data name="cancel" xml:space="preserve">
-<value>Cancel</value>
-</data>
-<data name="select_car" xml:space="preserve">
-<value>Select car</value>
-</data>
-<data name="speed" xml:space="preserve">
-<value>Speed: %s km/h</value>
-</data>
-<data name="temp_correct" xml:space="preserve">
-<value>Temperature correction</value>
-</data>
-<data name="voice" xml:space="preserve">
-<value>Download voice</value>
-</data>
-<data name="download_events" xml:space="preserve">
-<value>Download events table</value>
-</data>
-<data name="low_battery" xml:space="preserve">
-<value>Low card battery</value>
-</data>
-<data name="download_settings" xml:space="preserve">
-<value>Download settings</value>
-</data>
-<data name="lan_change" xml:space="preserve">
-<value>LAN devices changed</value>
-</data>
-<data name="command" xml:space="preserve">
-<value>Comannd from buttons</value>
-</data>
-<data name="brake" xml:space="preserve">
-<value>Brake</value>
-</data>
-<data name="guard2_on" xml:space="preserve">
-<value>Guard mode 2 on</value>
-</data>
-<data name="guard2_off" xml:space="preserve">
-<value>Guard mode 2 off</value>
-</data>
-<data name="valet_on_msg" xml:space="preserve">
-<value>Turn on VALET require enter C-Code</value>
-</data>
-<data name="valet_off_msg" xml:space="preserve">
-<value>Turn off VALET require enter C-Code</value>
-</data>
-<data name="valet_on_msg_sms" xml:space="preserve">
-<value>Send SMS for turn on VALET require enter C-Code</value>
-</data>
-<data name="valet_off_msg_sms" xml:space="preserve">
-<value>Send SMS for turn off VALET require enter C-Code</value>
-</data>
-<data name="bad_ccode" xml:space="preserve">
-<value>Invalid C-Code</value>
-</data>
-<data name="pswd" xml:space="preserve">
-<value>Password:</value>
-</data>
-<data name="motor_start_error" xml:space="preserve">
-<value>Engine start failed</value>
-</data>
-<data name="motor_stop" xml:space="preserve">
-<value>Engine stopped</value>
-</data>
-<data name="zone_in" xml:space="preserve">
-<value>Zone in</value>
-</data>
-<data name="zone_out" xml:space="preserve">
-<value>Zone out</value>
-</data>
-<data name="position" xml:space="preserve">
-<value>My position</value>
-</data>
-<data name="settings" xml:space="preserve">
-<value>Settings</value>
-</data>
-<data name="no_gps_title" xml:space="preserve">
-<value>GPS disabled</value>
-</data>
-<data name="no_gps_message" xml:space="preserve">
-<value>GPS disabled is system.\nFor detect location you must turn on it in Settings</value>
-</data>
-<data name="net_gps_message" xml:space="preserve">
-<value>Your location detected by network.\nFor more accuracy you can turn on GPS is Settings</value>
-</data>
-<data name="no_location" xml:space="preserve">
-<value>Unknown localtion</value>
-</data>
-<data name="shock_sens" xml:space="preserve">
-<value>Shock sensitivity</value>
-</data>
-<data name="shock_sens_msg" xml:space="preserve">
-<value>Setup shock sensitivity level. Wroks only for SuperAgent</value>
-</data>
-<data name="google" xml:space="preserve">
-<value>Google</value>
-</data>
-<data name="osm" xml:space="preserve">
-<value>OSM</value>
-</data>
-<data name="show_balance" xml:space="preserve">
-<value>Show balance</value>
-</data>
-<data name="safe_mode" xml:space="preserve">
-<value>Safe mode</value>
-</data>
-<data name="ugona_net" xml:space="preserve">
-<value>UGONA.NET</value>
-</data>
-<data name="no_phone" xml:space="preserve">
-<value>No phone number for contact</value>
-</data>
-<data name="select_phone" xml:space="preserve">
-<value>Select phone</value>
-</data>
-<data name="phone_home" xml:space="preserve">
-<value>home</value>
-</data>
-<data name="phone_work" xml:space="preserve">
-<value>work</value>
-</data>
-<data name="phone_mobile" xml:space="preserve">
-<value>mobile</value>
-</data>
-<data name="pgsm_version" xml:space="preserve">
-<value>Device software version</value>
-</data>
-<data name="copyright" xml:space="preserve">
-<value>© 2013-2014 Ugona.net, info@ugona.net</value>
-</data>
-<data name="delete" xml:space="preserve">
-<value>Delete</value>
-</data>
-<data name="status_title" xml:space="preserve">
-<value>Status</value>
-</data>
-<data name="status_sum" xml:space="preserve">
-<value>Request car state</value>
-</data>
-<data name="guard_state" xml:space="preserve">
-<value>Guard ON</value>
-</data>
-<data name="gps_state" xml:space="preserve">
-<value>GPS position founs</value>
-</data>
-<data name="gprs_none_state" xml:space="preserve">
-<value>No GPRS connection</value>
-</data>
-<data name="gprs_home_state" xml:space="preserve">
-<value>GPRS connected</value>
-</data>
-<data name="gprs_roaming_state" xml:space="preserve">
-<value>GPRS connected (roaming)</value>
-</data>
-<data name="phones" xml:space="preserve">
-<value>Control phones</value>
-</data>
-<data name="phones_sum" xml:space="preserve">
-<value>Manage control phones</value>
-</data>
-<data name="add_phone" xml:space="preserve">
-<value>Add phone</value>
-</data>
-<data name="erase_phones" xml:space="preserve">
-<value>You must reinitialize main phone for clear phones list</value>
-</data>
-<data name="clear" xml:space="preserve">
-<value>Clear</value>
-</data>
-<data name="timer" xml:space="preserve">
-<value>Timer</value>
-</data>
-<data name="timer_sum" xml:space="preserve">
-<value>Car connection period</value>
-</data>
-<data name="timer_on" xml:space="preserve">
-<value>Timer ON</value>
-</data>
-<data name="minutes" xml:space="preserve">
-<value>min</value>
-</data>
-<data name="init_phone" xml:space="preserve">
-<value>Main phone initialization</value>
-</data>
-<data name="main_phone" xml:space="preserve">
-<value>Main phone</value>
-</data>
-<data name="invalid_ccode" xml:space="preserve">
-<value>Invalid C-code</value>
-</data>
-<data name="supply_regular" xml:space="preserve">
-<value>Supply regular</value>
-</data>
-<data name="service" xml:space="preserve">
-<value>FEDERAL SERVICE</value>
-</data>
-<data name="application" xml:space="preserve">
-<value>Application UGONA.NET+ works with MS-PGSM devices</value>
-</data>
-<data name="service_btn" xml:space="preserve">
-<value>Service Ugona.net</value>
-</data>
-<data name="forum_btn" xml:space="preserve">
-<value>Support forum</value>
-</data>
-<data name="balance" xml:space="preserve">
-<value>Balance</value>
-</data>
-<data name="balance_request" xml:space="preserve">
-<value>Balance request</value>
-</data>
-<data name="valet_warning" xml:space="preserve">
-<value>VALET mode ON</value>
-</data>
-<data name="net_warning" xml:space="preserve">
-<value>No data connection</value>
-</data>
-<data name="passwd" xml:space="preserve">
-<value>Password:</value>
-</data>
-<data name="show_photo" xml:space="preserve">
-<value>Show photos</value>
-</data>
-<data name="photo" xml:space="preserve">
-<value>Photo</value>
-</data>
-<data name="no_photos" xml:space="preserve">
-<value>No photos</value>
-</data>
-<data name="sms_mode_msg" xml:space="preserve">
-<value>Application will be processed SMS messages from device and show alarm window</value>
-</data>
-<data name="photo_error" xml:space="preserve">
-<value>Loading image error</value>
-</data>
-<data name="motor_on_ok" xml:space="preserve">
-<value>Engine started</value>
-</data>
-<data name="motor_off_ok" xml:space="preserve">
-<value>Engine stopped</value>
-</data>
-<data name="valet_on_ok" xml:space="preserve">
-<value>VALET mode is ON</value>
-</data>
-<data name="valet_off_ok" xml:space="preserve">
-<value>VALET mode is OFF</value>
-</data>
-<data name="background" xml:space="preserve">
-<value>Background</value>
-</data>
-<data name="rotate" xml:space="preserve">
-<value>Rotate</value>
-</data>
-<data name="rele1_action" xml:space="preserve">
-<value>Send impulse on RELE1</value>
-</data>
-<data name="rele2_action" xml:space="preserve">
-<value>Send impules on RELE2</value>
-</data>
-<data name="gsm_register_fail" xml:space="preserve">
-<value>GSM register failed</value>
-</data>
-<data name="widget_config" xml:space="preserve">
-<value>Widget configuration</value>
-</data>
-<data name="balance_notification" xml:space="preserve">
-<value>Balance notification</value>
-</data>
-<data name="low_balance" xml:space="preserve">
-<value>Low balance</value>
-</data>
-<data name="call" xml:space="preserve">
-<value>Call to car</value>
-</data>
-<data name="timer_event" xml:space="preserve">
-<value>Timer connection</value>
-</data>
-<data name="find" xml:space="preserve">
-<value>Find mode</value>
-</data>
-<data name="find_sum" xml:space="preserve">
-<value>Send coordinates at 3 hours every 10 minutes</value>
-</data>
-<data name="map_req" xml:space="preserve">
-<value>Location request</value>
-</data>
-<data name="map_sum" xml:space="preserve">
-<value>Once location request</value>
-</data>
-<data name="mode_a" xml:space="preserve">
-<value>Mode A</value>
-</data>
-<data name="mode_a_sum" xml:space="preserve">
-<value>Send GSM coordinates every 6 hours</value>
-</data>
-<data name="mode_b" xml:space="preserve">
-<value>Mode B</value>
-</data>
-<data name="mode_b_sum" xml:space="preserve">
-<value>Send GSM coordinates every 12 hours</value>
-</data>
-<data name="mode_c" xml:space="preserve">
-<value>Mode C</value>
-</data>
-<data name="mode_c_sum" xml:space="preserve">
-<value>Send GPS coordinates every 24 hours</value>
-</data>
-<data name="mode_d" xml:space="preserve">
-<value>Mode D</value>
-</data>
-<data name="mode_d_sum" xml:space="preserve">
-<value>Wait command every 12 hours</value>
-</data>
-<data name="commands" xml:space="preserve">
-<value>Control commands</value>
-</data>
-<data name="commands_sum" xml:space="preserve">
-<value>Select commands on main screen</value>
-</data>
-<data name="valet_cmd" xml:space="preserve">
-<value>VALET</value>
-</data>
-<data name="work_time" xml:space="preserve">
-<value>Work time</value>
-</data>
-<data name="rele_sum" xml:space="preserve">
-<value>Prestarting heater settings</value>
-</data>
-<data name="connection" xml:space="preserve">
-<value>Connection:</value>
-</data>
-<data name="show_map" xml:space="preserve">
-<value>Show map</value>
-</data>
-<data name="data_transfer" xml:space="preserve">
-<value>Data transfer</value>
-</data>
-<data name="timeout" xml:space="preserve">
-<value>Long time no events from pointer</value>
-</data>
-<data name="pointer" xml:space="preserve">
-<value>Device is pointer</value>
-</data>
-<data name="pointer_msg" xml:space="preserve">
-<value>Connect pointer with car?</value>
-</data>
-<data name="pointer_support" xml:space="preserve">
-<value>Pointer support</value>
-</data>
-<data name="pointer_support_msg" xml:space="preserve">
-<value>Application is supported pointers.\nYou can add pointer now or do it later</value>
-</data>
-<data name="cmd_msg" xml:space="preserve">
-<value>Only 3 buttons can show on main screen</value>
-</data>
-<data name="temp_change" xml:space="preserve">
-<value>Temperature change</value>
-</data>
-<data name="brk_data" xml:space="preserve">
-<value>BRK data</value>
-</data>
-<data name="show_name" xml:space="preserve">
-<value>Show name</value>
-</data>
-<data name="impulse" xml:space="preserve">
-<value>Control by impulse</value>
-</data>
-<data name="brake_on" xml:space="preserve">
-<value>Hand brake on</value>
-</data>
-<data name="brake_off" xml:space="preserve">
-<value>Hand brake off</value>
-</data>
-<data name="ps_guard" xml:space="preserve">
-<value>Guard with passengers is ON</value>
-</data>
-<data name="time_warning" xml:space="preserve">
-<value>Long time no events from car</value>
-</data>
-<data name="gsm_new" xml:space="preserve">
-<value>GSM sector changed</value>
-</data>
-<data name="trace_point" xml:space="preserve">
-<value>Trace point</value>
-</data>
-<data name="nondigits" xml:space="preserve">
-<value>Code is non digits</value>
-</data>
-<data name="shock_sensor" xml:space="preserve">
-<value>Shock sensor</value>
-</data>
-<data name="motor_time" xml:space="preserve">
-<value>after $1 min</value>
-</data>
-<data name="guard_notify" xml:space="preserve">
-<value>Guard notify</value>
-</data>
-<data name="pointer_voltage" xml:space="preserve">
-<value>Low pointer voltage</value>
-</data>
-<data name="widget_rows" xml:space="preserve">
-<value>Show values:</value>
-</data>
-<data name="auto" xml:space="preserve">
-<value>auto</value>
-</data>
-<data name="send_sms" xml:space="preserve">
-<value>Send SMS</value>
-</data>
-<data name="send_sms_message" xml:space="preserve">
-<value>Network is not available.\nSend command as SMS?</value>
-</data>
-<data name="send_command" xml:space="preserve">
-<value>Send command</value>
-</data>
-<data name="send_sms_on_fail" xml:space="preserve">
-<value>Send command fail.\nSend command as SMS?</value>
-</data>
-<data name="wait_msg" xml:space="preserve">
-<value>Command store to queue and will be send in $1 мин.</value>
-</data>
-<data name="you_can" xml:space="preserve">
-<value>You can:</value>
-</data>
-<data name="call_car" xml:space="preserve">
-<value>Call car</value>
-</data>
-<data name="send_via_sms" xml:space="preserve">
-<value>Send command via SMS</value>
-</data>
-<data name="or_wait" xml:space="preserve">
-<value>or wait</value>
-</data>
-<data name="motor_on_ccode" xml:space="preserve">
-<value>Start engine require C-Code</value>
-</data>
-<data name="motor_off_ccode" xml:space="preserve">
-<value>Stop engine require C-Code</value>
-</data>
-<data name="rele_ccode" xml:space="preserve">
-<value>Require C-Code</value>
-</data>
-<data name="control_method" xml:space="preserve">
-<value>Control method</value>
-</data>
-<data name="number" xml:space="preserve">
-<value>C-code contains letters</value>
-</data>
-<data name="stat" xml:space="preserve">
-<value>Statistics</value>
-</data>
-<data name="sms_sent" xml:space="preserve">
-<value>SMS sent</value>
-</data>
-<data name="device_settings" xml:space="preserve">
-<value>Device settings</value>
-</data>
-<data name="notifications" xml:space="preserve">
-<value>Notifications</value>
-</data>
-<data name="guard_sound" xml:space="preserve">
-<value>Sound on guard ON/OFF</value>
-</data>
-<data name="tilt_low" xml:space="preserve">
-<value>Low sensitivy of tilt sensor</value>
-</data>
-<data name="guard_partial" xml:space="preserve">
-<value>Permanent partial guard</value>
-</data>
-<data name="comfort_enable" xml:space="preserve">
-<value>Enable comfort function</value>
-</data>
-<data name="tilt_level" xml:space="preserve">
-<value>Tilt sensor level</value>
-</data>
-<data name="unit" xml:space="preserve">
-<value>units</value>
-</data>
-<data name="guard_time" xml:space="preserve">
-<value>Set time to guard on lost label</value>
-</data>
-<data name="sec" xml:space="preserve">
-<value>sec.</value>
-</data>
-<data name="robbery_time" xml:space="preserve">
-<value>Delay for start robbery functions</value>
-</data>
-<data name="heater_start" xml:space="preserve">
-<value>Start engine after prestarting heater</value>
-</data>
-<data name="no_sound" xml:space="preserve">
-<value>Guard without sounds</value>
-</data>
-<data name="heater_time" xml:space="preserve">
-<value>Prestarting heater time</value>
-</data>
-<data name="close_time" xml:space="preserve">
-<value>Time for close car after ignition off</value>
-</data>
-<data name="voltage_limit" xml:space="preserve">
-<value>Voltage limit for autostart</value>
-</data>
-<data name="v" xml:space="preserve">
-<value>V</value>
-</data>
-<data name="no_start" xml:space="preserve">
-<value>no start</value>
-</data>
-<data name="setup" xml:space="preserve">
-<value>Setup</value>
-</data>
-<data name="setup_msg" xml:space="preserve">
-<value>Loading settings to device</value>
-</data>
-<data name="start_time" xml:space="preserve">
-<value>Engine autostart time</value>
-</data>
-<data name="soft_start" xml:space="preserve">
-<value>Soft start</value>
-</data>
-<data name="rele1" xml:space="preserve">
-<value>RELE 1</value>
-</data>
-<data name="rele1i" xml:space="preserve">
-<value>RELE 1 impulse</value>
-</data>
-<data name="rele2" xml:space="preserve">
-<value>RELE 2</value>
-</data>
-<data name="rele2i" xml:space="preserve">
-<value>RELE 2 impulse</value>
-</data>
-<data name="rele1_on" xml:space="preserve">
-<value>RELE 1 ON</value>
-</data>
-<data name="rele1_off" xml:space="preserve">
-<value>RELE 1 OFF</value>
-</data>
-<data name="rele2_on" xml:space="preserve">
-<value>RELE 2 ON</value>
-</data>
-<data name="rele2_off" xml:space="preserve">
-<value>RELE 2 OFF</value>
-</data>
-<data name="error" xml:space="preserve">
-<value>Error</value>
-</data>
-<data name="no_network" xml:space="preserve">
-<value>Netwrok is not available</value>
-</data>
-<data name="retry" xml:space="preserve">
-<value>Retry</value>
-</data>
-<data name="phone" xml:space="preserve">
-<value>Phone:</value>
-</data>
-<data name="changed" xml:space="preserve">
-<value>Settings changed</value>
-</data>
-<data name="changed_msg" xml:space="preserve">
-<value>You have unsaved settings.\nYou are sure leave settings?</value>
-</data>
-<data name="exit" xml:space="preserve">
-<value>Exit</value>
-</data>
-<data name="notify_msg" xml:space="preserve">
-<value>Notifications come with some delay depend on device timer settings and phone data connection</value>
-</data>
-<data name="command_name" xml:space="preserve">
-<value>Command name:</value>
-</data>
-<data name="device_phone_number" xml:space="preserve">
-<value>Device phone number</value>
-</data>
-<data name="sound_off" xml:space="preserve">
-<value>Silent guard mode</value>
-</data>
-<data name="sound_on" xml:space="preserve">
-<value>Silent guard mode OFF</value>
-</data>
-<data name="silent_mode" xml:space="preserve">
-<value>Silent guard mode</value>
-</data>
-<data name="km" xml:space="preserve">
-<value>km</value>
-</data>
-<data name="alarm_shock" xml:space="preserve">
-<value>Alarm on sensors</value>
-</data>
-<data name="inf_sms" xml:space="preserve">
-<value>Send SMS when engine started</value>
-</data>
-<data name="inf_sms_msg" xml:space="preserve">
-<value>undefined</value>
-</data>
-<data name="voltage_shift" xml:space="preserve">
-<value>Voltage correction</value>
-</data>
-<data name="zones" xml:space="preserve">
-<value>Zones</value>
-</data>
-<data name="sms_notify" xml:space="preserve">
-<value>Notify as SMS</value>
-</data>
-<data name="add_zone" xml:space="preserve">
-<value>Add zone</value>
-</data>
-<data name="zone_name" xml:space="preserve">
-<value>Zone name is empty</value>
-</data>
-<data name="zone_name_msg" xml:space="preserve">
-<value>Input name of zone</value>
-</data>
-<data name="zone_remove" xml:space="preserve">
-<value>Remove zone</value>
-</data>
-<data name="device_pswd" xml:space="preserve">
-<value>Device require password on SMS</value>
-</data>
-<data name="input_device_pswd" xml:space="preserve">
-<value>Input device password</value>
-</data>
-<data name="attention" xml:space="preserve">
-<value>Attention</value>
-</data>
-<data name="zone_msg" xml:space="preserve">
-<value>You should receive notification about zones with some delays if you turn off SMS options</value>
-</data>
-<data name="zone_bad_char" xml:space="preserve">
-<value>Zone name can contains only latin chars or digits</value>
-</data>
-<data name="schedule" xml:space="preserve">
-<value>Start schedule</value>
-</data>
-<data name="add_timer" xml:space="preserve">
-<value>Add timer</value>
-</data>
-<data name="init" xml:space="preserve">
-<value>Initialization</value>
-</data>
-<data name="zone_my" xml:space="preserve">
-<value>No notify if car around from me</value>
-</data>
-<data name="timer_set" xml:space="preserve">
-<value>Таймер</value>
-</data>
-<data name="timer_empty" xml:space="preserve">
-<value>Select any weekdays</value>
-</data>
-<data name="timer_delete" xml:space="preserve">
-<value>Delete timer?</value>
-</data>
-<data name="search" xml:space="preserve">
-<value>Search car</value>
-</data>
-<data name="temp_sensors" xml:space="preserve">
-<value>Temperature sensors</value>
-</data>
-<data name="sensor" xml:space="preserve">
-<value>Sensor</value>
-</data>
-<data name="door_time" xml:space="preserve">
-<value>Delay alarm for door and trunk zone</value>
-</data>
-<data name="zone_in_sound" xml:space="preserve">
-<value>Zone IN sound</value>
-</data>
-<data name="zone_out_sound" xml:space="preserve">
-<value>Zone OUT sound</value>
-</data>
-<data name="use_gps" xml:space="preserve">
-<value>Use GPS</value>
-</data>
-<data name="voltage" xml:space="preserve">
-<value>Voltage</value>
-</data>
-<data name="reserved" xml:space="preserve">
-<value>Reserved voltage</value>
-</data>
-<data name="temperature" xml:space="preserve">
-<value>Temperature</value>
-</data>
-<data name="charts" xml:space="preserve">
-<value>Charts</value>
-</data>
-<data name="heater_on" xml:space="preserve">
-<value>Heater without salon</value>
-</data>
-<data name="heater_air" xml:space="preserve">
-<value>Heater with salon</value>
-</data>
-<data name="heater_off" xml:space="preserve">
-<value>Heater off</value>
-</data>
-<data name="air" xml:space="preserve">
-<value>Salon fan</value>
-</data>
-<data name="thermocode" xml:space="preserve">
-<value>Thermocode</value>
-</data>
-<data name="card_message" xml:space="preserve">
-<value>Security card in car</value>
-</data>
-<data name="widgets" xml:space="preserve">
-<value>Widgets</value>
-</data>
-<data name="lock_widget" xml:space="preserve">
-<value>Lockscreen widget</value>
-</data>
-<data name="no_widgets" xml:space="preserve">
-<value>No widgets</value>
-</data>
-<data name="add_lock_widget" xml:space="preserve">
-<value>You can add widget on lockscreen</value>
-</data>
-<data name="recalc_stat" xml:space="preserve">
-<value>Recalc statistic</value>
-</data>
-<data name="recalc_message" xml:space="preserve">
-<value>Process of statics require some minutes</value>
-</data>
-<data name="e0101" xml:space="preserve">
-<value>Guard on charm</value>
-</data>
-<data name="e0102" xml:space="preserve">
-<value>Gaurd on auto</value>
-</data>
-<data name="e0103" xml:space="preserve">
-<value>Guard on VALET button</value>
-</data>
-<data name="e0104" xml:space="preserve">
-<value>Guard on by Hands-Free</value>
-</data>
-<data name="e0105" xml:space="preserve">
-<value>Guard on with phone</value>
-</data>
-<data name="e0106" xml:space="preserve">
-<value>Guard on by internet</value>
-</data>
-<data name="e0107" xml:space="preserve">
-<value>Guard on by slave</value>
-</data>
-<data name="e0201" xml:space="preserve">
-<value>Guard off charm</value>
-</data>
-<data name="e0202" xml:space="preserve">
-<value>Guard off from phone</value>
-</data>
-<data name="e0203" xml:space="preserve">
-<value>Guard off from internet</value>
-</data>
-<data name="e0204" xml:space="preserve">
-<value>Guard off by Hands-Free</value>
-</data>
-<data name="e0205" xml:space="preserve">
-<value>Guard off by PIN</value>
-</data>
-<data name="e0206" xml:space="preserve">
-<value>Guard off by slave</value>
-</data>
-<data name="e0301" xml:space="preserve">
-<value>Alarm by critical power</value>
-</data>
-<data name="e0302" xml:space="preserve">
-<value>Alarm secondary zone sensor</value>
-</data>
-<data name="e0303" xml:space="preserve">
-<value>Alarm primary zone sensor</value>
-</data>
-<data name="e0304" xml:space="preserve">
-<value>Alarm secondary zone shock sensor</value>
-</data>
-<data name="e0305" xml:space="preserve">
-<value>Alarm primary zone shock sensor</value>
-</data>
-<data name="e0306" xml:space="preserve">
-<value>Alarm on brake</value>
-</data>
-<data name="e0307" xml:space="preserve">
-<value>Alarm on hands brake</value>
-</data>
-<data name="e0308" xml:space="preserve">
-<value>Alarm on tilt sensor</value>
-</data>
-<data name="e0309" xml:space="preserve">
-<value>Alarm on moving sensor</value>
-</data>
-<data name="e0310" xml:space="preserve">
-<value>Alarm on ignition</value>
-</data>
-<data name="e0311" xml:space="preserve">
-<value>Alarm on trunk open</value>
-</data>
-<data name="e0312" xml:space="preserve">
-<value>Alarm on door open</value>
-</data>
-<data name="e0313" xml:space="preserve">
-<value>Alarm on door open</value>
-</data>
-<data name="e0314" xml:space="preserve">
-<value>Alarm on door open</value>
-</data>
-<data name="e0315" xml:space="preserve">
-<value>Alarm on door open</value>
-</data>
-<data name="e0316" xml:space="preserve">
-<value>Alarm on hood open</value>
-</data>
-<data name="e0401" xml:space="preserve">
-<value>Engine start by charm</value>
-</data>
-<data name="e0402" xml:space="preserve">
-<value>Engine start by phone</value>
-</data>
-<data name="e0403" xml:space="preserve">
-<value>Engine start by timer</value>
-</data>
-<data name="e0404" xml:space="preserve">
-<value>Engine start by temperature</value>
-</data>
-<data name="e0405" xml:space="preserve">
-<value>Engine start by voltage</value>
-</data>
-<data name="e0406" xml:space="preserve">
-<value>Engine start by internet</value>
-</data>
-<data name="e0501" xml:space="preserve">
-<value>Engine stop by charm</value>
-</data>
-<data name="e0502" xml:space="preserve">
-<value>Engine stop by phone</value>
-</data>
-<data name="e0503" xml:space="preserve">
-<value>Engine stop by timer</value>
-</data>
-<data name="e0504" xml:space="preserve">
-<value>Engine stop by temperature</value>
-</data>
-<data name="e0505" xml:space="preserve">
-<value>Engine stop by internet</value>
-</data>
-<data name="e0506" xml:space="preserve">
-<value>Emergency engine stop</value>
-</data>
-<data name="e0507" xml:space="preserve">
-<value>Automaticaly engine stop</value>
-</data>
-<data name="e0601" xml:space="preserve">
-<value>Engine blocked by internet</value>
-</data>
-<data name="e0602" xml:space="preserve">
-<value>Engine blocked by phone</value>
-</data>
-<data name="e0603" xml:space="preserve">
-<value>Engine blocked automatically</value>
-</data>
-<data name="e0701" xml:space="preserve">
-<value>Valet On by charm</value>
-</data>
-<data name="e0801" xml:space="preserve">
-<value>Settings changed from site</value>
-</data>
-<data name="e0802" xml:space="preserve">
-<value>Settings changed from internet</value>
-</data>
-<data name="e0803" xml:space="preserve">
-<value>Settings changed from menu</value>
-</data>
-<data name="e0804" xml:space="preserve">
-<value>Add new charm</value>
-</data>
-<data name="e0805" xml:space="preserve">
-<value>Add new RF-unit</value>
-</data>
-<data name="e0806" xml:space="preserve">
-<value>PIN changed</value>
-</data>
-<data name="e0807" xml:space="preserve">
-<value>Settings changed from phone</value>
-</data>
-<data name="e0808" xml:space="preserve">
-<value>Settings changed from charm</value>
-</data>
-<data name="e0901" xml:space="preserve">
-<value>Fuel</value>
-</data>
-<data name="e1001" xml:space="preserve">
-<value>Crash</value>
-</data>
-<data name="e1101" xml:space="preserve">
-<value>GSM failed</value>
-</data>
-<data name="e1102" xml:space="preserve">
-<value>GSM restored</value>
-</data>
-<data name="e1103" xml:space="preserve">
-<value>Incomming call</value>
-</data>
-<data name="e1201" xml:space="preserve">
-<value>Call from charm</value>
-</data>
-<data name="e1301" xml:space="preserve">
-<value>Engine start failed - no neutral</value>
-</data>
-<data name="e1302" xml:space="preserve">
-<value>Engine start failed - no gaurd</value>
-</data>
-<data name="e1303" xml:space="preserve">
-<value>Engine start failed - technical problems</value>
-</data>
-<data name="e1304" xml:space="preserve">
-<value>Engine start failed - blocked</value>
-</data>
-<data name="e1401" xml:space="preserve">
-<value>Tracking on by charm</value>
-</data>
-<data name="e1402" xml:space="preserve">
-<value>Tracking on by phone</value>
-</data>
-<data name="e1403" xml:space="preserve">
-<value>Tracking on by internet</value>
-</data>
-<data name="e1501" xml:space="preserve">
-<value>Tracking off by charm</value>
-</data>
-<data name="e1502" xml:space="preserve">
-<value>Tracking off by phone</value>
-</data>
-<data name="e1503" xml:space="preserve">
-<value>Trackingoff by internet</value>
-</data>
-<data name="e1601" xml:space="preserve">
-<value>Power off</value>
-</data>
-<data name="e1701" xml:space="preserve">
-<value>Trunk open by charm</value>
-</data>
-<data name="e1702" xml:space="preserve">
-<value>Trunk open by phone</value>
-</data>
-<data name="e1703" xml:space="preserve">
-<value>Trunk open by internet</value>
-</data>
-<data name="e3700" xml:space="preserve">
-<value>Road rougness</value>
-</data>
-<data name="sound" xml:space="preserve">
-<value>Sound signal</value>
-</data>
-<data name="shock_sensor_secondary" xml:space="preserve">
-<value>Shock sensor: preliminary level</value>
-</data>
-<data name="shock_sensor_primary" xml:space="preserve">
-<value>Shock sensor: primary level</value>
-</data>
-<data name="move_sensor" xml:space="preserve">
-<value>Moving sensor</value>
-</data>
-<data name="ext_sensor_secondary" xml:space="preserve">
-<value>External sensor: preliminary level</value>
-</data>
-<data name="ext_sensor_primary" xml:space="preserve">
-<value>External sensor: primary level</value>
-</data>
-<data name="no_points" xml:space="preserve">
-<value>No points in selected area</value>
-</data>
-<data name="lost" xml:space="preserve">
-<value>Lost control channel</value>
-</data>
-<data name="restore" xml:space="preserve">
-<value>Restore control channel</value>
-</data>
-<data name="cmd_error" xml:space="preserve">
-<value>Send command error</value>
-</data>
-<data name="lost_sound" xml:space="preserve">
-<value>Lost sound</value>
-</data>
-<data name="restore_sound" xml:space="preserve">
-<value>Restore sound</value>
-</data>
-<data name="light_shock_alarm" xml:space="preserve">
-<value>Alarm on light shock</value>
-</data>
-<data name="balance_sound" xml:space="preserve">
-<value>Low balance notification</value>
-</data>
-<data name="cant_connect" xml:space="preserve">
-<value>Can&amp;t connect to car</value>
-</data>
-<data name="send_cmd" xml:space="preserve">
-<value>Execute command?</value>
-</data>
-<data name="ccode_change" xml:space="preserve">
-<value>C-code</value>
-</data>
-<data name="ccode_change_msg" xml:space="preserve">
-<value>Change C-code</value>
-</data>
-<data name="ccode_guard" xml:space="preserve">
-<value>For changing C-code You must guard OFF</value>
-</data>
-<data name="old_ccode" xml:space="preserve">
-<value>Old C-code:</value>
-</data>
-<data name="new_ccode" xml:space="preserve">
-<value>New C-code:</value>
-</data>
-<data name="new_ccode_invalid" xml:space="preserve">
-<value>С-code does not match</value>
-</data>
-<data name="ccode_format" xml:space="preserve">
-<value>С-code mist contains 6 digits</value>
-</data>
-<data name="ccode_zero" xml:space="preserve">
-<value>New С-code contains zero</value>
-</data>
-<data name="open_trunk" xml:space="preserve">
-<value>Open trunk</value>
-</data>
-<data name="ccode_fail" xml:space="preserve">
-<value>Change C-code failed</value>
-</data>
-<data name="delete_widget" xml:space="preserve">
-<value>Delete widget</value>
-</data>
-<data name="delete_widget_msg" xml:space="preserve">
-<value>Delete widget?</value>
-</data>
-<data name="card_info" xml:space="preserve">
-<value>Signal level: %d dB\nVoltage: %.2f V</value>
-</data>
-<data name="demo_mode" xml:space="preserve">
-<value>Demo mode</value>
-</data>
-<data name="ccode_ok" xml:space="preserve">
-<value>C-code changed</value>
-</data>
-<data name="ccode_failed" xml:space="preserve">
-<value>Change C-code failed</value>
-</data>
-<data name="yandex" xml:space="preserve">
-<value>Yandex</value>
-</data>
-<data name="bing" xml:space="preserve">
-<value>Bing</value>
-</data>
-<data name="more" xml:space="preserve">
-<value>More info</value>
-</data>
+  </data>
+  <data name="m_format" xml:space="preserve">
+    <value>{0} min</value>
+  </data>
+  <data name="hm_format" xml:space="preserve">
+    <value>{0} h {1:00} min</value>
+  </data>
+  <data name="day" xml:space="preserve">
+    <value>Select a day</value>
+  </data>
+  <data name="no_data" xml:space="preserve">
+    <value>No data</value>
+  </data>
+  <data name="mileage" xml:space="preserve">
+    <value>%.2f km</value>
+  </data>
+  <data name="short_status" xml:space="preserve">
+    <value>Engine time: {0}
+Average speed: {1:n2} kmh
+Max speed: {2} kmh</value>
+  </data>
+  <data name="saved" xml:space="preserve">
+    <value>Track saved</value>
+  </data>
+  <data name="loading" xml:space="preserve">
+    <value>Loading data...</value>
+  </data>
+  <data name="error_load" xml:space="preserve">
+    <value>Data loading error</value>
+  </data>
+  <data name="about" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="version" xml:space="preserve">
+    <value>Version:</value>
+  </data>
+  <data name="share" xml:space="preserve">
+    <value>Share</value>
+  </data>
+  <data name="invalid_key" xml:space="preserve">
+    <value>Invalid API key</value>
+  </data>
+  <data name="auth_error" xml:space="preserve">
+    <value>Check authorization error</value>
+  </data>
+  <data name="check_auth" xml:space="preserve">
+    <value>Check authorization</value>
+  </data>
+  <data name="data_error" xml:space="preserve">
+    <value>Data update error</value>
+  </data>
+  <data name="block" xml:space="preserve">
+    <value>Remote blocking</value>
+  </data>
+  <data name="block_sum" xml:space="preserve">
+    <value>Remote blocking of the car</value>
+  </data>
+  <data name="block_msg" xml:space="preserve">
+    <value>For cancel blocking switch ON and OFF valet mode</value>
+  </data>
+  <data name="autostart" xml:space="preserve">
+    <value>Autostart</value>
+  </data>
+  <data name="autostart_summary" xml:space="preserve">
+    <value>Show autoastart actions</value>
+  </data>
+  <data name="rele" xml:space="preserve">
+    <value>Prestarting heater</value>
+  </data>
+  <data name="password_summary" xml:space="preserve">
+    <value>Set password for actions</value>
+  </data>
+  <data name="password_old" xml:space="preserve">
+    <value>Old password:</value>
+  </data>
+  <data name="password_text" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="password_confirm" xml:space="preserve">
+    <value>Confirm:</value>
+  </data>
+  <data name="password_set" xml:space="preserve">
+    <value>Set password</value>
+  </data>
+  <data name="invalid_password" xml:space="preserve">
+    <value>Invalid password</value>
+  </data>
+  <data name="invalid_confirm" xml:space="preserve">
+    <value>Invalid confirm</value>
+  </data>
+  <data name="input_password" xml:space="preserve">
+    <value>Input password</value>
+  </data>
+  <data name="map_type" xml:space="preserve">
+    <value>Map type</value>
+  </data>
+  <data name="kmh" xml:space="preserve">
+    <value>kmh</value>
+  </data>
+  <data name="close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="traffic" xml:space="preserve">
+    <value>Show speed</value>
+  </data>
+  <data name="traffic_layer" xml:space="preserve">
+    <value>Show traffic</value>
+  </data>
+  <data name="traffic_summary" xml:space="preserve">
+    <value>Show speed as color track</value>
+  </data>
+  <data name="alarms" xml:space="preserve">
+    <value>Alarms</value>
+  </data>
+  <data name="contacts" xml:space="preserve">
+    <value>Contacts</value>
+  </data>
+  <data name="system" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="event" xml:space="preserve">
+    <value>Event</value>
+  </data>
+  <data name="guard_on" xml:space="preserve">
+    <value>Guard on</value>
+  </data>
+  <data name="guard_off" xml:space="preserve">
+    <value>Guard off</value>
+  </data>
+  <data name="can_on" xml:space="preserve">
+    <value>Guard on via CAN</value>
+  </data>
+  <data name="can_off" xml:space="preserve">
+    <value>Guard off via CAN</value>
+  </data>
+  <data name="end_move" xml:space="preserve">
+    <value>End route by move sensor</value>
+  </data>
+  <data name="lock_off1" xml:space="preserve">
+    <value>Card 1 off</value>
+  </data>
+  <data name="lock_off2" xml:space="preserve">
+    <value>Card 2 off</value>
+  </data>
+  <data name="lock_off3" xml:space="preserve">
+    <value>Card 3 off</value>
+  </data>
+  <data name="lock_off4" xml:space="preserve">
+    <value>Card 4 off</value>
+  </data>
+  <data name="lock_off5" xml:space="preserve">
+    <value>Card 5 off</value>
+  </data>
+  <data name="lock_on1" xml:space="preserve">
+    <value>Card 1 on</value>
+  </data>
+  <data name="lock_on2" xml:space="preserve">
+    <value>Card 2 on</value>
+  </data>
+  <data name="lock_on3" xml:space="preserve">
+    <value>Card 3 on</value>
+  </data>
+  <data name="lock_on4" xml:space="preserve">
+    <value>Card 4 on</value>
+  </data>
+  <data name="lock_on5" xml:space="preserve">
+    <value>Card 5 on</value>
+  </data>
+  <data name="user_call" xml:space="preserve">
+    <value>Request via call</value>
+  </data>
+  <data name="user_sms" xml:space="preserve">
+    <value>Request via SMS</value>
+  </data>
+  <data name="motor_start" xml:space="preserve">
+    <value>Engine start request</value>
+  </data>
+  <data name="motor_start_azd" xml:space="preserve">
+    <value>Engine start request AZD</value>
+  </data>
+  <data name="request_photo" xml:space="preserve">
+    <value>Photo request</value>
+  </data>
+  <data name="trunk_open" xml:space="preserve">
+    <value>Trunk open</value>
+  </data>
+  <data name="hood_open" xml:space="preserve">
+    <value>Hood open</value>
+  </data>
+  <data name="door_open" xml:space="preserve">
+    <value>Door open</value>
+  </data>
+  <data name="ignition_on" xml:space="preserve">
+    <value>Ignition ON</value>
+  </data>
+  <data name="access_on" xml:space="preserve">
+    <value>Accessories ON</value>
+  </data>
+  <data name="input1_on" xml:space="preserve">
+    <value>Input 1 ON</value>
+  </data>
+  <data name="input2_on" xml:space="preserve">
+    <value>Input 2 ON</value>
+  </data>
+  <data name="input3_on" xml:space="preserve">
+    <value>Input 3 ON</value>
+  </data>
+  <data name="input4_on" xml:space="preserve">
+    <value>Input 4 ON</value>
+  </data>
+  <data name="input5_on" xml:space="preserve">
+    <value>Input 5 ON</value>
+  </data>
+  <data name="input6_on" xml:space="preserve">
+    <value>Input 6 ON</value>
+  </data>
+  <data name="trunk_close" xml:space="preserve">
+    <value>Trunk close</value>
+  </data>
+  <data name="hood_close" xml:space="preserve">
+    <value>Hood close</value>
+  </data>
+  <data name="door_close" xml:space="preserve">
+    <value>Door close</value>
+  </data>
+  <data name="ignition_off" xml:space="preserve">
+    <value>Ignition OFF</value>
+  </data>
+  <data name="access_off" xml:space="preserve">
+    <value>Accessories OFF</value>
+  </data>
+  <data name="input1_off" xml:space="preserve">
+    <value>Input 1 OFF</value>
+  </data>
+  <data name="input2_off" xml:space="preserve">
+    <value>Input 2 OFF</value>
+  </data>
+  <data name="input3_off" xml:space="preserve">
+    <value>Input 3 OFF</value>
+  </data>
+  <data name="input4_off" xml:space="preserve">
+    <value>Input 4 OFF</value>
+  </data>
+  <data name="input5_off" xml:space="preserve">
+    <value>Input 5 OFF</value>
+  </data>
+  <data name="input6_off" xml:space="preserve">
+    <value>Input 6 OFF</value>
+  </data>
+  <data name="gprs_on" xml:space="preserve">
+    <value>GPRS ON</value>
+  </data>
+  <data name="gprs_off" xml:space="preserve">
+    <value>GPRS OFF</value>
+  </data>
+  <data name="reset_modem" xml:space="preserve">
+    <value>Reset modem</value>
+  </data>
+  <data name="reset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="trace_start" xml:space="preserve">
+    <value>Trace start</value>
+  </data>
+  <data name="trace_stop" xml:space="preserve">
+    <value>Trace finish</value>
+  </data>
+  <data name="gsm_fail" xml:space="preserve">
+    <value>GSM fail</value>
+  </data>
+  <data name="gsm_recover" xml:space="preserve">
+    <value>GSM recovery</value>
+  </data>
+  <data name="gps_fail" xml:space="preserve">
+    <value>GPS fail</value>
+  </data>
+  <data name="gps_recover" xml:space="preserve">
+    <value>GPS recovery</value>
+  </data>
+  <data name="till_start" xml:space="preserve">
+    <value>Movement start</value>
+  </data>
+  <data name="net_error" xml:space="preserve">
+    <value>Network error</value>
+  </data>
+  <data name="light_shock" xml:space="preserve">
+    <value>Light shock</value>
+  </data>
+  <data name="ext_zone" xml:space="preserve">
+    <value>External zone MKW</value>
+  </data>
+  <data name="heavy_shock" xml:space="preserve">
+    <value>Heavy shock</value>
+  </data>
+  <data name="inner_zone" xml:space="preserve">
+    <value>Inner zone MKW</value>
+  </data>
+  <data name="sms_request" xml:space="preserve">
+    <value>SMS request</value>
+  </data>
+  <data name="tilt" xml:space="preserve">
+    <value>Tilt</value>
+  </data>
+  <data name="main_power_on" xml:space="preserve">
+    <value>Main power ON</value>
+  </data>
+  <data name="main_power_off" xml:space="preserve">
+    <value>Main power OFF</value>
+  </data>
+  <data name="reserve_power_on" xml:space="preserve">
+    <value>Reserve power ON</value>
+  </data>
+  <data name="reserve_power_off" xml:space="preserve">
+    <value>Reserve power OFF</value>
+  </data>
+  <data name="rogue" xml:space="preserve">
+    <value>Rogue</value>
+  </data>
+  <data name="rogue_off" xml:space="preserve">
+    <value>Cancel rogue</value>
+  </data>
+  <data name="alarm_boot" xml:space="preserve">
+    <value>Alarm Trunk</value>
+  </data>
+  <data name="alarm_hood" xml:space="preserve">
+    <value>Alarm hood</value>
+  </data>
+  <data name="alarm_door" xml:space="preserve">
+    <value>Alarm door</value>
+  </data>
+  <data name="ignition_lock" xml:space="preserve">
+    <value>Alarm ignition</value>
+  </data>
+  <data name="alarm_accessories" xml:space="preserve">
+    <value>Alarm accessories zone</value>
+  </data>
+  <data name="alarm_input1" xml:space="preserve">
+    <value>Alarm input 1</value>
+  </data>
+  <data name="alarm_input2" xml:space="preserve">
+    <value>Alarm input 2</value>
+  </data>
+  <data name="alarm_input3" xml:space="preserve">
+    <value>Alarm input 3</value>
+  </data>
+  <data name="alarm_input4" xml:space="preserve">
+    <value>Alarm input 4</value>
+  </data>
+  <data name="sos" xml:space="preserve">
+    <value>SOS</value>
+  </data>
+  <data name="error_read" xml:space="preserve">
+    <value>Error read memory</value>
+  </data>
+  <data name="incomming_sms" xml:space="preserve">
+    <value>Incomming SMS</value>
+  </data>
+  <data name="no_events" xml:space="preserve">
+    <value>No events</value>
+  </data>
+  <data name="unknown" xml:space="preserve">
+    <value>unknown</value>
+  </data>
+  <data name="cars" xml:space="preserve">
+    <value>Cars</value>
+  </data>
+  <data name="new_car" xml:space="preserve">
+    <value>New car</value>
+  </data>
+  <data name="name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="car" xml:space="preserve">
+    <value>Car</value>
+  </data>
+  <data name="add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="select_car" xml:space="preserve">
+    <value>Select car</value>
+  </data>
+  <data name="speed" xml:space="preserve">
+    <value>Speed: %s km/h</value>
+  </data>
+  <data name="temp_correct" xml:space="preserve">
+    <value>Temperature correction</value>
+  </data>
+  <data name="voice" xml:space="preserve">
+    <value>Download voice</value>
+  </data>
+  <data name="download_events" xml:space="preserve">
+    <value>Download events table</value>
+  </data>
+  <data name="low_battery" xml:space="preserve">
+    <value>Low card battery</value>
+  </data>
+  <data name="download_settings" xml:space="preserve">
+    <value>Download settings</value>
+  </data>
+  <data name="lan_change" xml:space="preserve">
+    <value>LAN devices changed</value>
+  </data>
+  <data name="command" xml:space="preserve">
+    <value>Comannd from buttons</value>
+  </data>
+  <data name="brake" xml:space="preserve">
+    <value>Brake</value>
+  </data>
+  <data name="guard2_on" xml:space="preserve">
+    <value>Guard mode 2 on</value>
+  </data>
+  <data name="guard2_off" xml:space="preserve">
+    <value>Guard mode 2 off</value>
+  </data>
+  <data name="valet_on_msg" xml:space="preserve">
+    <value>Turn on VALET require enter C-Code</value>
+  </data>
+  <data name="valet_off_msg" xml:space="preserve">
+    <value>Turn off VALET require enter C-Code</value>
+  </data>
+  <data name="valet_on_msg_sms" xml:space="preserve">
+    <value>Send SMS for turn on VALET require enter C-Code</value>
+  </data>
+  <data name="valet_off_msg_sms" xml:space="preserve">
+    <value>Send SMS for turn off VALET require enter C-Code</value>
+  </data>
+  <data name="bad_ccode" xml:space="preserve">
+    <value>Invalid C-Code</value>
+  </data>
+  <data name="pswd" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="motor_start_error" xml:space="preserve">
+    <value>Engine start failed</value>
+  </data>
+  <data name="motor_stop" xml:space="preserve">
+    <value>Engine stopped</value>
+  </data>
+  <data name="zone_in" xml:space="preserve">
+    <value>Zone in</value>
+  </data>
+  <data name="zone_out" xml:space="preserve">
+    <value>Zone out</value>
+  </data>
+  <data name="position" xml:space="preserve">
+    <value>My position</value>
+  </data>
+  <data name="settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="no_gps_title" xml:space="preserve">
+    <value>GPS disabled</value>
+  </data>
+  <data name="no_gps_message" xml:space="preserve">
+    <value>GPS disabled is system.\nFor detect location you must turn on it in Settings</value>
+  </data>
+  <data name="net_gps_message" xml:space="preserve">
+    <value>Your location detected by network.\nFor more accuracy you can turn on GPS is Settings</value>
+  </data>
+  <data name="no_location" xml:space="preserve">
+    <value>Unknown localtion</value>
+  </data>
+  <data name="shock_sens" xml:space="preserve">
+    <value>Shock sensitivity</value>
+  </data>
+  <data name="shock_sens_msg" xml:space="preserve">
+    <value>Setup shock sensitivity level. Wroks only for SuperAgent</value>
+  </data>
+  <data name="google" xml:space="preserve">
+    <value>Google</value>
+  </data>
+  <data name="osm" xml:space="preserve">
+    <value>OSM</value>
+  </data>
+  <data name="show_balance" xml:space="preserve">
+    <value>Show balance</value>
+  </data>
+  <data name="safe_mode" xml:space="preserve">
+    <value>Safe mode</value>
+  </data>
+  <data name="ugona_net" xml:space="preserve">
+    <value>UGONA.NET</value>
+  </data>
+  <data name="no_phone" xml:space="preserve">
+    <value>No phone number for contact</value>
+  </data>
+  <data name="select_phone" xml:space="preserve">
+    <value>Select phone</value>
+  </data>
+  <data name="phone_home" xml:space="preserve">
+    <value>home</value>
+  </data>
+  <data name="phone_work" xml:space="preserve">
+    <value>work</value>
+  </data>
+  <data name="phone_mobile" xml:space="preserve">
+    <value>mobile</value>
+  </data>
+  <data name="pgsm_version" xml:space="preserve">
+    <value>Device software version</value>
+  </data>
+  <data name="copyright" xml:space="preserve">
+    <value>© 2013-2014 Ugona.net, info@ugona.net</value>
+  </data>
+  <data name="delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="status_title" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="status_sum" xml:space="preserve">
+    <value>Request car state</value>
+  </data>
+  <data name="guard_state" xml:space="preserve">
+    <value>Guard ON</value>
+  </data>
+  <data name="gps_state" xml:space="preserve">
+    <value>GPS position founs</value>
+  </data>
+  <data name="gprs_none_state" xml:space="preserve">
+    <value>No GPRS connection</value>
+  </data>
+  <data name="gprs_home_state" xml:space="preserve">
+    <value>GPRS connected</value>
+  </data>
+  <data name="gprs_roaming_state" xml:space="preserve">
+    <value>GPRS connected (roaming)</value>
+  </data>
+  <data name="phones" xml:space="preserve">
+    <value>Control phones</value>
+  </data>
+  <data name="phones_sum" xml:space="preserve">
+    <value>Manage control phones</value>
+  </data>
+  <data name="add_phone" xml:space="preserve">
+    <value>Add phone</value>
+  </data>
+  <data name="erase_phones" xml:space="preserve">
+    <value>You must reinitialize main phone for clear phones list</value>
+  </data>
+  <data name="clear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="timer" xml:space="preserve">
+    <value>Timer</value>
+  </data>
+  <data name="timer_sum" xml:space="preserve">
+    <value>Car connection period</value>
+  </data>
+  <data name="timer_on" xml:space="preserve">
+    <value>Timer ON</value>
+  </data>
+  <data name="minutes" xml:space="preserve">
+    <value>min</value>
+  </data>
+  <data name="init_phone" xml:space="preserve">
+    <value>Main phone initialization</value>
+  </data>
+  <data name="main_phone" xml:space="preserve">
+    <value>Main phone</value>
+  </data>
+  <data name="invalid_ccode" xml:space="preserve">
+    <value>Invalid C-code</value>
+  </data>
+  <data name="supply_regular" xml:space="preserve">
+    <value>Supply regular</value>
+  </data>
+  <data name="service" xml:space="preserve">
+    <value>FEDERAL SERVICE</value>
+  </data>
+  <data name="application" xml:space="preserve">
+    <value>Application UGONA.NET+ works with MS-PGSM devices</value>
+  </data>
+  <data name="service_btn" xml:space="preserve">
+    <value>Service Ugona.net</value>
+  </data>
+  <data name="forum_btn" xml:space="preserve">
+    <value>Support forum</value>
+  </data>
+  <data name="balance" xml:space="preserve">
+    <value>Balance</value>
+  </data>
+  <data name="balance_request" xml:space="preserve">
+    <value>Balance request</value>
+  </data>
+  <data name="valet_warning" xml:space="preserve">
+    <value>VALET mode ON</value>
+  </data>
+  <data name="net_warning" xml:space="preserve">
+    <value>No data connection</value>
+  </data>
+  <data name="passwd" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="show_photo" xml:space="preserve">
+    <value>Show photos</value>
+  </data>
+  <data name="photo" xml:space="preserve">
+    <value>Photo</value>
+  </data>
+  <data name="no_photos" xml:space="preserve">
+    <value>No photos</value>
+  </data>
+  <data name="sms_mode_msg" xml:space="preserve">
+    <value>Application will be processed SMS messages from device and show alarm window</value>
+  </data>
+  <data name="photo_error" xml:space="preserve">
+    <value>Loading image error</value>
+  </data>
+  <data name="motor_on_ok" xml:space="preserve">
+    <value>Engine started</value>
+  </data>
+  <data name="motor_off_ok" xml:space="preserve">
+    <value>Engine stopped</value>
+  </data>
+  <data name="valet_on_ok" xml:space="preserve">
+    <value>VALET mode is ON</value>
+  </data>
+  <data name="valet_off_ok" xml:space="preserve">
+    <value>VALET mode is OFF</value>
+  </data>
+  <data name="background" xml:space="preserve">
+    <value>Background</value>
+  </data>
+  <data name="rotate" xml:space="preserve">
+    <value>Rotate</value>
+  </data>
+  <data name="rele1_action" xml:space="preserve">
+    <value>Send impulse on RELE1</value>
+  </data>
+  <data name="rele2_action" xml:space="preserve">
+    <value>Send impules on RELE2</value>
+  </data>
+  <data name="gsm_register_fail" xml:space="preserve">
+    <value>GSM register failed</value>
+  </data>
+  <data name="widget_config" xml:space="preserve">
+    <value>Widget configuration</value>
+  </data>
+  <data name="balance_notification" xml:space="preserve">
+    <value>Balance notification</value>
+  </data>
+  <data name="low_balance" xml:space="preserve">
+    <value>Low balance</value>
+  </data>
+  <data name="call" xml:space="preserve">
+    <value>Call to car</value>
+  </data>
+  <data name="timer_event" xml:space="preserve">
+    <value>Timer connection</value>
+  </data>
+  <data name="find" xml:space="preserve">
+    <value>Find mode</value>
+  </data>
+  <data name="find_sum" xml:space="preserve">
+    <value>Send coordinates at 3 hours every 10 minutes</value>
+  </data>
+  <data name="map_req" xml:space="preserve">
+    <value>Location request</value>
+  </data>
+  <data name="map_sum" xml:space="preserve">
+    <value>Once location request</value>
+  </data>
+  <data name="mode_a" xml:space="preserve">
+    <value>Mode A</value>
+  </data>
+  <data name="mode_a_sum" xml:space="preserve">
+    <value>Send GSM coordinates every 6 hours</value>
+  </data>
+  <data name="mode_b" xml:space="preserve">
+    <value>Mode B</value>
+  </data>
+  <data name="mode_b_sum" xml:space="preserve">
+    <value>Send GSM coordinates every 12 hours</value>
+  </data>
+  <data name="mode_c" xml:space="preserve">
+    <value>Mode C</value>
+  </data>
+  <data name="mode_c_sum" xml:space="preserve">
+    <value>Send GPS coordinates every 24 hours</value>
+  </data>
+  <data name="mode_d" xml:space="preserve">
+    <value>Mode D</value>
+  </data>
+  <data name="mode_d_sum" xml:space="preserve">
+    <value>Wait command every 12 hours</value>
+  </data>
+  <data name="commands" xml:space="preserve">
+    <value>Control commands</value>
+  </data>
+  <data name="commands_sum" xml:space="preserve">
+    <value>Select commands on main screen</value>
+  </data>
+  <data name="valet_cmd" xml:space="preserve">
+    <value>VALET</value>
+  </data>
+  <data name="work_time" xml:space="preserve">
+    <value>Work time</value>
+  </data>
+  <data name="rele_sum" xml:space="preserve">
+    <value>Prestarting heater settings</value>
+  </data>
+  <data name="connection" xml:space="preserve">
+    <value>Connection:</value>
+  </data>
+  <data name="show_map" xml:space="preserve">
+    <value>Show map</value>
+  </data>
+  <data name="data_transfer" xml:space="preserve">
+    <value>Data transfer</value>
+  </data>
+  <data name="timeout" xml:space="preserve">
+    <value>Long time no events from pointer</value>
+  </data>
+  <data name="pointer" xml:space="preserve">
+    <value>Device is pointer</value>
+  </data>
+  <data name="pointer_msg" xml:space="preserve">
+    <value>Connect pointer with car?</value>
+  </data>
+  <data name="pointer_support" xml:space="preserve">
+    <value>Pointer support</value>
+  </data>
+  <data name="pointer_support_msg" xml:space="preserve">
+    <value>Application is supported pointers.\nYou can add pointer now or do it later</value>
+  </data>
+  <data name="cmd_msg" xml:space="preserve">
+    <value>Only 3 buttons can show on main screen</value>
+  </data>
+  <data name="temp_change" xml:space="preserve">
+    <value>Temperature change</value>
+  </data>
+  <data name="brk_data" xml:space="preserve">
+    <value>BRK data</value>
+  </data>
+  <data name="show_name" xml:space="preserve">
+    <value>Show name</value>
+  </data>
+  <data name="impulse" xml:space="preserve">
+    <value>Control by impulse</value>
+  </data>
+  <data name="brake_on" xml:space="preserve">
+    <value>Hand brake on</value>
+  </data>
+  <data name="brake_off" xml:space="preserve">
+    <value>Hand brake off</value>
+  </data>
+  <data name="ps_guard" xml:space="preserve">
+    <value>Guard with passengers is ON</value>
+  </data>
+  <data name="time_warning" xml:space="preserve">
+    <value>Long time no events from car</value>
+  </data>
+  <data name="gsm_new" xml:space="preserve">
+    <value>GSM sector changed</value>
+  </data>
+  <data name="trace_point" xml:space="preserve">
+    <value>Trace point</value>
+  </data>
+  <data name="nondigits" xml:space="preserve">
+    <value>Code is non digits</value>
+  </data>
+  <data name="shock_sensor" xml:space="preserve">
+    <value>Shock sensor</value>
+  </data>
+  <data name="motor_time" xml:space="preserve">
+    <value>after $1 min</value>
+  </data>
+  <data name="guard_notify" xml:space="preserve">
+    <value>Guard notify</value>
+  </data>
+  <data name="pointer_voltage" xml:space="preserve">
+    <value>Low pointer voltage</value>
+  </data>
+  <data name="widget_rows" xml:space="preserve">
+    <value>Show values:</value>
+  </data>
+  <data name="auto" xml:space="preserve">
+    <value>auto</value>
+  </data>
+  <data name="send_sms" xml:space="preserve">
+    <value>Send SMS</value>
+  </data>
+  <data name="send_sms_message" xml:space="preserve">
+    <value>Network is not available.\nSend command as SMS?</value>
+  </data>
+  <data name="send_command" xml:space="preserve">
+    <value>Send command</value>
+  </data>
+  <data name="send_sms_on_fail" xml:space="preserve">
+    <value>Send command fail.\nSend command as SMS?</value>
+  </data>
+  <data name="wait_msg" xml:space="preserve">
+    <value>Command store to queue and will be send in $1 мин.</value>
+  </data>
+  <data name="you_can" xml:space="preserve">
+    <value>You can:</value>
+  </data>
+  <data name="call_car" xml:space="preserve">
+    <value>Call car</value>
+  </data>
+  <data name="send_via_sms" xml:space="preserve">
+    <value>Send command via SMS</value>
+  </data>
+  <data name="or_wait" xml:space="preserve">
+    <value>or wait</value>
+  </data>
+  <data name="motor_on_ccode" xml:space="preserve">
+    <value>Start engine require C-Code</value>
+  </data>
+  <data name="motor_off_ccode" xml:space="preserve">
+    <value>Stop engine require C-Code</value>
+  </data>
+  <data name="rele_ccode" xml:space="preserve">
+    <value>Require C-Code</value>
+  </data>
+  <data name="control_method" xml:space="preserve">
+    <value>Control method</value>
+  </data>
+  <data name="number" xml:space="preserve">
+    <value>C-code contains letters</value>
+  </data>
+  <data name="stat" xml:space="preserve">
+    <value>Statistics</value>
+  </data>
+  <data name="sms_sent" xml:space="preserve">
+    <value>SMS sent</value>
+  </data>
+  <data name="device_settings" xml:space="preserve">
+    <value>Device settings</value>
+  </data>
+  <data name="notifications" xml:space="preserve">
+    <value>Notifications</value>
+  </data>
+  <data name="guard_sound" xml:space="preserve">
+    <value>Sound on guard ON/OFF</value>
+  </data>
+  <data name="tilt_low" xml:space="preserve">
+    <value>Low sensitivy of tilt sensor</value>
+  </data>
+  <data name="guard_partial" xml:space="preserve">
+    <value>Permanent partial guard</value>
+  </data>
+  <data name="comfort_enable" xml:space="preserve">
+    <value>Enable comfort function</value>
+  </data>
+  <data name="tilt_level" xml:space="preserve">
+    <value>Tilt sensor level</value>
+  </data>
+  <data name="unit" xml:space="preserve">
+    <value>units</value>
+  </data>
+  <data name="guard_time" xml:space="preserve">
+    <value>Set time to guard on lost label</value>
+  </data>
+  <data name="sec" xml:space="preserve">
+    <value>sec.</value>
+  </data>
+  <data name="robbery_time" xml:space="preserve">
+    <value>Delay for start robbery functions</value>
+  </data>
+  <data name="heater_start" xml:space="preserve">
+    <value>Start engine after prestarting heater</value>
+  </data>
+  <data name="no_sound" xml:space="preserve">
+    <value>Guard without sounds</value>
+  </data>
+  <data name="heater_time" xml:space="preserve">
+    <value>Prestarting heater time</value>
+  </data>
+  <data name="close_time" xml:space="preserve">
+    <value>Time for close car after ignition off</value>
+  </data>
+  <data name="voltage_limit" xml:space="preserve">
+    <value>Voltage limit for autostart</value>
+  </data>
+  <data name="v" xml:space="preserve">
+    <value>V</value>
+  </data>
+  <data name="no_start" xml:space="preserve">
+    <value>no start</value>
+  </data>
+  <data name="setup" xml:space="preserve">
+    <value>Setup</value>
+  </data>
+  <data name="setup_msg" xml:space="preserve">
+    <value>Loading settings to device</value>
+  </data>
+  <data name="start_time" xml:space="preserve">
+    <value>Engine autostart time</value>
+  </data>
+  <data name="soft_start" xml:space="preserve">
+    <value>Soft start</value>
+  </data>
+  <data name="rele1" xml:space="preserve">
+    <value>RELE 1</value>
+  </data>
+  <data name="rele1i" xml:space="preserve">
+    <value>RELE 1 impulse</value>
+  </data>
+  <data name="rele2" xml:space="preserve">
+    <value>RELE 2</value>
+  </data>
+  <data name="rele2i" xml:space="preserve">
+    <value>RELE 2 impulse</value>
+  </data>
+  <data name="rele1_on" xml:space="preserve">
+    <value>RELE 1 ON</value>
+  </data>
+  <data name="rele1_off" xml:space="preserve">
+    <value>RELE 1 OFF</value>
+  </data>
+  <data name="rele2_on" xml:space="preserve">
+    <value>RELE 2 ON</value>
+  </data>
+  <data name="rele2_off" xml:space="preserve">
+    <value>RELE 2 OFF</value>
+  </data>
+  <data name="error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="no_network" xml:space="preserve">
+    <value>Netwrok is not available</value>
+  </data>
+  <data name="retry" xml:space="preserve">
+    <value>Retry</value>
+  </data>
+  <data name="phone" xml:space="preserve">
+    <value>Phone:</value>
+  </data>
+  <data name="changed" xml:space="preserve">
+    <value>Settings changed</value>
+  </data>
+  <data name="changed_msg" xml:space="preserve">
+    <value>You have unsaved settings.\nYou are sure leave settings?</value>
+  </data>
+  <data name="exit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="notify_msg" xml:space="preserve">
+    <value>Notifications come with some delay depend on device timer settings and phone data connection</value>
+  </data>
+  <data name="command_name" xml:space="preserve">
+    <value>Command name:</value>
+  </data>
+  <data name="device_phone_number" xml:space="preserve">
+    <value>Device phone number</value>
+  </data>
+  <data name="sound_off" xml:space="preserve">
+    <value>Silent guard mode</value>
+  </data>
+  <data name="sound_on" xml:space="preserve">
+    <value>Silent guard mode OFF</value>
+  </data>
+  <data name="silent_mode" xml:space="preserve">
+    <value>Silent guard mode</value>
+  </data>
+  <data name="km" xml:space="preserve">
+    <value>km</value>
+  </data>
+  <data name="alarm_shock" xml:space="preserve">
+    <value>Alarm on sensors</value>
+  </data>
+  <data name="inf_sms" xml:space="preserve">
+    <value>Send SMS when engine started</value>
+  </data>
+  <data name="inf_sms_msg" xml:space="preserve">
+    <value>undefined</value>
+  </data>
+  <data name="voltage_shift" xml:space="preserve">
+    <value>Voltage correction</value>
+  </data>
+  <data name="zones" xml:space="preserve">
+    <value>Zones</value>
+  </data>
+  <data name="sms_notify" xml:space="preserve">
+    <value>Notify as SMS</value>
+  </data>
+  <data name="add_zone" xml:space="preserve">
+    <value>Add zone</value>
+  </data>
+  <data name="zone_name" xml:space="preserve">
+    <value>Zone name is empty</value>
+  </data>
+  <data name="zone_name_msg" xml:space="preserve">
+    <value>Input name of zone</value>
+  </data>
+  <data name="zone_remove" xml:space="preserve">
+    <value>Remove zone</value>
+  </data>
+  <data name="device_pswd" xml:space="preserve">
+    <value>Device require password on SMS</value>
+  </data>
+  <data name="input_device_pswd" xml:space="preserve">
+    <value>Input device password</value>
+  </data>
+  <data name="attention" xml:space="preserve">
+    <value>Attention</value>
+  </data>
+  <data name="zone_msg" xml:space="preserve">
+    <value>You should receive notification about zones with some delays if you turn off SMS options</value>
+  </data>
+  <data name="zone_bad_char" xml:space="preserve">
+    <value>Zone name can contains only latin chars or digits</value>
+  </data>
+  <data name="schedule" xml:space="preserve">
+    <value>Start schedule</value>
+  </data>
+  <data name="add_timer" xml:space="preserve">
+    <value>Add timer</value>
+  </data>
+  <data name="init" xml:space="preserve">
+    <value>Initialization</value>
+  </data>
+  <data name="zone_my" xml:space="preserve">
+    <value>No notify if car around from me</value>
+  </data>
+  <data name="timer_set" xml:space="preserve">
+    <value>Таймер</value>
+  </data>
+  <data name="timer_empty" xml:space="preserve">
+    <value>Select any weekdays</value>
+  </data>
+  <data name="timer_delete" xml:space="preserve">
+    <value>Delete timer?</value>
+  </data>
+  <data name="search" xml:space="preserve">
+    <value>Search car</value>
+  </data>
+  <data name="temp_sensors" xml:space="preserve">
+    <value>Temperature sensors</value>
+  </data>
+  <data name="sensor" xml:space="preserve">
+    <value>Sensor</value>
+  </data>
+  <data name="door_time" xml:space="preserve">
+    <value>Delay alarm for door and trunk zone</value>
+  </data>
+  <data name="zone_in_sound" xml:space="preserve">
+    <value>Zone IN sound</value>
+  </data>
+  <data name="zone_out_sound" xml:space="preserve">
+    <value>Zone OUT sound</value>
+  </data>
+  <data name="use_gps" xml:space="preserve">
+    <value>Use GPS</value>
+  </data>
+  <data name="voltage" xml:space="preserve">
+    <value>Voltage</value>
+  </data>
+  <data name="reserved" xml:space="preserve">
+    <value>Reserved voltage</value>
+  </data>
+  <data name="temperature" xml:space="preserve">
+    <value>Temperature</value>
+  </data>
+  <data name="charts" xml:space="preserve">
+    <value>Charts</value>
+  </data>
+  <data name="heater_on" xml:space="preserve">
+    <value>Heater without salon</value>
+  </data>
+  <data name="heater_air" xml:space="preserve">
+    <value>Heater with salon</value>
+  </data>
+  <data name="heater_off" xml:space="preserve">
+    <value>Heater off</value>
+  </data>
+  <data name="air" xml:space="preserve">
+    <value>Salon fan</value>
+  </data>
+  <data name="thermocode" xml:space="preserve">
+    <value>Thermocode</value>
+  </data>
+  <data name="card_message" xml:space="preserve">
+    <value>Security card in car</value>
+  </data>
+  <data name="widgets" xml:space="preserve">
+    <value>Widgets</value>
+  </data>
+  <data name="lock_widget" xml:space="preserve">
+    <value>Lockscreen widget</value>
+  </data>
+  <data name="no_widgets" xml:space="preserve">
+    <value>No widgets</value>
+  </data>
+  <data name="add_lock_widget" xml:space="preserve">
+    <value>You can add widget on lockscreen</value>
+  </data>
+  <data name="recalc_stat" xml:space="preserve">
+    <value>Recalc statistic</value>
+  </data>
+  <data name="recalc_message" xml:space="preserve">
+    <value>Process of statics require some minutes</value>
+  </data>
+  <data name="e0101" xml:space="preserve">
+    <value>Guard on charm</value>
+  </data>
+  <data name="e0102" xml:space="preserve">
+    <value>Gaurd on auto</value>
+  </data>
+  <data name="e0103" xml:space="preserve">
+    <value>Guard on VALET button</value>
+  </data>
+  <data name="e0104" xml:space="preserve">
+    <value>Guard on by Hands-Free</value>
+  </data>
+  <data name="e0105" xml:space="preserve">
+    <value>Guard on with phone</value>
+  </data>
+  <data name="e0106" xml:space="preserve">
+    <value>Guard on by internet</value>
+  </data>
+  <data name="e0107" xml:space="preserve">
+    <value>Guard on by slave</value>
+  </data>
+  <data name="e0201" xml:space="preserve">
+    <value>Guard off charm</value>
+  </data>
+  <data name="e0202" xml:space="preserve">
+    <value>Guard off from phone</value>
+  </data>
+  <data name="e0203" xml:space="preserve">
+    <value>Guard off from internet</value>
+  </data>
+  <data name="e0204" xml:space="preserve">
+    <value>Guard off by Hands-Free</value>
+  </data>
+  <data name="e0205" xml:space="preserve">
+    <value>Guard off by PIN</value>
+  </data>
+  <data name="e0206" xml:space="preserve">
+    <value>Guard off by slave</value>
+  </data>
+  <data name="e0301" xml:space="preserve">
+    <value>Alarm by critical power</value>
+  </data>
+  <data name="e0302" xml:space="preserve">
+    <value>Alarm secondary zone sensor</value>
+  </data>
+  <data name="e0303" xml:space="preserve">
+    <value>Alarm primary zone sensor</value>
+  </data>
+  <data name="e0304" xml:space="preserve">
+    <value>Alarm secondary zone shock sensor</value>
+  </data>
+  <data name="e0305" xml:space="preserve">
+    <value>Alarm primary zone shock sensor</value>
+  </data>
+  <data name="e0306" xml:space="preserve">
+    <value>Alarm on brake</value>
+  </data>
+  <data name="e0307" xml:space="preserve">
+    <value>Alarm on hands brake</value>
+  </data>
+  <data name="e0308" xml:space="preserve">
+    <value>Alarm on tilt sensor</value>
+  </data>
+  <data name="e0309" xml:space="preserve">
+    <value>Alarm on moving sensor</value>
+  </data>
+  <data name="e0310" xml:space="preserve">
+    <value>Alarm on ignition</value>
+  </data>
+  <data name="e0311" xml:space="preserve">
+    <value>Alarm on trunk open</value>
+  </data>
+  <data name="e0312" xml:space="preserve">
+    <value>Alarm on door open</value>
+  </data>
+  <data name="e0313" xml:space="preserve">
+    <value>Alarm on door open</value>
+  </data>
+  <data name="e0314" xml:space="preserve">
+    <value>Alarm on door open</value>
+  </data>
+  <data name="e0315" xml:space="preserve">
+    <value>Alarm on door open</value>
+  </data>
+  <data name="e0316" xml:space="preserve">
+    <value>Alarm on hood open</value>
+  </data>
+  <data name="e0401" xml:space="preserve">
+    <value>Engine start by charm</value>
+  </data>
+  <data name="e0402" xml:space="preserve">
+    <value>Engine start by phone</value>
+  </data>
+  <data name="e0403" xml:space="preserve">
+    <value>Engine start by timer</value>
+  </data>
+  <data name="e0404" xml:space="preserve">
+    <value>Engine start by temperature</value>
+  </data>
+  <data name="e0405" xml:space="preserve">
+    <value>Engine start by voltage</value>
+  </data>
+  <data name="e0406" xml:space="preserve">
+    <value>Engine start by internet</value>
+  </data>
+  <data name="e0501" xml:space="preserve">
+    <value>Engine stop by charm</value>
+  </data>
+  <data name="e0502" xml:space="preserve">
+    <value>Engine stop by phone</value>
+  </data>
+  <data name="e0503" xml:space="preserve">
+    <value>Engine stop by timer</value>
+  </data>
+  <data name="e0504" xml:space="preserve">
+    <value>Engine stop by temperature</value>
+  </data>
+  <data name="e0505" xml:space="preserve">
+    <value>Engine stop by internet</value>
+  </data>
+  <data name="e0506" xml:space="preserve">
+    <value>Emergency engine stop</value>
+  </data>
+  <data name="e0507" xml:space="preserve">
+    <value>Automaticaly engine stop</value>
+  </data>
+  <data name="e0601" xml:space="preserve">
+    <value>Engine blocked by internet</value>
+  </data>
+  <data name="e0602" xml:space="preserve">
+    <value>Engine blocked by phone</value>
+  </data>
+  <data name="e0603" xml:space="preserve">
+    <value>Engine blocked automatically</value>
+  </data>
+  <data name="e0701" xml:space="preserve">
+    <value>Valet On by charm</value>
+  </data>
+  <data name="e0801" xml:space="preserve">
+    <value>Settings changed from site</value>
+  </data>
+  <data name="e0802" xml:space="preserve">
+    <value>Settings changed from internet</value>
+  </data>
+  <data name="e0803" xml:space="preserve">
+    <value>Settings changed from menu</value>
+  </data>
+  <data name="e0804" xml:space="preserve">
+    <value>Add new charm</value>
+  </data>
+  <data name="e0805" xml:space="preserve">
+    <value>Add new RF-unit</value>
+  </data>
+  <data name="e0806" xml:space="preserve">
+    <value>PIN changed</value>
+  </data>
+  <data name="e0807" xml:space="preserve">
+    <value>Settings changed from phone</value>
+  </data>
+  <data name="e0808" xml:space="preserve">
+    <value>Settings changed from charm</value>
+  </data>
+  <data name="e0901" xml:space="preserve">
+    <value>Fuel</value>
+  </data>
+  <data name="e1001" xml:space="preserve">
+    <value>Crash</value>
+  </data>
+  <data name="e1101" xml:space="preserve">
+    <value>GSM failed</value>
+  </data>
+  <data name="e1102" xml:space="preserve">
+    <value>GSM restored</value>
+  </data>
+  <data name="e1103" xml:space="preserve">
+    <value>Incomming call</value>
+  </data>
+  <data name="e1201" xml:space="preserve">
+    <value>Call from charm</value>
+  </data>
+  <data name="e1301" xml:space="preserve">
+    <value>Engine start failed - no neutral</value>
+  </data>
+  <data name="e1302" xml:space="preserve">
+    <value>Engine start failed - no gaurd</value>
+  </data>
+  <data name="e1303" xml:space="preserve">
+    <value>Engine start failed - technical problems</value>
+  </data>
+  <data name="e1304" xml:space="preserve">
+    <value>Engine start failed - blocked</value>
+  </data>
+  <data name="e1401" xml:space="preserve">
+    <value>Tracking on by charm</value>
+  </data>
+  <data name="e1402" xml:space="preserve">
+    <value>Tracking on by phone</value>
+  </data>
+  <data name="e1403" xml:space="preserve">
+    <value>Tracking on by internet</value>
+  </data>
+  <data name="e1501" xml:space="preserve">
+    <value>Tracking off by charm</value>
+  </data>
+  <data name="e1502" xml:space="preserve">
+    <value>Tracking off by phone</value>
+  </data>
+  <data name="e1503" xml:space="preserve">
+    <value>Trackingoff by internet</value>
+  </data>
+  <data name="e1601" xml:space="preserve">
+    <value>Power off</value>
+  </data>
+  <data name="e1701" xml:space="preserve">
+    <value>Trunk open by charm</value>
+  </data>
+  <data name="e1702" xml:space="preserve">
+    <value>Trunk open by phone</value>
+  </data>
+  <data name="e1703" xml:space="preserve">
+    <value>Trunk open by internet</value>
+  </data>
+  <data name="e3700" xml:space="preserve">
+    <value>Road rougness</value>
+  </data>
+  <data name="sound" xml:space="preserve">
+    <value>Sound signal</value>
+  </data>
+  <data name="shock_sensor_secondary" xml:space="preserve">
+    <value>Shock sensor: preliminary level</value>
+  </data>
+  <data name="shock_sensor_primary" xml:space="preserve">
+    <value>Shock sensor: primary level</value>
+  </data>
+  <data name="move_sensor" xml:space="preserve">
+    <value>Moving sensor</value>
+  </data>
+  <data name="ext_sensor_secondary" xml:space="preserve">
+    <value>External sensor: preliminary level</value>
+  </data>
+  <data name="ext_sensor_primary" xml:space="preserve">
+    <value>External sensor: primary level</value>
+  </data>
+  <data name="no_points" xml:space="preserve">
+    <value>No points in selected area</value>
+  </data>
+  <data name="lost" xml:space="preserve">
+    <value>Lost control channel</value>
+  </data>
+  <data name="restore" xml:space="preserve">
+    <value>Restore control channel</value>
+  </data>
+  <data name="cmd_error" xml:space="preserve">
+    <value>Send command error</value>
+  </data>
+  <data name="lost_sound" xml:space="preserve">
+    <value>Lost sound</value>
+  </data>
+  <data name="restore_sound" xml:space="preserve">
+    <value>Restore sound</value>
+  </data>
+  <data name="light_shock_alarm" xml:space="preserve">
+    <value>Alarm on light shock</value>
+  </data>
+  <data name="balance_sound" xml:space="preserve">
+    <value>Low balance notification</value>
+  </data>
+  <data name="cant_connect" xml:space="preserve">
+    <value>Can&amp;t connect to car</value>
+  </data>
+  <data name="send_cmd" xml:space="preserve">
+    <value>Execute command?</value>
+  </data>
+  <data name="ccode_change" xml:space="preserve">
+    <value>C-code</value>
+  </data>
+  <data name="ccode_change_msg" xml:space="preserve">
+    <value>Change C-code</value>
+  </data>
+  <data name="ccode_guard" xml:space="preserve">
+    <value>For changing C-code You must guard OFF</value>
+  </data>
+  <data name="old_ccode" xml:space="preserve">
+    <value>Old C-code:</value>
+  </data>
+  <data name="new_ccode" xml:space="preserve">
+    <value>New C-code:</value>
+  </data>
+  <data name="new_ccode_invalid" xml:space="preserve">
+    <value>С-code does not match</value>
+  </data>
+  <data name="ccode_format" xml:space="preserve">
+    <value>С-code mist contains 6 digits</value>
+  </data>
+  <data name="ccode_zero" xml:space="preserve">
+    <value>New С-code contains zero</value>
+  </data>
+  <data name="open_trunk" xml:space="preserve">
+    <value>Open trunk</value>
+  </data>
+  <data name="ccode_fail" xml:space="preserve">
+    <value>Change C-code failed</value>
+  </data>
+  <data name="delete_widget" xml:space="preserve">
+    <value>Delete widget</value>
+  </data>
+  <data name="delete_widget_msg" xml:space="preserve">
+    <value>Delete widget?</value>
+  </data>
+  <data name="card_info" xml:space="preserve">
+    <value>Signal level: {0} dB\nVoltage: {1:n2} V</value>
+  </data>
+  <data name="demo_mode" xml:space="preserve">
+    <value>Demo mode</value>
+  </data>
+  <data name="ccode_ok" xml:space="preserve">
+    <value>C-code changed</value>
+  </data>
+  <data name="ccode_failed" xml:space="preserve">
+    <value>Change C-code failed</value>
+  </data>
+  <data name="yandex" xml:space="preserve">
+    <value>Yandex</value>
+  </data>
+  <data name="bing" xml:space="preserve">
+    <value>Bing</value>
+  </data>
+  <data name="more" xml:space="preserve">
+    <value>More info</value>
+  </data>
 </root>

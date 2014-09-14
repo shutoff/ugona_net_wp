@@ -37,19 +37,13 @@ namespace ugona_net
             return IsolatedStorageSettings.ApplicationSettings[name] as String;
         }
 
-        static public bool GetBoolSetting(String name, bool defaultValue)
+        static public T GetSetting<T>(String name, T defaultValue)
         {
             if (!IsolatedStorageSettings.ApplicationSettings.Contains(name))
                 return defaultValue;
-            return (bool) IsolatedStorageSettings.ApplicationSettings[name];
+            return (T)IsolatedStorageSettings.ApplicationSettings[name];
         }
 
-        static public long GetLongSetting(String name)
-        {
-            if (!IsolatedStorageSettings.ApplicationSettings.Contains(name))
-                return 0;
-            return Convert.ToInt64(IsolatedStorageSettings.ApplicationSettings[name]);
-        }
 
         static public void PutSetting(String name, Object value)
         {
@@ -165,29 +159,32 @@ function notifyUA() {
             return GetJson(url);
         }
 
+        static public void SetData(Object to, JObject obj, String prefix)
+        {
+            Delegate[] delegates = null;
+            FieldInfo info = to.GetType().GetField("PropertyChanged",
+                       System.Reflection.BindingFlags.Instance |
+                       System.Reflection.BindingFlags.NonPublic);
+            if (info != null)
+            {
+                MulticastDelegate eventDelagate =
+                          (MulticastDelegate)info.GetValue(to);
+                if (eventDelagate != null)
+                    delegates = eventDelagate.GetInvocationList();
+            }
+            SetData(to, obj, prefix, delegates);
+        }
+
         static public void SetData(Object to, JObject obj, String prefix, Delegate[] delegates)
         {
             PropertyInfo[] props = to.GetType().GetProperties();
-            if (delegates == null)
-            {
-                FieldInfo info = to.GetType().GetField("PropertyChanged",
-                           System.Reflection.BindingFlags.Instance |
-                           System.Reflection.BindingFlags.NonPublic);
-                if (info != null)
-                {
-                    MulticastDelegate eventDelagate =
-                              (MulticastDelegate)info.GetValue(to);
-                    if (eventDelagate != null)
-                        delegates = eventDelagate.GetInvocationList();
-                }
-            }
             foreach (PropertyInfo p in props)
             {
                 JToken v = obj[p.Name];
                 if (v == null)
                     continue;
                 Type type = p.PropertyType;
-                if (type.IsClass)
+                if (type.IsClass && (type != typeof(String)) && (type != typeof(string)))
                 {
                     String name = p.Name;
                     if (prefix != null)

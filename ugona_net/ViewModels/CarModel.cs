@@ -29,7 +29,7 @@ namespace ugona_net
             get;
             private set;
         }
-
+        
         public bool Refresh
         {
             get;
@@ -346,7 +346,7 @@ namespace ugona_net
         {
             get
             {
-                return Helper.GetBoolSetting("Traffic", false);
+                return Helper.GetSetting<bool>("Traffic", false);
             }
 
             set
@@ -396,15 +396,17 @@ namespace ugona_net
         {
             get
             {
+                if (currentDate == null)
+                    currentDate = DateTime.Now;
                 return currentDate;
             }
-        }
 
-        public String DateText
-        {
-            get
+            set
             {
-                return currentDate.ToString("dd MMMM");
+                if ((currentDate.Day == value.Day) && (currentDate.Month == value.Month) && (currentDate.Year == value.Year))
+                    return;
+                currentDate = value;
+                NotifyPropertyChanged("Date");
             }
         }
 
@@ -913,7 +915,7 @@ namespace ugona_net
                     return false;
                 long time = Car.time;
                 JObject res = await Helper.GetApi("", "skey", key, "time", Car.time);           
-                Helper.SetData(Car, res, null, null);
+                Helper.SetData(Car, res, null);
                 Error = "";
                 NotifyPropertyChanged("Error");
                 if (time == Car.time)

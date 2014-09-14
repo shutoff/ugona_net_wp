@@ -61,11 +61,299 @@ namespace ugona_net.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Event.
+        /// </summary>
+        public static string _event {
+            get {
+                return ResourceManager.GetString("event", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+        public static string about {
+            get {
+                return ResourceManager.GetString("about", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Accessories OFF.
+        /// </summary>
+        public static string access_off {
+            get {
+                return ResourceManager.GetString("access_off", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Accessories ON.
+        /// </summary>
+        public static string access_on {
+            get {
+                return ResourceManager.GetString("access_on", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Actions.
+        /// </summary>
+        public static string actions {
+            get {
+                return ResourceManager.GetString("actions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add.
+        /// </summary>
+        public static string add {
+            get {
+                return ResourceManager.GetString("add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You can add widget on lockscreen.
+        /// </summary>
+        public static string add_lock_widget {
+            get {
+                return ResourceManager.GetString("add_lock_widget", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add phone.
+        /// </summary>
+        public static string add_phone {
+            get {
+                return ResourceManager.GetString("add_phone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add timer.
+        /// </summary>
+        public static string add_timer {
+            get {
+                return ResourceManager.GetString("add_timer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add zone.
+        /// </summary>
+        public static string add_zone {
+            get {
+                return ResourceManager.GetString("add_zone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Salon fan.
+        /// </summary>
+        public static string air {
+            get {
+                return ResourceManager.GetString("air", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heavy shock|Trunk|Hood|Doors|Ignition Lock|MovTilt sensor|Rogue|Accessory zone|Ignition lock.
+        /// </summary>
+        public static string alarm {
+            get {
+                return ResourceManager.GetString("alarm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alarm accessories zone.
+        /// </summary>
+        public static string alarm_accessories {
+            get {
+                return ResourceManager.GetString("alarm_accessories", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alarm Trunk.
+        /// </summary>
+        public static string alarm_boot {
+            get {
+                return ResourceManager.GetString("alarm_boot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alarm door.
+        /// </summary>
+        public static string alarm_door {
+            get {
+                return ResourceManager.GetString("alarm_door", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alarm hood.
+        /// </summary>
+        public static string alarm_hood {
+            get {
+                return ResourceManager.GetString("alarm_hood", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alarm input 1.
+        /// </summary>
+        public static string alarm_input1 {
+            get {
+                return ResourceManager.GetString("alarm_input1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alarm input 2.
+        /// </summary>
+        public static string alarm_input2 {
+            get {
+                return ResourceManager.GetString("alarm_input2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alarm input 3.
+        /// </summary>
+        public static string alarm_input3 {
+            get {
+                return ResourceManager.GetString("alarm_input3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alarm input 4.
+        /// </summary>
+        public static string alarm_input4 {
+            get {
+                return ResourceManager.GetString("alarm_input4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alarm notification.
+        /// </summary>
+        public static string alarm_mode {
+            get {
+                return ResourceManager.GetString("alarm_mode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alarm on sensors.
+        /// </summary>
+        public static string alarm_shock {
+            get {
+                return ResourceManager.GetString("alarm_shock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alarm sound.
+        /// </summary>
+        public static string alarm_sound {
+            get {
+                return ResourceManager.GetString("alarm_sound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alarm test.
+        /// </summary>
+        public static string alarm_test {
+            get {
+                return ResourceManager.GetString("alarm_test", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Click for test alarm.
+        /// </summary>
+        public static string alarm_test_sum {
+            get {
+                return ResourceManager.GetString("alarm_test_sum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alarms.
+        /// </summary>
+        public static string alarms {
+            get {
+                return ResourceManager.GetString("alarms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ugona.net+.
+        /// </summary>
+        public static string app_name {
+            get {
+                return ResourceManager.GetString("app_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Application UGONA.NET+ works with MS-PGSM devices.
+        /// </summary>
+        public static string application {
+            get {
+                return ResourceManager.GetString("application", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ugona.Net.
         /// </summary>
         public static string ApplicationTitle {
             get {
                 return ResourceManager.GetString("ApplicationTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Attention.
+        /// </summary>
+        public static string attention {
+            get {
+                return ResourceManager.GetString("attention", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Authorization.
+        /// </summary>
+        public static string auth {
+            get {
+                return ResourceManager.GetString("auth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Check authorization error.
+        /// </summary>
+        public static string auth_error {
+            get {
+                return ResourceManager.GetString("auth_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Authorization on server.
+        /// </summary>
+        public static string auth_summary {
+            get {
+                return ResourceManager.GetString("auth_summary", resourceCulture);
             }
         }
         
@@ -88,6 +376,582 @@ namespace ugona_net.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to auto.
+        /// </summary>
+        public static string auto {
+            get {
+                return ResourceManager.GetString("auto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Autostart.
+        /// </summary>
+        public static string autostart {
+            get {
+                return ResourceManager.GetString("autostart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show autoastart actions.
+        /// </summary>
+        public static string autostart_summary {
+            get {
+                return ResourceManager.GetString("autostart_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Background.
+        /// </summary>
+        public static string background {
+            get {
+                return ResourceManager.GetString("background", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid C-Code.
+        /// </summary>
+        public static string bad_ccode {
+            get {
+                return ResourceManager.GetString("bad_ccode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter valid API-key.
+        /// </summary>
+        public static string bad_key {
+            get {
+                return ResourceManager.GetString("bad_key", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Balance.
+        /// </summary>
+        public static string balance {
+            get {
+                return ResourceManager.GetString("balance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Balance notification.
+        /// </summary>
+        public static string balance_notification {
+            get {
+                return ResourceManager.GetString("balance_notification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Balance request.
+        /// </summary>
+        public static string balance_request {
+            get {
+                return ResourceManager.GetString("balance_request", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Low balance notification.
+        /// </summary>
+        public static string balance_sound {
+            get {
+                return ResourceManager.GetString("balance_sound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bing.
+        /// </summary>
+        public static string bing {
+            get {
+                return ResourceManager.GetString("bing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remote blocking.
+        /// </summary>
+        public static string block {
+            get {
+                return ResourceManager.GetString("block", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to For cancel blocking switch ON and OFF valet mode.
+        /// </summary>
+        public static string block_msg {
+            get {
+                return ResourceManager.GetString("block_msg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remote blocking of the car.
+        /// </summary>
+        public static string block_sum {
+            get {
+                return ResourceManager.GetString("block_sum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brake.
+        /// </summary>
+        public static string brake {
+            get {
+                return ResourceManager.GetString("brake", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hand brake off.
+        /// </summary>
+        public static string brake_off {
+            get {
+                return ResourceManager.GetString("brake_off", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hand brake on.
+        /// </summary>
+        public static string brake_on {
+            get {
+                return ResourceManager.GetString("brake_on", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BRK data.
+        /// </summary>
+        public static string brk_data {
+            get {
+                return ResourceManager.GetString("brk_data", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Call to car.
+        /// </summary>
+        public static string call {
+            get {
+                return ResourceManager.GetString("call", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Call car.
+        /// </summary>
+        public static string call_car {
+            get {
+                return ResourceManager.GetString("call_car", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Switch to call mode.
+        /// </summary>
+        public static string call_mode {
+            get {
+                return ResourceManager.GetString("call_mode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guard off via CAN.
+        /// </summary>
+        public static string can_off {
+            get {
+                return ResourceManager.GetString("can_off", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guard on via CAN.
+        /// </summary>
+        public static string can_on {
+            get {
+                return ResourceManager.GetString("can_on", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string cancel {
+            get {
+                return ResourceManager.GetString("cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Can&amp;t connect to car.
+        /// </summary>
+        public static string cant_connect {
+            get {
+                return ResourceManager.GetString("cant_connect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Car.
+        /// </summary>
+        public static string car {
+            get {
+                return ResourceManager.GetString("car", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Signal level: {0} dB\nVoltage: {1:n2} V.
+        /// </summary>
+        public static string card_info {
+            get {
+                return ResourceManager.GetString("card_info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Security card in car.
+        /// </summary>
+        public static string card_message {
+            get {
+                return ResourceManager.GetString("card_message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cars.
+        /// </summary>
+        public static string cars {
+            get {
+                return ResourceManager.GetString("cars", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to C-Code:.
+        /// </summary>
+        public static string ccode {
+            get {
+                return ResourceManager.GetString("ccode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to C-code.
+        /// </summary>
+        public static string ccode_change {
+            get {
+                return ResourceManager.GetString("ccode_change", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change C-code.
+        /// </summary>
+        public static string ccode_change_msg {
+            get {
+                return ResourceManager.GetString("ccode_change_msg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change C-code failed.
+        /// </summary>
+        public static string ccode_fail {
+            get {
+                return ResourceManager.GetString("ccode_fail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change C-code failed.
+        /// </summary>
+        public static string ccode_failed {
+            get {
+                return ResourceManager.GetString("ccode_failed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to С-code mist contains 6 digits.
+        /// </summary>
+        public static string ccode_format {
+            get {
+                return ResourceManager.GetString("ccode_format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to For changing C-code You must guard OFF.
+        /// </summary>
+        public static string ccode_guard {
+            get {
+                return ResourceManager.GetString("ccode_guard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to C-code changed.
+        /// </summary>
+        public static string ccode_ok {
+            get {
+                return ResourceManager.GetString("ccode_ok", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New С-code contains zero.
+        /// </summary>
+        public static string ccode_zero {
+            get {
+                return ResourceManager.GetString("ccode_zero", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings changed.
+        /// </summary>
+        public static string changed {
+            get {
+                return ResourceManager.GetString("changed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have unsaved settings.\nYou are sure leave settings?.
+        /// </summary>
+        public static string changed_msg {
+            get {
+                return ResourceManager.GetString("changed_msg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Charts.
+        /// </summary>
+        public static string charts {
+            get {
+                return ResourceManager.GetString("charts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Check authorization.
+        /// </summary>
+        public static string check_auth {
+            get {
+                return ResourceManager.GetString("check_auth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clear.
+        /// </summary>
+        public static string clear {
+            get {
+                return ResourceManager.GetString("clear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Close.
+        /// </summary>
+        public static string close {
+            get {
+                return ResourceManager.GetString("close", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Time for close car after ignition off.
+        /// </summary>
+        public static string close_time {
+            get {
+                return ResourceManager.GetString("close_time", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send command error.
+        /// </summary>
+        public static string cmd_error {
+            get {
+                return ResourceManager.GetString("cmd_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Only 3 buttons can show on main screen.
+        /// </summary>
+        public static string cmd_msg {
+            get {
+                return ResourceManager.GetString("cmd_msg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enable comfort function.
+        /// </summary>
+        public static string comfort_enable {
+            get {
+                return ResourceManager.GetString("comfort_enable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Comannd from buttons.
+        /// </summary>
+        public static string command {
+            get {
+                return ResourceManager.GetString("command", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Command name:.
+        /// </summary>
+        public static string command_name {
+            get {
+                return ResourceManager.GetString("command_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Control commands.
+        /// </summary>
+        public static string commands {
+            get {
+                return ResourceManager.GetString("commands", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select commands on main screen.
+        /// </summary>
+        public static string commands_sum {
+            get {
+                return ResourceManager.GetString("commands_sum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Connection:.
+        /// </summary>
+        public static string connection {
+            get {
+                return ResourceManager.GetString("connection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contacts.
+        /// </summary>
+        public static string contacts {
+            get {
+                return ResourceManager.GetString("contacts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Control.
+        /// </summary>
+        public static string control {
+            get {
+                return ResourceManager.GetString("control", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Control method.
+        /// </summary>
+        public static string control_method {
+            get {
+                return ResourceManager.GetString("control_method", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to © 2013-2014 Ugona.net, info@ugona.net.
+        /// </summary>
+        public static string copyright {
+            get {
+                return ResourceManager.GetString("copyright", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data update error.
+        /// </summary>
+        public static string data_error {
+            get {
+                return ResourceManager.GetString("data_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data transfer.
+        /// </summary>
+        public static string data_transfer {
+            get {
+                return ResourceManager.GetString("data_transfer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select a day.
+        /// </summary>
+        public static string day {
+            get {
+                return ResourceManager.GetString("day", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to default.
+        /// </summary>
+        public static string def {
+            get {
+                return ResourceManager.GetString("def", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        public static string delete {
+            get {
+                return ResourceManager.GetString("delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete widget.
+        /// </summary>
+        public static string delete_widget {
+            get {
+                return ResourceManager.GetString("delete_widget", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete widget?.
+        /// </summary>
+        public static string delete_widget_msg {
+            get {
+                return ResourceManager.GetString("delete_widget_msg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Demo.
         /// </summary>
         public static string Demo {
@@ -97,11 +961,1622 @@ namespace ugona_net.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Demo mode.
+        /// </summary>
+        public static string demo_mode {
+            get {
+                return ResourceManager.GetString("demo_mode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Device phone number.
+        /// </summary>
+        public static string device_phone_number {
+            get {
+                return ResourceManager.GetString("device_phone_number", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Device require password on SMS.
+        /// </summary>
+        public static string device_pswd {
+            get {
+                return ResourceManager.GetString("device_pswd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Device settings.
+        /// </summary>
+        public static string device_settings {
+            get {
+                return ResourceManager.GetString("device_settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Door close.
+        /// </summary>
+        public static string door_close {
+            get {
+                return ResourceManager.GetString("door_close", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Door open.
+        /// </summary>
+        public static string door_open {
+            get {
+                return ResourceManager.GetString("door_open", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delay alarm for door and trunk zone.
+        /// </summary>
+        public static string door_time {
+            get {
+                return ResourceManager.GetString("door_time", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download events table.
+        /// </summary>
+        public static string download_events {
+            get {
+                return ResourceManager.GetString("download_events", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download settings.
+        /// </summary>
+        public static string download_settings {
+            get {
+                return ResourceManager.GetString("download_settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guard on charm.
+        /// </summary>
+        public static string e0101 {
+            get {
+                return ResourceManager.GetString("e0101", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gaurd on auto.
+        /// </summary>
+        public static string e0102 {
+            get {
+                return ResourceManager.GetString("e0102", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guard on VALET button.
+        /// </summary>
+        public static string e0103 {
+            get {
+                return ResourceManager.GetString("e0103", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guard on by Hands-Free.
+        /// </summary>
+        public static string e0104 {
+            get {
+                return ResourceManager.GetString("e0104", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guard on with phone.
+        /// </summary>
+        public static string e0105 {
+            get {
+                return ResourceManager.GetString("e0105", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guard on by internet.
+        /// </summary>
+        public static string e0106 {
+            get {
+                return ResourceManager.GetString("e0106", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guard on by slave.
+        /// </summary>
+        public static string e0107 {
+            get {
+                return ResourceManager.GetString("e0107", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guard off charm.
+        /// </summary>
+        public static string e0201 {
+            get {
+                return ResourceManager.GetString("e0201", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guard off from phone.
+        /// </summary>
+        public static string e0202 {
+            get {
+                return ResourceManager.GetString("e0202", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guard off from internet.
+        /// </summary>
+        public static string e0203 {
+            get {
+                return ResourceManager.GetString("e0203", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guard off by Hands-Free.
+        /// </summary>
+        public static string e0204 {
+            get {
+                return ResourceManager.GetString("e0204", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guard off by PIN.
+        /// </summary>
+        public static string e0205 {
+            get {
+                return ResourceManager.GetString("e0205", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guard off by slave.
+        /// </summary>
+        public static string e0206 {
+            get {
+                return ResourceManager.GetString("e0206", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alarm by critical power.
+        /// </summary>
+        public static string e0301 {
+            get {
+                return ResourceManager.GetString("e0301", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alarm secondary zone sensor.
+        /// </summary>
+        public static string e0302 {
+            get {
+                return ResourceManager.GetString("e0302", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alarm primary zone sensor.
+        /// </summary>
+        public static string e0303 {
+            get {
+                return ResourceManager.GetString("e0303", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alarm secondary zone shock sensor.
+        /// </summary>
+        public static string e0304 {
+            get {
+                return ResourceManager.GetString("e0304", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alarm primary zone shock sensor.
+        /// </summary>
+        public static string e0305 {
+            get {
+                return ResourceManager.GetString("e0305", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alarm on brake.
+        /// </summary>
+        public static string e0306 {
+            get {
+                return ResourceManager.GetString("e0306", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alarm on hands brake.
+        /// </summary>
+        public static string e0307 {
+            get {
+                return ResourceManager.GetString("e0307", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alarm on tilt sensor.
+        /// </summary>
+        public static string e0308 {
+            get {
+                return ResourceManager.GetString("e0308", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alarm on moving sensor.
+        /// </summary>
+        public static string e0309 {
+            get {
+                return ResourceManager.GetString("e0309", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alarm on ignition.
+        /// </summary>
+        public static string e0310 {
+            get {
+                return ResourceManager.GetString("e0310", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alarm on trunk open.
+        /// </summary>
+        public static string e0311 {
+            get {
+                return ResourceManager.GetString("e0311", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alarm on door open.
+        /// </summary>
+        public static string e0312 {
+            get {
+                return ResourceManager.GetString("e0312", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alarm on door open.
+        /// </summary>
+        public static string e0313 {
+            get {
+                return ResourceManager.GetString("e0313", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alarm on door open.
+        /// </summary>
+        public static string e0314 {
+            get {
+                return ResourceManager.GetString("e0314", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alarm on door open.
+        /// </summary>
+        public static string e0315 {
+            get {
+                return ResourceManager.GetString("e0315", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alarm on hood open.
+        /// </summary>
+        public static string e0316 {
+            get {
+                return ResourceManager.GetString("e0316", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Engine start by charm.
+        /// </summary>
+        public static string e0401 {
+            get {
+                return ResourceManager.GetString("e0401", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Engine start by phone.
+        /// </summary>
+        public static string e0402 {
+            get {
+                return ResourceManager.GetString("e0402", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Engine start by timer.
+        /// </summary>
+        public static string e0403 {
+            get {
+                return ResourceManager.GetString("e0403", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Engine start by temperature.
+        /// </summary>
+        public static string e0404 {
+            get {
+                return ResourceManager.GetString("e0404", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Engine start by voltage.
+        /// </summary>
+        public static string e0405 {
+            get {
+                return ResourceManager.GetString("e0405", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Engine start by internet.
+        /// </summary>
+        public static string e0406 {
+            get {
+                return ResourceManager.GetString("e0406", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Engine stop by charm.
+        /// </summary>
+        public static string e0501 {
+            get {
+                return ResourceManager.GetString("e0501", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Engine stop by phone.
+        /// </summary>
+        public static string e0502 {
+            get {
+                return ResourceManager.GetString("e0502", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Engine stop by timer.
+        /// </summary>
+        public static string e0503 {
+            get {
+                return ResourceManager.GetString("e0503", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Engine stop by temperature.
+        /// </summary>
+        public static string e0504 {
+            get {
+                return ResourceManager.GetString("e0504", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Engine stop by internet.
+        /// </summary>
+        public static string e0505 {
+            get {
+                return ResourceManager.GetString("e0505", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Emergency engine stop.
+        /// </summary>
+        public static string e0506 {
+            get {
+                return ResourceManager.GetString("e0506", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Automaticaly engine stop.
+        /// </summary>
+        public static string e0507 {
+            get {
+                return ResourceManager.GetString("e0507", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Engine blocked by internet.
+        /// </summary>
+        public static string e0601 {
+            get {
+                return ResourceManager.GetString("e0601", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Engine blocked by phone.
+        /// </summary>
+        public static string e0602 {
+            get {
+                return ResourceManager.GetString("e0602", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Engine blocked automatically.
+        /// </summary>
+        public static string e0603 {
+            get {
+                return ResourceManager.GetString("e0603", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Valet On by charm.
+        /// </summary>
+        public static string e0701 {
+            get {
+                return ResourceManager.GetString("e0701", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings changed from site.
+        /// </summary>
+        public static string e0801 {
+            get {
+                return ResourceManager.GetString("e0801", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings changed from internet.
+        /// </summary>
+        public static string e0802 {
+            get {
+                return ResourceManager.GetString("e0802", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings changed from menu.
+        /// </summary>
+        public static string e0803 {
+            get {
+                return ResourceManager.GetString("e0803", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add new charm.
+        /// </summary>
+        public static string e0804 {
+            get {
+                return ResourceManager.GetString("e0804", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add new RF-unit.
+        /// </summary>
+        public static string e0805 {
+            get {
+                return ResourceManager.GetString("e0805", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PIN changed.
+        /// </summary>
+        public static string e0806 {
+            get {
+                return ResourceManager.GetString("e0806", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings changed from phone.
+        /// </summary>
+        public static string e0807 {
+            get {
+                return ResourceManager.GetString("e0807", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings changed from charm.
+        /// </summary>
+        public static string e0808 {
+            get {
+                return ResourceManager.GetString("e0808", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fuel.
+        /// </summary>
+        public static string e0901 {
+            get {
+                return ResourceManager.GetString("e0901", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Crash.
+        /// </summary>
+        public static string e1001 {
+            get {
+                return ResourceManager.GetString("e1001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GSM failed.
+        /// </summary>
+        public static string e1101 {
+            get {
+                return ResourceManager.GetString("e1101", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GSM restored.
+        /// </summary>
+        public static string e1102 {
+            get {
+                return ResourceManager.GetString("e1102", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Incomming call.
+        /// </summary>
+        public static string e1103 {
+            get {
+                return ResourceManager.GetString("e1103", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Call from charm.
+        /// </summary>
+        public static string e1201 {
+            get {
+                return ResourceManager.GetString("e1201", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Engine start failed - no neutral.
+        /// </summary>
+        public static string e1301 {
+            get {
+                return ResourceManager.GetString("e1301", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Engine start failed - no gaurd.
+        /// </summary>
+        public static string e1302 {
+            get {
+                return ResourceManager.GetString("e1302", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Engine start failed - technical problems.
+        /// </summary>
+        public static string e1303 {
+            get {
+                return ResourceManager.GetString("e1303", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Engine start failed - blocked.
+        /// </summary>
+        public static string e1304 {
+            get {
+                return ResourceManager.GetString("e1304", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tracking on by charm.
+        /// </summary>
+        public static string e1401 {
+            get {
+                return ResourceManager.GetString("e1401", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tracking on by phone.
+        /// </summary>
+        public static string e1402 {
+            get {
+                return ResourceManager.GetString("e1402", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tracking on by internet.
+        /// </summary>
+        public static string e1403 {
+            get {
+                return ResourceManager.GetString("e1403", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tracking off by charm.
+        /// </summary>
+        public static string e1501 {
+            get {
+                return ResourceManager.GetString("e1501", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tracking off by phone.
+        /// </summary>
+        public static string e1502 {
+            get {
+                return ResourceManager.GetString("e1502", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trackingoff by internet.
+        /// </summary>
+        public static string e1503 {
+            get {
+                return ResourceManager.GetString("e1503", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Power off.
+        /// </summary>
+        public static string e1601 {
+            get {
+                return ResourceManager.GetString("e1601", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trunk open by charm.
+        /// </summary>
+        public static string e1701 {
+            get {
+                return ResourceManager.GetString("e1701", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trunk open by phone.
+        /// </summary>
+        public static string e1702 {
+            get {
+                return ResourceManager.GetString("e1702", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trunk open by internet.
+        /// </summary>
+        public static string e1703 {
+            get {
+                return ResourceManager.GetString("e1703", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Road rougness.
+        /// </summary>
+        public static string e3700 {
+            get {
+                return ResourceManager.GetString("e3700", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ---.--.
+        /// </summary>
+        public static string empty_balance {
+            get {
+                return ResourceManager.GetString("empty_balance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to -- °C.
+        /// </summary>
+        public static string empty_temperature {
+            get {
+                return ResourceManager.GetString("empty_temperature", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to -- V.
+        /// </summary>
+        public static string empty_voltage {
+            get {
+                return ResourceManager.GetString("empty_voltage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to End route by move sensor.
+        /// </summary>
+        public static string end_move {
+            get {
+                return ResourceManager.GetString("end_move", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You must reinitialize main phone for clear phones list.
+        /// </summary>
+        public static string erase_phones {
+            get {
+                return ResourceManager.GetString("erase_phones", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        public static string error {
+            get {
+                return ResourceManager.GetString("error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data loading error.
+        /// </summary>
+        public static string error_load {
+            get {
+                return ResourceManager.GetString("error_load", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error read memory.
+        /// </summary>
+        public static string error_read {
+            get {
+                return ResourceManager.GetString("error_read", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Events.
         /// </summary>
         public static string Events {
             get {
                 return ResourceManager.GetString("Events", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exit.
+        /// </summary>
+        public static string exit {
+            get {
+                return ResourceManager.GetString("exit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to External sensor: primary level.
+        /// </summary>
+        public static string ext_sensor_primary {
+            get {
+                return ResourceManager.GetString("ext_sensor_primary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to External sensor: preliminary level.
+        /// </summary>
+        public static string ext_sensor_secondary {
+            get {
+                return ResourceManager.GetString("ext_sensor_secondary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to External zone MKW.
+        /// </summary>
+        public static string ext_zone {
+            get {
+                return ResourceManager.GetString("ext_zone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Find mode.
+        /// </summary>
+        public static string find {
+            get {
+                return ResourceManager.GetString("find", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send coordinates at 3 hours every 10 minutes.
+        /// </summary>
+        public static string find_sum {
+            get {
+                return ResourceManager.GetString("find_sum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Support forum.
+        /// </summary>
+        public static string forum_btn {
+            get {
+                return ResourceManager.GetString("forum_btn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Google.
+        /// </summary>
+        public static string google {
+            get {
+                return ResourceManager.GetString("google", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GPRS connected.
+        /// </summary>
+        public static string gprs_home_state {
+            get {
+                return ResourceManager.GetString("gprs_home_state", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No GPRS connection.
+        /// </summary>
+        public static string gprs_none_state {
+            get {
+                return ResourceManager.GetString("gprs_none_state", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GPRS OFF.
+        /// </summary>
+        public static string gprs_off {
+            get {
+                return ResourceManager.GetString("gprs_off", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GPRS ON.
+        /// </summary>
+        public static string gprs_on {
+            get {
+                return ResourceManager.GetString("gprs_on", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GPRS connected (roaming).
+        /// </summary>
+        public static string gprs_roaming_state {
+            get {
+                return ResourceManager.GetString("gprs_roaming_state", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GPS fail.
+        /// </summary>
+        public static string gps_fail {
+            get {
+                return ResourceManager.GetString("gps_fail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GPS recovery.
+        /// </summary>
+        public static string gps_recover {
+            get {
+                return ResourceManager.GetString("gps_recover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GPS position founs.
+        /// </summary>
+        public static string gps_state {
+            get {
+                return ResourceManager.GetString("gps_state", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GSM fail.
+        /// </summary>
+        public static string gsm_fail {
+            get {
+                return ResourceManager.GetString("gsm_fail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GSM sector changed.
+        /// </summary>
+        public static string gsm_new {
+            get {
+                return ResourceManager.GetString("gsm_new", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GSM recovery.
+        /// </summary>
+        public static string gsm_recover {
+            get {
+                return ResourceManager.GetString("gsm_recover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GSM register failed.
+        /// </summary>
+        public static string gsm_register_fail {
+            get {
+                return ResourceManager.GetString("gsm_register_fail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guard notify.
+        /// </summary>
+        public static string guard_notify {
+            get {
+                return ResourceManager.GetString("guard_notify", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guard off.
+        /// </summary>
+        public static string guard_off {
+            get {
+                return ResourceManager.GetString("guard_off", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guard on.
+        /// </summary>
+        public static string guard_on {
+            get {
+                return ResourceManager.GetString("guard_on", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Permanent partial guard.
+        /// </summary>
+        public static string guard_partial {
+            get {
+                return ResourceManager.GetString("guard_partial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sound on guard ON/OFF.
+        /// </summary>
+        public static string guard_sound {
+            get {
+                return ResourceManager.GetString("guard_sound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guard ON.
+        /// </summary>
+        public static string guard_state {
+            get {
+                return ResourceManager.GetString("guard_state", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set time to guard on lost label.
+        /// </summary>
+        public static string guard_time {
+            get {
+                return ResourceManager.GetString("guard_time", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guard mode 2 off.
+        /// </summary>
+        public static string guard2_off {
+            get {
+                return ResourceManager.GetString("guard2_off", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guard mode 2 on.
+        /// </summary>
+        public static string guard2_on {
+            get {
+                return ResourceManager.GetString("guard2_on", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heater with salon.
+        /// </summary>
+        public static string heater_air {
+            get {
+                return ResourceManager.GetString("heater_air", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heater off.
+        /// </summary>
+        public static string heater_off {
+            get {
+                return ResourceManager.GetString("heater_off", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heater without salon.
+        /// </summary>
+        public static string heater_on {
+            get {
+                return ResourceManager.GetString("heater_on", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start engine after prestarting heater.
+        /// </summary>
+        public static string heater_start {
+            get {
+                return ResourceManager.GetString("heater_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prestarting heater time.
+        /// </summary>
+        public static string heater_time {
+            get {
+                return ResourceManager.GetString("heater_time", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heavy shock.
+        /// </summary>
+        public static string heavy_shock {
+            get {
+                return ResourceManager.GetString("heavy_shock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} h {1:00} min.
+        /// </summary>
+        public static string hm_format {
+            get {
+                return ResourceManager.GetString("hm_format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hood close.
+        /// </summary>
+        public static string hood_close {
+            get {
+                return ResourceManager.GetString("hood_close", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hood open.
+        /// </summary>
+        public static string hood_open {
+            get {
+                return ResourceManager.GetString("hood_open", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alarm ignition.
+        /// </summary>
+        public static string ignition_lock {
+            get {
+                return ResourceManager.GetString("ignition_lock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ignition OFF.
+        /// </summary>
+        public static string ignition_off {
+            get {
+                return ResourceManager.GetString("ignition_off", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ignition ON.
+        /// </summary>
+        public static string ignition_on {
+            get {
+                return ResourceManager.GetString("ignition_on", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Control by impulse.
+        /// </summary>
+        public static string impulse {
+            get {
+                return ResourceManager.GetString("impulse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Incomming SMS.
+        /// </summary>
+        public static string incomming_sms {
+            get {
+                return ResourceManager.GetString("incomming_sms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send SMS when engine started.
+        /// </summary>
+        public static string inf_sms {
+            get {
+                return ResourceManager.GetString("inf_sms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to undefined.
+        /// </summary>
+        public static string inf_sms_msg {
+            get {
+                return ResourceManager.GetString("inf_sms_msg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Initialization.
+        /// </summary>
+        public static string init {
+            get {
+                return ResourceManager.GetString("init", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Main phone initialization.
+        /// </summary>
+        public static string init_phone {
+            get {
+                return ResourceManager.GetString("init_phone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inner zone MKW.
+        /// </summary>
+        public static string inner_zone {
+            get {
+                return ResourceManager.GetString("inner_zone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Input device password.
+        /// </summary>
+        public static string input_device_pswd {
+            get {
+                return ResourceManager.GetString("input_device_pswd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Input password.
+        /// </summary>
+        public static string input_password {
+            get {
+                return ResourceManager.GetString("input_password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Input 1 OFF.
+        /// </summary>
+        public static string input1_off {
+            get {
+                return ResourceManager.GetString("input1_off", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Input 1 ON.
+        /// </summary>
+        public static string input1_on {
+            get {
+                return ResourceManager.GetString("input1_on", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Input 2 OFF.
+        /// </summary>
+        public static string input2_off {
+            get {
+                return ResourceManager.GetString("input2_off", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Input 2 ON.
+        /// </summary>
+        public static string input2_on {
+            get {
+                return ResourceManager.GetString("input2_on", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Input 3 OFF.
+        /// </summary>
+        public static string input3_off {
+            get {
+                return ResourceManager.GetString("input3_off", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Input 3 ON.
+        /// </summary>
+        public static string input3_on {
+            get {
+                return ResourceManager.GetString("input3_on", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Input 4 OFF.
+        /// </summary>
+        public static string input4_off {
+            get {
+                return ResourceManager.GetString("input4_off", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Input 4 ON.
+        /// </summary>
+        public static string input4_on {
+            get {
+                return ResourceManager.GetString("input4_on", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Input 5 OFF.
+        /// </summary>
+        public static string input5_off {
+            get {
+                return ResourceManager.GetString("input5_off", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Input 5 ON.
+        /// </summary>
+        public static string input5_on {
+            get {
+                return ResourceManager.GetString("input5_on", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Input 6 OFF.
+        /// </summary>
+        public static string input6_off {
+            get {
+                return ResourceManager.GetString("input6_off", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Input 6 ON.
+        /// </summary>
+        public static string input6_on {
+            get {
+                return ResourceManager.GetString("input6_on", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Internet Off.
+        /// </summary>
+        public static string internet_off {
+            get {
+                return ResourceManager.GetString("internet_off", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disable internet on the device.
+        /// </summary>
+        public static string internet_off_sum {
+            get {
+                return ResourceManager.GetString("internet_off_sum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Internet On.
+        /// </summary>
+        public static string internet_on {
+            get {
+                return ResourceManager.GetString("internet_on", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enable internet on the device.
+        /// </summary>
+        public static string internet_on_sum {
+            get {
+                return ResourceManager.GetString("internet_on_sum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid C-code.
+        /// </summary>
+        public static string invalid_ccode {
+            get {
+                return ResourceManager.GetString("invalid_ccode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid confirm.
+        /// </summary>
+        public static string invalid_confirm {
+            get {
+                return ResourceManager.GetString("invalid_confirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid API key.
+        /// </summary>
+        public static string invalid_key {
+            get {
+                return ResourceManager.GetString("invalid_key", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid password.
+        /// </summary>
+        public static string invalid_password {
+            get {
+                return ResourceManager.GetString("invalid_password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to km.
+        /// </summary>
+        public static string km {
+            get {
+                return ResourceManager.GetString("km", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to kmh.
+        /// </summary>
+        public static string kmh {
+            get {
+                return ResourceManager.GetString("kmh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LAN devices changed.
+        /// </summary>
+        public static string lan_change {
+            get {
+                return ResourceManager.GetString("lan_change", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Light shock.
+        /// </summary>
+        public static string light_shock {
+            get {
+                return ResourceManager.GetString("light_shock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alarm on light shock.
+        /// </summary>
+        public static string light_shock_alarm {
+            get {
+                return ResourceManager.GetString("light_shock_alarm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loading data....
+        /// </summary>
+        public static string loading {
+            get {
+                return ResourceManager.GetString("loading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Card 1 off.
+        /// </summary>
+        public static string lock_off1 {
+            get {
+                return ResourceManager.GetString("lock_off1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Card 2 off.
+        /// </summary>
+        public static string lock_off2 {
+            get {
+                return ResourceManager.GetString("lock_off2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Card 3 off.
+        /// </summary>
+        public static string lock_off3 {
+            get {
+                return ResourceManager.GetString("lock_off3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Card 4 off.
+        /// </summary>
+        public static string lock_off4 {
+            get {
+                return ResourceManager.GetString("lock_off4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Card 5 off.
+        /// </summary>
+        public static string lock_off5 {
+            get {
+                return ResourceManager.GetString("lock_off5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Card 1 on.
+        /// </summary>
+        public static string lock_on1 {
+            get {
+                return ResourceManager.GetString("lock_on1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Card 2 on.
+        /// </summary>
+        public static string lock_on2 {
+            get {
+                return ResourceManager.GetString("lock_on2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Card 3 on.
+        /// </summary>
+        public static string lock_on3 {
+            get {
+                return ResourceManager.GetString("lock_on3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Card 4 on.
+        /// </summary>
+        public static string lock_on4 {
+            get {
+                return ResourceManager.GetString("lock_on4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Card 5 on.
+        /// </summary>
+        public static string lock_on5 {
+            get {
+                return ResourceManager.GetString("lock_on5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lockscreen widget.
+        /// </summary>
+        public static string lock_widget {
+            get {
+                return ResourceManager.GetString("lock_widget", resourceCulture);
             }
         }
         
@@ -124,11 +2599,1048 @@ namespace ugona_net.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lost control channel.
+        /// </summary>
+        public static string lost {
+            get {
+                return ResourceManager.GetString("lost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lost sound.
+        /// </summary>
+        public static string lost_sound {
+            get {
+                return ResourceManager.GetString("lost_sound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Low balance.
+        /// </summary>
+        public static string low_balance {
+            get {
+                return ResourceManager.GetString("low_balance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Low card battery.
+        /// </summary>
+        public static string low_battery {
+            get {
+                return ResourceManager.GetString("low_battery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} min.
+        /// </summary>
+        public static string m_format {
+            get {
+                return ResourceManager.GetString("m_format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Main phone.
+        /// </summary>
+        public static string main_phone {
+            get {
+                return ResourceManager.GetString("main_phone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Main power OFF.
+        /// </summary>
+        public static string main_power_off {
+            get {
+                return ResourceManager.GetString("main_power_off", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Main power ON.
+        /// </summary>
+        public static string main_power_on {
+            get {
+                return ResourceManager.GetString("main_power_on", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Map.
+        /// </summary>
+        public static string map {
+            get {
+                return ResourceManager.GetString("map", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Location request.
+        /// </summary>
+        public static string map_req {
+            get {
+                return ResourceManager.GetString("map_req", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Once location request.
+        /// </summary>
+        public static string map_sum {
+            get {
+                return ResourceManager.GetString("map_sum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Map type.
+        /// </summary>
+        public static string map_type {
+            get {
+                return ResourceManager.GetString("map_type", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to %.2f km.
+        /// </summary>
+        public static string mileage {
+            get {
+                return ResourceManager.GetString("mileage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to min.
+        /// </summary>
+        public static string minutes {
+            get {
+                return ResourceManager.GetString("minutes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mode A.
+        /// </summary>
+        public static string mode_a {
+            get {
+                return ResourceManager.GetString("mode_a", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send GSM coordinates every 6 hours.
+        /// </summary>
+        public static string mode_a_sum {
+            get {
+                return ResourceManager.GetString("mode_a_sum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mode B.
+        /// </summary>
+        public static string mode_b {
+            get {
+                return ResourceManager.GetString("mode_b", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send GSM coordinates every 12 hours.
+        /// </summary>
+        public static string mode_b_sum {
+            get {
+                return ResourceManager.GetString("mode_b_sum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mode C.
+        /// </summary>
+        public static string mode_c {
+            get {
+                return ResourceManager.GetString("mode_c", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send GPS coordinates every 24 hours.
+        /// </summary>
+        public static string mode_c_sum {
+            get {
+                return ResourceManager.GetString("mode_c_sum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mode D.
+        /// </summary>
+        public static string mode_d {
+            get {
+                return ResourceManager.GetString("mode_d", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wait command every 12 hours.
+        /// </summary>
+        public static string mode_d_sum {
+            get {
+                return ResourceManager.GetString("mode_d_sum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to More info.
+        /// </summary>
+        public static string more {
+            get {
+                return ResourceManager.GetString("more", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Motor Off.
+        /// </summary>
+        public static string motor_off {
+            get {
+                return ResourceManager.GetString("motor_off", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stop engine require C-Code.
+        /// </summary>
+        public static string motor_off_ccode {
+            get {
+                return ResourceManager.GetString("motor_off_ccode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Engine stopped.
+        /// </summary>
+        public static string motor_off_ok {
+            get {
+                return ResourceManager.GetString("motor_off_ok", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stop engine.
+        /// </summary>
+        public static string motor_off_sum {
+            get {
+                return ResourceManager.GetString("motor_off_sum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Motor On.
+        /// </summary>
+        public static string motor_on {
+            get {
+                return ResourceManager.GetString("motor_on", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start engine require C-Code.
+        /// </summary>
+        public static string motor_on_ccode {
+            get {
+                return ResourceManager.GetString("motor_on_ccode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Engine started.
+        /// </summary>
+        public static string motor_on_ok {
+            get {
+                return ResourceManager.GetString("motor_on_ok", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start engine.
+        /// </summary>
+        public static string motor_on_sum {
+            get {
+                return ResourceManager.GetString("motor_on_sum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Engine start request.
+        /// </summary>
+        public static string motor_start {
+            get {
+                return ResourceManager.GetString("motor_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Engine start request AZD.
+        /// </summary>
+        public static string motor_start_azd {
+            get {
+                return ResourceManager.GetString("motor_start_azd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Engine start failed.
+        /// </summary>
+        public static string motor_start_error {
+            get {
+                return ResourceManager.GetString("motor_start_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Engine stopped.
+        /// </summary>
+        public static string motor_stop {
+            get {
+                return ResourceManager.GetString("motor_stop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to after $1 min.
+        /// </summary>
+        public static string motor_time {
+            get {
+                return ResourceManager.GetString("motor_time", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Moving sensor.
+        /// </summary>
+        public static string move_sensor {
+            get {
+                return ResourceManager.GetString("move_sensor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string name {
+            get {
+                return ResourceManager.GetString("name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Network error.
+        /// </summary>
+        public static string net_error {
+            get {
+                return ResourceManager.GetString("net_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your location detected by network.\nFor more accuracy you can turn on GPS is Settings.
+        /// </summary>
+        public static string net_gps_message {
+            get {
+                return ResourceManager.GetString("net_gps_message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No data connection.
+        /// </summary>
+        public static string net_warning {
+            get {
+                return ResourceManager.GetString("net_warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New car.
+        /// </summary>
+        public static string new_car {
+            get {
+                return ResourceManager.GetString("new_car", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New C-code:.
+        /// </summary>
+        public static string new_ccode {
+            get {
+                return ResourceManager.GetString("new_ccode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to С-code does not match.
+        /// </summary>
+        public static string new_ccode_invalid {
+            get {
+                return ResourceManager.GetString("new_ccode_invalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No data.
+        /// </summary>
+        public static string no_data {
+            get {
+                return ResourceManager.GetString("no_data", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No events.
+        /// </summary>
+        public static string no_events {
+            get {
+                return ResourceManager.GetString("no_events", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GPS disabled is system.\nFor detect location you must turn on it in Settings.
+        /// </summary>
+        public static string no_gps_message {
+            get {
+                return ResourceManager.GetString("no_gps_message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GPS disabled.
+        /// </summary>
+        public static string no_gps_title {
+            get {
+                return ResourceManager.GetString("no_gps_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unknown localtion.
+        /// </summary>
+        public static string no_location {
+            get {
+                return ResourceManager.GetString("no_location", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Netwrok is not available.
+        /// </summary>
+        public static string no_network {
+            get {
+                return ResourceManager.GetString("no_network", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No phone number for contact.
+        /// </summary>
+        public static string no_phone {
+            get {
+                return ResourceManager.GetString("no_phone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No photos.
+        /// </summary>
+        public static string no_photos {
+            get {
+                return ResourceManager.GetString("no_photos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No points in selected area.
+        /// </summary>
+        public static string no_points {
+            get {
+                return ResourceManager.GetString("no_points", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guard without sounds.
+        /// </summary>
+        public static string no_sound {
+            get {
+                return ResourceManager.GetString("no_sound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to no start.
+        /// </summary>
+        public static string no_start {
+            get {
+                return ResourceManager.GetString("no_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No widgets.
+        /// </summary>
+        public static string no_widgets {
+            get {
+                return ResourceManager.GetString("no_widgets", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Code is non digits.
+        /// </summary>
+        public static string nondigits {
+            get {
+                return ResourceManager.GetString("nondigits", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Low card battery|Supply reserve|Supply regular|ERROR
+        ///        LAN-devices|Low reserve voltage|Roaming. Internet OFF
+        ///    .
+        /// </summary>
+        public static string notification {
+            get {
+                return ResourceManager.GetString("notification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Notifications.
+        /// </summary>
+        public static string notifications {
+            get {
+                return ResourceManager.GetString("notifications", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Notifications come with some delay depend on device timer settings and phone data connection.
+        /// </summary>
+        public static string notify_msg {
+            get {
+                return ResourceManager.GetString("notify_msg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Notify sound.
+        /// </summary>
+        public static string notify_sound {
+            get {
+                return ResourceManager.GetString("notify_sound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to C-code contains letters.
+        /// </summary>
+        public static string number {
+            get {
+                return ResourceManager.GetString("number", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OK.
+        /// </summary>
+        public static string ok {
+            get {
+                return ResourceManager.GetString("ok", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Old C-code:.
+        /// </summary>
+        public static string old_ccode {
+            get {
+                return ResourceManager.GetString("old_ccode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open trunk.
+        /// </summary>
+        public static string open_trunk {
+            get {
+                return ResourceManager.GetString("open_trunk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to or wait.
+        /// </summary>
+        public static string or_wait {
+            get {
+                return ResourceManager.GetString("or_wait", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OSM.
+        /// </summary>
+        public static string osm {
+            get {
+                return ResourceManager.GetString("osm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password:.
+        /// </summary>
+        public static string passwd {
+            get {
+                return ResourceManager.GetString("passwd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password.
         /// </summary>
         public static string Password {
             get {
                 return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm:.
+        /// </summary>
+        public static string password_confirm {
+            get {
+                return ResourceManager.GetString("password_confirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Old password:.
+        /// </summary>
+        public static string password_old {
+            get {
+                return ResourceManager.GetString("password_old", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set password.
+        /// </summary>
+        public static string password_set {
+            get {
+                return ResourceManager.GetString("password_set", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set password for actions.
+        /// </summary>
+        public static string password_summary {
+            get {
+                return ResourceManager.GetString("password_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password:.
+        /// </summary>
+        public static string password_text {
+            get {
+                return ResourceManager.GetString("password_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Device software version.
+        /// </summary>
+        public static string pgsm_version {
+            get {
+                return ResourceManager.GetString("pgsm_version", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phone:.
+        /// </summary>
+        public static string phone {
+            get {
+                return ResourceManager.GetString("phone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to home.
+        /// </summary>
+        public static string phone_home {
+            get {
+                return ResourceManager.GetString("phone_home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to mobile.
+        /// </summary>
+        public static string phone_mobile {
+            get {
+                return ResourceManager.GetString("phone_mobile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phone number.
+        /// </summary>
+        public static string phone_number {
+            get {
+                return ResourceManager.GetString("phone_number", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select car phone number.
+        /// </summary>
+        public static string phone_number_summary {
+            get {
+                return ResourceManager.GetString("phone_number_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to work.
+        /// </summary>
+        public static string phone_work {
+            get {
+                return ResourceManager.GetString("phone_work", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Control phones.
+        /// </summary>
+        public static string phones {
+            get {
+                return ResourceManager.GetString("phones", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manage control phones.
+        /// </summary>
+        public static string phones_sum {
+            get {
+                return ResourceManager.GetString("phones_sum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Photo.
+        /// </summary>
+        public static string photo {
+            get {
+                return ResourceManager.GetString("photo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loading image error.
+        /// </summary>
+        public static string photo_error {
+            get {
+                return ResourceManager.GetString("photo_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Device is pointer.
+        /// </summary>
+        public static string pointer {
+            get {
+                return ResourceManager.GetString("pointer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Connect pointer with car?.
+        /// </summary>
+        public static string pointer_msg {
+            get {
+                return ResourceManager.GetString("pointer_msg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pointer support.
+        /// </summary>
+        public static string pointer_support {
+            get {
+                return ResourceManager.GetString("pointer_support", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Application is supported pointers.\nYou can add pointer now or do it later.
+        /// </summary>
+        public static string pointer_support_msg {
+            get {
+                return ResourceManager.GetString("pointer_support_msg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Low pointer voltage.
+        /// </summary>
+        public static string pointer_voltage {
+            get {
+                return ResourceManager.GetString("pointer_voltage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My position.
+        /// </summary>
+        public static string position {
+            get {
+                return ResourceManager.GetString("position", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Preferences.
+        /// </summary>
+        public static string preferences {
+            get {
+                return ResourceManager.GetString("preferences", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guard with passengers is ON.
+        /// </summary>
+        public static string ps_guard {
+            get {
+                return ResourceManager.GetString("ps_guard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password:.
+        /// </summary>
+        public static string pswd {
+            get {
+                return ResourceManager.GetString("pswd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Process of statics require some minutes.
+        /// </summary>
+        public static string recalc_message {
+            get {
+                return ResourceManager.GetString("recalc_message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recalc statistic.
+        /// </summary>
+        public static string recalc_stat {
+            get {
+                return ResourceManager.GetString("recalc_stat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prestarting heater.
+        /// </summary>
+        public static string rele {
+            get {
+                return ResourceManager.GetString("rele", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Require C-Code.
+        /// </summary>
+        public static string rele_ccode {
+            get {
+                return ResourceManager.GetString("rele_ccode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prestarting heater settings.
+        /// </summary>
+        public static string rele_sum {
+            get {
+                return ResourceManager.GetString("rele_sum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RELE 1.
+        /// </summary>
+        public static string rele1 {
+            get {
+                return ResourceManager.GetString("rele1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send impulse on RELE1.
+        /// </summary>
+        public static string rele1_action {
+            get {
+                return ResourceManager.GetString("rele1_action", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RELE 1 OFF.
+        /// </summary>
+        public static string rele1_off {
+            get {
+                return ResourceManager.GetString("rele1_off", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RELE 1 ON.
+        /// </summary>
+        public static string rele1_on {
+            get {
+                return ResourceManager.GetString("rele1_on", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RELE 1 impulse.
+        /// </summary>
+        public static string rele1i {
+            get {
+                return ResourceManager.GetString("rele1i", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RELE 2.
+        /// </summary>
+        public static string rele2 {
+            get {
+                return ResourceManager.GetString("rele2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send impules on RELE2.
+        /// </summary>
+        public static string rele2_action {
+            get {
+                return ResourceManager.GetString("rele2_action", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RELE 2 OFF.
+        /// </summary>
+        public static string rele2_off {
+            get {
+                return ResourceManager.GetString("rele2_off", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RELE 2 ON.
+        /// </summary>
+        public static string rele2_on {
+            get {
+                return ResourceManager.GetString("rele2_on", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RELE 2 impulse.
+        /// </summary>
+        public static string rele2i {
+            get {
+                return ResourceManager.GetString("rele2i", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Photo request.
+        /// </summary>
+        public static string request_photo {
+            get {
+                return ResourceManager.GetString("request_photo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reserve power OFF.
+        /// </summary>
+        public static string reserve_power_off {
+            get {
+                return ResourceManager.GetString("reserve_power_off", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reserve power ON.
+        /// </summary>
+        public static string reserve_power_on {
+            get {
+                return ResourceManager.GetString("reserve_power_on", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reserved voltage.
+        /// </summary>
+        public static string reserved {
+            get {
+                return ResourceManager.GetString("reserved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reset.
+        /// </summary>
+        public static string reset {
+            get {
+                return ResourceManager.GetString("reset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reset modem.
+        /// </summary>
+        public static string reset_modem {
+            get {
+                return ResourceManager.GetString("reset_modem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reset device.
+        /// </summary>
+        public static string reset_sum {
+            get {
+                return ResourceManager.GetString("reset_sum", resourceCulture);
             }
         }
         
@@ -151,11 +3663,1214 @@ namespace ugona_net.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Restore control channel.
+        /// </summary>
+        public static string restore {
+            get {
+                return ResourceManager.GetString("restore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restore sound.
+        /// </summary>
+        public static string restore_sound {
+            get {
+                return ResourceManager.GetString("restore_sound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Retry.
+        /// </summary>
+        public static string retry {
+            get {
+                return ResourceManager.GetString("retry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delay for start robbery functions.
+        /// </summary>
+        public static string robbery_time {
+            get {
+                return ResourceManager.GetString("robbery_time", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rogue.
+        /// </summary>
+        public static string rogue {
+            get {
+                return ResourceManager.GetString("rogue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel rogue.
+        /// </summary>
+        public static string rogue_off {
+            get {
+                return ResourceManager.GetString("rogue_off", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rotate.
+        /// </summary>
+        public static string rotate {
+            get {
+                return ResourceManager.GetString("rotate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Safe mode.
+        /// </summary>
+        public static string safe_mode {
+            get {
+                return ResourceManager.GetString("safe_mode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        public static string save {
+            get {
+                return ResourceManager.GetString("save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Track saved.
+        /// </summary>
+        public static string saved {
+            get {
+                return ResourceManager.GetString("saved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start schedule.
+        /// </summary>
+        public static string schedule {
+            get {
+                return ResourceManager.GetString("schedule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search car.
+        /// </summary>
+        public static string search {
+            get {
+                return ResourceManager.GetString("search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to sec..
+        /// </summary>
+        public static string sec {
+            get {
+                return ResourceManager.GetString("sec", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select car.
+        /// </summary>
+        public static string select_car {
+            get {
+                return ResourceManager.GetString("select_car", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select phone.
+        /// </summary>
+        public static string select_phone {
+            get {
+                return ResourceManager.GetString("select_phone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Execute command?.
+        /// </summary>
+        public static string send_cmd {
+            get {
+                return ResourceManager.GetString("send_cmd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send command.
+        /// </summary>
+        public static string send_command {
+            get {
+                return ResourceManager.GetString("send_command", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send SMS.
+        /// </summary>
+        public static string send_sms {
+            get {
+                return ResourceManager.GetString("send_sms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Network is not available.\nSend command as SMS?.
+        /// </summary>
+        public static string send_sms_message {
+            get {
+                return ResourceManager.GetString("send_sms_message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send command fail.\nSend command as SMS?.
+        /// </summary>
+        public static string send_sms_on_fail {
+            get {
+                return ResourceManager.GetString("send_sms_on_fail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send command via SMS.
+        /// </summary>
+        public static string send_via_sms {
+            get {
+                return ResourceManager.GetString("send_via_sms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sensor.
+        /// </summary>
+        public static string sensor {
+            get {
+                return ResourceManager.GetString("sensor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FEDERAL SERVICE.
+        /// </summary>
+        public static string service {
+            get {
+                return ResourceManager.GetString("service", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Service Ugona.net.
+        /// </summary>
+        public static string service_btn {
+            get {
+                return ResourceManager.GetString("service_btn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        public static string settings {
+            get {
+                return ResourceManager.GetString("settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Setup.
+        /// </summary>
+        public static string setup {
+            get {
+                return ResourceManager.GetString("setup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loading settings to device.
+        /// </summary>
+        public static string setup_msg {
+            get {
+                return ResourceManager.GetString("setup_msg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Share.
+        /// </summary>
+        public static string share {
+            get {
+                return ResourceManager.GetString("share", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shock sensitivity.
+        /// </summary>
+        public static string shock_sens {
+            get {
+                return ResourceManager.GetString("shock_sens", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Setup shock sensitivity level. Wroks only for SuperAgent.
+        /// </summary>
+        public static string shock_sens_msg {
+            get {
+                return ResourceManager.GetString("shock_sens_msg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shock sensor.
+        /// </summary>
+        public static string shock_sensor {
+            get {
+                return ResourceManager.GetString("shock_sensor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shock sensor: primary level.
+        /// </summary>
+        public static string shock_sensor_primary {
+            get {
+                return ResourceManager.GetString("shock_sensor_primary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shock sensor: preliminary level.
+        /// </summary>
+        public static string shock_sensor_secondary {
+            get {
+                return ResourceManager.GetString("shock_sensor_secondary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Engine time: {0}
+        ///Average speed: {1:n2} kmh
+        ///Max speed: {2} kmh.
+        /// </summary>
+        public static string short_status {
+            get {
+                return ResourceManager.GetString("short_status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show balance.
+        /// </summary>
+        public static string show_balance {
+            get {
+                return ResourceManager.GetString("show_balance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show map.
+        /// </summary>
+        public static string show_map {
+            get {
+                return ResourceManager.GetString("show_map", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show name.
+        /// </summary>
+        public static string show_name {
+            get {
+                return ResourceManager.GetString("show_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show photos.
+        /// </summary>
+        public static string show_photo {
+            get {
+                return ResourceManager.GetString("show_photo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Silent guard mode.
+        /// </summary>
+        public static string silent_mode {
+            get {
+                return ResourceManager.GetString("silent_mode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SMS send error.
+        /// </summary>
+        public static string sms_err {
+            get {
+                return ResourceManager.GetString("sms_err", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Can&amp;t send SMS.
+        /// </summary>
+        public static string sms_error {
+            get {
+                return ResourceManager.GetString("sms_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Switch to SMS mode.
+        /// </summary>
+        public static string sms_mode {
+            get {
+                return ResourceManager.GetString("sms_mode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Application will be processed SMS messages from device and show alarm window.
+        /// </summary>
+        public static string sms_mode_msg {
+            get {
+                return ResourceManager.GetString("sms_mode_msg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select alarm mode: SMS or call.
+        /// </summary>
+        public static string sms_mode_summary {
+            get {
+                return ResourceManager.GetString("sms_mode_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Notify as SMS.
+        /// </summary>
+        public static string sms_notify {
+            get {
+                return ResourceManager.GetString("sms_notify", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SMS request.
+        /// </summary>
+        public static string sms_request {
+            get {
+                return ResourceManager.GetString("sms_request", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SMS sent.
+        /// </summary>
+        public static string sms_sent {
+            get {
+                return ResourceManager.GetString("sms_sent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Soft start.
+        /// </summary>
+        public static string soft_start {
+            get {
+                return ResourceManager.GetString("soft_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SOS.
+        /// </summary>
+        public static string sos {
+            get {
+                return ResourceManager.GetString("sos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sound signal.
+        /// </summary>
+        public static string sound {
+            get {
+                return ResourceManager.GetString("sound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Silent guard mode.
+        /// </summary>
+        public static string sound_off {
+            get {
+                return ResourceManager.GetString("sound_off", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Silent guard mode OFF.
+        /// </summary>
+        public static string sound_on {
+            get {
+                return ResourceManager.GetString("sound_on", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Speed: %s km/h.
+        /// </summary>
+        public static string speed {
+            get {
+                return ResourceManager.GetString("speed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Engine autostart time.
+        /// </summary>
+        public static string start_time {
+            get {
+                return ResourceManager.GetString("start_time", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Statistics.
+        /// </summary>
+        public static string stat {
+            get {
+                return ResourceManager.GetString("stat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to State.
         /// </summary>
         public static string State {
             get {
                 return ResourceManager.GetString("State", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mileage: {0:n2} km
+        ///Engine time: {1}
+        ///Average speed: {2:n2} kmh
+        ///Max speed: {3} kmh
+        ///    .
+        /// </summary>
+        public static string status {
+            get {
+                return ResourceManager.GetString("status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Request car state.
+        /// </summary>
+        public static string status_sum {
+            get {
+                return ResourceManager.GetString("status_sum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status.
+        /// </summary>
+        public static string status_title {
+            get {
+                return ResourceManager.GetString("status_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Supply regular.
+        /// </summary>
+        public static string supply_regular {
+            get {
+                return ResourceManager.GetString("supply_regular", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to System.
+        /// </summary>
+        public static string system {
+            get {
+                return ResourceManager.GetString("system", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Temperature change.
+        /// </summary>
+        public static string temp_change {
+            get {
+                return ResourceManager.GetString("temp_change", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Temperature correction.
+        /// </summary>
+        public static string temp_correct {
+            get {
+                return ResourceManager.GetString("temp_correct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Temperature sensors.
+        /// </summary>
+        public static string temp_sensors {
+            get {
+                return ResourceManager.GetString("temp_sensors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Temperature.
+        /// </summary>
+        public static string temperature {
+            get {
+                return ResourceManager.GetString("temperature", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thermocode.
+        /// </summary>
+        public static string thermocode {
+            get {
+                return ResourceManager.GetString("thermocode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Movement start.
+        /// </summary>
+        public static string till_start {
+            get {
+                return ResourceManager.GetString("till_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tilt.
+        /// </summary>
+        public static string tilt {
+            get {
+                return ResourceManager.GetString("tilt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tilt sensor level.
+        /// </summary>
+        public static string tilt_level {
+            get {
+                return ResourceManager.GetString("tilt_level", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Low sensitivy of tilt sensor.
+        /// </summary>
+        public static string tilt_low {
+            get {
+                return ResourceManager.GetString("tilt_low", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Long time no events from car.
+        /// </summary>
+        public static string time_warning {
+            get {
+                return ResourceManager.GetString("time_warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Long time no events from pointer.
+        /// </summary>
+        public static string timeout {
+            get {
+                return ResourceManager.GetString("timeout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Timer.
+        /// </summary>
+        public static string timer {
+            get {
+                return ResourceManager.GetString("timer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete timer?.
+        /// </summary>
+        public static string timer_delete {
+            get {
+                return ResourceManager.GetString("timer_delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select any weekdays.
+        /// </summary>
+        public static string timer_empty {
+            get {
+                return ResourceManager.GetString("timer_empty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Timer connection.
+        /// </summary>
+        public static string timer_event {
+            get {
+                return ResourceManager.GetString("timer_event", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Timer ON.
+        /// </summary>
+        public static string timer_on {
+            get {
+                return ResourceManager.GetString("timer_on", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Таймер.
+        /// </summary>
+        public static string timer_set {
+            get {
+                return ResourceManager.GetString("timer_set", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Car connection period.
+        /// </summary>
+        public static string timer_sum {
+            get {
+                return ResourceManager.GetString("timer_sum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trace point.
+        /// </summary>
+        public static string trace_point {
+            get {
+                return ResourceManager.GetString("trace_point", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trace start.
+        /// </summary>
+        public static string trace_start {
+            get {
+                return ResourceManager.GetString("trace_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trace finish.
+        /// </summary>
+        public static string trace_stop {
+            get {
+                return ResourceManager.GetString("trace_stop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tracks.
+        /// </summary>
+        public static string tracks {
+            get {
+                return ResourceManager.GetString("tracks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show speed.
+        /// </summary>
+        public static string traffic {
+            get {
+                return ResourceManager.GetString("traffic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show traffic.
+        /// </summary>
+        public static string traffic_layer {
+            get {
+                return ResourceManager.GetString("traffic_layer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show speed as color track.
+        /// </summary>
+        public static string traffic_summary {
+            get {
+                return ResourceManager.GetString("traffic_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trunk close.
+        /// </summary>
+        public static string trunk_close {
+            get {
+                return ResourceManager.GetString("trunk_close", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trunk open.
+        /// </summary>
+        public static string trunk_open {
+            get {
+                return ResourceManager.GetString("trunk_open", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turbo Off.
+        /// </summary>
+        public static string turbo_off {
+            get {
+                return ResourceManager.GetString("turbo_off", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel turbo mode.
+        /// </summary>
+        public static string turbo_off_sum {
+            get {
+                return ResourceManager.GetString("turbo_off_sum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turbo On.
+        /// </summary>
+        public static string turbo_on {
+            get {
+                return ResourceManager.GetString("turbo_on", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start turbo mode.
+        /// </summary>
+        public static string turbo_on_sum {
+            get {
+                return ResourceManager.GetString("turbo_on_sum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to UGONA.NET.
+        /// </summary>
+        public static string ugona_net {
+            get {
+                return ResourceManager.GetString("ugona_net", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to units.
+        /// </summary>
+        public static string unit {
+            get {
+                return ResourceManager.GetString("unit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to unknown.
+        /// </summary>
+        public static string unknown {
+            get {
+                return ResourceManager.GetString("unknown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use GPS.
+        /// </summary>
+        public static string use_gps {
+            get {
+                return ResourceManager.GetString("use_gps", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Request via call.
+        /// </summary>
+        public static string user_call {
+            get {
+                return ResourceManager.GetString("user_call", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Request via SMS.
+        /// </summary>
+        public static string user_sms {
+            get {
+                return ResourceManager.GetString("user_sms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to V.
+        /// </summary>
+        public static string v {
+            get {
+                return ResourceManager.GetString("v", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to VALET.
+        /// </summary>
+        public static string valet_cmd {
+            get {
+                return ResourceManager.GetString("valet_cmd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to VALET Off.
+        /// </summary>
+        public static string valet_off {
+            get {
+                return ResourceManager.GetString("valet_off", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn off VALET require enter C-Code.
+        /// </summary>
+        public static string valet_off_msg {
+            get {
+                return ResourceManager.GetString("valet_off_msg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send SMS for turn off VALET require enter C-Code.
+        /// </summary>
+        public static string valet_off_msg_sms {
+            get {
+                return ResourceManager.GetString("valet_off_msg_sms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to VALET mode is OFF.
+        /// </summary>
+        public static string valet_off_ok {
+            get {
+                return ResourceManager.GetString("valet_off_ok", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Activate guard.
+        /// </summary>
+        public static string valet_off_sum {
+            get {
+                return ResourceManager.GetString("valet_off_sum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to VALET On.
+        /// </summary>
+        public static string valet_on {
+            get {
+                return ResourceManager.GetString("valet_on", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn on VALET require enter C-Code.
+        /// </summary>
+        public static string valet_on_msg {
+            get {
+                return ResourceManager.GetString("valet_on_msg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send SMS for turn on VALET require enter C-Code.
+        /// </summary>
+        public static string valet_on_msg_sms {
+            get {
+                return ResourceManager.GetString("valet_on_msg_sms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to VALET mode is ON.
+        /// </summary>
+        public static string valet_on_ok {
+            get {
+                return ResourceManager.GetString("valet_on_ok", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deactivate guard.
+        /// </summary>
+        public static string valet_on_sum {
+            get {
+                return ResourceManager.GetString("valet_on_sum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to VALET mode ON.
+        /// </summary>
+        public static string valet_warning {
+            get {
+                return ResourceManager.GetString("valet_warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Version:.
+        /// </summary>
+        public static string version {
+            get {
+                return ResourceManager.GetString("version", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download voice.
+        /// </summary>
+        public static string voice {
+            get {
+                return ResourceManager.GetString("voice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Voltage.
+        /// </summary>
+        public static string voltage {
+            get {
+                return ResourceManager.GetString("voltage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Voltage limit for autostart.
+        /// </summary>
+        public static string voltage_limit {
+            get {
+                return ResourceManager.GetString("voltage_limit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Voltage correction.
+        /// </summary>
+        public static string voltage_shift {
+            get {
+                return ResourceManager.GetString("voltage_shift", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Command store to queue and will be send in $1 мин..
+        /// </summary>
+        public static string wait_msg {
+            get {
+                return ResourceManager.GetString("wait_msg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Widget configuration.
+        /// </summary>
+        public static string widget_config {
+            get {
+                return ResourceManager.GetString("widget_config", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show values:.
+        /// </summary>
+        public static string widget_rows {
+            get {
+                return ResourceManager.GetString("widget_rows", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Widgets.
+        /// </summary>
+        public static string widgets {
+            get {
+                return ResourceManager.GetString("widgets", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Work time.
+        /// </summary>
+        public static string work_time {
+            get {
+                return ResourceManager.GetString("work_time", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yandex.
+        /// </summary>
+        public static string yandex {
+            get {
+                return ResourceManager.GetString("yandex", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You can:.
+        /// </summary>
+        public static string you_can {
+            get {
+                return ResourceManager.GetString("you_can", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone name can contains only latin chars or digits.
+        /// </summary>
+        public static string zone_bad_char {
+            get {
+                return ResourceManager.GetString("zone_bad_char", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone in.
+        /// </summary>
+        public static string zone_in {
+            get {
+                return ResourceManager.GetString("zone_in", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone IN sound.
+        /// </summary>
+        public static string zone_in_sound {
+            get {
+                return ResourceManager.GetString("zone_in_sound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You should receive notification about zones with some delays if you turn off SMS options.
+        /// </summary>
+        public static string zone_msg {
+            get {
+                return ResourceManager.GetString("zone_msg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No notify if car around from me.
+        /// </summary>
+        public static string zone_my {
+            get {
+                return ResourceManager.GetString("zone_my", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone name is empty.
+        /// </summary>
+        public static string zone_name {
+            get {
+                return ResourceManager.GetString("zone_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Input name of zone.
+        /// </summary>
+        public static string zone_name_msg {
+            get {
+                return ResourceManager.GetString("zone_name_msg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone out.
+        /// </summary>
+        public static string zone_out {
+            get {
+                return ResourceManager.GetString("zone_out", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone OUT sound.
+        /// </summary>
+        public static string zone_out_sound {
+            get {
+                return ResourceManager.GetString("zone_out_sound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove zone.
+        /// </summary>
+        public static string zone_remove {
+            get {
+                return ResourceManager.GetString("zone_remove", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zones.
+        /// </summary>
+        public static string zones {
+            get {
+                return ResourceManager.GetString("zones", resourceCulture);
             }
         }
     }

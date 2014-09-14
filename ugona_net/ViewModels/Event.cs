@@ -1,13 +1,14 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel;
+using System.Windows;
+using System.Windows.Media;
 
 namespace ugona_net
 {
 
-    public class Event
+    public class Event : INotifyPropertyChanged
     {
 
         public long id
@@ -28,13 +29,49 @@ namespace ugona_net
             set;
         }
 
-        public String Name
+        public int mask
         {
             get
             {
                 if (defs.ContainsKey(type))
-                    return Helper.GetString(defs[type].name);
-                return "Event #:" + id;
+                    return defs[type].level;
+                return 4;
+            }
+        }
+
+        public string zone
+        {
+            get;
+            set;
+        }
+
+        public string text{
+            get;
+            set;
+        }
+
+        public double? card_level
+        {
+            get;
+            set;
+        }
+
+        public double card_voltage
+        {
+            get;
+            set;
+        }
+
+        public String Name
+        {
+            get
+            {
+                String name = Helper.GetString("event") + " #:" + id;
+                if (defs.ContainsKey(type)) 
+                    name = Helper.GetString(defs[type].name);
+                if (zone != null)
+                    name += " " + zone;
+                return name;
             }
         }
 
@@ -56,6 +93,205 @@ namespace ugona_net
                 DateTime dt = DateUtils.ToDateTime(time);
                 return dt.ToShortTimeString();
             }
+        }
+
+        public String Info
+        {
+            get
+            {
+                String info = "";
+                if (text != null)
+                    info = text + "\n";
+                if (voltage.main != null)
+                    info += Helper.GetString("voltage") + String.Format(": {0:n2} V\n", voltage.main);
+                if (voltage.reserved != null)
+                    info += Helper.GetString("reserved") + String.Format(": {0:n2} V\n", voltage.reserved);
+                if (balance != null)
+                    info += Helper.GetString("balance") + String.Format(": {0:n2} V\n", balance);
+                if ((card_level != null) && (card_voltage != null))
+                    info += String.Format(Helper.GetString("card_info"), card_level, card_voltage) + "\n";
+                if ((gps.lat != null) && (gps.lng != null))
+                    info += String.Format("{0:n5} {1:n5}\n", gps.lat, gps.lng);
+                if (address != null)
+                    info += address;
+                return info;
+            }
+        }
+
+        String address;
+
+        bool is_current;
+        int state;
+
+        public bool IsCurrent
+        {
+            get
+            {
+                return is_current;
+            }
+            set
+            {
+                if (value == is_current)
+                    return;
+                is_current = value;
+                NotifyPropertyChanged("ProgressVisible");
+                NotifyPropertyChanged("InfoVisible");
+                if (is_current)
+                    Load();
+            }
+        }
+
+        public Visibility ProgressVisible
+        {
+            get
+            {
+                return (IsCurrent && (state == 1)) ? Visibility.Visible : Visibility.Collapsed;
+            }
+        }
+
+        public Visibility InfoVisible
+        {
+            get
+            {
+                return (IsCurrent && (state == 2)) ? Visibility.Visible : Visibility.Collapsed;
+            }
+        }
+
+        public Brush Color
+        {
+            get
+            {
+                return (Brush)App.Current.Resources["PhoneForegroundBrush"];
+            }
+        }
+
+        static public int Filter
+        {
+            get
+            {
+                return Helper.GetSetting<int>("EventFilter", 3);
+            }
+
+            set
+            {
+                Helper.PutSetting("EventFilter", value);
+            }
+        }
+
+        async private void Load()
+        {
+            if (state != 0)
+                return;
+            state = 1;
+            NotifyPropertyChanged("ProgressVisible");
+            try
+            {
+                JObject data = null;
+                switch (type)
+                {
+                    case 88:
+                    case 140:
+                    case -116:
+                    case 121:
+                    case 122:
+                    case 123:
+                    case 124:
+                    case 125:
+                        data = await Helper.GetApi("event",
+                            "skey", Helper.GetSetting(Names.KEY),
+                            "id", id,
+                            "time", time,
+                            "type", type,
+                            "auth", Helper.GetSetting(Names.AUTH));
+                        break;
+                }
+                if (data == null)
+                {
+                    data = await Helper.GetApi("event",
+                        "skey", Helper.GetSetting(Names.KEY),
+                        "id", id,
+                        "time", time);
+                };
+                Helper.SetData(this, data, "", null);
+                if ((gps.lat != null) && (gps.lng != null))
+                    address = await AddressHelper.get(gps.lat, gps.lng);
+            }
+            catch (Exception)
+            {
+            }
+            state = 2;
+            NotifyPropertyChanged("ProgressVisible");
+            NotifyPropertyChanged("InfoVisible");
+            NotifyPropertyChanged("Info");
+
+        }
+
+
+        public class GpsData
+        {
+            public double? lat
+            {
+                get;
+                set;
+            }
+
+            public double? lng
+            {
+                get;
+                set;
+            }
+
+            public double? speed
+            {
+                get;
+                set;
+            }
+
+            public int? course
+            {
+                get;
+                set;
+            }
+        }
+
+        GpsData gps_data;
+        CarModel.GsmData gsm_data;
+        CarModel.VoltageData voltage_data;
+
+        public GpsData gps
+        {
+            get
+            {
+                if (gps_data == null)
+                    gps_data = new GpsData();
+                return gps_data;
+            }
+        }
+
+        public CarModel.GsmData gsm
+        {
+            get
+            {
+                if (gsm_data == null)
+                    gsm_data = new CarModel.GsmData();
+                return gsm_data;
+            }
+        }
+
+        public CarModel.VoltageData voltage
+        {
+            get
+            {
+                if (voltage_data == null)
+                    voltage_data = new CarModel.VoltageData();
+                return voltage_data;
+            }
+        }
+
+        public double? balance
+        {
+            get;
+            set;
         }
 
         struct EventDef
@@ -99,20 +335,20 @@ namespace ugona_net
                     add(23, "input4_off", "e_input4_off", 2);
                     add(24, "guard_on", "e_guard_on", 1);
                     add(25, "guard_off", "e_guard_off", 1);
-                    add(26, "reset", "e_reset", 3);
+                    add(26, "reset", "e_reset", 4);
                     add(27, "main_power_on", "e_main_power_off", 0);
                     add(28, "main_power_off", "e_main_power_off", 0);
                     add(29, "reserve_power_on", "e_reserve_power_off", 0);
                     add(30, "reserve_power_off", "e_reserve_power_off", 0);
-                    add(31, "gsm_recover", "e_gsm_recover", 3);
-                    add(32, "gsm_fail", "e_gsm_fail", 3);
-                    add(33, "gsm_new", "e_gsm_recover", 3);
-                    add(34, "gps_recover", "e_gps_recover", 3);
-                    add(35, "gps_fail", "e_gps_fail", 3);
-                    add(37, "trace_start", "e_trace_start", 3);
-                    add(38, "trace_stop", "e_trace_stop", 3);
-                    add(39, "trace_point", "e_trace_start", 3);
-                    add(41, "timer_event", "e_timer", 3);
+                    add(31, "gsm_recover", "e_gsm_recover", 4);
+                    add(32, "gsm_fail", "e_gsm_fail", 4);
+                    add(33, "gsm_new", "e_gsm_recover", 4);
+                    add(34, "gps_recover", "e_gps_recover", 4);
+                    add(35, "gps_fail", "e_gps_fail", 4);
+                    add(37, "trace_start", "e_trace_start", 4);
+                    add(38, "trace_stop", "e_trace_stop", 4);
+                    add(39, "trace_point", "e_trace_start", 4);
+                    add(41, "timer_event", "e_timer", 4);
                     add(42, "user_call", "e_user_call", 1);
                     add(43, "rogue", "e_rogue", 0);
                     add(44, "rogue_off", "e_rogue", 0);
@@ -130,36 +366,36 @@ namespace ugona_net
                     add(56, "alarm_input3", "e_alarm_input3", 0);
                     add(57, "alarm_input4", "e_alarm_input4", 0);
                     add(58, "sms_request", "e_user_sms", 1);
-                    add(59, "reset_modem", "e_reset_modem", 3);
-                    add(60, "gprs_on", "e_gprs_on", 3);
-                    add(61, "gprs_off", "e_gprs_off", 3);
-                    add(65, "reset", "e_reset", 3);
-                    add(66, "gsm_register_fail", "e_gsm_fail", 3);
-                    add(68, "net_error", "e_system", 3);
-                    add(71, "sms_err", "e_user_sms", 3);
-                    add(72, "net_error", "e_system", 3);
-                    add(74, "error_read", "e_system", 3);
-                    add(75, "net_error", "e_system", 3);
-                    add(76, "reset_modem", "e_reset_modem", 3);
-                    add(77, "reset_modem", "e_reset_modem", 3);
-                    add(78, "reset_modem", "e_reset_modem", 3);
-                    add(79, "reset_modem", "e_reset_modem", 3);
-                    add(80, "reset_modem", "e_reset_modem", 3);
+                    add(59, "reset_modem", "e_reset_modem", 4);
+                    add(60, "gprs_on", "e_gprs_on", 4);
+                    add(61, "gprs_off", "e_gprs_off", 4);
+                    add(65, "reset", "e_reset", 4);
+                    add(66, "gsm_register_fail", "e_gsm_fail", 4);
+                    add(68, "net_error", "e_system", 4);
+                    add(71, "sms_err", "e_user_sms", 4);
+                    add(72, "net_error", "e_system", 4);
+                    add(74, "error_read", "e_system", 4);
+                    add(75, "net_error", "e_system", 4);
+                    add(76, "reset_modem", "e_reset_modem", 4);
+                    add(77, "reset_modem", "e_reset_modem", 4);
+                    add(78, "reset_modem", "e_reset_modem", 4);
+                    add(79, "reset_modem", "e_reset_modem", 4);
+                    add(80, "reset_modem", "e_reset_modem", 4);
                     add(85, "sos", "e_sos", 0);
                     add(86, "zone_in", "e_zone_in", 1);
                     add(87, "zone_out", "e_zone_out", 1);
                     add(88, "incomming_sms", "e_user_sms", 1);
                     add(89, "request_photo", "e_request_photo", 1);
-                    add(90, "till_start", "e_till_start", 3);
-                    add(91, "end_move", "e_system", 3);
-                    add(94, "temp_change", "e_system", 3);
-                    add(98, "data_transfer", "e_system", 3);
-                    add(100, "reset", "e_reset", 3);
-                    add(101, "reset", "e_reset", 3);
-                    add(105, "reset_modem", "e_reset_modem", 3);
-                    add(106, "reset_modem", "e_reset_modem", 3);
-                    add(107, "reset_modem", "e_reset_modem", 3);
-                    add(108, "reset_modem", "e_reset_modem", 3);
+                    add(90, "till_start", "e_till_start", 4);
+                    add(91, "end_move", "e_system", 4);
+                    add(94, "temp_change", "e_system", 4);
+                    add(98, "data_transfer", "e_system", 4);
+                    add(100, "reset", "e_reset", 4);
+                    add(101, "reset", "e_reset", 4);
+                    add(105, "reset_modem", "e_reset_modem", 4);
+                    add(106, "reset_modem", "e_reset_modem", 4);
+                    add(107, "reset_modem", "e_reset_modem", 4);
+                    add(108, "reset_modem", "e_reset_modem", 4);
                     add(110, "valet_off", "e_valet_off", 1);
                     add(111, "lock_off1", "e_lockclose1", 1);
                     add(112, "lock_off2", "e_lockclose2", 1);
@@ -173,17 +409,17 @@ namespace ugona_net
                     add(123, "lock_on3", "e_lockopen3", 1);
                     add(124, "lock_on4", "e_lockopen4", 1);
                     add(125, "lock_on5", "e_lockopen5", 1);
-                    add(127, "brk_data", "e_system", 3);
+                    add(127, "brk_data", "e_system", 4);
                     add(128, "input5_on", "e_input5_on", 2);
                     add(129, "input5_off", "e_input5_off", 2);
-                    add(130, "voice", "e_voice", 3);
+                    add(130, "voice", "e_voice", 4);
                     add(131, "download_events", "e_settings", 1);
                     add(132, "can_on", "e_can", 1);
                     add(133, "can_off", "e_can", 1);
                     add(134, "input6_on", "e_input6_on", 2);
                     add(135, "input6_off", "e_input6_off", 2);
                     add(136, "low_battery", "e_system", 0);
-                    add(137, "download_settings", "e_settings", 3);
+                    add(137, "download_settings", "e_settings", 4);
                     add(138, "guard2_on", "e_guard_on", 1);
                     add(139, "guard2_off", "e_guard_off", 1);
                     add(140, "lan_change", "e_system", 0);
@@ -237,18 +473,18 @@ namespace ugona_net
                     add(10602, "e0602", "e_rogue", 1);
                     add(10603, "e0603", "e_rogue", 1);
                     add(10701, "e0701", "e_valet_on", 1);
-                    add(10801, "e0801", "e_system", 3);
-                    add(10802, "e0802", "e_system", 3);
-                    add(10803, "e0803", "e_system", 3);
-                    add(10804, "e0804", "e_system", 3);
-                    add(10805, "e0805", "e_system", 3);
-                    add(10806, "e0806", "e_system", 3);
-                    add(10807, "e0807", "e_system", 3);
-                    add(10808, "e0808", "e_system", 3);
+                    add(10801, "e0801", "e_system", 4);
+                    add(10802, "e0802", "e_system", 4);
+                    add(10803, "e0803", "e_system", 4);
+                    add(10804, "e0804", "e_system", 4);
+                    add(10805, "e0805", "e_system", 4);
+                    add(10806, "e0806", "e_system", 4);
+                    add(10807, "e0807", "e_system", 4);
+                    add(10808, "e0808", "e_system", 4);
                     add(10901, "e0901", "e_system", 2);
                     add(11001, "e1001", "e_sos", 0);
-                    add(11101, "e1101", "e_gsm_fail", 3);
-                    add(11102, "e1102", "e_gsm_recover", 3);
+                    add(11101, "e1101", "e_gsm_fail", 4);
+                    add(11102, "e1102", "e_gsm_recover", 4);
                     add(11103, "e1103", "e_user_call", 2);
                     add(11201, "e1201", "e_sos", 2);
                     add(11301, "e1301", "e_motor_error", 2);
@@ -265,18 +501,29 @@ namespace ugona_net
                     add(11701, "e1701", "e_hood_open", 2);
                     add(11702, "e1702", "e_hood_open", 2);
                     add(11703, "e1703", "e_hood_open", 2);
-                    add(13700, "e3700", "e_tilt", 3);
+                    add(13700, "e3700", "e_tilt", 4);
                 }
                 return events_def;
             }
         }
 
-        static void add(int id, string name, string pict, int level) {
+        static void add(int id, string name, string pict, int level)
+        {
             EventDef d = new EventDef();
             d.name = name;
             d.pict = pict;
             d.level = level;
             events_def.Add(id, d);
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void NotifyPropertyChanged(String propertyName)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (null != handler)
+            {
+                handler(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
     }
 }

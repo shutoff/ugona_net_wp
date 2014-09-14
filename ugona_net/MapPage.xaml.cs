@@ -226,7 +226,7 @@ namespace ugona_net
                 SetData();
                 CallJs("showPoints");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
             }
             track_load = false;

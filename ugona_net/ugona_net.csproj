@@ -116,10 +116,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\AppResources.ru.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppResources.ru.resx</DependentUpon>
+    </Compile>
     <Compile Include="SQLite.cs" />
     <Compile Include="SQLiteAsync.cs" />
     <Compile Include="ViewModels\CarModel.cs" />
     <Compile Include="ViewModels\Event.cs" />
+    <Compile Include="ViewModels\Track.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -218,7 +224,12 @@
     <Content Include="Assets\Events\e_voice.png" />
     <Content Include="Assets\Events\e_zone_in.png" />
     <Content Include="Assets\Events\e_zone_out.png" />
-    <Content Include="README_FIRST.txt" />
+    <Content Include="Assets\Icons\appbar.contacts.off.png" />
+    <Content Include="Assets\Icons\appbar.contacts.png" />
+    <Content Include="Assets\Icons\appbar.system.off.png" />
+    <Content Include="Assets\Icons\appbar.system.png" />
+    <Content Include="Assets\Icons\appbar.user.off.png" />
+    <Content Include="Assets\Icons\appbar.user.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
