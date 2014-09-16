@@ -1,4 +1,5 @@
 ﻿using Microsoft.Phone.Controls;
+using Microsoft.Phone.Notification;
 using Microsoft.Phone.Shell;
 using System;
 using System.Diagnostics;
@@ -71,6 +72,8 @@ namespace ugona_net
                 // and consume battery power when the user is not using the phone.
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
             }
+
+            CreateChannel();
         }
 
         // Code to execute when the application is launching (eg, from Start)
@@ -235,6 +238,18 @@ namespace ugona_net
 
                 throw;
             }
+        }
+
+        private void CreateChannel()
+        {
+            HttpNotificationChannel channel = new HttpNotificationChannel("ugona.net", "ugona.nat");
+            channel.ChannelUriUpdated += OnChannelUriUpdated;
+            channel.Open();
+        }
+
+        private void OnChannelUriUpdated(Object sender, NotificationChannelUriEventArgs e)
+        {
+            App.ViewModel.SetChannelUri(e.ChannelUri.ToString());
         }
     }
 }

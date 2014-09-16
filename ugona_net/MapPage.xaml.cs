@@ -1,18 +1,19 @@
 ﻿using Microsoft.Phone.Controls;
+using Microsoft.Phone.Shell;
+using Newtonsoft.Json.Linq;
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Globalization;
 using System.IO;
 using System.IO.IsolatedStorage;
+using System.Net;
 using System.Text;
 using System.Windows;
 using System.Windows.Navigation;
 using System.Windows.Resources;
 using System.Windows.Threading;
-using Windows.Devices.Geolocation;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace ugona_net
 {
@@ -25,11 +26,22 @@ namespace ugona_net
             DataContext = App.ViewModel;
         }
 
+        Event ev;
+        ObservableCollection<Track> tracks;
+
         DispatcherTimer refreshTimer;
         String track_data;
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            ev = null;
+            if (PhoneApplicationService.Current.State.ContainsKey("MapEvent"))
+                ev = PhoneApplicationService.Current.State["MapEvent"] as Event;
+            tracks = null;
+            if (PhoneApplicationService.Current.State.ContainsKey("MapTracks"))
+                tracks = PhoneApplicationService.Current.State["MapTracks"] as ObservableCollection<Track>;
+            if ((ev != null) || (tracks != null))
+                return;
             track_data = null;
             if (refreshTimer == null)
             {
@@ -42,7 +54,8 @@ namespace ugona_net
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
-            refreshTimer.Stop();
+            if (refreshTimer != null)
+                refreshTimer.Stop();
         }
 
         void OnRefresh(Object sender, EventArgs args)
@@ -58,13 +71,15 @@ namespace ugona_net
             map.IsScriptEnabled = true;
             map.IsGeolocationEnabled = true;
             map.Navigate(new Uri("html/map.html", UriKind.Relative));
-            LoadTrack();
+            if ((ev == null) && (tracks == null))
+                LoadTrack();
         }
 
         private void Map_OnScriptNotify(object sender, NotifyEventArgs e)
         {
             String[] data = e.Value.Split(separator);
-            if (data[0] == "init"){
+            if ((data[0] == "init") && (ev == null))
+            {
                 App.ViewModel.PropertyChanged += CarPropertyChanged;
             }
         }
@@ -90,33 +105,158 @@ namespace ugona_net
             CallJs("setConfig", App.ViewModel.MapType, App.ViewModel.Traffic, Helper.GetString("km/h"), 1, Helper.GetString("ResourceLanguage"));
         }
 
-        private char[] separator = {'|'};
+        private char[] separator = { '|' };
+
+        private static String s(double v)
+        {
+            return String.Format(CultureInfo.InvariantCulture, "{0:0.#####}", v);
+        }
 
         private void SetData()
         {
-            String data = String.Format(CultureInfo.InvariantCulture, "{0:0.#####}", App.ViewModel.Latitude) + ";";
-            data += String.Format(CultureInfo.InvariantCulture, "{0:0.#####}", App.ViewModel.Longitude) + ";";
-            if (App.ViewModel.Course != null)
-                data += App.ViewModel.Course;
-            data += ";";
-            String[] parts = App.ViewModel.Address.Split(separator);
-            bool odd = true;
-            foreach (String part in parts){
-                String p = part.Replace("\n", "<br/>");
-                if (odd){
-                    odd = false;
-                    if (part.Length == 0)
-                        continue;
-                    data += "<b>";
-                    data += p;
-                    data += "</b>";
-                    continue;
+            String data = null;
+            if (tracks != null)
+            {
+                List<Track.Marker> markers = new List<Track.Marker>();
+                for (int i = 0; i < tracks.Count; i++)
+                {
+                    Track track = tracks[i];
+                    String[] points = track.track.Split(separator);
+                    Track.Point start = new Track.Point(points[0]);
+                    Track.Point finish = new Track.Point(points[points.Length - 1]);
+                    int n_start = markers.Count;
+                    double d_best = 200.0;
+                    for (int n = 0; n < markers.Count; n++) {
+                        Track.Marker m = markers[n];
+                        double delta = (double) AddressHelper.distance(start.latitude, start.longitude, m.latitude, m.longitude);
+                        if (delta < d_best) {
+                            d_best = delta;
+                            n_start = n;
+                        }
+                    }
+                    if (n_start >= markers.Count) {
+                        Track.Marker m = new Track.Marker();
+                        m.latitude = start.latitude;
+                        m.longitude = start.longitude;
+                        m.address = track.start;
+                        m.times = new List<Track.TimeInterval>();
+                        markers.Add(m);
+                    }
+                    Track.Marker marker = markers[n_start];
+                    if ((marker.times.Count == 0) || (marker.times[marker.times.Count - 1].end > 0)) {
+                        Track.TimeInterval interval = new Track.TimeInterval();
+                        marker.times.Add(interval);
+                    }
+                    marker.times[marker.times.Count - 1].end = track.begin;
+
+                    if (i > 0) {
+                        Track prev = tracks[i - 1];
+                        points = prev.track.Split(separator);
+                        Track.Point last = new Track.Point(points[points.Length - 1]);
+                        double delta = (double)AddressHelper.distance(start.latitude, start.longitude, last.latitude, last.longitude);
+                        if (delta > 200)
+                            data += "|";
+                    }
+                    data += track.track;
+
+                    int n_finish = markers.Count;
+                    d_best = 200;
+                    for (int n = 0; n < markers.Count; n++) {
+                        if (n == n_start)
+                            continue;
+                        marker = markers[n];
+                        double delta = (double) AddressHelper.distance(finish.latitude, finish.longitude, marker.latitude, marker.longitude);
+                        if (delta < d_best) {
+                            n_finish = n;
+                            d_best = delta;
+                        }
+                    }
+                    if (n_finish >= markers.Count) {
+                        marker = new Track.Marker();
+                        marker.latitude = finish.latitude;
+                        marker.longitude = finish.longitude;
+                        marker.address = track.finish;
+                        marker.times = new List<Track.TimeInterval>();
+                        markers.Add(marker);
+                    }
+                    marker = markers[n_finish];
+                    Track.TimeInterval ti = new Track.TimeInterval();
+                    ti.begin = track.end;
+                    marker.times.Add(ti);
                 }
-                data += p;
-                odd = true;
+                data += "|";
+                foreach (Track.Marker marker in markers) {
+                    data += "|";
+                    data += s(marker.latitude);
+                    data += ",";
+                    data += s(marker.longitude);
+                    data += ",<b>";
+                    foreach (Track.TimeInterval interval in marker.times) {
+                        if (interval.begin > 0) {
+                            data += DateUtils.formatTime(interval.begin);
+                            if (interval.end > 0)
+                                data += "-";
+                        }
+                        if (interval.end > 0) {
+                            data += DateUtils.formatTime(interval.end);
+                        }
+                        data += " ";
+                    }
+                    data += "</b><br/>";
+                    data += HttpUtility.HtmlEncode(marker.address).Replace(",", "&#x2C;").Replace("|", "&#x7C;");
+                }
+                while (data.Length > 2000)
+                {
+                    CallJs("setTrackPart", data.Substring(0, 2000));
+                    data = data.Substring(2000);
+                }
+                CallJs("setTrack", data);
+                return;
             }
-            data += ";;";
+
+            if (ev != null)
+            {
+                data = String.Format(CultureInfo.InvariantCulture, "{0:0.#####}", ev.gps.lat) + ";";
+                data += String.Format(CultureInfo.InvariantCulture, "{0:0.#####}", ev.gps.lng) + ";";
+                if (ev.gps.course != null)
+                    data += ev.gps.course;
+                data += ";<b>";
+                data += ev.Time;
+                data += "</b> ";
+                data += ev.Name;
+                data += "<br/>";
+                data += ev.Info.Replace("\n", "<br/>");
+                String[] parts = ev.Info.Split(separator);
+                data += ";;";
+            }
+            else
+            {
+                data = String.Format(CultureInfo.InvariantCulture, "{0:0.#####}", App.ViewModel.Latitude) + ";";
+                data += String.Format(CultureInfo.InvariantCulture, "{0:0.#####}", App.ViewModel.Longitude) + ";";
+                if (App.ViewModel.Course != null)
+                    data += App.ViewModel.Course;
+                data += ";";
+                String[] parts = App.ViewModel.Address.Split(separator);
+                bool odd = true;
+                foreach (String part in parts)
+                {
+                    String p = part.Replace("\n", "<br/>");
+                    if (odd)
+                    {
+                        odd = false;
+                        if (part.Length == 0)
+                            continue;
+                        data += "<b>";
+                        data += p;
+                        data += "</b>";
+                        continue;
+                    }
+                    data += p;
+                    odd = true;
+                }
+                data += ";;";
                 data += track_data;
+            }
             CallJs("setData", data);
         }
 
@@ -198,7 +338,8 @@ namespace ugona_net
 
         bool track_load;
 
-        async private void LoadTrack(){
+        async private void LoadTrack()
+        {
             bool engine = App.ViewModel.Car.contact.input3 || App.ViewModel.Car.contact.realIgnition;
             bool az = App.ViewModel.Car.az;
             if (!engine || az)
@@ -242,6 +383,7 @@ namespace ugona_net
                 "html/leaflet/leaflet-src.js",
                 "html/leaflet/Location.js",
                 "html/leaflet/Traffic.js",
+                "html/leaflet/Tracks.js",
                 "html/leaflet/Points.js",
                 "html/leaflet/Map.js",
                 "html/leaflet/Bing.js",
@@ -263,7 +405,7 @@ namespace ugona_net
             foreach (string f in files)
             {
                 StreamResourceInfo sr = Application.GetResourceStream(new Uri(f, UriKind.Relative));
- //               if (!isoStore.FileExists(f))
+                //               if (!isoStore.FileExists(f))
                 {
                     using (BinaryReader br = new BinaryReader(sr.Stream))
                     {
@@ -291,17 +433,24 @@ namespace ugona_net
                 isoStore.CreateDirectory(strBaseDir);
             }
 
-            //Remove the existing file.
-            if (isoStore.FileExists(fileName))
+            try
             {
-                isoStore.DeleteFile(fileName);
-            }
+                //Remove the existing file.
+                if (isoStore.FileExists(fileName))
+                {
+                    isoStore.DeleteFile(fileName);
+                }
 
-            //Write the file.
-            using (BinaryWriter bw = new BinaryWriter(isoStore.CreateFile(fileName)))
+                //Write the file.
+                using (BinaryWriter bw = new BinaryWriter(isoStore.CreateFile(fileName)))
+                {
+                    bw.Write(data);
+                    bw.Close();
+                }
+            }
+            catch (Exception)
             {
-                bw.Write(data);
-                bw.Close();
+
             }
         }
 

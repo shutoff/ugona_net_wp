@@ -1,4 +1,5 @@
 ﻿using Microsoft.Phone.Controls;
+using Microsoft.Phone.Notification;
 using Microsoft.Phone.Shell;
 using Newtonsoft.Json.Linq;
 using System;
@@ -31,6 +32,8 @@ namespace ugona_net
 
         private void OnAddressClick(object sender, RoutedEventArgs e)
         {
+            PhoneApplicationService.Current.State["MapEvent"] = null;
+            PhoneApplicationService.Current.State["MapTracks"] = null;
             NavigationService.Navigate(new Uri("/MapPage.xaml", UriKind.Relative));
         }
 
@@ -292,12 +295,20 @@ namespace ugona_net
             Event eNew = Events.SelectedItem as Event;
             if (eNew == null)
                 return;
+            Events.SelectedIndex = -1;
             foreach (Event ev in Events.ItemsSource){
                 if (ev.IsCurrent)
                 {
-                    ev.IsCurrent = false;
                     if (ev == eNew)
+                    {
+                        if ((ev.gps.lat != null) && (ev.gps.lng != null))
+                        {
+                            PhoneApplicationService.Current.State["MapEvent"] = ev;
+                            NavigationService.Navigate(new Uri("/MapPage.xaml", UriKind.Relative));
+                        }                        
                         return;
+                    }
+                    ev.IsCurrent = false;
                     break;
                 }
             }
@@ -310,6 +321,7 @@ namespace ugona_net
         {
             TracksProgress.Visibility = Visibility.Visible;
             Tracks.Visibility = Visibility.Collapsed;
+            TracksText.Visibility = Visibility.Collapsed;
             TracksInfo.Text = "";
             DateTime current = App.ViewModel.Date;
             DateTime begin = new DateTime(current.Year, current.Month, current.Day);
@@ -341,15 +353,26 @@ namespace ugona_net
                         speed = track.day_max_speed;
                     tracks.Add(track);
                 }
-                        
-                double avg_speed = mileage * 3600000.0 / time;
-                TracksInfo.Text = String.Format(Helper.GetString("status"), mileage, Track.timeFormat(time), avg_speed, speed);
 
-                Tracks.ItemsSource = tracks;
-                Tracks.Visibility = Visibility.Visible;
+                if (tracks.Count > 0)
+                {
+                    double avg_speed = mileage * 3600000.0 / time;
+                    TracksInfo.Text = "|" + String.Format(Helper.GetString("status"), mileage, Track.timeFormat(time), avg_speed, speed);
+
+                    Tracks.ItemsSource = tracks;
+                    Tracks.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    TracksText.Text = Helper.GetString("no_data");
+                    TracksText.Visibility = Visibility.Visible;
+                }
+
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                TracksText.Text = ex.Message;
+                TracksText.Visibility = Visibility.Visible;
             }
             TracksProgress.Visibility = Visibility.Collapsed;
         }
@@ -359,17 +382,33 @@ namespace ugona_net
             Track tNew = Tracks.SelectedItem as Track;
             if (tNew == null)
                 return;
+            Tracks.SelectedIndex = -1;
             foreach (Track t in Tracks.ItemsSource)
             {
                 if (t.IsCurrent)
                 {
-                    t.IsCurrent = false;
                     if (t == tNew)
+                    {
+                        ObservableCollection<Track> tracks = new ObservableCollection<Track>();
+                        tracks.Add(t);
+                        PhoneApplicationService.Current.State["MapEvent"] = null;
+                        PhoneApplicationService.Current.State["MapTracks"] = tracks;
+                        NavigationService.Navigate(new Uri("/MapPage.xaml", UriKind.Relative));
                         return;
+                    }
+                    t.IsCurrent = false;
                     break;
                 }
             }
             tNew.IsCurrent = true;
         }
+
+        private void OnTracksClick(object sender, RoutedEventArgs e)
+        {
+            PhoneApplicationService.Current.State["MapEvent"] = null;
+            PhoneApplicationService.Current.State["MapTracks"] = Tracks.ItemsSource;
+            NavigationService.Navigate(new Uri("/MapPage.xaml", UriKind.Relative));
+        }
+
     }
 }

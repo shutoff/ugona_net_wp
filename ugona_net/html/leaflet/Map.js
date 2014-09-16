@@ -53,6 +53,26 @@ function setData(data) {
     }
 }
 
+var track_data = null;
+
+function setTrackPart(data) {
+    if (track_data == null) {
+        track_data = data;
+        return;
+    }
+    track_data += data;
+}
+
+function setTrack(data) {
+    setTrackPart(data);
+    (function (data) {
+        android.getTrack = function () {
+            return data;
+        }
+    })(track_data);
+    track_data = null;
+}
+
 var mapLayer;
 
 function loaded() {
@@ -148,7 +168,6 @@ function init() {
         return;
     }
     if (android.getTrack != null) {
-        alert('track')
         getBounds = trackGetBounds;
         initialize();
         showTracks();

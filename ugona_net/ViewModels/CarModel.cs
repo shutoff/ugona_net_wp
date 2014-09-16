@@ -40,7 +40,7 @@ namespace ugona_net
         {
             get
             {
-                return DateUtils.formatTime(Car.time);
+                return DateUtils.formatDateTime(Car.time);
             }
         }
 
@@ -439,7 +439,7 @@ namespace ugona_net
             {
                 String res = "";
                 if (Car.last_stand > 0)
-                    res = DateUtils.formatTime(Car.last_stand);
+                    res = DateUtils.formatDateTime(Car.last_stand);
                 if ((Car.last_stand < 0) && (Car.gps.speed != null))
                     res = String.Format("{0:n0} ", Car.gps.speed) + Helper.GetString("km/h");
                 if (res.Length > 0)
@@ -1113,6 +1113,23 @@ namespace ugona_net
             if (doors4)
                 group += "4";
             setLayer(pos, group);
+        }
+
+        public void SetChannelUri(String url)
+        {
+            String old = Helper.GetSetting(Names.CHANNEL);
+            if ((old != null) && (old == url))
+            {
+                long upd_time = Helper.GetSetting<long>(Names.CHANNEL_TIME, 0);
+                long now = DateUtils.ToJavaTime(DateTime.Now);
+                if (now < upd_time + 86400000)
+                    return;
+            }
+            Helper.PutSetting(Names.CHANNEL, url);
+            TimeZoneInfo localZone = TimeZoneInfo.Local;
+            String key = Helper.GetSetting(Names.KEY, "demo");
+            if (key == "demo")
+                return;
         }
     }
 

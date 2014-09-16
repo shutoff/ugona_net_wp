@@ -45,7 +45,7 @@ namespace ugona_net
             return DateTime.FromFileTimeUtc((javaTime + epochDiff) * TimeSpan.TicksPerMillisecond);
         }
 
-        static public String formatTime(long time)
+        static public String formatDateTime(long time)
         {
             if (time == 0)
                 return "";
@@ -54,6 +54,15 @@ namespace ugona_net
             String date = dt.ToString("d");
             if (date != DateTime.Now.ToString("d"))
                 res += " " + date;
+            return res;
+        }
+
+        static public String formatTime(long time)
+        {
+            if (time == 0)
+                return "";
+            DateTime dt = ToDateTime(time);
+            String res = dt.ToString("t");
             return res;
         }
 

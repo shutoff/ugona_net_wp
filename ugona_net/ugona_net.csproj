@@ -230,6 +230,7 @@
     <Content Include="Assets\Icons\appbar.system.png" />
     <Content Include="Assets\Icons\appbar.user.off.png" />
     <Content Include="Assets\Icons\appbar.user.png" />
+    <Content Include="html\leaflet\Tracks.js" />
     <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Check.png" />

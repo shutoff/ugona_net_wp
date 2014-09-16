@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
 using System.Windows;
 using System.Windows.Media;
 
@@ -194,6 +196,33 @@ namespace ugona_net
             {
                 handler(this, new PropertyChangedEventArgs(propertyName));
             }
+        }
+
+        static char[] separator = { ',' };
+
+        public class Point {
+            public Point(String s){
+                String[] p = s.Split(separator);
+                latitude = Double.Parse(p[0], CultureInfo.InvariantCulture);
+                longitude = Double.Parse(p[1], CultureInfo.InvariantCulture);
+            }
+
+            public double latitude;
+            public double longitude;
+        }
+
+        public class TimeInterval
+        {
+            public long begin;
+            public long end;
+        }
+
+        public class Marker
+        {
+            public double latitude;
+            public double longitude;
+            public String address;
+            public List<TimeInterval> times;
         }
     }
 }

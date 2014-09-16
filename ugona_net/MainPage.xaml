@@ -68,7 +68,7 @@
                         <TextBlock Text="{Binding Balance}" Grid.Row="3" Grid.Column="2" TextAlignment="Right" Foreground="{Binding BalanceColor}" VerticalAlignment="Center" Visibility="{Binding BalanceVisibilty}"/>
                     </Grid>
                     <ScrollViewer Margin="10,10,10,10">
-                        <local:AddressBox x:Name="Addr" Text="{Binding Address}" Click="OnAddressClick"/>
+                        <local:AddressBox x:Name="Addr" Text="{Binding Address}" Click="OnAddressClick" TextAlignment="Center"/>
                     </ScrollViewer>
                 </StackPanel>
 
@@ -111,7 +111,7 @@
                         </ListBox.ItemTemplate>
                     </ListBox>
                 </Grid>
-                
+
             </phone:PivotItem>
 
             <phone:PivotItem x:Name="TracksPage" Header="{Binding Path=LocalizedResources.tracks, Source={StaticResource LocalizedStrings}}">
@@ -127,6 +127,7 @@
 
                     <toolkit:DatePicker x:Name="TrackDatePicker" Value="{Binding Date}" ValueStringFormat="{}{0:dd MMMM yyyy}" ValueChanged="DateChanged"/>
                     <ProgressBar x:Name="TracksProgress" IsIndeterminate="True" Grid.Row="1"/>
+                    <TextBlock x:Name="TracksText" Grid.Row="1" Visibility="Collapsed" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center"/>
                     <ListBox x:Name="Tracks" Grid.Row="1" Visibility="Collapsed" SelectionChanged="TrackClick">
                         <ListBox.ItemContainerStyle>
                             <Style TargetType="ListBoxItem">
@@ -153,7 +154,7 @@
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
-                    <TextBlock x:Name="TracksInfo" Grid.Row="2" Margin="5,10,5,0"/>
+                    <local:AddressBox x:Name="TracksInfo" Grid.Row="2" Margin="5,10,5,5" Click="OnTracksClick"/>
                 </Grid>
             </phone:PivotItem>
 
@@ -169,7 +170,7 @@
 
                     <ProgressBar x:Name="StatProgress" IsIndeterminate="True" Grid.Row="1"/>
 
-                </Grid>            
+                </Grid>
             </phone:PivotItem>
 
             <phone:PivotItem x:Name="PhotoPage" Header="{Binding Path=LocalizedResources.photo, Source={StaticResource LocalizedStrings}}">
@@ -185,7 +186,8 @@
                     <toolkit:DatePicker x:Name="PhotoDatePicker" Value="{Binding Date}" ValueStringFormat="{}{0:dd MMMM yyyy}" ValueChanged="DateChanged"/>
                     <ProgressBar x:Name="PhotoProgress" IsIndeterminate="True" Grid.Row="1"/>
 
-                </Grid>            </phone:PivotItem>
+                </Grid>
+            </phone:PivotItem>
 
         </phone:Pivot>
 

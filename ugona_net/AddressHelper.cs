@@ -79,7 +79,7 @@ namespace ugona_net
         async public static Task<String> get(String str)
         {
             String[] parts = str.Split(separator);
-            return await get(Double.Parse(parts[0]), Double.Parse(parts[1]));
+            return await get(Double.Parse(parts[0], CultureInfo.InvariantCulture), Double.Parse(parts[1], CultureInfo.InvariantCulture));
         }
 
         async public static Task<String> get(double? lat, double? lon)

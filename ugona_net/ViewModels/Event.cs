@@ -108,7 +108,7 @@ namespace ugona_net
                     info += Helper.GetString("reserved") + String.Format(": {0:n2} V\n", voltage.reserved);
                 if (balance != null)
                     info += Helper.GetString("balance") + String.Format(": {0:n2} V\n", balance);
-                if ((card_level != null) && (card_voltage != null))
+                if (card_level != null)
                     info += String.Format(Helper.GetString("card_info"), card_level, card_voltage) + "\n";
                 if ((gps.lat != null) && (gps.lng != null))
                     info += String.Format("{0:n5} {1:n5}\n", gps.lat, gps.lng);

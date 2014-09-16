@@ -21,7 +21,6 @@ namespace ugona_net
 
         public AddressBox()
         {
-            this.TextAlignment = TextAlignment.Center;
         }
 
         public string Text
