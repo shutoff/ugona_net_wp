@@ -915,7 +915,7 @@ namespace ugona_net
                     return false;
                 long time = Car.time;
                 JObject res = await Helper.GetApi("", "skey", key, "time", Car.time);           
-                Helper.SetData(Car, res, null);
+                Helper.SetData(Car, res);
                 Error = "";
                 NotifyPropertyChanged("Error");
                 if (time == Car.time)

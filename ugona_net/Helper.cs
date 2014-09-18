@@ -159,7 +159,7 @@ function notifyUA() {
             return GetJson(url);
         }
 
-        static public void SetData(Object to, JObject obj, String prefix)
+        static public void SetData(Object to, JObject obj)
         {
             Delegate[] delegates = null;
             FieldInfo info = to.GetType().GetField("PropertyChanged",
@@ -172,7 +172,7 @@ function notifyUA() {
                 if (eventDelagate != null)
                     delegates = eventDelagate.GetInvocationList();
             }
-            SetData(to, obj, prefix, delegates);
+            SetData(to, obj, "", delegates);
         }
 
         static public void SetData(Object to, JObject obj, String prefix, Delegate[] delegates)

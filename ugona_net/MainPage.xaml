@@ -89,6 +89,11 @@
                     <ProgressBar x:Name="EventsProgress" IsIndeterminate="True" Grid.Row="1"/>
                     <TextBlock x:Name="EventsText" Grid.Row="1" Visibility="Collapsed" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center"/>
                     <ListBox x:Name="Events" Grid.Row="1" Visibility="Collapsed" SelectionChanged="EventClick">
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="ListBoxItem">
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                            </Style>
+                        </ListBox.ItemContainerStyle>
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Grid Margin="10,10,10,10">
@@ -164,11 +169,37 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
 
                     <ProgressBar x:Name="StatProgress" IsIndeterminate="True" Grid.Row="1"/>
+                    <TextBlock x:Name="StatText" Visibility="Collapsed" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center"/>
+                    <ListBox x:Name="Stat" Visibility="Collapsed" SelectionChanged="StatClick">
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="ListBoxItem">
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                            </Style>
+                        </ListBox.ItemContainerStyle>
+                        <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Margin="10,10,10,10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{Binding Time}" Foreground="{Binding Blue}" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding Distance}" TextAlignment="Right" Grid.Column="1" Foreground="{Binding Blue}" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding Info}" TextWrapping="Wrap" Grid.Row="1" Grid.ColumnSpan="2" Margin="{Binding Margin}"/>
+                            </Grid>
+                        </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <TextBlock x:Name="StatInfo" Grid.Row="1" Margin="5,10,5,5" TextWrapping="Wrap"/>
 
                 </Grid>
             </phone:PivotItem>
