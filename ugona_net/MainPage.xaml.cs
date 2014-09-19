@@ -600,5 +600,15 @@ namespace ugona_net
                 }
             }
         }
+
+        private void AboutClick(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/About.xaml", UriKind.Relative));
+        }
+
+        private void SettingsClick(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Settings.xaml", UriKind.Relative));
+        }
     }
 }
