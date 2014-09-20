@@ -175,6 +175,8 @@ namespace ugona_net
                 LoadStat();
             if (e.Item.Name == "PhotoPage")
                 LoadPhoto();
+            if (e.Item.Name == "ActionsPage")
+                LoadActions();
         }
 
         private void ChangeFilter(object sender, EventArgs e)
@@ -655,6 +657,20 @@ namespace ugona_net
             PhoneApplicationService.Current.State["Photo"] = pNew;
             NavigationService.Navigate(new Uri("/PhotoView.xaml", UriKind.Relative));
         }
+
+        private void LoadActions()
+        {
+            Actions.ItemsSource = Action.MsActions;
+        }
+
+        private void ActionClick(object sender, SelectionChangedEventArgs e)
+        {
+            Action aNew = Actions.SelectedItem as Action;
+            if (aNew == null)
+                return;
+            Actions.SelectedIndex = -1;
+        }
+
 
         private void AboutClick(object sender, EventArgs e)
         {
