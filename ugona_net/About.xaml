@@ -28,7 +28,24 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Image Source="/Assets/ugona_net.png" Width="111" Grid.Row="1"/>
+            <TextBlock x:Name="Version" Grid.Row="2" TextAlignment="Center"/>
+            <TextBlock Text="{Binding Path=LocalizedResources.service, Source={StaticResource LocalizedStrings}}" Grid.Row="3" TextAlignment="Center" Margin="15,40,15,40"/>
+            <TextBlock Text="{Binding Path=LocalizedResources.application, Source={StaticResource LocalizedStrings}}" Grid.Row="4" TextAlignment="Center" TextWrapping="Wrap" Margin="15,40,15,40"/>
+            <Button Content="{Binding Path=LocalizedResources.service_btn, Source={StaticResource LocalizedStrings}}" Grid.Row="5"  Margin="15,10,15,0" Click="ServiceClick"/>
+            <Button Content="{Binding Path=LocalizedResources.forum_btn, Source={StaticResource LocalizedStrings}}" Grid.Row="6"  Margin="15,10,15,0" Click="ForumClick"/>
+            <TextBlock Text="{Binding Path=LocalizedResources.copyright, Source={StaticResource LocalizedStrings}}" Grid.Row="7" TextAlignment="Center" TextWrapping="Wrap" Margin="15,40,15,40"/>
         </Grid>
     </Grid>
 

@@ -65,6 +65,8 @@ namespace ugona_net
                         LoadEvents();
                     if (item.Name == "TracksPage")
                         LoadTracks();
+                    if (item.Name == "PhotoPage")
+                        LoadPhoto();
                 }
             }
         }
@@ -171,6 +173,8 @@ namespace ugona_net
                 LoadTracks();
             if (e.Item.Name == "StatPage")
                 LoadStat();
+            if (e.Item.Name == "PhotoPage")
+                LoadPhoto();
         }
 
         private void ChangeFilter(object sender, EventArgs e)
@@ -599,6 +603,57 @@ namespace ugona_net
                     }
                 }
             }
+        }
+
+        async private void LoadPhoto()
+        {
+            PhotoProgress.Visibility = Visibility.Visible;
+            Photos.Visibility = Visibility.Collapsed;
+            PhotoText.Visibility = Visibility.Collapsed;
+            try
+            {
+                DateTime current = App.ViewModel.Date;
+                DateTime begin = new DateTime(current.Year, current.Month, current.Day);
+                DateTime end = begin.AddDays(1);
+                JObject res = await Helper.GetApi("photos",
+                    "skey", Helper.GetSetting(Names.KEY),
+                    "begin", DateUtils.ToJavaTime(begin),
+                    "end", DateUtils.ToJavaTime(end));
+                JArray photos = res.GetValue("photos").ToObject<JArray>();
+                ObservableCollection<Photo> p = new ObservableCollection<Photo>();
+                foreach (JToken el in photos)
+                {
+                    Photo photo = new Photo();
+                    Helper.SetData(photo, el.ToObject<JObject>(), "", null);
+                    p.Add(photo);
+                }
+                if (p.Count > 0)
+                {
+                    Photos.ItemsSource = p;
+                    Photos.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    PhotoText.Text = Helper.GetString("no_data");
+                    PhotoText.Visibility = Visibility.Visible;
+                }
+            }
+            catch (Exception ex)
+            {
+                PhotoText.Text = ex.Message;
+                PhotoText.Visibility = Visibility.Visible;
+            }
+            PhotoProgress.Visibility = Visibility.Collapsed;
+        }
+
+        private void PhotoClick(object sender, SelectionChangedEventArgs e)
+        {
+            Photo pNew = Photos.SelectedItem as Photo;
+            if (pNew == null)
+                return;
+            Photos.SelectedIndex = -1;
+            PhoneApplicationService.Current.State["Photo"] = pNew;
+            NavigationService.Navigate(new Uri("/PhotoView.xaml", UriKind.Relative));
         }
 
         private void AboutClick(object sender, EventArgs e)

@@ -105,6 +105,7 @@
     <Compile Include="Colors.cs" />
     <Compile Include="DateUtils.cs" />
     <Compile Include="Helper.cs" />
+    <Compile Include="ImageLoader.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -113,6 +114,9 @@
       <DependentUpon>MapPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Names.cs" />
+    <Compile Include="PhotoView.xaml.cs">
+      <DependentUpon>PhotoView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\AppResources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -131,6 +135,7 @@
     <Compile Include="SQLiteAsync.cs" />
     <Compile Include="ViewModels\CarModel.cs" />
     <Compile Include="ViewModels\Event.cs" />
+    <Compile Include="ViewModels\Photo.cs" />
     <Compile Include="ViewModels\Stat.cs" />
     <Compile Include="ViewModels\Track.cs" />
   </ItemGroup>
@@ -152,6 +157,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MapPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PhotoView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -245,6 +254,7 @@
     <Content Include="Assets\Icons\appbar.system.png" />
     <Content Include="Assets\Icons\appbar.user.off.png" />
     <Content Include="Assets\Icons\appbar.user.png" />
+    <Content Include="Assets\ugona_net.png" />
     <Content Include="html\leaflet\Tracks.js" />
     <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
@@ -409,8 +419,9 @@
       <HintPath>..\packages\AppBarUtils.2.4\lib\windowsphone8\AppBarUtils.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.Phone.Controls.Toolkit">
-      <HintPath>..\packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+    <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=8.0.1.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WPtoolkit.Kinnara.4.2014.08.05\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -442,6 +453,10 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\JetImageLoader\JetImageLoader.csproj">
+      <Project>{83723b46-02fc-42da-a803-a1c363f266fa}</Project>
+      <Name>JetImageLoader</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PhoneNumbers\PhoneNumbers.csproj">
       <Project>{2dcd7c72-1a52-4961-88bc-b2e0bcc01b88}</Project>
       <Name>PhoneNumbers</Name>

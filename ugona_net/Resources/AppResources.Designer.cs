@@ -295,7 +295,7 @@ namespace ugona_net.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ugona.net+.
+        ///   Looks up a localized string similar to Ugona.net.
         /// </summary>
         public static string app_name {
             get {
@@ -304,7 +304,7 @@ namespace ugona_net.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Application UGONA.NET+ works with MS-PGSM devices.
+        ///   Looks up a localized string similar to Application UGONA.NET works with MS-PGSM devices.
         /// </summary>
         public static string application {
             get {

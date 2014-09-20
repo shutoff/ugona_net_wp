@@ -153,7 +153,7 @@
     <value>State</value>
   </data>
   <data name="app_name" xml:space="preserve">
-    <value>Ugona.net+</value>
+    <value>Ugona.net</value>
   </data>
   <data name="notification" xml:space="preserve">
     <value>Low card battery|Supply reserve|Supply regular|ERROR
@@ -875,7 +875,7 @@ Max speed: {2} kmh</value>
     <value>FEDERAL SERVICE</value>
   </data>
   <data name="application" xml:space="preserve">
-    <value>Application UGONA.NET+ works with MS-PGSM devices</value>
+    <value>Application UGONA.NET works with MS-PGSM devices</value>
   </data>
   <data name="service_btn" xml:space="preserve">
     <value>Service Ugona.net</value>

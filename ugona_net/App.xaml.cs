@@ -251,5 +251,6 @@ namespace ugona_net
         {
             App.ViewModel.SetChannelUri(e.ChannelUri.ToString());
         }
+
     }
 }
