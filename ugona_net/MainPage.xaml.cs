@@ -13,6 +13,8 @@ using System.Windows.Threading;
 using System.Globalization;
 using System.Reflection;
 using System.Threading;
+using System.IO;
+using Coding4Fun.Toolkit.Controls;
 
 namespace ugona_net
 {
@@ -24,13 +26,17 @@ namespace ugona_net
         public MainPage()
         {
             InitializeComponent();
+
             Loaded += OnLoaded;
             DataContext = App.ViewModel;
 
             App.ViewModel.PropertyChanged += OnPropertyChanged;
+            App.ViewModel.RegisterGCM();
 
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
+
+            CreateChannel();
         }
 
         private void OnAddressClick(object sender, RoutedEventArgs e)
@@ -83,7 +89,7 @@ namespace ugona_net
         protected void ShowAuth()
         {
             show_auth = true;
-            Helper.RemoveSetting(Names.KEY);
+            App.ViewModel.Key = null;
             NavigationService.Navigate(new Uri("/AuthPage.xaml", UriKind.Relative));
         }
 
@@ -92,8 +98,7 @@ namespace ugona_net
         {
             if (e.NavigationMode == NavigationMode.New)
             {
-                String key = Helper.GetSetting(Names.KEY, "demo");
-                if (key == "demo")
+                if ((App.ViewModel.Key == null) || (App.ViewModel.Key == "demo"))
                 {
                     ShowAuth();
                     return;
@@ -102,7 +107,7 @@ namespace ugona_net
 
             if (e.NavigationMode == NavigationMode.Back)
             {
-                if (show_auth && (Helper.GetSetting(Names.KEY) == null))
+                if (show_auth && (App.ViewModel.Key == null))
                 {
                     Application.Current.Terminate();
                     return;
@@ -242,12 +247,12 @@ namespace ugona_net
             try
             {
                 JObject res = await Helper.GetApi("events",
-                    "skey", Helper.GetSetting(Names.KEY),
+                    "skey", App.ViewModel.Key,
                     "begin", DateUtils.ToJavaTime(begin),
                     "end", DateUtils.ToJavaTime(end),
                     "first", IsCurrentDate() ? "true" : "",
                     "pointer", "",
-                    "auth", Helper.GetSetting(Names.AUTH));
+                    "auth", App.ViewModel.Auth);
                 JArray ev = res.GetValue("events").ToObject<JArray>();
                 events = new List<Event>();
                 foreach (JToken el in ev)
@@ -342,7 +347,7 @@ namespace ugona_net
             try
             {
                 JObject res = await Helper.GetApi("tracks",
-                    "skey", Helper.GetSetting(Names.KEY),
+                    "skey", App.ViewModel.Key,
                     "begin", DateUtils.ToJavaTime(begin),
                     "end", DateUtils.ToJavaTime(end));
                 JArray tracks_data = res.GetValue("tracks").ToObject<JArray>();
@@ -436,7 +441,7 @@ namespace ugona_net
             try
             {
                 JObject res = await Helper.GetApi("stat",
-                    "skey", Helper.GetSetting(Names.KEY),
+                    "skey", App.ViewModel.Key,
                     "tz", TimeZoneInfo.Local.StandardName);
                 stat = new List<Stat>();
                 foreach (var x in res)
@@ -618,7 +623,7 @@ namespace ugona_net
                 DateTime begin = new DateTime(current.Year, current.Month, current.Day);
                 DateTime end = begin.AddDays(1);
                 JObject res = await Helper.GetApi("photos",
-                    "skey", Helper.GetSetting(Names.KEY),
+                    "skey", App.ViewModel.Key,
                     "begin", DateUtils.ToJavaTime(begin),
                     "end", DateUtils.ToJavaTime(end));
                 JArray photos = res.GetValue("photos").ToObject<JArray>();
@@ -680,6 +685,79 @@ namespace ugona_net
         private void SettingsClick(object sender, EventArgs e)
         {
             NavigationService.Navigate(new Uri("/Settings.xaml", UriKind.Relative));
+        }
+
+        private void CreateChannel()
+        {
+            String channelName = "ugona.net";
+            HttpNotificationChannel pushChannel = HttpNotificationChannel.Find(channelName);
+            if (pushChannel == null)
+            {
+                pushChannel = new HttpNotificationChannel(channelName);
+
+                pushChannel.ChannelUriUpdated += new EventHandler<NotificationChannelUriEventArgs>(OnChannelUriUpdated);
+                pushChannel.ShellToastNotificationReceived += new EventHandler<NotificationEventArgs>(OnToastNotificationReceived);
+                pushChannel.HttpNotificationReceived += new EventHandler<HttpNotificationEventArgs>(OnRawNotificationReceived);
+
+                pushChannel.Open();
+
+                // Bind this new channel for toast events.
+                pushChannel.BindToShellToast();
+                pushChannel.BindToShellTile();
+
+            }
+            else
+            {
+                pushChannel.ChannelUriUpdated += new EventHandler<NotificationChannelUriEventArgs>(OnChannelUriUpdated);
+                pushChannel.ShellToastNotificationReceived += new EventHandler<NotificationEventArgs>(OnToastNotificationReceived);
+                pushChannel.HttpNotificationReceived += new EventHandler<HttpNotificationEventArgs>(OnRawNotificationReceived);
+                App.ViewModel.ChannelUri = pushChannel.ChannelUri.ToString();
+            }
+
+        }
+
+        private void OnChannelUriUpdated(Object sender, NotificationChannelUriEventArgs e)
+        {
+            App.ViewModel.ChannelUri = e.ChannelUri.ToString();
+        }
+
+
+        Uri toast_uri;
+
+        private void OnToastNotificationReceived(Object sender, NotificationEventArgs e)
+        {
+            Dispatcher.BeginInvoke(() =>
+            {
+                ToastPrompt toast = new ToastPrompt();
+                if (e.Collection.ContainsKey("wp:Text1"))
+                    toast.Title = e.Collection["wp:Text1"];
+                if (e.Collection.ContainsKey("wp:Text2"))
+                    toast.Message = e.Collection["wp:Text2"];
+                toast.MillisecondsUntilHidden = 60000;
+                try
+                {
+                    toast_uri = new Uri(e.Collection["wp:Param"], UriKind.Relative);
+                    toast.Tap += OnToastTap;
+                }
+                catch (Exception)
+                {
+                    toast_uri = null;
+                }
+                toast.Show();
+            });
+        }
+
+        private void OnToastTap(object sender, EventArgs e)
+        {
+            if (toast_uri != null)
+            {
+                NavigationService.Navigate(toast_uri);
+            }
+        }
+
+        private void OnRawNotificationReceived(Object sender, HttpNotificationEventArgs e)
+        {
+
         }
     }
 }

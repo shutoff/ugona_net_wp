@@ -5,6 +5,7 @@ using System.IO.IsolatedStorage;
 using System.Net;
 using System.Net.Http;
 using System.Reflection;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
@@ -47,12 +48,12 @@ namespace ugona_net
 
         static public void PutSetting(String name, Object value)
         {
+            if (value == null)
+            {
+                IsolatedStorageSettings.ApplicationSettings.Remove(name);
+                return;
+            }
             IsolatedStorageSettings.ApplicationSettings[name] = value;
-        }
-
-        static public void RemoveSetting(String name)
-        {
-            IsolatedStorageSettings.ApplicationSettings.Remove(name);
         }
 
         static public void Flush()
@@ -102,7 +103,6 @@ function notifyUA() {
             {
                 if (request.Headers.IfModifiedSince == null)
                     request.Headers.IfModifiedSince = new DateTimeOffset(DateTime.Now);
-                var browser = new Microsoft.Phone.Controls.WebBrowser();
                 return base.SendAsync(request, cancellationToken);
             }
         }
@@ -127,6 +127,26 @@ function notifyUA() {
             HttpResponseMessage response = await httpClient.GetAsync(url);
             String body = await response.Content.ReadAsStringAsync();
             JObject obj = JObject.Parse(body);
+            if (obj["error"] != null)
+            {
+                throw new Exception(obj["error"].ToString());
+            }
+            return obj;
+        }
+
+        async static public Task<JObject> PostData(String url, String postBody)
+        {
+            if (httpClient == null)
+            {
+                HttpMessageHandler handler = new BypassCacheClientHandler();
+                httpClient = new HttpClient(handler);
+                if (user_agent != null)
+                    httpClient.DefaultRequestHeaders.Add("User-Agent", user_agent);
+            }
+            HttpResponseMessage response = await httpClient.PostAsync(url, 
+                new StringContent(postBody, Encoding.UTF8, "application/json"));
+            String result = await response.Content.ReadAsStringAsync();
+            JObject obj = JObject.Parse(result);
             if (obj["error"] != null)
             {
                 throw new Exception(obj["error"].ToString());

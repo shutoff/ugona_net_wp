@@ -7,6 +7,8 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
+using System.Reflection;
+using Microsoft.Phone.Info;
 
 namespace ugona_net
 {
@@ -851,8 +853,7 @@ namespace ugona_net
 
         public void LoadData()
         {
-            String key = Helper.GetSetting(Names.KEY);
-            if (key == null)
+            if (Key == null)
                 return;
             String data = Helper.GetSetting(Names.CAR_DATA);
             if (data != null)
@@ -863,6 +864,17 @@ namespace ugona_net
             this.IsDataLoaded = true;
             UpdateAddress();
             UpdateLevels();
+        }
+
+        public void ClearData()
+        {
+            Helper.GetSetting(Names.CAR_DATA, null);
+            car_data = new CarData();
+            car_data.PropertyChanged += CarPropertyChanged;
+            this.IsDataLoaded = false;
+            latitude = null;
+            longitude = null;
+            NotifyPropertyChanged("Address");
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -910,11 +922,8 @@ namespace ugona_net
         {
             try
             {
-                String key = Helper.GetSetting(Names.KEY);
-                if (key == null)
-                    return false;
                 long time = Car.time;
-                JObject res = await Helper.GetApi("", "skey", key, "time", Car.time);           
+                JObject res = await Helper.GetApi("", "skey", Key, "time", Car.time);           
                 Helper.SetData(Car, res);
                 Error = "";
                 NotifyPropertyChanged("Error");
@@ -950,10 +959,17 @@ namespace ugona_net
                 return;
             if (d > 300)
                 SetAddress(null);
-            String res = await AddressHelper.get(Car.gps.latitude, Car.gps.longitude);
-            SetAddress(res);
-            latitude = Car.gps.latitude;
-            longitude = Car.gps.longitude;
+            try
+            {
+                String res = await AddressHelper.get(Car.gps.latitude, Car.gps.longitude);
+                SetAddress(res);
+                latitude = Car.gps.latitude;
+                longitude = Car.gps.longitude;
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         private void SetAddress(String addr)
@@ -1115,22 +1131,119 @@ namespace ugona_net
             setLayer(pos, group);
         }
 
-        public void SetChannelUri(String url)
+        long RegisterTime
         {
-            String old = Helper.GetSetting(Names.CHANNEL);
-            if ((old != null) && (old == url))
+            get
             {
-                long upd_time = Helper.GetSetting<long>(Names.CHANNEL_TIME, 0);
-                long now = DateUtils.ToJavaTime(DateTime.Now);
-                if (now < upd_time + 86400000)
-                    return;
+                return Helper.GetSetting<long>(Names.CHANNEL_TIME, 0);
             }
-            Helper.PutSetting(Names.CHANNEL, url);
-            TimeZoneInfo localZone = TimeZoneInfo.Local;
-            String key = Helper.GetSetting(Names.KEY, "demo");
-            if (key == "demo")
-                return;
+
+            set
+            {
+                Helper.PutSetting(Names.CHANNEL_TIME, value);
+                RegisterGCM();
+            }
         }
+
+        public String ChannelUri
+        {
+            get
+            {
+                return Helper.GetSetting(Names.CHANNEL);
+            }
+
+            set
+            {
+                if (value == ChannelUri)
+                    return;
+                Helper.PutSetting(Names.CHANNEL, value);
+                RegisterTime = 0;
+
+            }
+        }
+
+        public String Key
+        {
+            get
+            {
+                return Helper.GetSetting(Names.KEY);
+            }
+
+            set
+            {
+                if (value == Key)
+                    return;
+                Helper.PutSetting(Names.KEY, value);
+                RegisterTime = 0;
+            }
+        }
+
+        public String Auth
+        {
+            get
+            {
+                return Helper.GetSetting(Names.AUTH);
+            }
+
+            set
+            {
+                if (value == Key)
+                    return;
+                Helper.PutSetting(Names.AUTH, value);
+            }
+        }
+
+        public String Phone
+        {
+            get
+            {
+                return Helper.GetSetting(Names.PHONE);
+            }
+
+            set
+            {
+                if (value == Key)
+                    return;
+                Helper.PutSetting(Names.PHONE, value);
+            }
+        }
+
+        public async void RegisterGCM()
+        {
+            if (ChannelUri == null)
+                return;
+            if ((Key == null) || (Key == "demo"))
+                return;
+            long now = DateUtils.ToJavaTime(DateTime.Now);
+            if (now < RegisterTime + 86400000)
+                return;
+
+            JObject data = new JObject();
+            data.Add("reg", ChannelUri);
+            data.Add("tz", TimeZoneInfo.Local.StandardName);
+            data.Add("type", 1);
+            var nameHelper = new AssemblyName(Assembly.GetExecutingAssembly().FullName);
+            data.Add("version", nameHelper.Version.ToString());
+            data.Add("uid", DeviceId());
+            data.Add("lang", Helper.GetString("ResourceLanguage"));
+            data.Add("cars", Key + ";;" + Phone + ";" + Auth);
+            try
+            {
+                await Helper.PostData("https://car-online.ugona.net/reg", data.ToString());
+                App.ViewModel.RegisterTime = now;
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        String DeviceId()
+        {
+            byte[] myDeviceID = (byte[])Microsoft.Phone.Info.DeviceExtendedProperties.GetValue("DeviceUniqueId");
+            return Convert.ToBase64String(myDeviceID);
+        }
+
+        
     }
 
 }

@@ -357,7 +357,7 @@ namespace ugona_net
 
             try
             {
-                String key = Helper.GetSetting(Names.KEY);
+                String key = App.ViewModel.Key;
                 long end = App.ViewModel.Car.time;
                 long begin = end - 86400000;
                 JObject res = await Helper.GetApi("tracks", "skey", key, "begin", begin, "end", end);

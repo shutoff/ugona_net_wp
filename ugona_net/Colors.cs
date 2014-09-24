@@ -18,6 +18,20 @@ namespace ugona_net
             }
         }
 
+        static private Brush error_black_brush;
+
+        static public Brush ErrorBlackBrush
+        {
+            get
+            {
+                if (error_black_brush == null)
+                {
+                    error_black_brush = new SolidColorBrush(Color.FromArgb(255, 192, 0, 0));
+                }
+                return error_black_brush;
+            }
+        }
+
         static private Brush blue_brush;
 
         static public Brush BlueBrush

@@ -7,6 +7,7 @@ using System.Globalization;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Navigation;
+using System.Windows.Media;
 
 namespace ugona_net
 {
@@ -28,7 +29,7 @@ namespace ugona_net
 
         private void TextChanged(object sender, RoutedEventArgs e)
         {
-            SignIn.IsEnabled = (Login.Text.Length > 0) && (Password.Password.Length > 0) && IsValidNumber();
+            SignIn.IsEnabled = IsValidNumber() && (Login.Text.Length > 0) && (Password.Password.Length > 0);
             Error.Text = "";
         }
 
@@ -77,11 +78,15 @@ namespace ugona_net
             {
                 PhoneNumber number = util.Parse(Phone.Text, CultureInfo.CurrentCulture.Name);
                 if (util.IsValidNumber(number))
+                {
+                    Phone.Foreground = (Brush)App.Current.Resources["PhoneTextBoxForegroundBrush"];
                     return true;
+                }
             }
             catch (Exception)
             {
             }
+            Phone.Foreground = Colors.ErrorBlackBrush;
             return false;
         }
 
@@ -118,11 +123,11 @@ namespace ugona_net
             try
             {
                 JObject obj = await Helper.GetApi("key", "login", login, "password", password);
-                Helper.PutSetting(Names.KEY, obj["key"].ToString());
-                Helper.PutSetting(Names.AUTH, obj["auth"].ToString());
-                Helper.PutSetting(Names.PHONE, Phone.Text);
+                App.ViewModel.ClearData();
+                App.ViewModel.Auth =  obj["auth"].ToString();
+                App.ViewModel.Phone = Phone.Text;
+                App.ViewModel.Key = obj["key"].ToString();
                 Helper.Flush();
-                String key = Helper.GetSetting(Names.KEY);
                 NavigationService.GoBack();
             }
             catch (Exception ex)
