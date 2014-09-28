@@ -22,7 +22,7 @@ namespace ugona_net
         public MapPage()
         {
             InitializeComponent();
-            map.Loaded += Map_OnLoaded;
+            Map.Loaded += Map_OnLoaded;
             DataContext = App.ViewModel;
         }
 
@@ -66,11 +66,11 @@ namespace ugona_net
         private void Map_OnLoaded(object sender, RoutedEventArgs e)
         {
             SaveFilesToIsoStore();
-            map.ScriptNotify += Map_OnScriptNotify;
-            map.LoadCompleted += Map_OnLoadCompleted;
-            map.IsScriptEnabled = true;
-            map.IsGeolocationEnabled = true;
-            map.Navigate(new Uri("html/map.html", UriKind.Relative));
+            Map.ScriptNotify += Map_OnScriptNotify;
+            Map.LoadCompleted += Map_OnLoadCompleted;
+            Map.IsScriptEnabled = true;
+            Map.IsGeolocationEnabled = true;
+            Map.Navigate(new Uri("html/map.html", UriKind.Relative));
             if ((ev == null) && (tracks == null))
                 LoadTrack();
         }
@@ -81,6 +81,15 @@ namespace ugona_net
             if ((data[0] == "init") && (ev == null))
             {
                 App.ViewModel.PropertyChanged += CarPropertyChanged;
+                Progress.Visibility = Visibility.Collapsed;
+                Map.Visibility = Visibility.Visible;
+            }
+            if (data[0] == "error")
+            {
+                Progress.Visibility = Visibility.Collapsed;
+                Map.Visibility = Visibility.Collapsed;
+                Error.Text = data[1];
+                Error.Visibility = Visibility.Visible;
             }
         }
 
@@ -205,12 +214,7 @@ namespace ugona_net
                     data += "</b><br/>";
                     data += HttpUtility.HtmlEncode(marker.address).Replace(",", "&#x2C;").Replace("|", "&#x7C;");
                 }
-                while (data.Length > 2000)
-                {
-                    CallJs("setTrackPart", data.Substring(0, 2000));
-                    data = data.Substring(2000);
-                }
-                CallJs("setTrack", data);
+                CallJsParts(data, "setTrack");
                 return;
             }
 
@@ -257,7 +261,7 @@ namespace ugona_net
                 data += ";;";
                 data += track_data;
             }
-            CallJs("setData", data);
+            CallJsParts(data, "setData");
         }
 
         private void PositionClick(object sender, EventArgs e)
@@ -333,7 +337,7 @@ namespace ugona_net
                 }
             }
             url += ')';
-            map.Navigate(new Uri(url, UriKind.Absolute));
+            Map.Navigate(new Uri(url, UriKind.Absolute));
         }
 
         bool track_load;
@@ -378,33 +382,25 @@ namespace ugona_net
             //These files must match what is included in the application package,
             //or BinaryStream.Dispose below will throw an exception.
             string[] files = {
+                "leaflet.min.js",
+                "leaflet.css",
                 "html/map.html",
-                "html/leaflet/leaflet.css",
-                "html/leaflet/leaflet-src.js",
-                "html/leaflet/Location.js",
-                "html/leaflet/Traffic.js",
-                "html/leaflet/Tracks.js",
-                "html/leaflet/Points.js",
-                "html/leaflet/Map.js",
-                "html/leaflet/Bing.js",
-                "html/leaflet/Google.js",
-                "html/leaflet/Yandex.js",
-                "html/leaflet/images/layers-2x.png",
-                "html/leaflet/images/layers.png",
-                "html/leaflet/images/marker-icon-2x.png",
-                "html/leaflet/images/marker-icon.png",
-                "html/leaflet/images/marker-shadow.png",
-                "html/leaflet/images/arrow.png",
-                "html/leaflet/images/marker.png",
-                "html/leaflet/images/cur_arrow.png",
-                "html/leaflet/images/cur_marker.png",
-                "html/leaflet/images/person.png",
+                "images/layers-2x.png",
+                "images/layers.png",
+                "images/marker-icon-2x.png",
+                "images/marker-icon.png",
+                "images/marker-shadow.png",
+                "images/arrow.png",
+                "images/marker.png",
+                "images/cur_arrow.png",
+                "images/cur_marker.png",
+                "images/person.png",
             };
 
             IsolatedStorageFile isoStore = IsolatedStorageFile.GetUserStoreForApplication();
             foreach (string f in files)
             {
-                StreamResourceInfo sr = Application.GetResourceStream(new Uri(f, UriKind.Relative));
+                StreamResourceInfo sr = Application.GetResourceStream(new Uri("map/"+ f, UriKind.Relative));
                 //               if (!isoStore.FileExists(f))
                 {
                     using (BinaryReader br = new BinaryReader(sr.Stream))
@@ -469,6 +465,27 @@ namespace ugona_net
             }
             res += "'";
             return res;
+        }
+
+        void CallJsParts(String data, String method)
+        {
+            String res = "";
+            byte[] bytes = Encoding.Unicode.GetBytes(data);
+            for (int i = 0; i < bytes.Length; i += 2)
+            {
+                if (res.Length > 2040)
+                {
+                    Map.Navigate(new Uri("javascript:setPart('" + res + "')", UriKind.Absolute));
+                    res = "";
+                }
+                if ((bytes[i + 1] == 0) && ((bytes[i] >= 0x20) && (bytes[i] != ':')))
+                {
+                    res += (char)bytes[i];
+                    continue;
+                }
+                res += "\\u" + bytes[i + 1].ToString("X2") + bytes[i].ToString("X2");
+            }
+            Map.Navigate(new Uri("javascript:" + method + "('" + res + "')", UriKind.Absolute));
         }
     }
 

@@ -8,6 +8,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Navigation;
 using System.Windows.Media;
+using Microsoft.Phone.Tasks;
 
 namespace ugona_net
 {
@@ -68,6 +69,21 @@ namespace ugona_net
         private void DemoClick(object sender, RoutedEventArgs e)
         {
             DoAuth("demo", "demo");
+        }
+
+        private void ChooseContact(object sender, RoutedEventArgs e)
+        {
+            PhoneNumberChooserTask phoneNumberChooserTask = new PhoneNumberChooserTask();
+            phoneNumberChooserTask.Completed += new EventHandler<PhoneNumberResult>(phoneNumberChooserTask_Completed);
+            phoneNumberChooserTask.Show();
+        }
+
+        void phoneNumberChooserTask_Completed(object sender, PhoneNumberResult e)
+        {
+            if (e.TaskResult == TaskResult.OK)
+            {
+                Phone.Text = e.PhoneNumber;
+            }
         }
 
         private bool IsValidNumber()

@@ -932,6 +932,7 @@ namespace ugona_net
                 UpdateLevels();
                 UpdateAddress();
                 Helper.PutSetting(Names.CAR_DATA, JsonConvert.SerializeObject(Car));
+                UpdateTiles();
                 return true;
             }
             catch (Exception ex)
@@ -1243,6 +1244,17 @@ namespace ugona_net
             return Convert.ToBase64String(myDeviceID);
         }
 
+        void UpdateTiles()
+        {
+            /*
+            foreach (ShellTile tile in ShellTile.ActiveTiles){
+                StandardTileData data = new StandardTileData();
+                data.Count = 4;
+                data.BackgroundImage = new Uri("http://www.wpcentral.com/sites/wpcentral.com/files/styles/medium/public/field/image/2014/04/qr_zedge.jpg?itok=QkA_CKvD", UriKind.Absolute);
+                tile.Update(data);
+            }
+             * */
+        }
         
     }
 

@@ -33,7 +33,14 @@
             <PasswordBox x:Name="Password" PasswordChanged="TextChanged" KeyDown="OnPasswordKeyDownHandler"/>
             <TextBlock x:Name="Error" Foreground="OrangeRed" FontSize="20"/>
             <TextBlock Text="{Binding Path=LocalizedResources.device_phone_number, Source={StaticResource LocalizedStrings}}" Margin="0,6.5,0,0" TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}"/>
-            <TextBox x:Name="Phone" AcceptsReturn="False" TextChanged="TextChanged" InputScope="Url" KeyDown="OnPhoneKeyDownHandler"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="Phone" AcceptsReturn="False" TextChanged="TextChanged" InputScope="Url" KeyDown="OnPhoneKeyDownHandler"/>
+                <Button Content="..." Grid.Column="1" Click="ChooseContact"/>
+            </Grid>
         </StackPanel>
 
         <Grid Grid.Row="2">

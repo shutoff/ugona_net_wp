@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../leaflet.css"/>
+    <script src="../leaflet.min.js"></script>
+    <style>
+        html, body, #map-canvas {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        }
+    </style>
+    <script>
+        window.onerror = function (message) {
+            window.external.notify('Error|' + message)
+        }
+    </script>
+</head>
+<body>
+<div id="map" style="height: 100%"></div>
+</body>
+</html>

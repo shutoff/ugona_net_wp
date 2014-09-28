@@ -48,7 +48,9 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <phone:WebBrowser x:Name="map"/>
+        <ProgressBar x:Name="Progress" IsIndeterminate="True"/>
+        <TextBlock x:Name="Error" TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Visibility="Collapsed"/>
+        <phone:WebBrowser x:Name="Map" Visibility="Collapsed"/>
     </Grid>
 
 </phone:PhoneApplicationPage>
