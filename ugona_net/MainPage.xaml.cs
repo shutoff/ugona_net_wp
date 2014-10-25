@@ -89,7 +89,7 @@ namespace ugona_net
         protected void ShowAuth()
         {
             show_auth = true;
-            App.ViewModel.Key = null;
+            App.ViewModel.Car.api_key = null;
             NavigationService.Navigate(new Uri("/AuthPage.xaml", UriKind.Relative));
         }
 
@@ -98,7 +98,7 @@ namespace ugona_net
         {
             if (e.NavigationMode == NavigationMode.New)
             {
-                if ((App.ViewModel.Key == null) || (App.ViewModel.Key == "demo"))
+                if ((App.ViewModel.Car.api_key == null) || (App.ViewModel.Car.api_key == "demo"))
                 {
                     ShowAuth();
                     return;
@@ -107,7 +107,7 @@ namespace ugona_net
 
             if (e.NavigationMode == NavigationMode.Back)
             {
-                if (show_auth && (App.ViewModel.Key == null))
+                if (show_auth && (App.ViewModel.Car.api_key == null))
                 {
                     Application.Current.Terminate();
                     return;
@@ -115,10 +115,6 @@ namespace ugona_net
                 show_auth = false;
             }
 
-            if (!App.ViewModel.IsDataLoaded)
-            {
-                App.ViewModel.LoadData();
-            }
             App.ViewModel.refresh();
             if (refreshTimer == null)
             {
@@ -127,6 +123,10 @@ namespace ugona_net
                 refreshTimer.Tick += OnRefresh;
             }
             refreshTimer.Start();
+            PivotItem item = Pivot.SelectedItem as PivotItem;
+            if (item == null)
+                return;
+            OnItemSelected(item);
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
@@ -157,31 +157,134 @@ namespace ugona_net
         //}
 
         List<ApplicationBarIconButton> pageButtons = null;
+        List<ApplicationBarMenuItem> menuItems = null;
 
         private void Pivot_LoadedPivotItem(object sender, PivotItemEventArgs e)
         {
+            OnItemSelected(e.Item);
+        }
+
+        private void OnItemSelected(PivotItem item)
+        {
             if (pageButtons == null)
                 pageButtons = new List<ApplicationBarIconButton>();
+            if (menuItems == null)
+                menuItems = new List<ApplicationBarMenuItem>();
             foreach (ApplicationBarIconButton button in pageButtons)
             {
                 ApplicationBar.Buttons.Remove(button);
             }
             pageButtons.Clear();
-            if (e.Item.Name == "EventsPage")
+            foreach (ApplicationBarMenuItem i in menuItems)
+            {
+                ApplicationBar.MenuItems.Remove(i);
+            }
+            menuItems.Clear();
+            if (item.Name == "StatePage")
+            {
+                List<String> cmd = new List<String>();
+                CarModel.Commands commands = App.ViewModel.Car.commands;
+                if (commands.autostart)
+                {
+                    if (App.ViewModel.Car.az)
+                    {
+                        cmd.Add("motor_off");
+                    }
+                    else
+                    {
+                        cmd.Add("motor_on");
+                    }
+                }
+                if (App.ViewModel.Car.contact.input3)
+                    cmd.Add("block");
+                if (App.ViewModel.Car.contact.guardMode0 && App.ViewModel.Car.contact.guardMode1)
+                {
+                    cmd.Add("valet_off");
+                }else if (commands.valet_cmd){
+                    cmd.Add("valet_on");
+                }
+                if (commands.search)
+                    cmd.Add("search");
+                if (commands.call)
+                    cmd.Add("call");
+                if (commands.silent_mode)
+                    cmd.Add("silent_mode");
+                if (commands.rele1){
+                    if (App.ViewModel.Car.contact.relay1)
+                    {
+                        cmd.Add("rele1_off");
+                    }
+                    else
+                    {
+                        cmd.Add("rele1_on");
+                    }
+                }
+                if (commands.rele1i)
+                    cmd.Add("rele1i");
+                if (commands.rele2)
+                {
+                    if (App.ViewModel.Car.contact.relay2)
+                    {
+                        cmd.Add("rele2_off");
+                    }
+                    else
+                    {
+                        cmd.Add("rele2_on");
+                    }
+                }
+                if (commands.rele2i)
+                    cmd.Add("rele2i");
+
+                int count = 0;
+                foreach (String c in cmd)
+                {
+                    if (count > 3)
+                    {
+                        addMenuItem(c, ItemCmd);
+                        continue;
+                    }
+                    addButton("appbar." + c, c, IconCmd);
+                    count++;
+                }
+            }
+            if (item.Name == "EventsPage")
             {
                 addButton(((Event.Filter & 1) != 0) ? "appbar.user" : "appbar.user.off", "actions", ChangeFilter);
                 addButton(((Event.Filter & 2) != 0) ? "appbar.contacts" : "appbar.contacts.off", "contacts", ChangeFilter);
                 addButton(((Event.Filter & 4) != 0) ? "appbar.system" : "appbar.system.off", "system", ChangeFilter);
                 LoadEvents();
             }
-            if (e.Item.Name == "TracksPage")
+            if (item.Name == "TracksPage")
                 LoadTracks();
-            if (e.Item.Name == "StatPage")
-                LoadStat();
-            if (e.Item.Name == "PhotoPage")
+            if (item.Name == "StatPage")
+            {
+                addMenuItem("recalc_stat", RecalcStat);
+                LoadStat(false);
+            }
+            if (item.Name == "PhotoPage")
                 LoadPhoto();
-            if (e.Item.Name == "ActionsPage")
+            if (item.Name == "ActionsPage")
                 LoadActions();
+        }
+
+        private void RecalcStat(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(Helper.GetString("recalc_message"), Helper.GetString("recalc_stat"), MessageBoxButton.OKCancel) == MessageBoxResult.OK)
+            {
+                LoadStat(true);
+            }
+        }
+
+        private void IconCmd(object sender, EventArgs e)
+        {
+            AppBarIcon icon = sender as AppBarIcon;
+            DoAction.Run(icon.command);
+        }
+
+        private void ItemCmd(object sender, EventArgs e)
+        {
+            AppBarItem item = sender as AppBarItem;
+            DoAction.Run(item.command);
         }
 
         private void ChangeFilter(object sender, EventArgs e)
@@ -225,13 +328,51 @@ namespace ugona_net
             }
         }
 
+        class AppBarIcon : ApplicationBarIconButton
+        {
+            public AppBarIcon(Uri uri, String cmd)
+                : base(uri)
+            {
+                Text = Helper.GetString(cmd);
+                command = cmd;
+            }
+
+            public String command
+            {
+                get;
+                set;
+            }
+        }
+
         private void addButton(string icon, string text, EventHandler handler)
         {
-            ApplicationBarIconButton button = new ApplicationBarIconButton(new Uri("/Assets/Icons/" + icon + ".png", UriKind.Relative));
-            button.Text = Helper.GetString(text);
+            ApplicationBarIconButton button = new AppBarIcon(new Uri("/Assets/Icons/" + icon + ".png", UriKind.Relative), text);
             button.Click += handler;
             ApplicationBar.Buttons.Insert(ApplicationBar.Buttons.Count, button);
-            pageButtons.Insert(pageButtons.Count, button);
+            pageButtons.Add(button);
+        }
+
+        class AppBarItem : ApplicationBarMenuItem
+        {
+            public AppBarItem(String cmd)
+                : base(Helper.GetString(cmd))
+            {
+                command = cmd;
+            }
+
+            public String command
+            {
+                get;
+                set;
+            }
+        }
+
+        private void addMenuItem(string text, EventHandler handler)
+        {
+            ApplicationBarMenuItem item = new AppBarItem(text);
+            item.Click += handler;
+            ApplicationBar.MenuItems.Insert(0, item);
+            menuItems.Add(item);
         }
 
         List<Event> events;
@@ -247,12 +388,12 @@ namespace ugona_net
             try
             {
                 JObject res = await Helper.GetApi("events",
-                    "skey", App.ViewModel.Key,
+                    "skey", App.ViewModel.Car.api_key,
                     "begin", DateUtils.ToJavaTime(begin),
                     "end", DateUtils.ToJavaTime(end),
                     "first", IsCurrentDate() ? "true" : "",
                     "pointer", "",
-                    "auth", App.ViewModel.Auth);
+                    "auth", App.ViewModel.Car.auth);
                 JArray ev = res.GetValue("events").ToObject<JArray>();
                 events = new List<Event>();
                 foreach (JToken el in ev)
@@ -347,7 +488,7 @@ namespace ugona_net
             try
             {
                 JObject res = await Helper.GetApi("tracks",
-                    "skey", App.ViewModel.Key,
+                    "skey", App.ViewModel.Car.api_key,
                     "begin", DateUtils.ToJavaTime(begin),
                     "end", DateUtils.ToJavaTime(end));
                 JArray tracks_data = res.GetValue("tracks").ToObject<JArray>();
@@ -432,7 +573,7 @@ namespace ugona_net
         List<Stat> stat;
 
 
-        async private void LoadStat()
+        async private void LoadStat(bool recalc)
         {
             StatProgress.Visibility = Visibility.Visible;
             Stat.Visibility = Visibility.Collapsed;
@@ -441,8 +582,9 @@ namespace ugona_net
             try
             {
                 JObject res = await Helper.GetApi("stat",
-                    "skey", App.ViewModel.Key,
-                    "tz", TimeZoneInfo.Local.StandardName);
+                    "skey", App.ViewModel.Car.api_key,
+                    "tz", TimeZoneInfo.Local.StandardName,
+                    "recalc", recalc ? "true" : null);
                 stat = new List<Stat>();
                 foreach (var x in res)
                 {
@@ -623,7 +765,7 @@ namespace ugona_net
                 DateTime begin = new DateTime(current.Year, current.Month, current.Day);
                 DateTime end = begin.AddDays(1);
                 JObject res = await Helper.GetApi("photos",
-                    "skey", App.ViewModel.Key,
+                    "skey", App.ViewModel.Car.api_key,
                     "begin", DateUtils.ToJavaTime(begin),
                     "end", DateUtils.ToJavaTime(end));
                 JArray photos = res.GetValue("photos").ToObject<JArray>();
@@ -665,7 +807,7 @@ namespace ugona_net
 
         private void LoadActions()
         {
-            Actions.ItemsSource = Action.MsActions;
+            Actions.ItemsSource = DoAction.MsActions;
         }
 
         private void ActionClick(object sender, SelectionChangedEventArgs e)

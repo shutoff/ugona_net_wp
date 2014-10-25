@@ -46,14 +46,11 @@
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Button x:Name="SignIn" Content="{Binding Path=LocalizedResources.Authorize, Source={StaticResource LocalizedStrings}}" Grid.Column="1" IsEnabled="False" Click="LoginClick"/>
-            <Button Content="{Binding Path=LocalizedResources.Demo, Source={StaticResource LocalizedStrings}}" Grid.Column="3" Click="DemoClick"/>
+            <Button x:Name="SignIn" Content="{Binding Path=LocalizedResources.Authorize, Source={StaticResource LocalizedStrings}}" IsEnabled="False" Click="LoginClick" Margin="5,5,5,5"/>
+            <Button x:Name="Demo" Content="{Binding Path=LocalizedResources.Demo, Source={StaticResource LocalizedStrings}}" Grid.Column="1" Click="DemoClick" Margin="5,5,5,5"/>
         </Grid>
     </Grid>
 

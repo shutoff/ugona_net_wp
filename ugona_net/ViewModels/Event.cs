@@ -198,17 +198,17 @@ namespace ugona_net
                     case 124:
                     case 125:
                         data = await Helper.GetApi("event",
-                            "skey", App.ViewModel.Key,
+                            "skey", App.ViewModel.Car.api_key,
                             "id", id,
                             "time", time,
                             "type", type,
-                            "auth", App.ViewModel.Auth);
+                            "auth", App.ViewModel.Car.auth);
                         break;
                 }
                 if (data == null)
                 {
                     data = await Helper.GetApi("event",
-                        "skey", App.ViewModel.Key,
+                        "skey", App.ViewModel.Car.api_key,
                         "id", id,
                         "time", time);
                 };

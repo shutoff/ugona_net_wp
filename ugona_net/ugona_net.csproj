@@ -25,7 +25,7 @@
     <ValidateXaml>true</ValidateXaml>
     <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
     <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
-    <NuGetPackageImportStamp>0d4883bb</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>3da75da6</NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -136,10 +136,11 @@
     </Compile>
     <Compile Include="SQLite.cs" />
     <Compile Include="SQLiteAsync.cs" />
-    <Compile Include="ViewModels\Action.cs" />
+    <Compile Include="ViewModels\DoAction.cs" />
     <Compile Include="ViewModels\CarModel.cs" />
     <Compile Include="ViewModels\Event.cs" />
     <Compile Include="ViewModels\Photo.cs" />
+    <Compile Include="ViewModels\SettingsItem.cs" />
     <Compile Include="ViewModels\Stat.cs" />
     <Compile Include="ViewModels\Track.cs" />
   </ItemGroup>
@@ -256,13 +257,30 @@
     <Content Include="Assets\Events\e_voice.png" />
     <Content Include="Assets\Events\e_zone_in.png" />
     <Content Include="Assets\Events\e_zone_out.png" />
+    <Content Include="Assets\Icons\appbar.block.png" />
+    <Content Include="Assets\Icons\appbar.call.png" />
     <Content Include="Assets\Icons\appbar.contacts.off.png" />
     <Content Include="Assets\Icons\appbar.contacts.png" />
+    <Content Include="Assets\Icons\appbar.motor_off.png" />
+    <Content Include="Assets\Icons\appbar.motor_on.png" />
+    <Content Include="Assets\Icons\appbar.parking.png" />
+    <Content Include="Assets\Icons\appbar.phone.png" />
+    <Content Include="Assets\Icons\appbar.rele1i.png" />
+    <Content Include="Assets\Icons\appbar.rele1_off.png" />
+    <Content Include="Assets\Icons\appbar.rele1_on.png" />
+    <Content Include="Assets\Icons\appbar.rele2i.png" />
+    <Content Include="Assets\Icons\appbar.rele2_off.png" />
+    <Content Include="Assets\Icons\appbar.rele2_on.png" />
+    <Content Include="Assets\Icons\appbar.search.png" />
+    <Content Include="Assets\Icons\appbar.silent_mode.png" />
     <Content Include="Assets\Icons\appbar.system.off.png" />
     <Content Include="Assets\Icons\appbar.system.png" />
     <Content Include="Assets\Icons\appbar.user.off.png" />
     <Content Include="Assets\Icons\appbar.user.png" />
+    <Content Include="Assets\Icons\appbar.valet_off.png" />
+    <Content Include="Assets\Icons\appbar.valet_on.png" />
     <Content Include="Assets\Icons\balance.png" />
+    <Content Include="Assets\Icons\edit.png" />
     <Content Include="Assets\Icons\icon_air.png" />
     <Content Include="Assets\Icons\icon_block.png" />
     <Content Include="Assets\Icons\icon_guard_off.png" />
@@ -446,7 +464,8 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="AppBarUtils">
-      <HintPath>..\packages\AppBarUtils.2.4\lib\windowsphone8\AppBarUtils.dll</HintPath>
+      <HintPath>..\packages\AppBarUtils.2.5\lib\windowsphone8\AppBarUtils.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Coding4Fun.Toolkit.Controls">
       <HintPath>..\packages\Coding4Fun.Toolkit.Controls.2.0.7\lib\windowsphone8\Coding4Fun.Toolkit.Controls.dll</HintPath>
@@ -504,11 +523,6 @@
     <Folder Include="SampleData\" />
   </ItemGroup>
   <ItemGroup>
-    <SDKReference Include="SQLite.WP80, Version=3.8.6">
-      <Name>SQLite for Windows Phone</Name>
-    </SDKReference>
-  </ItemGroup>
-  <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
@@ -520,6 +534,11 @@
       <Project>{2dcd7c72-1a52-4961-88bc-b2e0bcc01b88}</Project>
       <Name>PhoneNumbers</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="SQLite.WP80, Version=3.8.7">
+      <Name>SQLite for Windows Phone</Name>
+    </SDKReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
@@ -540,10 +559,10 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
     <Error Condition="!Exists('..\packages\sqlite-net-wp8.3.8.5\build\windowsphone8\sqlite-net-wp8.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\sqlite-net-wp8.3.8.5\build\windowsphone8\sqlite-net-wp8.props'))" />
     <Error Condition="!Exists('..\packages\sqlite-net-wp8.3.8.5\build\windowsphone8\sqlite-net-wp8.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\sqlite-net-wp8.3.8.5\build\windowsphone8\sqlite-net-wp8.targets'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
   </Target>
-  <Import Project="..\packages\sqlite-net-wp8.3.8.5\build\windowsphone8\sqlite-net-wp8.targets" Condition="Exists('..\packages\sqlite-net-wp8.3.8.5\build\windowsphone8\sqlite-net-wp8.targets')" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Import Project="..\packages\sqlite-net-wp8.3.8.5\build\windowsphone8\sqlite-net-wp8.targets" Condition="Exists('..\packages\sqlite-net-wp8.3.8.5\build\windowsphone8\sqlite-net-wp8.targets')" />
 </Project>

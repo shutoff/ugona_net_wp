@@ -23,6 +23,14 @@ namespace ugona_net
             Loaded += OnLoaded;
         }
 
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            String parameter = string.Empty;
+            NavigationContext.QueryString.TryGetValue("parameter", out parameter);
+            if (parameter == "nodemo")
+                Demo.Visibility = Visibility.Collapsed;
+        }
+
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
             Helper.Init(LayoutRoot);
@@ -140,10 +148,11 @@ namespace ugona_net
             {
                 JObject obj = await Helper.GetApi("key", "login", login, "password", password);
                 App.ViewModel.ClearData();
-                App.ViewModel.Auth =  obj["auth"].ToString();
-                App.ViewModel.Phone = Phone.Text;
-                App.ViewModel.Key = obj["key"].ToString();
-                Helper.Flush();
+                App.ViewModel.Car.auth =  obj["auth"].ToString();
+                App.ViewModel.Car.phone = Phone.Text;
+                App.ViewModel.Car.api_key = obj["key"].ToString();
+                App.ViewModel.RegisterTime = 0;
+                App.ViewModel.Flush();
                 NavigationService.GoBack();
             }
             catch (Exception ex)

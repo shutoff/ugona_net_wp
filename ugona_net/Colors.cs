@@ -44,6 +44,20 @@ namespace ugona_net
                 }
                 return blue_brush;
             }
-        }       
+        }
+
+        static private Brush updated_brush;
+
+        static public Brush UpdatedBrush
+        {
+            get
+            {
+                if (updated_brush == null)
+                {
+                    updated_brush = new SolidColorBrush(Color.FromArgb(0xFF, 0xff, 0xff, 0x80));
+                }
+                return updated_brush;
+            }
+        }     
     }
 }

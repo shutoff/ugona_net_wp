@@ -9,6 +9,7 @@ using System.Windows;
 using System.Windows.Media;
 using System.Reflection;
 using Microsoft.Phone.Info;
+using System.Collections.Generic;
 
 namespace ugona_net
 {
@@ -18,12 +19,7 @@ namespace ugona_net
         public CarModel()
         {
             currentDate = DateTime.Now;
-        }
-
-        public bool IsDataLoaded
-        {
-            get;
-            private set;
+            LoadData();
         }
 
         public String Error
@@ -138,6 +134,24 @@ namespace ugona_net
             get
             {
                 return (Car.balance.value == null) ? Visibility.Collapsed : Visibility.Visible;
+            }
+        }
+
+        public String Temperature
+        {
+            get
+            {
+                if (Car.temperature.Count == 0)
+                    return "";
+                return String.Format("{0} ºC", Car.temperature[0].value + Car.TempShift);
+            }
+        }
+
+        public Visibility TemperatureVisibilty
+        {
+            get
+            {
+                return (Car.temperature.Count == 0) ? Visibility.Collapsed : Visibility.Visible;
             }
         }
 
@@ -605,6 +619,30 @@ namespace ugona_net
                 get;
                 set;
             }
+
+            public bool relay1
+            {
+                get;
+                set;
+            }
+
+            public bool relay2
+            {
+                get;
+                set;
+            }
+
+            public bool relay3
+            {
+                get;
+                set;
+            }
+
+            public bool relay4
+            {
+                get;
+                set;
+            }
         }
 
         public class GpsData
@@ -667,6 +705,133 @@ namespace ugona_net
             }
         }
 
+        public class Commands
+        {
+            public Commands()
+            {
+                valet_cmd = true;
+            }
+
+            public bool call
+            {
+                get;
+                set;
+            }
+
+            public bool search
+            {
+                get;
+                set;
+            }
+
+            public bool valet_cmd 
+            {
+                get;
+                set;
+            }
+
+            public bool autostart
+            {
+                get;
+                set;
+            }
+
+            public bool rele 
+            {
+                get;
+                set;
+            }
+
+            public bool silent_mode
+            {
+                get;
+                set;
+            }
+
+            public bool rele1
+            {
+                get;
+                set;
+            }
+
+            public bool rele1i
+            {
+                get;
+                set;
+            }
+
+            public bool rele2
+            {
+                get;
+                set;
+            }
+
+            public bool rele2i
+            {
+                get;
+                set;
+            }
+
+            public String rele1_name
+            {
+                get;
+                set;
+            }
+
+            public String rele1i_name
+            {
+                get;
+                set;
+            }
+
+            public String rele2_name
+            {
+                get;
+                set;
+            }
+
+            public String rele2i_name
+            {
+                get;
+                set;
+            }
+        }
+
+        public class TemperatureData
+        {
+            public int sensor
+            {
+                get;
+                set;
+            }
+
+            public int value
+            {
+                get;
+                set;
+            }
+        }
+
+        public class TemperaturesData : List<TemperatureData>
+        {
+            public void FromJson(JObject obj)
+            {
+                Clear();
+                foreach (KeyValuePair<string, JToken> item in obj){
+                    try
+                    {
+                        TemperatureData data = new TemperatureData();
+                        data.sensor = Int16.Parse(item.Key);
+                        data.value = item.Value.ToObject<Int16>();
+                        Add(data);
+                    }
+                    catch (Exception)
+                    {
+                    }
+                }
+            }
+        }
+
         public class CarData : INotifyPropertyChanged
         {
             public long time
@@ -718,6 +883,12 @@ namespace ugona_net
             }
 
             public long timer
+            {
+                get;
+                set;
+            }
+
+            public long settings
             {
                 get;
                 set;
@@ -782,11 +953,82 @@ namespace ugona_net
                 }
             }
 
+            public Commands commands
+            {
+                get
+                {
+                    if (commands_ == null)
+                        commands_ = new Commands();
+                    return commands_;
+                }
+            }
+
+            public int[] settings_values
+            {
+                get
+                {
+                    if (settings_ == null)
+                        settings_ = new int[22];
+                    return settings_;
+                }
+            }
+
+            public String api_key
+            {
+                get;
+                set;
+            }
+
+            public String auth
+            {
+                get;
+                set;
+            }
+
+            public String phone
+            {
+                get;
+                set;
+            }
+
+            public bool silent_mode
+            {
+                get
+                {
+                    return false;
+                }
+            }
+
+            public double TempShift
+            {
+                get;
+                set;
+            }
+
+            public double VoltageShift
+            {
+                get;
+                set;
+            }
+
+            public TemperaturesData temperature
+            {
+                get
+                {
+                    if (temperature_data == null)
+                        temperature_data = new TemperaturesData();
+                    return temperature_data;
+                }
+            }
+
+            TemperaturesData temperature_data;
             VoltageData voltage_data;
             BalanceData balance_data;
             ContactData contact_data;
             GpsData gps_data;
             GsmData gsm_data;
+            Commands commands_;
+            int[] settings_;
 
             public event PropertyChangedEventHandler PropertyChanged;
             private void NotifyPropertyChanged(String propertyName)
@@ -849,19 +1091,28 @@ namespace ugona_net
                 NotifyPropertyChanged("GsmLevelImage");
                 NotifyPropertyChanged("GsmLevelVisibility");
             }
+            if (args.PropertyName == "temperature")
+            {
+                NotifyPropertyChanged("Temperature");
+                NotifyPropertyChanged("TemperatureVisibilty");
+            }
         }
 
-        public void LoadData()
+        private void LoadData()
         {
-            if (Key == null)
-                return;
             String data = Helper.GetSetting(Names.CAR_DATA);
             if (data != null)
             {
-                car_data = JsonConvert.DeserializeObject<CarData>(data);
+                try
+                {
+                    car_data = JsonConvert.DeserializeObject<CarData>(data);
+                }
+                catch (Exception)
+                {
+                    car_data = new CarData();
+                }
                 car_data.PropertyChanged += CarPropertyChanged;
             }
-            this.IsDataLoaded = true;
             UpdateAddress();
             UpdateLevels();
         }
@@ -871,14 +1122,14 @@ namespace ugona_net
             Helper.GetSetting(Names.CAR_DATA, null);
             car_data = new CarData();
             car_data.PropertyChanged += CarPropertyChanged;
-            this.IsDataLoaded = false;
             latitude = null;
             longitude = null;
             NotifyPropertyChanged("Address");
+            Helper.PutSetting(Names.CAR_DATA, JsonConvert.SerializeObject(Car));
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
-        private void NotifyPropertyChanged(String propertyName)
+        public void NotifyPropertyChanged(String propertyName)
         {
             PropertyChangedEventHandler handler = PropertyChanged;
             if (null != handler)
@@ -918,12 +1169,18 @@ namespace ugona_net
             Refresh = false;
         }
 
+        public void Flush()
+        {
+            Helper.PutSetting(Names.CAR_DATA, JsonConvert.SerializeObject(Car));
+            Helper.Flush();
+        }
+
         async public Task<bool> doRefresh()
         {
             try
             {
                 long time = Car.time;
-                JObject res = await Helper.GetApi("", "skey", Key, "time", Car.time);           
+                JObject res = await Helper.GetApi("", "skey", Car.api_key, "time", Car.time);           
                 Helper.SetData(Car, res);
                 Error = "";
                 NotifyPropertyChanged("Error");
@@ -932,7 +1189,6 @@ namespace ugona_net
                 UpdateLevels();
                 UpdateAddress();
                 Helper.PutSetting(Names.CAR_DATA, JsonConvert.SerializeObject(Car));
-                UpdateTiles();
                 return true;
             }
             catch (Exception ex)
@@ -1132,7 +1388,7 @@ namespace ugona_net
             setLayer(pos, group);
         }
 
-        long RegisterTime
+        public long RegisterTime
         {
             get
             {
@@ -1163,75 +1419,40 @@ namespace ugona_net
             }
         }
 
-        public String Key
-        {
-            get
-            {
-                return Helper.GetSetting(Names.KEY);
-            }
-
-            set
-            {
-                if (value == Key)
-                    return;
-                Helper.PutSetting(Names.KEY, value);
-                RegisterTime = 0;
-            }
-        }
-
-        public String Auth
-        {
-            get
-            {
-                return Helper.GetSetting(Names.AUTH);
-            }
-
-            set
-            {
-                if (value == Key)
-                    return;
-                Helper.PutSetting(Names.AUTH, value);
-            }
-        }
-
-        public String Phone
-        {
-            get
-            {
-                return Helper.GetSetting(Names.PHONE);
-            }
-
-            set
-            {
-                if (value == Key)
-                    return;
-                Helper.PutSetting(Names.PHONE, value);
-            }
-        }
+        static String gcm_version;
 
         public async void RegisterGCM()
         {
             if (ChannelUri == null)
                 return;
-            if ((Key == null) || (Key == "demo"))
+            if ((Car.api_key == null) || (Car.api_key == "demo"))
                 return;
             long now = DateUtils.ToJavaTime(DateTime.Now);
-            if (now < RegisterTime + 86400000)
+
+            var nameHelper = new AssemblyName(Assembly.GetExecutingAssembly().FullName);
+            String version = nameHelper.Version.ToString();
+            if (gcm_version == null)
+                gcm_version = Helper.GetSetting(Names.GCM_VERSION, "");
+
+            if ((now < RegisterTime + 86400000) && (version == gcm_version))
                 return;
 
             JObject data = new JObject();
             data.Add("reg", ChannelUri);
             data.Add("tz", TimeZoneInfo.Local.StandardName);
-            data.Add("type", 1);
-            var nameHelper = new AssemblyName(Assembly.GetExecutingAssembly().FullName);
-            data.Add("version", nameHelper.Version.ToString());
+            data.Add("version", version);
             data.Add("uid", DeviceId());
             data.Add("lang", Helper.GetString("ResourceLanguage"));
-            data.Add("cars", Key + ";;" + Phone + ";" + Auth);
+            data.Add("cars", Car.api_key + ";;" + Car.phone + ";" + Car.auth);
+            data.Add("os", Environment.OSVersion.ToString());
+            data.Add("model", DeviceStatus.DeviceManufacturer + " " + DeviceStatus.DeviceName);
+            data.Add("type", 1);
             try
             {
                 await Helper.PostData("https://car-online.ugona.net/reg", data.ToString());
+                Helper.PutSetting(Names.GCM_VERSION, version);
                 App.ViewModel.RegisterTime = now;
+                Helper.Flush();
             }
             catch (Exception)
             {
@@ -1242,18 +1463,6 @@ namespace ugona_net
         {
             byte[] myDeviceID = (byte[])Microsoft.Phone.Info.DeviceExtendedProperties.GetValue("DeviceUniqueId");
             return Convert.ToBase64String(myDeviceID);
-        }
-
-        void UpdateTiles()
-        {
-            /*
-            foreach (ShellTile tile in ShellTile.ActiveTiles){
-                StandardTileData data = new StandardTileData();
-                data.Count = 4;
-                data.BackgroundImage = new Uri("http://www.wpcentral.com/sites/wpcentral.com/files/styles/medium/public/field/image/2014/04/qr_zedge.jpg?itok=QkA_CKvD", UriKind.Absolute);
-                tile.Update(data);
-            }
-             * */
         }
         
     }

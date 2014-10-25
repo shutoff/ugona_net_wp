@@ -197,7 +197,24 @@ function notifyUA() {
 
         static public void SetData(Object to, JObject obj, String prefix, Delegate[] delegates)
         {
-            PropertyInfo[] props = to.GetType().GetProperties();
+            Type obj_type = to.GetType();
+            MethodInfo fromJson = obj_type.GetMethod("FromJson");
+            if (fromJson != null)
+            {
+                Object[] args = { obj };
+                fromJson.Invoke(to, args);
+                if ((delegates != null) && (prefix != null))
+                {
+                    String pname = prefix.Substring(0, prefix.Length - 1);
+                    foreach (Delegate dlg in delegates)
+                    {
+                        dlg.Method.Invoke(dlg.Target, new object[] { to, new PropertyChangedEventArgs(pname) });
+                    }
+                }              
+                return;
+            }
+
+            PropertyInfo[] props = obj_type.GetProperties();
             foreach (PropertyInfo p in props)
             {
                 JToken v = obj[p.Name];

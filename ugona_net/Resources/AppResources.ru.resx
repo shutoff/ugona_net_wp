@@ -1741,4 +1741,25 @@
   <data name="more" xml:space="preserve">
     <value>Подробнее</value>
   </data>
+  <data name="start_time_0" xml:space="preserve">
+    <value>10 минут</value>
+  </data>
+  <data name="start_time_1" xml:space="preserve">
+    <value>20 минут</value>
+  </data>
+  <data name="shock_sens_0" xml:space="preserve">
+    <value>Максимальная</value>
+  </data>  
+  <data name="shock_sens_1" xml:space="preserve">
+    <value>Высокая</value>
+  </data>  
+  <data name="shock_sens_2" xml:space="preserve">
+    <value>Средняя</value>
+  </data>  
+  <data name="shock_sens_3" xml:space="preserve">
+    <value>Низкая</value>
+  </data>  
+  <data name="shock_sens_4" xml:space="preserve">
+    <value>Минимальная</value>
+  </data>
 </root>

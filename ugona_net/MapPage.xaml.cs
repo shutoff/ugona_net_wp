@@ -78,9 +78,10 @@ namespace ugona_net
         private void Map_OnScriptNotify(object sender, NotifyEventArgs e)
         {
             String[] data = e.Value.Split(separator);
-            if ((data[0] == "init") && (ev == null))
+            if (data[0] == "init") 
             {
-                App.ViewModel.PropertyChanged += CarPropertyChanged;
+                if ((ev == null) && (tracks == null))
+                    App.ViewModel.PropertyChanged += CarPropertyChanged;
                 Progress.Visibility = Visibility.Collapsed;
                 Map.Visibility = Visibility.Visible;
             }
@@ -361,7 +362,7 @@ namespace ugona_net
 
             try
             {
-                String key = App.ViewModel.Key;
+                String key = App.ViewModel.Car.api_key;
                 long end = App.ViewModel.Car.time;
                 long begin = end - 86400000;
                 JObject res = await Helper.GetApi("tracks", "skey", key, "begin", begin, "end", end);

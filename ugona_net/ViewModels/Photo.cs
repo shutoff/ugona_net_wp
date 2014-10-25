@@ -29,7 +29,7 @@ namespace ugona_net
         {
             get
             {
-                String url = "https://car-online.ugona.net/photo?id=" + id + "&skey=" + App.ViewModel.Key;
+                String url = "https://car-online.ugona.net/photo?id=" + id + "&skey=" + App.ViewModel.Car.api_key;
                 return url;
             }
         }

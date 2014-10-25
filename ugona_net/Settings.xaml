@@ -6,27 +6,93 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     mc:Ignorable="d"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="True">
+    
+    <phone:PhoneApplicationPage.Resources>
+        <DataTemplate x:Key="ItemTemplate">
+            <Grid Margin="10,10,10,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <CheckBox Visibility="{Binding IsCheckbox}" IsChecked="{Binding Path=IsChecked, Mode=TwoWay}"/>
+                <TextBlock Text="{Binding Title}" Foreground="{Binding TitleColor}" FontSize="{Binding TitleSize}" Margin="5,0,5,0" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap"/>
+                <TextBlock Text="{Binding Units}" Grid.Column="2" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                <Button Grid.Column="2" Visibility="{Binding IsEdit}" BorderThickness="0" Click="EditClick" CommandParameter="{Binding Item}">
+                    <Image Source="/Assets/Icons/edit.png"/>
+                </Button>
+                <TextBlock Text="{Binding Info}" Grid.Row="1" Margin="20,5,5,0" Grid.Column="1" Grid.ColumnSpan="2" Visibility="{Binding IsInfo}"/>
+                <Slider HorizontalAlignment="Stretch" Grid.Row="1" Grid.ColumnSpan="3" Maximum="{Binding MaxValue}" Value="{Binding Path=Value, Mode=TwoWay}" Visibility="{Binding IsSlider}"/>
+                <toolkit:ListPicker Grid.Row="1" Grid.ColumnSpan="3" Visibility="{Binding IsList}" ItemsSource="{Binding Items}" SelectedItem="{Binding Path=SelectedItem, Mode=TwoWay}"/>
+            </Grid>
+        </DataTemplate>
 
+        <Style TargetType="ListBoxItem" x:Key="ContainerStyle">
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        </Style>
+    </phone:PhoneApplicationPage.Resources>
+    
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
         <!--Pivot Control-->
-        <phone:Pivot Title="MY APPLICATION">
-            <!--Pivot item one-->
-            <phone:PivotItem Header="item1">
-                <Grid/>
+        <phone:Pivot x:Name="Pivot" Title="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}" LoadedPivotItem="Pivot_LoadedPivotItem">
+            <phone:Pivot.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" FontSize="40" FontWeight="Bold" Margin="5,10,5,10"/>
+                </DataTemplate>
+            </phone:Pivot.HeaderTemplate>
+
+            <phone:PivotItem x:Name="AuthPage" Header="{Binding Path=LocalizedResources.auth, Source={StaticResource LocalizedStrings}}">
+                <Grid>
+                    <ListBox x:Name="Auth" SelectionChanged="ItemClick" ItemContainerStyle="{StaticResource ContainerStyle}" ItemTemplate="{StaticResource ItemTemplate}"/>
+                </Grid>
             </phone:PivotItem>
 
-            <!--Pivot item two-->
-            <phone:PivotItem Header="item2">
-                <Grid/>
+            <phone:PivotItem x:Name="ControlPage" Header="{Binding Path=LocalizedResources.commands, Source={StaticResource LocalizedStrings}}">
+                <Grid>
+                    <ListBox x:Name="Commands" SelectionChanged="ItemClick" ItemContainerStyle="{StaticResource ContainerStyle}" ItemTemplate="{StaticResource ItemTemplate}"/>
+                </Grid>
             </phone:PivotItem>
+
+            <phone:PivotItem x:Name="DevicePage" Header="{Binding Path=LocalizedResources.device_settings, Source={StaticResource LocalizedStrings}}">
+                <Grid>
+                    <ListBox x:Name="DeviceSettings" SelectionChanged="ItemClick" ItemContainerStyle="{StaticResource ContainerStyle}" ItemTemplate="{StaticResource ItemTemplate}"/>
+                    <TextBlock x:Name="DeviceError" TextAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+            </phone:PivotItem>
+
+            <phone:PivotItem x:Name="AzPage" Header="{Binding Path=LocalizedResources.autostart, Source={StaticResource LocalizedStrings}}">
+                <Grid>
+                    <ListBox x:Name="AzSettings" SelectionChanged="ItemClick" ItemContainerStyle="{StaticResource ContainerStyle}" ItemTemplate="{StaticResource ItemTemplate}"/>
+                    <TextBlock x:Name="AzError" TextAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+            </phone:PivotItem>
+            
         </phone:Pivot>
+        <Button x:Name="Setup" Grid.Row="1">
+            <Button.Content>
+                <Grid>
+                    <ProgressBar x:Name="Loading" IsIndeterminate="True" Width="320"/>
+                    <TextBlock x:Name="SetupLabel" Text="{Binding Path=LocalizedResources.loading, Source={StaticResource LocalizedStrings}}" TextAlignment="Center"/>
+                </Grid>
+            </Button.Content>
+        </Button>
     </Grid>
     
 </phone:PhoneApplicationPage>
