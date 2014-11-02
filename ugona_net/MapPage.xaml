@@ -46,11 +46,20 @@
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <ProgressBar x:Name="Progress" IsIndeterminate="True"/>
-        <TextBlock x:Name="Error" TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Visibility="Collapsed"/>
-        <phone:WebBrowser x:Name="Map" Visibility="Collapsed"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="NameLabel" Visibility="Collapsed" Text="{Binding Path=LocalizedResources.name, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center"/>
+        <TextBox x:Name="Name" Grid.Column="1" Visibility="Collapsed"/>
+        <CheckBox x:Name="Sms" Grid.Row="1" Grid.ColumnSpan="2" Visibility="Collapsed" Content="{Binding Path=LocalizedResources.sms_notify, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center"/>
+        <ProgressBar x:Name="Progress" Grid.Row="2" Grid.ColumnSpan="2" IsIndeterminate="True"/>
+        <TextBlock x:Name="Error" Grid.Row="2" Grid.ColumnSpan="2" TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Visibility="Collapsed"/>
+        <phone:WebBrowser x:Name="Map" Grid.Row="2" Grid.ColumnSpan="2" Visibility="Collapsed"/>
     </Grid>
 
 </phone:PhoneApplicationPage>

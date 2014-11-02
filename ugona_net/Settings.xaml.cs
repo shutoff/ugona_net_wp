@@ -1,4 +1,5 @@
 ﻿using Microsoft.Phone.Controls;
+using Microsoft.Phone.Shell;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -12,11 +13,13 @@ namespace ugona_net
 {
     public partial class Settings : PhoneApplicationPage
     {
-        static int[] values;
-        static int[] old_values;
+        static State state;
 
         PivotItem az_item;
+        PivotItem heater_item;
         bool az_visible;
+        bool heater_visible;
+        bool show_map;
 
         public Settings()
         {
@@ -24,11 +27,13 @@ namespace ugona_net
             DataContext = App.ViewModel;
             Auth.ItemsSource = SettingsItem.AuthItems;
             Commands.ItemsSource = SettingsItem.CommandsItems;
-            values = new int[22];
-            old_values = new int[22];
+            state = new State();
             az_item = Pivot.Items[3] as PivotItem;
             Pivot.Items.RemoveAt(3);
+            heater_item = Pivot.Items[3] as PivotItem;
+            Pivot.Items.RemoveAt(3);
             SetupAz();
+            SetupHeater();
             App.ViewModel.PropertyChanged += CarPropertyChanged;
         }
 
@@ -36,6 +41,8 @@ namespace ugona_net
         {
             if (args.PropertyName == "commands.autostart")
                 SetupAz();
+            if (args.PropertyName == "commands.rele")
+                SetupHeater();
         }
 
         void SetupAz()
@@ -50,6 +57,24 @@ namespace ugona_net
             else
             {
                 Pivot.Items.RemoveAt(3);
+            }
+        }
+
+        void SetupHeater()
+        {
+            if (App.ViewModel.Car.commands.rele == heater_visible)
+                return;
+            heater_visible = App.ViewModel.Car.commands.rele;
+            int pos = 3;
+            if (App.ViewModel.Car.commands.autostart)
+                pos++;
+            if (heater_visible)
+            {
+                Pivot.Items.Insert(pos, heater_item);
+            }
+            else
+            {
+                Pivot.Items.RemoveAt(pos);
             }
         }
 
@@ -72,12 +97,26 @@ namespace ugona_net
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
+            if (!show_map)
+            {
+                PhoneApplicationService.Current.State["Settings"] = null;
+                PhoneApplicationService.Current.State["SettingsOld"] = null;
+            }
+            show_map = true;
             App.ViewModel.Flush();
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            LoadSettings();
+            if (PhoneApplicationService.Current.State.ContainsKey("Settings"))
+            {
+                state = PhoneApplicationService.Current.State["Settings"] as State;
+                RestoreState();
+            }
+            else
+            {
+                LoadSettings();
+            }
             PivotItem item = Pivot.SelectedItem as PivotItem;
             if (item == null)
                 return;
@@ -107,6 +146,7 @@ namespace ugona_net
             {
                 DeviceError.Visibility = Visibility.Collapsed;
                 AzError.Visibility = Visibility.Collapsed;
+                HeaterError.Visibility = Visibility.Collapsed;
                 Loading.Visibility = Visibility.Visible;
                 SetupLabel.Text = Helper.GetString("loading");
                 JObject res = await Helper.GetApi("settings",
@@ -117,41 +157,13 @@ namespace ugona_net
                     JToken v = res.GetValue("v" + i);
                     if (v == null)
                         continue;
-                    values[i] = v.ToObject<Int32>();
-                    old_values[i] = values[i];
+                    state.values[i] = v.ToObject<Int32>();
+                    state.old_values[i] = state.values[i];
                 }
                 res = await Helper.GetApi("version",
                         "skey", App.ViewModel.Car.api_key);
-                String version = res.GetValue("version").ToString();
-
-                Loading.Visibility = Visibility.Collapsed;
-                SetupLabel.Text = Helper.GetString("set");
-
-                List<SettingsItem> items = new List<SettingsItem>();
-
-                items.Add(new SeekBarWordItem("timer", 21, 1, 30, "minutes"));
-                items.Add(new CheckBitItem("guard_sound", 0, 7));
-                items.Add(new CheckBitItem("no_sound", 12, 3));
-                items.Add(new CheckBitItem("guard_partial", 2, 2));
-                items.Add(new CheckBitItem("comfort_enable", 9, 5));
-                items.Add(new SeekBarWordItem("guard_time", 4, 15, 60, "sec"));
-                items.Add(new SeekBarWordItem("robbery_time", 5, 1, 30, "sec", 20));
-                items.Add(new SeekBarWordItem("door_time", 10, 10, 30, "sec"));
-                items.Add(new SeekBarWordItem("tilt_level", 1, 15, 45, "unit"));
-                items.Add(new SeekBarListItem("shock_sens", 14));
-                items.Add(new CheckBitItem("tilt_low", 2, 1));
-                items.Add(new SeekBarPrefItem("temp_correct", "TempShift", -10, 10, "ºC", 1));
-                items.Add(new SeekBarPrefItem("voltage_shift", "VoltageShift", -20, 20, "V", 0.05));
-                items.Add(new SettingsItem("version", version));
-
-                DeviceSettings.ItemsSource = items;
-
-                items = new List<SettingsItem>();
-
-                items.Add(new ListItem("start_time", 20));
-                items.Add(new SeekBarBitItem("voltage_limit", 18, 60, 93, "v", 0.13));
-                items.Add(new CheckBitItem("soft_start", 19, 1));
-                AzSettings.ItemsSource = items;
+                state.version = res.GetValue("version").ToString();
+                RestoreState();
             }
             catch (Exception ex)
             {
@@ -161,7 +173,84 @@ namespace ugona_net
                 DeviceError.Text = ex.Message;
                 AzError.Visibility = Visibility.Visible;
                 AzError.Text = ex.Message;
+                HeaterError.Visibility = Visibility.Visible;
+                HeaterError.Text = ex.Message;
             }
+        }
+
+        void RestoreState()
+        {
+            Loading.Visibility = Visibility.Collapsed;
+            SetupLabel.Text = Helper.GetString("setup");
+
+            List<SettingsItem> items = new List<SettingsItem>();
+
+            items.Add(new SeekBarWordItem("timer", 21, 1, 30, "minutes"));
+            items.Add(new CheckBitItem("guard_sound", 0, 7));
+            items.Add(new CheckBitItem("no_sound", 12, 3));
+            items.Add(new CheckBitItem("guard_partial", 2, 2));
+            items.Add(new CheckBitItem("comfort_enable", 9, 5));
+            items.Add(new SeekBarWordItem("guard_time", 4, 15, 60, "sec"));
+            items.Add(new SeekBarWordItem("robbery_time", 5, 1, 30, "sec", 20));
+            items.Add(new SeekBarWordItem("door_time", 10, 10, 30, "sec"));
+            items.Add(new SeekBarWordItem("tilt_level", 1, 15, 45, "unit"));
+            items.Add(new SeekBarListItem("shock_sens", 14));
+            items.Add(new CheckBitItem("tilt_low", 2, 1));
+            items.Add(new SeekBarPrefItem("temp_correct", "TempShift", -10, 10, "ºC", 1));
+            items.Add(new SeekBarPrefItem("voltage_shift", "VoltageShift", -20, 20, "V", 0.05));
+            items.Add(new SettingsItem("version", state.version));
+
+            DeviceSettings.ItemsSource = items;
+
+            items = new List<SettingsItem>();
+            items.Add(new ListItem("start_time", 20));
+            items.Add(new SeekBarBitItem("voltage_limit", 18, 60, 93, "v", 0.13));
+            items.Add(new CheckBitItem("soft_start", 19, 1));
+            items.Add(new TimerAddItem());
+            AzSettings.ItemsSource = items;
+
+            items = new List<SettingsItem>();
+            HeaterSettings.ItemsSource = items;
+
+            items = new List<SettingsItem>();
+            items.Add(new ZoneAddItem(AddZone));
+            ZoneSettings.ItemsSource = items;
+        }
+
+        void AddZone(PhoneApplicationPage page)
+        {
+            Zone zone = new Zone();
+            double lat = (double)App.ViewModel.Car.gps.latitude;
+            double lng = (double)App.ViewModel.Car.gps.longitude;
+            zone.lat1 = lat - 0.01;
+            zone.lat2 = lat + 0.01;
+            zone.lng1 = lng - 0.01;
+            zone.lng2 = lng + 0.01;
+            zone.name = "Zone";
+            EditZone(zone);
+        }
+
+        void EditZone(Zone zone)
+        {
+            show_map = true;
+            PhoneApplicationService.Current.State["Settings"] = state;
+            PhoneApplicationService.Current.State["MapEvent"] = null;
+            PhoneApplicationService.Current.State["MapZone"] = zone;
+            PhoneApplicationService.Current.State["MapTracks"] = null;
+            NavigationService.Navigate(new Uri("/MapPage.xaml", UriKind.Relative));
+        }
+
+        new class State
+        {
+            public State()
+            {
+                values = new int[22];
+                old_values = new int[22];
+            }
+
+            public int[] values;
+            public int[] old_values;
+            public String version;
         }
 
         class ListItem : SettingsItem
@@ -178,7 +267,7 @@ namespace ugona_net
                 {
                     return Visibility.Visible;
                 }
-            }           
+            }
 
             override public IEnumerable<String> Items
             {
@@ -200,12 +289,12 @@ namespace ugona_net
                 }
             }
 
-            virtual public Object SelectedItem
+            new virtual public Object SelectedItem
             {
                 get
                 {
                     IEnumerable<String> i = Items;
-                    return items[values[word]];
+                    return items[state.values[word]];
                 }
 
                 set
@@ -214,7 +303,7 @@ namespace ugona_net
                     {
                         if (items[i] == value)
                         {
-                            values[word] = i;
+                            state.values[word] = i;
                             break;
                         }
                     }
@@ -226,7 +315,7 @@ namespace ugona_net
             {
                 get
                 {
-                    return values[word] != old_values[word];
+                    return state.values[word] != state.old_values[word];
                 }
             }
 
@@ -248,7 +337,7 @@ namespace ugona_net
                 {
                     Type type = App.ViewModel.Car.GetType();
                     PropertyInfo info = type.GetProperty(name);
-                    double v = (double) info.GetValue(App.ViewModel.Car);
+                    double v = (double)info.GetValue(App.ViewModel.Car);
                     return (int)Math.Round(v / k) - min;
                 }
                 set
@@ -283,7 +372,7 @@ namespace ugona_net
             {
                 get
                 {
-                    int res = values[word];
+                    int res = state.values[word];
                     if (res < min)
                         res = min;
                     if (res > max)
@@ -292,7 +381,7 @@ namespace ugona_net
                 }
                 set
                 {
-                    values[word] = value + min;
+                    state.values[word] = value + min;
                     NotifyPropertyChanged("Units");
                     NotifyPropertyChanged("TitleColor");
                 }
@@ -302,7 +391,7 @@ namespace ugona_net
             {
                 get
                 {
-                    return values[word] != old_values[word];
+                    return state.values[word] != state.old_values[word];
                 }
             }
 
@@ -312,7 +401,7 @@ namespace ugona_net
         class SeekBarListItem : SeekBarWordItem
         {
             public SeekBarListItem(String title, int word_)
-                :base(title, word_, 0, 0, "")
+                : base(title, word_, 0, 0, "")
             {
                 for (int i = 0; ; i++)
                 {
@@ -346,16 +435,16 @@ namespace ugona_net
             {
                 get
                 {
-                    if ((values[word] & mask) == 0)
+                    if ((state.values[word] & mask) == 0)
                         return 0;
                     return base.Value;
                 }
                 set
                 {
-                    values[word] &= ~mask;
+                    state.values[word] &= ~mask;
                     if (value > 0)
                     {
-                        values[word] |= mask;
+                        state.values[word] |= mask;
                         base.Value = value;
                     }
                     else
@@ -379,7 +468,7 @@ namespace ugona_net
             {
                 get
                 {
-                    if (((values[word] & mask) == 0) && ((old_values[word] & mask) == 0))
+                    if (((state.values[word] & mask) == 0) && ((state.old_values[word] & mask) == 0))
                         return false;
                     return base.updated;
                 }
@@ -402,14 +491,14 @@ namespace ugona_net
             {
                 get
                 {
-                    return (values[word] & mask) != 0;
+                    return (state.values[word] & mask) != 0;
                 }
 
                 set
                 {
-                    values[word] &= ~mask;
+                    state.values[word] &= ~mask;
                     if (value)
-                        values[word] |= mask;
+                        state.values[word] |= mask;
                     NotifyPropertyChanged("IsChecked");
                     NotifyPropertyChanged("TitleColor");
                 }
@@ -419,12 +508,48 @@ namespace ugona_net
             {
                 get
                 {
-                    return (values[word] & mask) != (old_values[word] & mask);
+                    return (state.values[word] & mask) != (state.old_values[word] & mask);
                 }
             }
 
             int word;
             int mask;
+        }
+
+        class TimerAddItem : SettingsItem
+        {
+            public TimerAddItem()
+                : base("add_timer")
+            {
+
+            }
+
+            public override Visibility IsAdd
+            {
+                get
+                {
+                    return Visibility.Visible;
+                }
+            }
+        }
+
+        class ZoneAddItem : SettingsItem
+        {
+            public ZoneAddItem(SettingsItem.OnClick onclick)
+                : base("add_zone")
+            {
+                on_click = onclick;
+            }
+
+            public override Visibility IsAdd
+            {
+                get
+                {
+                    return Visibility.Visible;
+                }
+            }
+
+
         }
     }
 }

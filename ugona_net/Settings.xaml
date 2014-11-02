@@ -27,6 +27,7 @@
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
                 <CheckBox Visibility="{Binding IsCheckbox}" IsChecked="{Binding Path=IsChecked, Mode=TwoWay}"/>
+                <Image Visibility="{Binding IsAdd}" Source="Assets\Icons\add.png"/>
                 <TextBlock Text="{Binding Title}" Foreground="{Binding TitleColor}" FontSize="{Binding TitleSize}" Margin="5,0,5,0" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap"/>
                 <TextBlock Text="{Binding Units}" Grid.Column="2" VerticalAlignment="Center" Margin="10,0,0,0"/>
                 <Button Grid.Column="2" Visibility="{Binding IsEdit}" BorderThickness="0" Click="EditClick" CommandParameter="{Binding Item}">
@@ -83,7 +84,21 @@
                     <TextBlock x:Name="AzError" TextAlignment="Center" VerticalAlignment="Center"/>
                 </Grid>
             </phone:PivotItem>
-            
+
+            <phone:PivotItem x:Name="HeaterPage" Header="{Binding Path=LocalizedResources.rele, Source={StaticResource LocalizedStrings}}">
+                <Grid>
+                    <ListBox x:Name="HeaterSettings" SelectionChanged="ItemClick" ItemContainerStyle="{StaticResource ContainerStyle}" ItemTemplate="{StaticResource ItemTemplate}"/>
+                    <TextBlock x:Name="HeaterError" TextAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+            </phone:PivotItem>
+
+            <phone:PivotItem x:Name="ZonePage" Header="{Binding Path=LocalizedResources.zones, Source={StaticResource LocalizedStrings}}">
+                <Grid>
+                    <ListBox x:Name="ZoneSettings" SelectionChanged="ItemClick" ItemContainerStyle="{StaticResource ContainerStyle}" ItemTemplate="{StaticResource ItemTemplate}"/>
+                    <TextBlock x:Name="ZoneError" TextAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+            </phone:PivotItem>
+
         </phone:Pivot>
         <Button x:Name="Setup" Grid.Row="1">
             <Button.Content>

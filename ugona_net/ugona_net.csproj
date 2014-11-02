@@ -143,6 +143,7 @@
     <Compile Include="ViewModels\SettingsItem.cs" />
     <Compile Include="ViewModels\Stat.cs" />
     <Compile Include="ViewModels\Track.cs" />
+    <Compile Include="ViewModels\Zone.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -257,6 +258,7 @@
     <Content Include="Assets\Events\e_voice.png" />
     <Content Include="Assets\Events\e_zone_in.png" />
     <Content Include="Assets\Events\e_zone_out.png" />
+    <Content Include="Assets\Icons\add.png" />
     <Content Include="Assets\Icons\appbar.block.png" />
     <Content Include="Assets\Icons\appbar.call.png" />
     <Content Include="Assets\Icons\appbar.contacts.off.png" />
@@ -536,7 +538,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <SDKReference Include="SQLite.WP80, Version=3.8.7">
+    <SDKReference Include="SQLite.WP80, Version=3.8.7.1">
       <Name>SQLite for Windows Phone</Name>
     </SDKReference>
   </ItemGroup>

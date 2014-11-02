@@ -28,6 +28,7 @@ namespace ugona_net
 
         Event ev;
         ObservableCollection<Track> tracks;
+        Zone zone;
 
         DispatcherTimer refreshTimer;
         String track_data;
@@ -40,6 +41,16 @@ namespace ugona_net
             tracks = null;
             if (PhoneApplicationService.Current.State.ContainsKey("MapTracks"))
                 tracks = PhoneApplicationService.Current.State["MapTracks"] as ObservableCollection<Track>;
+            zone = null;
+            if (PhoneApplicationService.Current.State.ContainsKey("MapZone"))
+            {
+                zone = PhoneApplicationService.Current.State["MapZone"] as Zone;
+                NameLabel.Visibility = Visibility.Visible;
+                Name.Visibility = Visibility.Visible;
+                Name.Text = zone.name;
+                Sms.Visibility = Visibility.Visible;
+                Sms.IsChecked = zone.sms;
+            }
             if ((ev != null) || (tracks != null))
                 return;
             track_data = null;
@@ -92,6 +103,14 @@ namespace ugona_net
                 Error.Text = data[1];
                 Error.Visibility = Visibility.Visible;
             }
+            if (data[0] == "setZone")
+            {
+                String[] coord = data[1].Split(sep);
+                zone.lat1 = Double.Parse(coord[0]);
+                zone.lng1 = Double.Parse(coord[1]);
+                zone.lat2 = Double.Parse(coord[2]);
+                zone.lng2 = Double.Parse(coord[3]);
+            }
         }
 
         private void CarPropertyChanged(Object sender, PropertyChangedEventArgs args)
@@ -116,6 +135,7 @@ namespace ugona_net
         }
 
         private char[] separator = { '|' };
+        private char[] sep = { ',' };
 
         private static String s(double v)
         {
@@ -125,6 +145,16 @@ namespace ugona_net
         private void SetData()
         {
             String data = null;
+            if (zone != null)
+            {
+                data = String.Format(CultureInfo.InvariantCulture, "{0:0.#####}", zone.lat1) + ",";
+                data += String.Format(CultureInfo.InvariantCulture, "{0:0.#####}", zone.lng1) + ",";
+                data += String.Format(CultureInfo.InvariantCulture, "{0:0.#####}", zone.lat2) + ",";
+                data += String.Format(CultureInfo.InvariantCulture, "{0:0.#####}", zone.lng2);
+                CallJsParts(data, "setZone");
+                return;
+            }
+
             if (tracks != null)
             {
                 List<Track.Marker> markers = new List<Track.Marker>();

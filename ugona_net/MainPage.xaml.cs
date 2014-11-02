@@ -43,6 +43,7 @@ namespace ugona_net
         {
             PhoneApplicationService.Current.State["MapEvent"] = null;
             PhoneApplicationService.Current.State["MapTracks"] = null;
+            PhoneApplicationService.Current.State["MapZone"] = null;
             NavigationService.Navigate(new Uri("/MapPage.xaml", UriKind.Relative));
         }
 
@@ -553,6 +554,7 @@ namespace ugona_net
                         tracks.Add(t);
                         PhoneApplicationService.Current.State["MapEvent"] = null;
                         PhoneApplicationService.Current.State["MapTracks"] = tracks;
+                        PhoneApplicationService.Current.State["MapZone"] = null;
                         NavigationService.Navigate(new Uri("/MapPage.xaml", UriKind.Relative));
                         return;
                     }
@@ -566,6 +568,7 @@ namespace ugona_net
         private void OnTracksClick(object sender, RoutedEventArgs e)
         {
             PhoneApplicationService.Current.State["MapEvent"] = null;
+            PhoneApplicationService.Current.State["MapZone"] = null;
             PhoneApplicationService.Current.State["MapTracks"] = Tracks.ItemsSource;
             NavigationService.Navigate(new Uri("/MapPage.xaml", UriKind.Relative));
         }
@@ -583,7 +586,7 @@ namespace ugona_net
             {
                 JObject res = await Helper.GetApi("stat",
                     "skey", App.ViewModel.Car.api_key,
-                    "tz", TimeZoneInfo.Local.StandardName,
+                    "tz", TimeZoneInfo.Local.DisplayName,
                     "recalc", recalc ? "true" : null);
                 stat = new List<Stat>();
                 foreach (var x in res)

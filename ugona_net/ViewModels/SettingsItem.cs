@@ -100,6 +100,14 @@ namespace ugona_net
             }
         }
 
+        virtual public Visibility IsAdd
+        {
+            get
+            {
+                return Visibility.Collapsed;
+            }
+        }
+
         virtual public IEnumerable<String> Items
         {
             get
@@ -195,7 +203,7 @@ namespace ugona_net
             }
         }
 
-        protected delegate void OnClick(PhoneApplicationPage page);
+        public delegate void OnClick(PhoneApplicationPage page);
         protected OnClick on_click;
 
         public void click(PhoneApplicationPage page)

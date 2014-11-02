@@ -1439,7 +1439,7 @@ namespace ugona_net
 
             JObject data = new JObject();
             data.Add("reg", ChannelUri);
-            data.Add("tz", TimeZoneInfo.Local.StandardName);
+            data.Add("tz", TimeZoneInfo.Local.DisplayName);
             data.Add("version", version);
             data.Add("uid", DeviceId());
             data.Add("lang", Helper.GetString("ResourceLanguage"));
