@@ -43,8 +43,8 @@ namespace ugona_net
                 tracks = PhoneApplicationService.Current.State["MapTracks"] as ObservableCollection<Track>;
             zone = null;
             if (PhoneApplicationService.Current.State.ContainsKey("MapZone"))
-            {
                 zone = PhoneApplicationService.Current.State["MapZone"] as Zone;
+            if (zone != null){
                 NameLabel.Visibility = Visibility.Visible;
                 Name.Visibility = Visibility.Visible;
                 Name.Text = zone.name;
