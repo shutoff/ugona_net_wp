@@ -85,13 +85,6 @@
                 </Grid>
             </phone:PivotItem>
 
-            <phone:PivotItem x:Name="HeaterPage" Header="{Binding Path=LocalizedResources.rele, Source={StaticResource LocalizedStrings}}">
-                <Grid>
-                    <ListBox x:Name="HeaterSettings" SelectionChanged="ItemClick" ItemContainerStyle="{StaticResource ContainerStyle}" ItemTemplate="{StaticResource ItemTemplate}"/>
-                    <TextBlock x:Name="HeaterError" TextAlignment="Center" VerticalAlignment="Center"/>
-                </Grid>
-            </phone:PivotItem>
-
             <phone:PivotItem x:Name="ZonePage" Header="{Binding Path=LocalizedResources.zones, Source={StaticResource LocalizedStrings}}">
                 <Grid>
                     <ListBox x:Name="ZoneSettings" SelectionChanged="ItemClick" ItemContainerStyle="{StaticResource ContainerStyle}" ItemTemplate="{StaticResource ItemTemplate}"/>

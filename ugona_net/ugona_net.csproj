@@ -103,6 +103,9 @@
       <DependentUpon>AuthPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Colors.cs" />
+    <Compile Include="Command.xaml.cs">
+      <DependentUpon>Command.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DateUtils.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="ImageLoader.cs" />
@@ -155,6 +158,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AuthPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Command.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -469,8 +476,13 @@
       <HintPath>..\packages\AppBarUtils.2.5\lib\windowsphone8\AppBarUtils.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Coding4Fun.Toolkit">
+      <HintPath>..\packages\Coding4Fun.Toolkit.Controls.2.0.8\lib\windowsphone8\Coding4Fun.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Coding4Fun.Toolkit.Controls">
-      <HintPath>..\packages\Coding4Fun.Toolkit.Controls.2.0.7\lib\windowsphone8\Coding4Fun.Toolkit.Controls.dll</HintPath>
+      <HintPath>..\packages\Coding4Fun.Toolkit.Controls.2.0.8\lib\windowsphone8\Coding4Fun.Toolkit.Controls.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="ICSharpCode.SharpZLib.Phone">
       <HintPath>..\packages\ImageTools.0.3.1\lib\sl3-wp\ICSharpCode.SharpZLib.Phone.dll</HintPath>
@@ -502,7 +514,7 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Newtonsoft.Json.6.0.5\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.6\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="PhoneCodeContractsAssemblies">
       <HintPath>..\packages\ImageTools.0.3.1\lib\sl3-wp\PhoneCodeContractsAssemblies.dll</HintPath>
@@ -538,7 +550,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <SDKReference Include="SQLite.WP80, Version=3.8.7.1">
+    <SDKReference Include="SQLite.WP80, Version=3.8.7.2">
       <Name>SQLite for Windows Phone</Name>
     </SDKReference>
   </ItemGroup>

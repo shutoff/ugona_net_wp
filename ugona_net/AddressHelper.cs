@@ -103,44 +103,51 @@ namespace ugona_net
             if (result != null)
                 return result;
 
-            JObject res = await Helper.GetJson(OSM_URL, String.Format(CultureInfo.InvariantCulture, "{0:0.#####}", lat), String.Format(CultureInfo.InvariantCulture, "{0:0.#####}", lon), Helper.GetString("ResourceLanguage"));
-            string[] separators = new string[] {", "};
-            String[] parts = res.GetValue("display_name").ToString().Split(separators, StringSplitOptions.None);
-            JToken house_number = null;
-            JToken address = res.GetValue("address");
-            if (address != null)
-                house_number = address.ToObject<JObject>().GetValue("house_number");
-            if (house_number != null)
+            try
             {
-                String house = house_number.ToString();
-                for (int i = 0; i < parts.Length - 1; i++)
+                JObject res = await Helper.GetJson(OSM_URL, String.Format(CultureInfo.InvariantCulture, "{0:0.#####}", lat), String.Format(CultureInfo.InvariantCulture, "{0:0.#####}", lon), Helper.GetString("ResourceLanguage"));
+                string[] separators = new string[] { ", " };
+                String[] parts = res.GetValue("display_name").ToString().Split(separators, StringSplitOptions.None);
+                JToken house_number = null;
+                JToken address = res.GetValue("address");
+                if (address != null)
+                    house_number = address.ToObject<JObject>().GetValue("house_number");
+                if (house_number != null)
                 {
-                    if (parts[i] == house)
+                    String house = house_number.ToString();
+                    for (int i = 0; i < parts.Length - 1; i++)
                     {
-                        parts[i] = parts[i + 1];
-                        parts[i + 1] = house;
-                        break;
+                        if (parts[i] == house)
+                        {
+                            parts[i] = parts[i + 1];
+                            parts[i + 1] = house;
+                            break;
+                        }
                     }
                 }
-            }
-            for (int i = 0; i < parts.Length - 2; i++)
-            {
-                if (parts[i] == "Unnamed road")
-                    continue;
-                if (result == null)
+                for (int i = 0; i < parts.Length - 2; i++)
                 {
-                    result = parts[i];
-                    continue;
+                    if (parts[i] == "Unnamed road")
+                        continue;
+                    if (result == null)
+                    {
+                        result = parts[i];
+                        continue;
+                    }
+                    result += ", ";
+                    result += parts[i];
                 }
-                result += ", ";
-                result += parts[i];
+                Address addr = new Address();
+                addr.address = result;
+                addr.Lat = (double)lat;
+                addr.Lng = (double)lon;
+                db.InsertAsync(addr);
+                return result;
             }
-            Address addr = new Address();
-            addr.address = result;
-            addr.Lat = (double)lat;
-            addr.Lng = (double)lon;
-            db.InsertAsync(addr);
-            return result;
+            catch (Exception ex)
+            {
+                return lat + ", " + lon;
+            }
         }
     }
 

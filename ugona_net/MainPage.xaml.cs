@@ -279,13 +279,13 @@ namespace ugona_net
         private void IconCmd(object sender, EventArgs e)
         {
             AppBarIcon icon = sender as AppBarIcon;
-            DoAction.Run(icon.command);
+            DoAction.Run(icon.command, NavigationService);
         }
 
         private void ItemCmd(object sender, EventArgs e)
         {
             AppBarItem item = sender as AppBarItem;
-            DoAction.Run(item.command);
+            DoAction.Run(item.command, NavigationService);
         }
 
         private void ChangeFilter(object sender, EventArgs e)
@@ -815,10 +815,11 @@ namespace ugona_net
 
         private void ActionClick(object sender, SelectionChangedEventArgs e)
         {
-            Action aNew = Actions.SelectedItem as Action;
+            DoAction aNew = Actions.SelectedItem as DoAction;
             if (aNew == null)
                 return;
             Actions.SelectedIndex = -1;
+            DoAction.Run(aNew.name, NavigationService);
         }
 
 

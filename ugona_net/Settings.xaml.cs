@@ -33,7 +33,6 @@ namespace ugona_net
             heater_item = Pivot.Items[3] as PivotItem;
             Pivot.Items.RemoveAt(3);
             SetupAz();
-            SetupHeater();
             App.ViewModel.PropertyChanged += CarPropertyChanged;
         }
 
@@ -41,8 +40,6 @@ namespace ugona_net
         {
             if (args.PropertyName == "commands.autostart")
                 SetupAz();
-            if (args.PropertyName == "commands.rele")
-                SetupHeater();
         }
 
         void SetupAz()
@@ -57,24 +54,6 @@ namespace ugona_net
             else
             {
                 Pivot.Items.RemoveAt(3);
-            }
-        }
-
-        void SetupHeater()
-        {
-            if (App.ViewModel.Car.commands.rele == heater_visible)
-                return;
-            heater_visible = App.ViewModel.Car.commands.rele;
-            int pos = 3;
-            if (App.ViewModel.Car.commands.autostart)
-                pos++;
-            if (heater_visible)
-            {
-                Pivot.Items.Insert(pos, heater_item);
-            }
-            else
-            {
-                Pivot.Items.RemoveAt(pos);
             }
         }
 
@@ -146,7 +125,6 @@ namespace ugona_net
             {
                 DeviceError.Visibility = Visibility.Collapsed;
                 AzError.Visibility = Visibility.Collapsed;
-                HeaterError.Visibility = Visibility.Collapsed;
                 Loading.Visibility = Visibility.Visible;
                 SetupLabel.Text = Helper.GetString("loading");
                 JObject res = await Helper.GetApi("settings",
@@ -173,8 +151,6 @@ namespace ugona_net
                 DeviceError.Text = ex.Message;
                 AzError.Visibility = Visibility.Visible;
                 AzError.Text = ex.Message;
-                HeaterError.Visibility = Visibility.Visible;
-                HeaterError.Text = ex.Message;
             }
         }
 
@@ -208,9 +184,6 @@ namespace ugona_net
             items.Add(new CheckBitItem("soft_start", 19, 1));
             items.Add(new TimerAddItem());
             AzSettings.ItemsSource = items;
-
-            items = new List<SettingsItem>();
-            HeaterSettings.ItemsSource = items;
 
             items = new List<SettingsItem>();
             items.Add(new ZoneAddItem(AddZone));
